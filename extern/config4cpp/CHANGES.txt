@@ -1,0 +1,102 @@
+Version 1.2 (30 September 2021)
+------------------------------------------------------------------------------
+
+Functional enhancements:
+
+	- In both Config4Cpp and Config4J, the configuration-file syntax has
+	  been enhanced with the addition of a "+=" operator that appends a
+	  value onto an existing variable.
+
+	- In Config4Cpp, the UNIX Makefile system now builds both a static
+	  and dynamic library (tested on Linux).
+
+	- In Config4J, you can now parse a configuration file that is found
+	  on the classpath: cfg.parse("classpath#path/to.file.cfg").
+
+Performance enhancements:
+
+	- I finally got around to replacing a poorly-performing
+	  "placeholder"-style ConfigScope::hash() implementation with a
+	  proper implementation. Embarrassing but true.
+
+	- Configuration::patternMatch() now optimises for some common cases,
+	  including: there not being any wildcards in the pattern; a single
+	  wildcard appears at the very start/end of the pattern; and both
+	  the pattern and haystack contain only ASCII characters (as opposed
+	  to containing at least one multi-byte character).
+
+Bug fixes in Config4Cpp:
+
+	- Fixed a memory leak when a SchemaValidator object was re-used to
+	  parse an additional schema.
+
+	- Fixed a bug in ConfigurationImpl::isDurationMicroseconds().
+
+	- Various bugs in the Windows and UNIX Makefiles have been fixed.
+
+	- Removed "throw" declarations from the signatures of operations.
+	  Such declarations were considered to be good practice when
+	  Config4Cpp was originally designed. However, "throw" declarations
+	  became deprecated in (I think) C++11 and illegal in (I think)
+	  C++17.
+
+Requirements:
+
+	- Config4J now requires Java 1.5 or greater.
+
+Miscellaneous changes affecting organisation of source code:
+
+	- In Config4J, the DefaultSecurity.cfg file is now found via the
+	  classpath rather than being compiled into code via the
+	  config2jNoCheck utility. This simplifies the build system.
+
+	- In Config4J, the directory structure has been modified to make it
+	  more friendly with Maven. But the build system still uses Ant.
+
+	- In Config4J, the Java classes for the "config2j" and "config4j"
+	  command-line utilities have moved from package "org.config4j" to
+	  package "org.config4j.util".
+
+
+Version 1.1 (2 February 2012): Changes from the original (unnumbered) version.
+------------------------------------------------------------------------------
+
+The following enhancements have been made in Config4Cpp and Config4J:
+
+	- The "durationMicroseconds" type (with associated lookup
+	  operations) has been added to complement the
+	  "durationMilliseconds" and "durationSeconds" types.
+
+	- The "config4cpp" and "config4j" utilities now support a "-set
+	  <name> <value>" command-line option that can be used to preset
+	  variables before parsing the input configuration file.
+
+
+The following bugs have been fixed in Config4Cpp and Config4J:
+
+	- An exception is now thrown if a string literal in a
+	  configuration file contains an invalid escape sequence.
+
+	- The dump() operation now escapes double quotes.
+
+	- An identifier that consists of just "." is now rejected.
+
+
+The following bug has been fixed in Config4Cpp:
+
+	- The Makefile for Config4Cpp now passes the "-fPIC"
+	  command-line option to the g++ compiler, so that it can
+	  generate position-independent code.
+
+
+The following bugs have been fixed in Config4J:
+
+	- The "config2j" utility now uses System.getProperty("line.separator")
+	  instead of "\n" when generating a file.
+
+	- The split() function in a configuration file was always
+	  returning an empty list. That is now fixed.
+
+	- If lookupEnum() threw an exception, then the exception message
+	  referred to <localName>.<localName> instead of
+	  <scope>.<localName>.
