@@ -138,6 +138,10 @@ NFDRSDailyRec::NFDRSDailyRec(FW21Record rhs)
 	SetWindSpeed(rhs.GetWindSpeed());
 	SetSolarRadiation(rhs.GetSolarRadiation());
 	SetSnowFlag(rhs.GetSnowFlag());
+	m_minTemp = dNODATA;
+	m_maxTemp = dNODATA;
+	m_minRH = dNODATA;
+	m_pcp24 = dNODATA;
 }
 
 NFDRSDailyRec::~NFDRSDailyRec()

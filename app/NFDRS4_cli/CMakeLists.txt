@@ -24,4 +24,7 @@ set(CONFIG4CPP_HEADERS
 
 add_executable(${PROJECT_NAME} src/CNFDRSParams.cpp src/NFDRSConfiguration.cpp src/NFDRSInitConfig.cpp src/RunNFDRS.cpp src/RunNFDRSConfig.cpp src/RunNFDRSConfiguration.cpp)
 
-target_link_libraries (${PROJECT_NAME} PUBLIC NFDRS4 fw21 ${CONFIG4CPP_LIB})
+add_library(config4cpp STATIC IMPORTED)
+set_target_properties(config4cpp PROPERTIES IMPORTED_LOCATION ${CONFIG4CPP_LIB})
+#target_link_libraries(${PROJECT_NAME} PRIVATE config4cpp)
+target_link_libraries (${PROJECT_NAME} PUBLIC NFDRS4 fw21 PRIVATE config4cpp)

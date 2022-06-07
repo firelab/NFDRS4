@@ -4,7 +4,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_subdirectory(FireWxConverter)
 add_subdirectory(NFDRS4_cli)
 
-set_target_properties( NFDRS4_cli
+set_target_properties(NFDRS4_cli
   PROPERTIES
   ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
   LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"

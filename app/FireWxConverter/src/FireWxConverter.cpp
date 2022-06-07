@@ -9,6 +9,8 @@
 #include "utctime.h"
 #include <vector>
 #include <numeric>
+#include <cmath>
+#include <cstring>
 
 using namespace std;
 using namespace utctime;

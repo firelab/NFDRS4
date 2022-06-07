@@ -9,4 +9,4 @@ ENDIF(MSVC)
 
 add_executable(${PROJECT_NAME} src/FireWxConverter.cpp)
 
-target_link_libraries (${PROJECT_NAME} PUBLIC fw21 ${CONFIG4CPP_LIB})
+target_link_libraries (${PROJECT_NAME} PUBLIC fw21 )
