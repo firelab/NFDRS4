@@ -32,3 +32,4 @@ set_target_properties( fw21
 
 #install
 install(TARGETS NFDRS4 DESTINATION "${lib_dest}")
+install(TARGETS fw21 DESTINATION "${lib_dest}")

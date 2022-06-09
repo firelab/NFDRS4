@@ -11,15 +11,62 @@ CMAKE
 
 Config4cpp - see http://www.config4star.org/
  Config4cpp is used by NFDRS4 for defining configuration files for NFDRS4_cli and NFDRS4 initialization (station) parameters. 
- Complete source for config4cpp is included in the 'extern' directory, and must be built via makefiles to produce config4cpp.lib which is neccessary to build NFDRS4_cli executable.
+ Complete source for config4cpp is included in the 'extern' directory, and must be built via makefiles to produce a static config4cpp library which is neccessary to build NFDRS4_cli executable.
 
 utctime - see http://paulgriffiths.github.io/utctime/documentation/index.html
  UTCTime class is used for handling time in NFDRS4. Complete source is in the lib/utctime directory
 
+License - NFDRS4 is public domain software, still under development at this time.
 
 Building NFDRS4_cli
  Run CMAKE and provide entries for CONFIG4CPP_DIR (directory containing config4cpp include files) and CONFIG4CPP_LIB (directory containing config4cpp.lib)
  Rerun CMAKE and run make
 
-License - NFDRS4 is public domain software, still under development at this time.
 
+Building in MS Windows
+ Building for MS Windows has been tested with MS Visual Studio 2022
+ Steps
+ Build config4cpp
+	Build config4cpp.lib is easiest accomplished by use of the x64 Native Tools Command Prompt for VS 2022. Open the x64 Native Tools Command Prompt for VS 2022,
+	navigate to the NFDRS4/extern/config4cpp directory and enter: nmake -f Makefile.win all 
+	This should produce config4cpp.lib static library in NFDRS4/extern/config4cpp/lib
+ Build NFDRS4 from the x64 Native Tools Command Prompt for VS 2022
+	Navigate back to the root NFDRS4 directory
+	Run CMake
+		If you haven't already done so, create entries for CONFIG4CPP_DIR and CONFIG4CPP_LIB in CMakeCache.txt
+	Rerun CMake, there should be no errors
+	Run nmake
+
+Build NFDRS4 from Visual Studio 2022
+	In Visual Studio 2022, open the NFDRS4 folder and NFDRS4 will load as a CMake project
+	Select Project - CMake Settings for NFDRS4
+		Create a Configuration for x64-Release
+		Save the settings, Cmake will run
+		Populate the entry in CMakeSettings.json for CONFIG4CPP_DIR 
+			(should be <repo location>/NFDRS4/extern/config4cpp/include where <repo location> is the Drive and folder where the NFDRS4 repository is located)
+			e.g. D:/Repos/NFDRS4/extern/config4cpp/include
+		Populate the entry in CmakeSettings.json for CONFIG4CPP_LIB
+			(should be <repo location>/NFDRS4/extern/config4cpp/lib/config4cpp.lib)
+			e.g. D:/Repos/NFDRS4/extern/config4cpp/lib/config4cpp.lib
+		Save CMakeSettings.json, CMake will run and there should be no errors
+
+		Select Build - Build All
+		Select Build - Install NFDRS4
+			- this will create an install folder for X64-Release with necessary include and lib files to use NFDRS4 and fw21 with applications, as well as executables
+			NFDRS4_cli.exe and FireWxConverter.exe
+
+Building NFDRS4 for Linux
+	After extracting the repository, navigate to the NFDRS4/external/config4cpp directory in a Terminal window, and run make
+		This will create config4cpp.a in NFDRS/external/lib
+
+	Navigate back to the NFDRS4 directory. run CMake .
+	Fill in or add entries for CONFIG4CPP_DIR and CONFIG4CPP_LIB
+	e.g.
+	CONFIG4CPP_DIR:PATH=/home/<user>/src/NFDRS4/extern/config4cpp/include
+	CONFIG4CPP_LIB:FILEPATH=/home/<user>/src/NFDRS4/extern/config4cpp/lib/libconfig4cpp.a
+
+	Build the repository:
+	run make
+
+	Install the repository:
+	run sudo make install

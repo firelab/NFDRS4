@@ -21,3 +21,5 @@ target_include_directories(${PROJECT_NAME}   PUBLIC
 
 target_link_libraries (${PROJECT_NAME} PUBLIC csv_readrow utctime)
 
+set(include_dest "include")
+install(FILES ${HEADERS} DESTINATION "${include_dest}")

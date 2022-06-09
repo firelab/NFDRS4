@@ -47,9 +47,9 @@ int main(int argc, char* argv[])
 	int	exitStatus = 0;
 	if (argc < 2)
 	{
-		printf("RunNFDRS takes 1 parameter: A path to a RunNFDRS configuration file.\n"
-			"RunNFDRS <configFileName>\n"
-		"\twhere configFileName is the complete path to a RunNFDRS configuration file\n\n");
+		printf("NFDRS4_cli takes 1 parameter: A path to a NFDRS4_cli configuration file.\n"
+			"NFDRS4_cli <configFileName>\n"
+		"\twhere configFileName is the complete path to a NFDRS4_cli configuration file\n\n");
 		exit(1);
 	}
 	if (!fileExists(argv[1]))
@@ -94,7 +94,7 @@ int main(int argc, char* argv[])
 
 	if (strlen(wxFileName) == 0)
 	{
-		printf("A wxFile must be specified in the RunNFDRS Configuration file\n");
+		printf("A wxFile must be specified in the NFDRS4_cli Configuration file\n");
 		delete cfg;
 		return -3;
 	}
