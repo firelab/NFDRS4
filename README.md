@@ -24,18 +24,18 @@ Building NFDRS4_cli
 
 
 Building in MS Windows
- Building for MS Windows has been tested with MS Visual Studio 2022
- Steps
- Build config4cpp
-	Build config4cpp.lib is easiest accomplished by use of the x64 Native Tools Command Prompt for VS 2022. Open the x64 Native Tools Command Prompt for VS 2022,
-	navigate to the NFDRS4/extern/config4cpp directory and enter: nmake -f Makefile.win all 
-	This should produce config4cpp.lib static library in NFDRS4/extern/config4cpp/lib
- Build NFDRS4 from the x64 Native Tools Command Prompt for VS 2022
-	Navigate back to the root NFDRS4 directory
-	Run CMake
-		If you haven't already done so, create entries for CONFIG4CPP_DIR and CONFIG4CPP_LIB in CMakeCache.txt
-	Rerun CMake, there should be no errors
-	Run nmake
+	Building for MS Windows has been tested with MS Visual Studio 2022
+	Steps
+	Build config4cpp
+		Build config4cpp.lib is easiest accomplished by use of the x64 Native Tools Command Prompt for VS 2022. Open the x64 Native Tools Command Prompt for VS 2022,
+		navigate to the NFDRS4/extern/config4cpp directory and enter: nmake -f Makefile.win all 
+		This should produce config4cpp.lib static library in NFDRS4/extern/config4cpp/lib
+	Build NFDRS4 from the x64 Native Tools Command Prompt for VS 2022
+		Navigate back to the root NFDRS4 directory
+		Run CMake
+			If you haven't already done so, create entries for CONFIG4CPP_DIR and CONFIG4CPP_LIB in CMakeCache.txt
+		Rerun CMake, there should be no errors
+		Run nmake
 
 Build NFDRS4 from Visual Studio 2022
 	In Visual Studio 2022, open the NFDRS4 folder and NFDRS4 will load as a CMake project
