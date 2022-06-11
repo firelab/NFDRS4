@@ -309,7 +309,7 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 			strWindSpeed = vFields[wsKphIdx];
 			trim(strWindSpeed);
 			if (!strWindSpeed.empty())
-				thisRec.SetWindSpeed(atof(strWindSpeed.c_str()) * 0.6213711922);
+				thisRec.SetWindSpeed((atof(strWindSpeed.c_str()) / 1.15) * 0.6213711922);
 		}
 		strWDir = vFields[wdirIdx];
 		trim(strWDir);
@@ -337,7 +337,7 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 			strGustSpeed = vFields[gsKphIdx];
 			trim(strGustSpeed);
 			if (!strGustSpeed.empty())
-				thisRec.SetGustSpeed(atof(strGustSpeed.c_str()) * 0.6213711922);
+				thisRec.SetGustSpeed((atof(strGustSpeed.c_str()) / 1.15) * 0.6213711922);
 		}
 		if (gdirIdx >= 0)
 		{
