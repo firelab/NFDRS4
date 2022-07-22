@@ -30,7 +30,7 @@ tm CFW21Data::ParseISO8061(const string input)
 		hasMillisecs = true;
 	//then do appropriate sscanf!
 	int nRead;
-	int y = -1, M = -1, d = -1, h = -1, m = -1, s = -1, tzh = 0, tzm = 0;
+	int y = -1, M = -1, d = -1, h = -1, m = 0, s = 0, tzh = 0, tzm = 0;
 	float ms = 0.0;
 	if (isExtended)//has dashes separating fields...
 	{
@@ -65,6 +65,11 @@ tm CFW21Data::ParseISO8061(const string input)
 			else
 				nRead = sscanf(input.c_str(), "%4d%2d%2dT%2d%2d%2d%3d%2d", &y, &M, &d, &h, &m, &s, &tzh, &tzm);
 		}
+	}
+	if (y < 0 || M <= 0 || M > 12 || d <= 0 || d > 31 || h < 0 || h > 23 || m < 0 || m > 59 || s < 0 || s > 59)
+	{
+		thisTime.tm_year = thisTime.tm_mon = thisTime.tm_mday = thisTime.tm_hour = thisTime.tm_min = thisTime.tm_sec = -1;
+		return thisTime;
 	}
 	//now build the tm
 	if (isZulu)//convert to local time
@@ -250,7 +255,6 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 		{
 			printf("Error: DateTime is blank, line %d\n", lineNo);
 			continue;
-			continue;
 		}
 		if (firstRec)
 		{
@@ -260,6 +264,11 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 			firstRec = false;
 		}
 		tm recTime = ParseISO8061(strDate);
+		if (recTime.tm_mon < 0 || recTime.tm_mday <= 0 || recTime.tm_hour < 0 || recTime.tm_min < 0 || recTime.tm_sec < 0)
+		{
+			printf("Error, line %d date (%s) is invalid, skipping record\n", lineNo, strDate.c_str());
+			continue;
+		}
 		thisRec.SetDateTime(recTime);
 		if (tmpIdx >= 0)//use Fahrenheit if present
 		{
