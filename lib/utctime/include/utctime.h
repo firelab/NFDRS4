@@ -12,8 +12,7 @@
 #define PG_UTC_TIME_H
 
 #include <string>
-#include <ctime>
-
+#include "time64.h"
 
 //! Namespace for UTCTime() class and associated functions.
 
@@ -85,33 +84,32 @@ class invalid_date : public UTCTimeException {
 /*
  *  Standalone functions.
  */
-int get_day_of_year(int year, int month, int day);
 
 bool validate_date(const int year, const int month,
                    const int day, const int hour,
                    const int minute, const int second);
-time_t get_day_diff();
-time_t get_hour_diff();
-time_t get_sec_diff();
-int tm_compare(const std::tm& first, const std::tm& second);
-int tm_intraday_secs_diff(const std::tm& first, const std::tm& second);
+Time64_T get_day_diff();
+Time64_T get_hour_diff();
+Time64_T get_sec_diff();
+int tm_compare(const TM& first, const TM& second);
+int tm_intraday_secs_diff(const TM& first, const TM& second);
 bool is_leap_year(const int year);
-std::tm* tm_increment_day(std::tm* changing_tm, const int quantity = 1);
-std::tm* tm_increment_hour(std::tm* changing_tm, const int quantity = 1);
-std::tm* tm_increment_minute(std::tm* changing_tm, const int quantity = 1);
-std::tm* tm_increment_second(std::tm* changing_tm, const int quantity = 1);
-std::tm* tm_decrement_day(std::tm* changing_tm, const int quantity = 1);
-std::tm* tm_decrement_hour(std::tm* changing_tm, const int quantity = 1);
-std::tm* tm_decrement_minute(std::tm* changing_tm, const int quantity = 1);
-std::tm* tm_decrement_second(std::tm* changing_tm, const int quantity = 1);
-bool check_utc_timestamp(const time_t check_time, int& secs_diff,
+TM* tm_increment_day(TM* changing_tm, const int quantity = 1);
+TM* tm_increment_hour(TM* changing_tm, const int quantity = 1);
+TM* tm_increment_minute(TM* changing_tm, const int quantity = 1);
+TM* tm_increment_second(TM* changing_tm, const int quantity = 1);
+TM* tm_decrement_day(TM* changing_tm, const int quantity = 1);
+TM* tm_decrement_hour(TM* changing_tm, const int quantity = 1);
+TM* tm_decrement_minute(TM* changing_tm, const int quantity = 1);
+TM* tm_decrement_second(TM* changing_tm, const int quantity = 1);
+bool check_utc_timestamp(const Time64_T check_time, int& secs_diff,
                          const int year, const int month,
                          const int day, const int hour,
                          const int minute, const int second);
-time_t get_utc_timestamp(const int year, const int month,
+Time64_T get_utc_timestamp(const int year, const int month,
                          const int day, const int hour,
                          const int minute, const int second);
-int get_utc_timestamp_sec_diff(const time_t check_time,
+int get_utc_timestamp_sec_diff(const Time64_T check_time,
                                const int year, const int month,
                                const int day, const int hour,
                                const int minute, const int second);
@@ -125,15 +123,15 @@ int get_utc_timestamp_sec_diff(const time_t check_time,
 class UTCTime {
     public:
         explicit UTCTime();
-        explicit UTCTime(const std::tm& utc_tm);
+        explicit UTCTime(const TM& utc_tm);
         explicit UTCTime(const int year, const int month,
                          const int day, const int hour,
                          const int minute, const int second);
 
-        std::tm get_tm() const;
+        TM get_tm() const;
         std::string time_string() const;
         std::string time_string_inet() const;
-        time_t timestamp() const;
+        Time64_T timestamp() const;
 
         bool operator<(const UTCTime& rhs) const;
         bool operator>=(const UTCTime& rhs) const;
@@ -151,7 +149,7 @@ class UTCTime {
         int m_hour;
         int m_minute;
         int m_second;
-        time_t m_timestamp;
+        Time64_T m_timestamp;
 };
 
 }           //  namespace utctime

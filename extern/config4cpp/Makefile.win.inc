@@ -1,7 +1,7 @@
 #----
 # Makefile settings for using the Visual C++ compiler.
 #----
-LIB_DIR=	$(PROJECT_ROOT)\lib
+LIB_DIR=	$(PROJECT_ROOT)\lib32
 BIN_DIR=	$(PROJECT_ROOT)\bin
 INC_DIR=	$(PROJECT_ROOT)\include
 

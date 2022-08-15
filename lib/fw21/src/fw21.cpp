@@ -11,9 +11,9 @@ using namespace std;
 using namespace utctime;
 
 
-tm CFW21Data::ParseISO8061(const string input)
+TM CFW21Data::ParseISO8061(const string input)
 {
-	tm thisTime = { 0 };
+	TM thisTime = { 0 };
 	//first, need to know if extended or basic ISO 8061 format, and if Zulu time or time zone offset, also if milliseconds are included(but we'll ignore them...)
 	bool isExtended = false;
 	bool isZulu = false;
@@ -263,7 +263,7 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 				m_bTimeIsZulu = true;
 			firstRec = false;
 		}
-		tm recTime = ParseISO8061(strDate);
+		TM recTime = ParseISO8061(strDate);
 		if (recTime.tm_mon < 0 || recTime.tm_mday <= 0 || recTime.tm_hour < 0 || recTime.tm_min < 0 || recTime.tm_sec < 0)
 		{
 			printf("Error, line %d date (%s) is invalid, skipping record\n", lineNo, strDate.c_str());
@@ -440,15 +440,15 @@ NFDRSDailyRec CFW21Data::GetNFDRSDailyRec(size_t recNum)//zero based! valid: 0->
 	}
 	rec = GetRec(recNum);
 	NFDRSDailyRec goodRec(rec);
-	tm trgTime = rec.GetDateTime();
-	time_t trgTimet = mktime(&trgTime), thisTimet;
+	TM trgTime = rec.GetDateTime();
+	Time64_T trgTimet = mktime64(&trgTime), thisTimet;
 	double tMin = rec.GetTemp(), tMax = rec.GetTemp(), rhMin = rec.GetRH(), pcp = rec.GetPrecip();
 	size_t checkRec = recNum - 1;
 	while (checkRec >= 0)
 	{
 		rec2 = GetRec(checkRec);
-		tm thisTime = rec2.GetDateTime();
-		thisTimet = mktime(&thisTime);
+		TM thisTime = rec2.GetDateTime();
+		thisTimet = mktime64(&thisTime);
 		if (difftime(trgTimet, thisTimet) >= SECS_PER_DAY)
 			break;
 		double thisTemp = rec2.GetTemp(), thisRH = rec2.GetRH(), thisPcp = rec2.GetPrecip();
@@ -497,16 +497,16 @@ int CFW21Data::AddRecord(FW21Record rec)
 	return 1;
 }
 
-string FormatTM(tm in, int offsetHours)
+string FormatTM(TM in, int offsetHours)
 {
 	char buf[64];
 	string ret = "";
 	if(offsetHours < 0)
-		sprintf(buf, "%4d-%02d-%02dT%02d:%02d:00%03d:00",
+		sprintf(buf, "%4ld-%02d-%02dT%02d:%02d:00%03d:00",
 			in.tm_year + 1900, in.tm_mon + 1, in.tm_mday,
 			in.tm_hour, in.tm_min, offsetHours);
 	else
-		sprintf(buf, "%4d-%02d-%02dT%02d:%02d:00%02d:00",
+		sprintf(buf, "%4ld-%02d-%02dT%02d:%02d:00%02d:00",
 			in.tm_year + 1900, in.tm_mon + 1, in.tm_mday,
 			in.tm_hour, in.tm_min, offsetHours);
 

@@ -14,7 +14,7 @@
 #include <stdlib.h>
 using namespace std;
 
-string FormatToISO8061Offset(tm inTm, int offset)
+string FormatToISO8061Offset(TM inTm, int offset)
 {
 	char buf[64];
 	sprintf(buf, "%04d-%02d-%02dT%02d:%02d:%02d%+03d:00", inTm.tm_year + 1900, inTm.tm_mon + 1,
