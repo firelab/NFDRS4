@@ -551,16 +551,16 @@ Time64_T mktime64(struct TM *input_date) {
     Time64_T  time;
     Year      year = input_date->tm_year + 1900;
 
-    if( date_in_safe_range(input_date, &SYSTEM_MKTIME_MIN, &SYSTEM_MKTIME_MAX) )
+    /*if (date_in_safe_range(input_date, &SYSTEM_MKTIME_MIN, &SYSTEM_MKTIME_MAX))
     {
         copy_TM64_to_tm(input_date, &safe_date);
         time = (Time64_T)mktime(&safe_date);
 
-        /* Correct the possibly out of bound input date */
+        // Correct the possibly out of bound input date //
         copy_tm_to_TM64(&safe_date, input_date);
         TIME64_TRACE2("mktime64: safe year %ld, %"PRId64" seconds\n", (long)year, time);
         return time;
-    }
+    }*/
 
     /* Have to make the year safe in date else it won't fit in safe_date */
     date = *input_date;
