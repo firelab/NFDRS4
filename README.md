@@ -32,9 +32,16 @@ Building in MS Windows
 		This should produce config4cpp.lib static library in NFDRS4/extern/config4cpp/lib
 	Build NFDRS4 from the x64 Native Tools Command Prompt for VS 2022
 		Navigate back to the root NFDRS4 directory
-		Run CMake
+		Run cmake -G "NMake Makefiles" .
 			If you haven't already done so, create entries for CONFIG4CPP_DIR and CONFIG4CPP_LIB in CMakeCache.txt
-		Rerun CMake, there should be no errors
+			Example: 
+			//Path to a file.
+			CONFIG4CPP_DIR:PATH=S:/src/NFDRS4/extern/config4cpp/include
+
+			//Path to a library.
+			CONFIG4CPP_LIB:FILEPATH=S:/src/NFDRS4/extern/config4cpp/lib/config4cpp.lib
+			
+		Rerun cmake -G "NMake Makefiles" ., there should be no errors
 		Run nmake
 
 Build NFDRS4 from Visual Studio 2022
