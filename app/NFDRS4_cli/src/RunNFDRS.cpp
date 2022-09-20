@@ -120,10 +120,11 @@ int main(int argc, char* argv[])
 		}
 	}
 	//at this point we should have everything we need
-	NFDRS4 fw21Calc;
+	NFDRS4 fw21Calc, wtdCalc;
 	//use NFDRSParams to initialize NFDRS4 object
 	//params.InitNFDRS(&thisCalc);
 	params.InitNFDRS(&fw21Calc);
+	params.InitNFDRS(&wtdCalc);
 	//do we have a state file?
 	if (strlen(loadStateFileName) > 0)
 	{
@@ -158,7 +159,7 @@ int main(int argc, char* argv[])
 		}
 		//if(!allExists)
 			//fprintf(allOut, "DateTime, Temp, RH, Precip, WindSpeed, SolarRadiation, SnowFlag, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM, BI, ERC, SC, IC, GSI, KBDI\n");
-		fprintf(allOut, "DateTime, Temperature(F), RelativeHumidity(%%), Precipitation(in), WindSpeed(mph), SolarRadiation(W/m2), SnowFlag, MinTemp, MaxTemp, MinRH, Pcp24, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM, BI, ERC, SC, IC, GSI, KBDI\n");
+		fprintf(allOut, "DateTime, Temperature(F), RelativeHumidity(%%), Precipitation(in), WindSpeed(mph), SolarRadiation(W/m2), SnowFlag, MinTemp, MaxTemp, MinRH, Pcp24, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM, BI, ERC, SC, IC, GSI, KBDI, Wtd1HourDFM, Wtd10HourDFM, Wtd100HourDFM, Wtd1000HourDFM, WtdBI, WtdERC, WtdSC, WtdIC\n");
 	}
 	if (indexOutputsFileName && strlen(indexOutputsFileName) > 0)
 	{
@@ -175,7 +176,7 @@ int main(int argc, char* argv[])
 			return -3;
 		}
 		//if (!exists)
-		fprintf(indexOut, "DateTime, BI, ERC, SC, IC, GSI, KBDI\n");
+		fprintf(indexOut, "DateTime, BI, ERC, SC, IC, GSI, KBDI, WtdBI, WtdERC, WtdSC, WtdIC\n");
 	}
 	if (fuelMoistureOutputsFileName && strlen(fuelMoistureOutputsFileName) > 0)
 	{
@@ -194,9 +195,13 @@ int main(int argc, char* argv[])
 			return -3;
 		}
 		//if(!fExists)
-		fprintf(moistOut, "DateTime, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM\n");
+		fprintf(moistOut, "DateTime, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM, Wtd1HourDFM, Wtd10HourDFM, Wtd100HourDFM, Wtd1000HourDFM\n");
 	}
 
+	//create a second NFDRS4 object for weightMeanMx calculations
+	//NFDRS4 wtdCalc(fw21Calc);
+	//varaibles
+	double wtdMx1, wtdMx10, wtdMx100, wtdMx1000, wtdSC, wtdERC, wtdBI, wtdIC;
 	//now need to read the wxFile and process the records
 	time_t startTime = clock();
 	for (size_t r = 0; r < FW21data.GetNumRecs(); r++)
@@ -207,28 +212,36 @@ int main(int argc, char* argv[])
 			fw21Rec.GetSolarRadiation(), fw21Rec.GetWindSpeed(), fw21Rec.GetSnowFlag());
 		if (cfg->getOutputInterval() == 0 || (cfg->getOutputInterval() == 1 && fw21Rec.GetHour() == params.getObsHour()))
 		{
+			wtdMx1 = fw21Calc.OneHourFM.meanWtdMoisture() * 100.0;
+			wtdMx10 = fw21Calc.TenHourFM.meanWtdMoisture() * 100.0;
+			wtdMx100 = fw21Calc.HundredHourFM.meanWtdMoisture() * 100.0;
+			wtdMx1000 = fw21Calc.ThousandHourFM.meanWtdMoisture() * 100.0;
+			wtdCalc.iSetFuelMoistures(wtdMx1, wtdMx10, wtdMx100, wtdMx1000, fw21Calc.MCWOOD, fw21Calc.MCHERB, fw21Calc.FuelTemperature);
+			wtdCalc.iCalcIndexes(fw21Rec.GetWindSpeed(), fw21Calc.SlopeClass, &wtdSC, &wtdERC, &wtdBI, &wtdIC, fw21Calc.m_GSI, fw21Calc.KBDI);
 			//output to open csv files
 			if (allOut)
 			{
 				fprintf(allOut, "%s,%.1f,%.1f,%.3f,%.1f,%.0f,%d,%.1f,%.1f,%.1f,%.3f,"
-					"%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%d\n", 
+					"%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%d,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n", 
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
 					fw21Rec.GetTemp(), fw21Rec.GetRH(), fw21Rec.GetPrecip(), fw21Rec.GetWindSpeed(), fw21Rec.GetSolarRadiation(),
 					fw21Rec.GetSnowFlag(), fw21Calc.GetMinTemp(), fw21Calc.GetMaxTemp(), fw21Calc.GetMinRH(), fw21Calc.GetPcp24(),
 					fw21Calc.MC1, fw21Calc.MC10, fw21Calc.MC100, fw21Calc.MC1000, fw21Calc.MCHERB, fw21Calc.MCWOOD,
-					fw21Calc.BI, fw21Calc.ERC, fw21Calc.SC, fw21Calc.IC, fw21Calc.m_GSI, fw21Calc.KBDI);
+					fw21Calc.BI, fw21Calc.ERC, fw21Calc.SC, fw21Calc.IC, fw21Calc.m_GSI, fw21Calc.KBDI,
+					wtdMx1, wtdMx10, wtdMx100, wtdMx1000,
+					wtdCalc.BI, wtdCalc.ERC, wtdCalc.SC, wtdCalc.IC);
 			}
 			if (indexOut)
 			{
-				fprintf(indexOut, "%s, %.2f, %.2f, %.2f, %.2f, %.2f, %d\n",
+				fprintf(indexOut, "%s, %.2f, %.2f, %.2f, %.2f, %.2f, %d, %.2f, %.2f, %.2f, %.2f\n",
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
-					fw21Calc.BI, fw21Calc.ERC, fw21Calc.SC, fw21Calc.IC, fw21Calc.m_GSI, fw21Calc.KBDI);
+					fw21Calc.BI, fw21Calc.ERC, fw21Calc.SC, fw21Calc.IC, fw21Calc.m_GSI, fw21Calc.KBDI, wtdCalc.BI, wtdCalc.ERC, wtdCalc.SC, wtdCalc.IC);
 			}
 			if (moistOut)
 			{
-				fprintf(moistOut, "%s, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f\n",
+				fprintf(moistOut, "%s, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f\n",
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
-					fw21Calc.MC1, fw21Calc.MC10, fw21Calc.MC100, fw21Calc.MC1000, fw21Calc.MCHERB, fw21Calc.MCWOOD);
+					fw21Calc.MC1, fw21Calc.MC10, fw21Calc.MC100, fw21Calc.MC1000, fw21Calc.MCHERB, fw21Calc.MCWOOD, wtdMx1, wtdMx10, wtdMx100, wtdMx1000);
 			}
 		}
 	}
