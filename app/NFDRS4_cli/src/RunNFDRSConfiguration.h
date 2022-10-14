@@ -26,8 +26,8 @@ public:
 	~RunNFDRSConfiguration();
 
 	void parse(
-		const char *	cfgInput,
-		const char *	cfgScope = "") throw (RunNFDRSConfigurationException);
+		const char* cfgInput,
+		const char* cfgScope = "");// throw (RunNFDRSConfigurationException);
 
 	//--------
 	// Acccessors for configuration variables.

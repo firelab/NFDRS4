@@ -27,8 +27,8 @@ public:
 	~NFDRSConfiguration();
 	void saveAs(const char *fileName);
 	void parse(
-		const char *	cfgInput,
-		const char *	cfgScope = "") throw (NFDRSConfigurationException);
+		const char* cfgInput,
+		const char* cfgScope = "");// throw (NFDRSConfigurationException);
 
 	const CNFDRSParams getNFDRSParams() { return m_nfdrsParams; }
 

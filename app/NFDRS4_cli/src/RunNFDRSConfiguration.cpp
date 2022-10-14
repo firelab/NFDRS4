@@ -56,7 +56,7 @@ RunNFDRSConfiguration::~RunNFDRSConfiguration()
 
 void RunNFDRSConfiguration::parse(
 	const char *	cfgInput,
-	const char *	cfgScope/* = ""*/) throw (RunNFDRSConfigurationException)
+	const char *	cfgScope/* = ""*/)// throw (RunNFDRSConfigurationException)
 {
 	Configuration *		cfg = (Configuration*)m_cfg;
 	SchemaValidator		sv;

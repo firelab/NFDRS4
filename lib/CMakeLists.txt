@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.13)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_subdirectory(csv_readrow)
 add_subdirectory(time64)

@@ -44,8 +44,8 @@ NFDRSConfiguration::~NFDRSConfiguration()
 }
 
 void NFDRSConfiguration::parse(
-	const char *	cfgInput,
-	const char *	cfgScope/* = ""*/) throw (NFDRSConfigurationException)
+	const char* cfgInput,
+	const char* cfgScope/* = ""*/)// throw (NFDRSConfigurationException)
 {
 	Configuration *		cfg = (Configuration*)m_cfg;
 	SchemaValidator		sv;
