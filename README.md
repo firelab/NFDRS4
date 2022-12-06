@@ -62,7 +62,7 @@ Select Build - Install NFDRS4
 	NFDRS4_cli.exe and FireWxConverter.exe
 
 ## Building NFDRS4 for Linux
-After extracting the repository, navigate to the NFDRS4/external/config4cpp directory in a Terminal window, and run make<br>
+After extracting the repository, navigate to the NFDRS4/external/config4cpp directory in a Terminal window, and run ```make```<br>
 This will create config4cpp.a in NFDRS/external/lib
 
 Navigate back to the NFDRS4 directory. run: ```cmake .```<br>
