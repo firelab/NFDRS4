@@ -13,7 +13,7 @@ g++ -fPIC -I /usr/include/python3.10  -I ../lib/NFDRS4/include/ \
       ../lib/NFDRS4/src/lfmcalcstate.cpp \
       ../lib/NFDRS4/src/nfdrs4calcstate.cpp \
       ../lib/NFDRS4/src/nfdrs4.cpp  \
-      ../lib/utctime/src/utctime.cpp 
+      ../lib/utctime/src/utctime.cpp \
       ../lib/time64/src/time64.c nfdrs_wrap.cxx
 g++ -shared *.o -o _nfdrs.so -lgomp
 ```
