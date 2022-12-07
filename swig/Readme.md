@@ -25,7 +25,7 @@ Notes: The include path to Python.h might need to be changed. Other than that, a
 ```python
 python3
 >>> import nfdrs
->>> nf= nfdrs.DeadFuelMoisture_createDeadFuelMoisture1()
+>>> nf= nfdrs.DeadFuelMoisture.createDeadFuelMoisture1()
 >>> nf.update(1,1,1,1,1)
 True
 >>> nf.medianRadialMoisture()
