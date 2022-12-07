@@ -72,7 +72,7 @@ CONFIG4CPP_DIR:PATH=/home/<user>/src/NFDRS4/extern/config4cpp/include
 CONFIG4CPP_LIB:FILEPATH=/home/<user>/src/NFDRS4/extern/config4cpp/lib/libconfig4cpp.a
 
 Build the repository:
-```run make```
+run ```make```
 
 Install the repository:
-```run sudo make install```
+run ```sudo make install```
