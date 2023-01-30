@@ -1,27 +1,30 @@
-all:
+all64:
 	cd src
-	nmake -f Makefile.win all
-	cd ../tests
-	nmake -f Makefile.win all
-	cd ../demos
-	nmake -f Makefile.win all
+	nmake -f Makefile.win64 all
 	cd ..
 
-clean:
+all32:
 	cd src
-	nmake -f Makefile.win clean
-	cd ../tests
-	nmake -f Makefile.win clean
-	cd ../demos
-	nmake -f Makefile.win clean
+	nmake -f Makefile.win32 all
 	cd ..
 
-clobber:
+clean64:
 	cd src
-	nmake -f Makefile.win clobber
-	cd ../tests
-	nmake -f Makefile.win clobber
-	cd ../demos
-	nmake -f Makefile.win clobber
+	nmake -f Makefile.win64 clean
+	cd ..
+
+clean32:
+	cd src
+	nmake -f Makefile.win32 clean
+	cd ..
+
+clobber64:
+	cd src
+	nmake -f Makefile.win64 clobber
+	cd ..
+
+clobber32:
+	cd src
+	nmake -f Makefile.win32 clobber
 	cd ..
 
