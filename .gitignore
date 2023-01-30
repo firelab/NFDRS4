@@ -366,3 +366,4 @@ FodyWeavers.xsd
 CMakeSettings.json
 *.lib
 *.exe
+/extern/config4cpp/bin
