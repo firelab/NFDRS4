@@ -158,7 +158,7 @@ int main(int argc, char* argv[])
 		}
 		//if(!allExists)
 			//fprintf(allOut, "DateTime, Temp, RH, Precip, WindSpeed, SolarRadiation, SnowFlag, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM, BI, ERC, SC, IC, GSI, KBDI\n");
-		fprintf(allOut, "DateTime, Temperature(F), RelativeHumidity(%%), Precipitation(in), WindSpeed(mph), SolarRadiation(W/m2), SnowFlag, MinTemp, MaxTemp, MinRH, Pcp24, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM, BI, ERC, SC, IC, GSI, KBDI\n");
+		fprintf(allOut, "DateTime,Temperature(F),RelativeHumidity(%%),Precipitation(in),WindSpeed(mph),SolarRadiation(W/m2),SnowFlag,MinTemp,MaxTemp,MinRH,Pcp24,1HourDFM,10HourDFM,100HourDFM,1000HourDFM,HerbLFM,WoodyLFM,BI,ERC,SC,IC,GSI,KBDI\n");
 	}
 	if (indexOutputsFileName && strlen(indexOutputsFileName) > 0)
 	{
@@ -175,7 +175,7 @@ int main(int argc, char* argv[])
 			return -3;
 		}
 		//if (!exists)
-		fprintf(indexOut, "DateTime, BI, ERC, SC, IC, GSI, KBDI\n");
+		fprintf(indexOut, "DateTime,BI,ERC,SC,IC,GSI,KBDI\n");
 	}
 	if (fuelMoistureOutputsFileName && strlen(fuelMoistureOutputsFileName) > 0)
 	{
@@ -194,7 +194,7 @@ int main(int argc, char* argv[])
 			return -3;
 		}
 		//if(!fExists)
-		fprintf(moistOut, "DateTime, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM\n");
+		fprintf(moistOut, "DateTime,1HourDFM,10HourDFM,100HourDFM,1000HourDFM,HerbLFM,WoodyLFM\n");
 	}
 
 	//now need to read the wxFile and process the records
@@ -220,13 +220,13 @@ int main(int argc, char* argv[])
 			}
 			if (indexOut)
 			{
-				fprintf(indexOut, "%s, %.2f, %.2f, %.2f, %.2f, %.2f, %d\n",
+				fprintf(indexOut, "%s,%.2f,%.2f,%.2f,%.2f,%.2f,%d\n",
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
 					fw21Calc.BI, fw21Calc.ERC, fw21Calc.SC, fw21Calc.IC, fw21Calc.m_GSI, fw21Calc.KBDI);
 			}
 			if (moistOut)
 			{
-				fprintf(moistOut, "%s, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f\n",
+				fprintf(moistOut, "%s,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n",
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
 					fw21Calc.MC1, fw21Calc.MC10, fw21Calc.MC100, fw21Calc.MC1000, fw21Calc.MCHERB, fw21Calc.MCWOOD);
 			}

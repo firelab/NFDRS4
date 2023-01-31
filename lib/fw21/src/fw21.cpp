@@ -175,8 +175,6 @@ CFW21Data::~CFW21Data()
 int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 {
 	m_timeZoneOffset = tzOffsetHours;
-	//vector<string> vFieldNames = { "DateTime","Temperature(F)","RelativeHumidity(%)","Precipitation(in)",
-	//	"WindSpeed(mph)","WindAzimuth(degrees)","SolarRadiation(W/m2)","SnowFlag","GustSpeed(mph)","GustAzimuth(degrees)" };
 	m_fileName = fw21FileName;
 	ifstream stream;
 	stream.open(m_fileName);
@@ -482,11 +480,6 @@ int CFW21Data::AddRecord(FW21Record rec)
 		FW21Record lastRec = m_recs[m_recs.size() - 1];
 		UTCTime lastUtc(lastRec.GetYear(), lastRec.GetMonth(), lastRec.GetDay(), lastRec.GetHour(), lastRec.GetMinutes(), 0);
 		UTCTime recUtc(rec.GetYear(), rec.GetMonth(), rec.GetDay(), rec.GetHour(), rec.GetMinutes(), 0);
-		//tm recTM = rec.GetDateTime();
-		//time_t recTime = mktime(&recTM);
-		//tm lastTM = m_recs[m_recs.size() - 1].GetDateTime();
-		//time_t lastTime = mktime(&lastTM);
-		//if (recTime - lastTime <= 0)
 		if (recUtc <= lastUtc)
 		{
 			cout << "Error, rectime is <= last record time\n";
@@ -518,18 +511,11 @@ int CFW21Data::WriteFile(const char* fw21FileName, int offsetHours)
 {
 	ofstream out;
 	out.open(fw21FileName, ofstream::out | ofstream::trunc);
-	/*for (vector<string>::iterator it = m_vFieldNames.begin(); it != m_vFieldNames.end(); ++it)
-	{
-		//if((*it).compare(m_vFieldNames[FW21_TEMPC]) != 0
-		if (it != m_vFieldNames.begin())
-			out << ", ";
-		out << *it;
-	}*/
 	//we only output English units, so disregard metric fields
 	for (int f = FW21_DATE; f <= FW21_GAZI; f++)
 	{
 		if(f > FW21_DATE)
-			out << ", ";
+			out << ",";
 		out << m_vFieldNames[f];
 	}
 	out << "\n";
