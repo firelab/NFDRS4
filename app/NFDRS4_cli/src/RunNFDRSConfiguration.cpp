@@ -87,7 +87,7 @@ void RunNFDRSConfiguration::parse(
 	}
 	catch (const ConfigurationException & ex) {
 		//do nothing but print the message
-		//throw RunNFDRSConfigurationException(ex.c_str());
+		throw RunNFDRSConfigurationException(ex.c_str());
 		printf("%s\n", ex.c_str());
 	}
 

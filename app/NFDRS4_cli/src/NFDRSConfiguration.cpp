@@ -171,7 +171,7 @@ void NFDRSConfiguration::parse(
 		//saveAs("Dummyfile.cfg");
 	}
 	catch (const ConfigurationException & ex) {
-		//throw NFDRSConfigurationException(ex.c_str());
+		throw NFDRSConfigurationException(ex.c_str());
 		//throw ConfigurationException(ex.c_str());
 		printf("%s\n", ex.c_str());
 	}
