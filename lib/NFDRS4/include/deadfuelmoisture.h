@@ -604,6 +604,11 @@ protected:
 
 //-----------------------------------------------------------------------------
 /*! \page citations Cited Documents
+    \section carlson2007 Carlson, J. D., et al. 2007. 
+    Application of the Nelson model to four timelag fuel classes using Oklahoma 
+    field observations: model evaluation and comparison with National Fire Danger 
+    Rating System algorithms. In International Journal of Wildland Fire 
+    (Vol. 16, Issue 2, p. 204). CSIRO Publishing. https://doi.org/10.1071/wf06073
 
     \section bevins2005 Bevins, Collin D. 2005.
     Adapting Nelson's dead fuel moisture model for wildland fire modeling.
