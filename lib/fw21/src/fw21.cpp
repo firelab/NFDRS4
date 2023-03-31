@@ -74,14 +74,36 @@ TM CFW21Data::ParseISO8061(const string input)
 	//now build the tm
 	if (isZulu)//convert to local time
 	{
-		UTCTime zTime(y, M, d, h, m, s);
-		thisTime = zTime.get_tm();
-		tm_increment_hour(&thisTime, m_timeZoneOffset);
+		try
+		{
+			UTCTime zTime(y, M, d, h, m, s);
+			thisTime = zTime.get_tm();
+			tm_increment_hour(&thisTime, m_timeZoneOffset);
+		}
+		catch (invalid_date e)
+		{
+			//cout << e.what();
+		}
+		catch (bad_time_init e)
+		{
+
+		}
 	}
 	else
 	{
-		UTCTime lTime(y, M, d, h, m, s);
-		thisTime = lTime.get_tm();
+		try
+		{
+			UTCTime lTime(y, M, d, h, m, s);
+			thisTime = lTime.get_tm();
+		}
+		catch (invalid_date e)
+		{
+			//cout << e.what();
+		}
+		catch (bad_time_init e)
+		{
+
+		}
 	}
 	return thisTime;
 }
@@ -189,6 +211,7 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 	stream.getline(buf, bufSize);
 	string line = buf;
 	vector<string> vFields = csv_read_row(line, ',');
+	int nExpectedFields = vFields.size();
 	//get field Indexes
 	int dtIdx, tmpIdx, rhIdx, pcpIdx, wsIdx, wdirIdx, srIdx, snowIdx, gsIdx, gdirIdx, 
 		tmpCIdx, pcpmmIdx, wsKphIdx, gsKphIdx;
@@ -241,9 +264,9 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 		lineNo++;
 		line = buf;
 		vFields = csv_read_row(line, ',');
-		if (vFields.size() < 8)
+		if (vFields.size() < nExpectedFields)
 		{
-			printf("Warning, line %d has less than 8 fields, skipping record\n", lineNo);
+			printf("Warning, line %d has less than %d fields, skipping record\n", lineNo, nExpectedFields);
 			continue;
 		}
 		FW21Record thisRec;
