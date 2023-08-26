@@ -106,10 +106,8 @@ int main(int argc, char* argv[])
 	{
 		try
 		{
-			//NFDRSConfiguration *nfdrsCfg = new NFDRSConfiguration();
 			nfdrsCfg->parse(nfdrsInitFileName);
 			params = nfdrsCfg->getNFDRSParams();
-			//delete nfdrsCfg;
 		}
 		catch (NFDRSConfigurationException & ex)
 		{
