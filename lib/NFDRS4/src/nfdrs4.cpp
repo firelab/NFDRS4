@@ -183,7 +183,17 @@ int NFDRS4::GetSCMax()
 	return SCM;
 }
 
-void NFDRS4::SetMxdHumid(bool isHumid)
+void NFDRS4::SetMXD(int mxd)
+{
+    MXD = mxd;
+}
+
+int NFDRS4::GetMXD()
+{
+    return MXD;
+}
+
+/*void NFDRS4::SetMxdHumid(bool isHumid)
 {
 	mxdHumid = isHumid;
 	if (isHumid)
@@ -216,7 +226,7 @@ bool NFDRS4::GetMxdHumid()
 {
 	return mxdHumid;
 }
-
+*/
 
 double NFDRS4::GetFuelTemperature()
 {

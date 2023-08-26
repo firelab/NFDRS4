@@ -73,7 +73,7 @@ void NFDRSConfiguration::parse(
 		if(strlen(fm) > 0)
 			m_nfdrsParams.setFuelModel(fm[0]);
 		m_nfdrsParams.setIsAnnual(cfg->lookupInt(cfgScope, "isAnnuals"));
-		m_nfdrsParams.setIsHumid(cfg->lookupInt(cfgScope, "isHumid"));
+		m_nfdrsParams.setMXD(cfg->lookupInt(cfgScope, "MXD"));
 		m_nfdrsParams.setKbdiThreshold(cfg->lookupInt(cfgScope, "kbdiThreshold"));
 		m_nfdrsParams.setLatitude(cfg->lookupFloat(cfgScope, "latitude"));
 		m_nfdrsParams.setMaxSC(cfg->lookupInt(cfgScope, "maxSC"));

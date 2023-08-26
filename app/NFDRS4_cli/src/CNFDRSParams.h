@@ -108,7 +108,7 @@ public:
 	bool getIsAnnual() { return m_isAnnual; }
 	int getKbdiThreshold() { return m_kbdiThreshold; }
 	int getStartKbdi() { return m_startKBDI; }
-	bool getIsHumid() { return m_isHumid; }
+	int getMXD() { return m_MXD; }
 	int getObsHour() { return m_obsHour; }
 	int getTimeZoneOffsetHours() { return m_timeZoneOffsetHours; }
 	CGSIParams getGsiParams() { return m_gsiParams; }
@@ -129,7 +129,8 @@ public:
 	void setIsAnnual(bool isAnnual) { m_isAnnual = isAnnual; }
 	void setKbdiThreshold(int kbdiThreshold) { m_kbdiThreshold = kbdiThreshold; }
 	void setStartKbdi(int startKbdi) { m_startKBDI = startKbdi; }
-	void setIsHumid(bool isHumid) { m_isHumid = isHumid; }
+	//void setIsHumid(bool isHumid) { m_isHumid = isHumid; }
+	void setMXD(int mxd) { m_MXD = mxd; }
 	void setObsHour(int obsHour) { m_obsHour = obsHour; }
 	void setTimeZoneOffsetHours(int offset){m_timeZoneOffsetHours = offset;}
 		void setGsiParams(CGSIParams gsiParams) { m_gsiParams = gsiParams; }
@@ -151,7 +152,8 @@ private:
 	bool m_isAnnual;
 	int m_kbdiThreshold;
 	int m_startKBDI;
-	bool m_isHumid;
+	//bool m_isHumid;
+	int m_MXD;
 	//necessary for Update()
 	int m_obsHour;
 	int m_timeZoneOffsetHours;

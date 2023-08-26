@@ -148,8 +148,10 @@ class NFDRS4
 
 		void SetSCMax(int maxSC);
 		int GetSCMax();
-		void SetMxdHumid(bool isHumid);
-		bool GetMxdHumid();
+		//void SetMxdHumid(bool isHumid);
+        void SetMXD(int mxd);
+        int GetMXD();
+		//bool GetMxdHumid();
 		double GetFuelTemperature();
 		double GetXDaysPrecipitation(int nDays);
 		bool ReadState(std::string fileName);

@@ -1,0 +1,25 @@
+# Sample RunNFDRS configuration file
+# required to initialize RunNFDRS program
+# used by config2cpp.exe as follows:
+# config2cpp -cfg RunNFDRSSample.txt -class RunNFDRSConfig
+# NOTE short paths are used here, use of complete paths is recommended but not required
+initFile = "/NFDRSInitSample.txt";
+# required as input for processing
+wxFile = "/someWx.fw21";
+#NFDRSState saving and loading capabilities (optional)
+#loadFromState will load the state file and begin any calculations from the saved state
+loadFromStateFile = "/someSavedState.nfdrs";
+#saveToStateFile will save the state when calculation is complete to the indicated file
+saveToStateFile = "/newSavedState.nfdrs";
+# output files (csv) can be designated, otherwise nothing is output 
+# if they exist, they are appended to by the program
+# output files include a date/time and selected outputs
+#csv header is only written to the output file if the file is being created
+#all outputs available, includes fuel moistures and indexes
+allOutputsFile = "/NFDRSoutput.csv";
+#indexes only
+indexOutputFile = "/NFDRSIndexes.csv";
+#fuel moistures
+fuelMoisturesOutputFile = "/NFDRSMoistures.csv";
+#outputInterval 0 = hourly (each record), 1 = daily (at ObsHour from NFDRSInit file)
+outputInterval = "0";

@@ -80,7 +80,7 @@ CNFDRSParams::CNFDRSParams()
 	m_isAnnual = true;
 	m_kbdiThreshold = 100;
 	m_startKBDI = 100;
-	m_isHumid = false;
+	m_MXD = 25;
 	m_obsHour = 13;
 	m_timeZoneOffsetHours = 0;
 	m_herbParams.setLiveFuelMoistureMin(30);
@@ -101,7 +101,7 @@ CNFDRSParams::CNFDRSParams(const CNFDRSParams& rhs)
 	m_isAnnual = rhs.m_isAnnual;
 	m_kbdiThreshold = rhs.m_kbdiThreshold;
 	m_startKBDI = rhs.m_startKBDI;
-	m_isHumid = rhs.m_isHumid;
+	m_MXD = rhs.m_MXD;
 	m_obsHour = rhs.m_obsHour;
 	m_timeZoneOffsetHours = rhs.m_timeZoneOffsetHours;
 	m_gsiParams = rhs.m_gsiParams;
@@ -146,5 +146,6 @@ void CNFDRSParams::InitNFDRS(NFDRS4* pNFDRS)
 	pNFDRS->SetStartKBDI(getStartKbdi());
 	if (getMaxSC() > 0)
 		pNFDRS->SetSCMax(getMaxSC());
-	pNFDRS->SetMxdHumid(getIsHumid());
+	if(getMXD() > 0)
+		pNFDRS->SetMXD(getMXD());
 }

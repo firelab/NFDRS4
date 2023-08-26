@@ -1,0 +1,112 @@
+#Sample NFDRS2016 initialization file
+#contains all parameters to initialize an NFSDRS2016 object for computation
+#used by config2cpp as:
+#config2cpp -cfg NFDRSInitSample.txt -class NFDRSInitConfig -singleton
+#generates NFDRSInitConfig.cpp and NFDRSInitConfig.h, 
+#these must be copied to RunNFDRS directory to replace old versions in the project
+#
+#latitude decimal degrees
+latitude = "47.01";
+#NFDRS2016 fuel model (one of V, W, X, Y, Z)
+fuelModel = "Y";
+#standard NFDRS Slope Class (1 = 0.25%, 2 = 26-40%, 3 = 41 - 55%, 4 = 56 - 75%, 5 = 76%+)
+slopeClass = "1";
+#average annual precipitation (inches)
+avgAnnualPrecip = "13.4";
+#load transfer flag, should always be "1"
+useLoadTransfer = "1";
+#curing flag, should always be "1"
+useCure = "1";
+#annuals flag, 1 = herbs are annuals, 0 = perennial
+isAnnuals = "1";
+#threshold KBDI value, minimum value to have KBDI modify NFDRS Index calculation
+kbdiThreshold = "100";
+# initial KBDI value on Init
+startKBDI = "100";
+# flag to indicate Humid climate
+# flag removed  8/26/2023 SB
+#isHumid = "1";
+#MXD added 8/26/2023 SB
+#Moisture of Extinction (%), any positive value other than zero (0) will override fuel model default MXD for the fuel model
+MXD = "0";
+# hour when daily observations are reported and GSI/Live fuel moistures updated
+obsHour = "13";
+# timeZone offset from UTC, absolutely necessary if FW21 data is Zulu time
+timeZoneOffset = "-6";
+#for maxSC, any positive value other than zero (0) will override fuel model default maxSC
+maxSC = "0";
+#
+#GSI and Live Fuel Moistures
+#
+liveFuelMoisture.defaults {
+	gsiMax = "1.0";
+	gsiHerbGreenup = "0.5";
+	gsiTminMin = "-2";
+	gsiTminMax = "5";
+	gsiVpdMin = "900";
+	gsiVpdMax = "4100";
+	gsiDayLenMin = "36000";
+	gsiDayLenMax = "39600";
+	gsiUseVpdAvg = "0";
+	gsiAveragingDays = "21";
+	gsiNumPrecipDays = "30";
+	gsiRTPrecipMin = "0.5";
+	gsiRTPrecipMax = "1.5";
+	gsiUseRTPrecip = "0";
+	fuelMoistureMax = "100";
+	fuelMoistureMin = "0";
+}
+#set any GSI specific options here
+gsi_opts {
+	@copyFrom "liveFuelMoisture.defaults";
+
+}
+#set any Herb LFM specific options here
+herb_opts {
+	@copyFrom "liveFuelMoisture.defaults";
+	fuelMoistureMax = "250";
+	fuelMoistureMin = "30";
+}
+
+#set any Woody LFM specific options here
+woody_opts {
+	@copyFrom "liveFuelMoisture.defaults";
+	fuelMoistureMax = "200";
+	fuelMoistureMin = "50";
+}
+
+#Dead Fuel Moisture settings
+#1hr, 10 hr, 100hr, 1000hr
+deadFuelMoisture.defaults {
+#These were previously specific to stick size, should always be present
+	radius = "0.64";
+	adsorptionRate = "0.079548303";
+#These were previously defaults in DeadFuelMoisture::initializeParameters()
+	stickDensity = "0.400";
+	maxLocalMoisture = "0.35";
+	desorptionRate = "0.06";
+}
+# 1hr options
+1hr_opts {
+	@copyFrom "deadFuelMoisture.defaults";
+	radius = "0.2";
+	adsorptionRate = "0.462252733";
+}
+# 10hr options
+10hr_opts {
+	@copyFrom "deadFuelMoisture.defaults";
+	radius = "0.64";
+	adsorptionRate = "0.079548303";
+}
+# 100hr options
+100hr_opts {
+	@copyFrom "deadFuelMoisture.defaults";
+	radius = "2.0";
+	adsorptionRate = "0.06";
+}
+# 1000hr options
+1000hr_opts {
+	@copyFrom "deadFuelMoisture.defaults";
+	radius = "3.81";
+	adsorptionRate = "0.06";
+}

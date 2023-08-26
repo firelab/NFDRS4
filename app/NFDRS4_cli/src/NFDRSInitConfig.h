@@ -7,7 +7,7 @@
 #ifndef NFDRSInitConfig_h
 #define NFDRSInitConfig_h
 
-#include "config4cpp/Configuration.h"
+#include <config4cpp/Configuration.h>
 
 
 class NFDRSInitConfig
