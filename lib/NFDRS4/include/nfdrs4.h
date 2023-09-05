@@ -95,7 +95,7 @@ class NFDRS4
         NFDRS4(double Lat,char FuelModel,int SlopeClass, double AvgAnnPrecip,bool LT,bool Cure, bool IsAnnual);
         ~NFDRS4();
         // Member functions
-		void Init(double Lat, char FuelModel, int SlopeClass, double AvgAnnPrecip, bool LT, bool Cure, bool isAnnual, int kbdiThreshold, int RegObsHour = 13);
+		void Init(double Lat, char FuelModel, int SlopeClass, double AvgAnnPrecip, bool LT, bool Cure, bool isAnnual, int kbdiThreshold, int RegObsHour = 13, bool isReinit = false);
       // void Update(Wx);
 	   void Update(int Year, int Month, int Day, int Hour, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double PPTAmt, double pcp24, double SolarRad, double WS, bool SnowDay, int RegObsHr);
        void Update(int Year, int Month, int Day, int Hour, double Temp, double RH, double PPTAmt, double SolarRad, double WS, bool SnowDay);
@@ -193,7 +193,6 @@ class NFDRS4
         bool UseLoadTransfer, UseCuring;
         bool SnowCovered;
         double WTMCD, WTMCL,WTMCDE, WTMCLE;
-		bool mxdHumid;
 		double FuelTemperature;
 		double m_GSI;
 		int nConsectiveSnowDays;

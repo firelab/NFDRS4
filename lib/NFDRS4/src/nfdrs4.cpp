@@ -53,7 +53,6 @@ NFDRS4::NFDRS4()
 	PrevYear = -999;
 	YesterdayJDay = -999;
 	StartKBDI = 100;
-	mxdHumid = false;
 	FuelTemperature = -999;
 	m_GSI = 0.0;
 	nConsectiveSnowDays = 0;
@@ -103,21 +102,23 @@ NFDRS4::~NFDRS4()
 
 }
 
-void NFDRS4::Init(double inLat, char iFuelModel, int inSlopeClass, double inAvgAnnPrecip, bool LT, bool Cure, bool isAnnual, int kbdiThreshold, int RegObsHour/* = 13*/)//, double fMaxGSI , double fGSIGreenupThreshold )
+void NFDRS4::Init(double inLat, char iFuelModel, int inSlopeClass, double inAvgAnnPrecip, bool LT, bool Cure, bool isAnnual, int kbdiThreshold, int RegObsHour/* = 13*/, bool isReinit/* = false*/)
 {
 	CTA = 0.0459137;
 	NFDRSVersion = 16;                                          // NFDRS Model Version
 	Lat = inLat;                                                // Latitude (degrees)
 	AvgPrecip = inAvgAnnPrecip;                                    // Average Annual Precip
 	CummPrecip = 0.0;                                           // Place to store cummulative precip
-	KBDIThreshold = kbdiThreshold;															// Initialize the live fuel moisture models
-	GsiFM.Initialize(Lat, true, isAnnual);
-	HerbFM.Initialize(Lat, true, isAnnual);                           // Live Herb FM model init
-	WoodyFM.Initialize(Lat, false, false);                        // Live Woody FM model init
-	GsiFM.SetLFMParameters(GsiFM.GetMaxGSI(), GsiFM.GetGreenupThreshold(), GsiFM.GetMinLFMVal(), GsiFM.GetMaxLFMVal());
-	HerbFM.SetLFMParameters(HerbFM.GetMaxGSI(), HerbFM.GetGreenupThreshold(), HerbFM.GetMinLFMVal(), HerbFM.GetMaxLFMVal());
-	WoodyFM.SetLFMParameters(WoodyFM.GetMaxGSI(), WoodyFM.GetGreenupThreshold(), WoodyFM.GetMinLFMVal(), WoodyFM.GetMaxLFMVal());
-
+	KBDIThreshold = kbdiThreshold;	
+    if (!isReinit)// Initialize the live fuel moisture models
+    {
+        GsiFM.Initialize(Lat, true, isAnnual);
+        HerbFM.Initialize(Lat, true, isAnnual);                           // Live Herb FM model init
+        WoodyFM.Initialize(Lat, false, false);                        // Live Woody FM model init
+        GsiFM.SetLFMParameters(GsiFM.GetMaxGSI(), GsiFM.GetGreenupThreshold(), GsiFM.GetMinLFMVal(), GsiFM.GetMaxLFMVal());
+        HerbFM.SetLFMParameters(HerbFM.GetMaxGSI(), HerbFM.GetGreenupThreshold(), HerbFM.GetMinLFMVal(), HerbFM.GetMaxLFMVal());
+        WoodyFM.SetLFMParameters(WoodyFM.GetMaxGSI(), WoodyFM.GetGreenupThreshold(), WoodyFM.GetMinLFMVal(), WoodyFM.GetMaxLFMVal());
+    }
 	// Initialize the dead fuel moisture models
 	OneHourFM.initializeParameters(0.2, "One Hour");             // 1hr Dead FM model init
 	TenHourFM.initializeParameters(0.64, "Ten Hour");            // 10hr Dead FM model init
@@ -154,7 +155,6 @@ void NFDRS4::Init(double inLat, char iFuelModel, int inSlopeClass, double inAvgA
 	PrevYear = -999;
 	YesterdayJDay = -999;
 
-	mxdHumid = false;
 	FuelTemperature = -999;
 	m_GSI = 0.0;
 	nConsectiveSnowDays = 0;
@@ -282,7 +282,7 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, int Julian, double T
 		if (Year < PrevYear || (Year > (PrevYear + 1)) || (365 * (Year - PrevYear) + Julian - YesterdayJDay > 30))
 		{
 			//reinit
-			Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, HerbFM.GetIsAnnual(), KBDIThreshold);// , HerbFM.GetMaxGSI(), HerbFM.GetGreenupThreshold());
+			Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, HerbFM.GetIsAnnual(), KBDIThreshold, m_regObsHour, true);// , HerbFM.GetMaxGSI(), HerbFM.GetGreenupThreshold());
 		}
 	}
 
@@ -430,7 +430,7 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, double Temp, double 
         if (Year < PrevYear || (Year > (PrevYear + 1)) || (365 * (Year - PrevYear) + Julian - YesterdayJDay > 30))
         {
             //reinit
-            Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, HerbFM.GetIsAnnual(), KBDIThreshold);// , HerbFM.GetMaxGSI(), HerbFM.GetGreenupThreshold());
+            Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, HerbFM.GetIsAnnual(), KBDIThreshold, m_regObsHour, true);
         }
     }
 
@@ -614,7 +614,7 @@ void NFDRS4::UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, 
 		if (Year < PrevYear || (Year >(PrevYear + 1)) || (365 * (Year - PrevYear) + Julian - YesterdayJDay > 30))
 		{
 			//reinit
-			Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, HerbFM.GetIsAnnual(), KBDIThreshold);// , HerbFM.GetMaxGSI(), HerbFM.GetGreenupThreshold());
+			Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, HerbFM.GetIsAnnual(), KBDIThreshold, m_regObsHour, true);
 		}
 	}
 
