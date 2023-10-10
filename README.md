@@ -1,8 +1,13 @@
 
 # NFDRS4 - National Fire Danger Rating System 4.0
 
+
 ## Multiplatform source for NFDRS4 static library
-Also produces FireWxConverter, which converts FW13 fire weather data files to FW21 fire weather data files
+This library provides all of the source code for NFDRS Version 4.0 including the Nelson Dead Fuel Moisture Model, the Growing Season Index-based Live Fuel Moisture Model and the NFDRS calculator.
+
+Also produces two apps: the FireWxConverter and the NFDRS4_cli (command line interface). 
+
+FireWxConverter, which converts FW13 fire weather data files to FW21 fire weather data files
 NFDRS4_cli produces live and dead fuel moistures as well as NFDRS indexes from FW21 fire weather data files.
 
 ### Dependencies:
