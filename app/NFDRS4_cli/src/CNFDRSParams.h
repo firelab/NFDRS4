@@ -1,6 +1,5 @@
 #pragma once
-//#include "nfdrs4.h"
-
+#include "nfdrs4.h"
 class CGSIParams
 {
 public:
@@ -118,6 +117,7 @@ public:
 	CDeadFuelMoistureParams get10HourParams() { return m_10HourParams; }
 	CDeadFuelMoistureParams get100HourParams() { return m_100HourParams; }
 	CDeadFuelMoistureParams get1000HourParams() { return m_1000HourParams; }
+	CFuelModelParams getFuelModelParams() { return m_fuelParams; }
 	//setters
 	void setFuelModel(char fuelModel) { m_fuelModel = fuelModel; }
 	void setMaxSC(int maxSC) { m_maxSC = maxSC; }
@@ -140,6 +140,7 @@ public:
 	void set10HourParams(CDeadFuelMoistureParams tenHourParams) { m_10HourParams = tenHourParams; }
 	void set100HourParams(CDeadFuelMoistureParams hundredHourParams) { m_100HourParams = hundredHourParams; }
 	void set1000HourParams(CDeadFuelMoistureParams thousandHourParams) { m_1000HourParams = thousandHourParams; }
+	void setFuelModelParams(CFuelModelParams fuelModelParams) { m_fuelParams = fuelModelParams; }
 private:
 	//init params
 	char m_fuelModel;
@@ -165,5 +166,7 @@ private:
 	CDeadFuelMoistureParams m_10HourParams;
 	CDeadFuelMoistureParams m_100HourParams;
 	CDeadFuelMoistureParams m_1000HourParams;
+	CFuelModelParams  m_fuelParams;
+
 };
 

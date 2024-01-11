@@ -7,7 +7,7 @@
 #
 #latitude decimal degrees
 latitude = "47.01";
-#NFDRS2016 fuel model (one of V, W, X, Y, Z)
+#NFDRS2016 fuel model (one of V, W, X, Y, Z, or C for a custom defined model)
 fuelModel = "Y";
 #standard NFDRS Slope Class (1 = 0.25%, 2 = 26-40%, 3 = 41 - 55%, 4 = 56 - 75%, 5 = 76%+)
 slopeClass = "1";
@@ -109,4 +109,29 @@ deadFuelMoisture.defaults {
 	@copyFrom "deadFuelMoisture.defaults";
 	radius = "3.81";
 	adsorptionRate = "0.06";
+}
+
+#Custom fuel model settings
+customFuelModel {
+#These are from NFDRS88 fuel model G
+	FuelModel = "C";
+	Description = "Custom fuel model";
+	SG1 = "2000";
+	SG10 = "109";
+	SG100 = "30";
+	SG1000 = "8";
+	SGWOOD = "1500";
+	SGHERB = "2000";
+	L1 = "2.5";
+	L10 = "2.0";
+	L100 = "5.0";
+	L1000 = "12.0";
+	LWOOD = "0.5";
+	LHERB = "0.5";
+	DEPTH = "1.0";
+	MXD = "25";
+	HD = "8000";
+	SCM = "30";
+	LDROUGHT = "0.0";
+	WNDFC = "0.4";
 }

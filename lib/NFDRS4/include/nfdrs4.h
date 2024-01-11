@@ -15,12 +15,81 @@
 #include <numeric>
 #include <algorithm>
 #include <deque>
+#include <unordered_map>
 #include "deadfuelmoisture.h"
 #include "livefuelmoisture.h"
 #include "nfdrs4calcstate.h"
 #include "utctime.h"
 
-
+/*Fuel Model Definition*/
+class CFuelModelParams
+{
+public:
+	CFuelModelParams();
+	CFuelModelParams(const CFuelModelParams& rhs);
+	~CFuelModelParams();
+	char getFuelModel();
+	const char* getDescription();
+	int getSG1();
+	int getSG10();
+	int getSG100();
+	int getSG1000();
+	int getSGHerb();
+	int getSGWood();
+	double getL1();
+	double getL10();
+	double getL100();
+	double getL1000();
+	double getLHerb();
+	double getLWood();
+	double getDepth();
+	int getMXD();
+	int getHD();
+	int getSCM();
+	double getLDrought();
+	double getWNDFC();
+	void setFuelModel(char fm);
+	void setDescription(const char* description);
+	void setSG1(int sg1);
+	void setSG10(int sg10);
+	void setSG100(int sg100);
+	void setSG1000(int sg1000);
+	void setSGHerb(int sgHerb);
+	void setSGWood(int sgWood);
+	void setL1(double l1);
+	void setL10(double l10);
+	void setL100(double l100);
+	void setL1000(double l1000);
+	void setLHerb(double lHerb);
+	void setLWood(double lWood);
+	void setDepth(double depth);
+	void setMXD(int mxd);
+	void setHD(int hd);
+	void setSCM(int scm);
+	void setLDrought(double ldrought);
+	void setWNDFC(double wndfc);
+private:
+	char m_fuelModel;
+	std::string m_description;
+	int m_SG1;
+	int m_SG10;
+	int m_SG100;
+	int m_SG1000;
+	int m_SGHERB;
+	int m_SGWOOD;
+	double m_L1;
+	double m_L10;
+	double m_L100;
+	double m_L1000;
+	double m_LHERB;
+	double m_LWOOD;
+	double m_DEPTH;
+	int m_MXD;
+	int m_HD;
+	int m_SCM;
+	double m_LDROUGHT;
+	double m_WNDFC;
+};
 
 /**************************** nfdrs4.h ***********************************
 
@@ -95,12 +164,16 @@ class NFDRS4
         NFDRS4(double Lat,char FuelModel,int SlopeClass, double AvgAnnPrecip,bool LT,bool Cure, bool IsAnnual);
         ~NFDRS4();
         // Member functions
+		//CreateFuelModels called in constructors
+		void CreateFuelModels();
+
 		void Init(double Lat, char FuelModel, int SlopeClass, double AvgAnnPrecip, bool LT, bool Cure, bool isAnnual, int kbdiThreshold, int RegObsHour = 13, bool isReinit = false);
       // void Update(Wx);
 	   void Update(int Year, int Month, int Day, int Hour, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double PPTAmt, double pcp24, double SolarRad, double WS, bool SnowDay, int RegObsHr);
        void Update(int Year, int Month, int Day, int Hour, double Temp, double RH, double PPTAmt, double SolarRad, double WS, bool SnowDay);
        void UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double pcp24, double WS, double fMC1, double fMC10, double fMC100, double fMC1000, double fuelTemp, bool SnowDay/* = false*/);
-        void iSetFuelModel (char cFM);
+        //void iSetFuelModel (char cFM);
+		bool iSetFuelModel(char cFM);
         int iSetFuelMoistures (double fMC1, double fMC10,double fMC100, double fMC1000, double fMCWood, double fMCHerb, double fuelTempC);
         int iCalcIndexes (int iWS, int iSlopeCls,double* fSC,double* fERC, double* fBI, double* fIC,double fGSI = -999,double fKBDI = -999);
         int iCalcKBDI (double fPrecipAmt, int iMaxTemp,double fCummPrecip, int iYKBDI, double fAvgPrecip);
@@ -164,6 +237,8 @@ class NFDRS4
         double GetMinRH();
         double GetPcp24();
 
+        //bool SetCustomFuelModel(CFuelModelParams fmParams);
+		void AddCustomFuel(CFuelModelParams fmParams);
 		double CTA;
         double Lat;
         int NFDRSVersion;
@@ -179,6 +254,7 @@ class NFDRS4
 		LiveFuelMoisture WoodyFM;
 
 		int FuelModel;
+		std::string FuelDescription;
         int SG1, SG10, SG100, SG1000, SGWOOD, SGHERB;
         double W1, W10, W100, W1000, WWOOD, WHERB, WDROUGHT, W1P, WHERBP,WTOT;
         double L1, L10, L100, L1000, LWOOD, LHERB, LDROUGHT;
@@ -204,6 +280,7 @@ class NFDRS4
         std::deque<double> qHourlyPrecip;
         std::deque<double> qHourlyTemp;
         std::deque<double> qHourlyRH;
+		std::unordered_map<char, CFuelModelParams> mapFuels;
 };
 
 

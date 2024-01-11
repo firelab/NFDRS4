@@ -1,5 +1,203 @@
-#include "nfdrs4.h"
+//#include "nfdrs4.h"
 #include "CNFDRSParams.h"
+
+CFuelModelParams::CFuelModelParams()
+{
+	m_fuelModel = 'C';
+	m_description = "";
+	m_SG1 = m_SG10 = m_SG100 = m_SG1000 = m_SGHERB = m_SGWOOD = 0;
+	m_L1 = m_L10 = m_L100 = m_L1000 = m_LHERB = m_LWOOD = 0.0;
+	m_DEPTH = 0.0;
+	m_MXD = m_HD = m_SCM = 0;
+	m_LDROUGHT = m_WNDFC = 0.0;
+}
+CFuelModelParams::CFuelModelParams(const CFuelModelParams& rhs)
+{
+	m_fuelModel = rhs.m_fuelModel;
+	m_description = rhs.m_description;
+	m_SG1 = rhs.m_SG1;
+	m_SG10 = rhs.m_SG10;
+	m_SG100 = rhs.m_SG100;
+	m_SG1000 = rhs.m_SG1000;
+	m_SGHERB = rhs.m_SGHERB;
+	m_SGWOOD = rhs.m_SGWOOD;
+	m_L1 = rhs.m_L1;
+	m_L10 = rhs.m_L10;
+	m_L100 = rhs.m_L100;
+	m_L1000 = rhs.m_L1000;
+	m_LHERB = rhs.m_LHERB;
+	m_LWOOD = rhs.m_LWOOD;
+	m_DEPTH = rhs.m_DEPTH;
+	m_MXD = rhs.m_MXD;
+	m_HD = rhs.m_HD;
+	m_SCM = rhs.m_SCM;
+	m_LDROUGHT = rhs.m_LDROUGHT;
+	m_WNDFC = rhs.m_WNDFC;
+}
+CFuelModelParams::~CFuelModelParams()
+{
+}
+char CFuelModelParams::getFuelModel()
+{
+	return m_fuelModel;
+}
+const char* CFuelModelParams::getDescription()
+{
+	return m_description.c_str();
+}
+int CFuelModelParams::getSG1()
+{
+	return m_SG1;
+}
+int CFuelModelParams::getSG10()
+{
+	return m_SG10;
+}
+int CFuelModelParams::getSG100()
+{
+	return m_SG100;
+}
+int CFuelModelParams::getSG1000()
+{
+	return m_SG1000;
+}
+int CFuelModelParams::getSGHerb()
+{
+	return m_SGHERB;
+}
+int CFuelModelParams::getSGWood()
+{
+	return m_SGWOOD;
+}
+double CFuelModelParams::getL1()
+{
+	return m_L1;
+}
+double CFuelModelParams::getL10()
+{
+	return m_L10;
+
+}
+double CFuelModelParams::getL100()
+{
+	return m_L100;
+}
+double CFuelModelParams::getL1000()
+{
+	return m_L1000;
+}
+double CFuelModelParams::getLHerb()
+{
+	return m_LHERB;
+}
+double CFuelModelParams::getLWood()
+{
+	return m_LWOOD;
+}
+double CFuelModelParams::getDepth()
+{
+	return m_DEPTH;
+}
+int CFuelModelParams::getMXD()
+{
+	return m_MXD;
+}
+int CFuelModelParams::getHD()
+{
+	return m_HD;
+}
+int CFuelModelParams::getSCM()
+{
+	return m_SCM;
+}
+double CFuelModelParams::getLDrought()
+{
+	return m_LDROUGHT;
+}
+double CFuelModelParams::getWNDFC()
+{
+	return m_WNDFC;
+}
+void CFuelModelParams::setFuelModel(char fm)
+{
+	m_fuelModel = fm;
+}
+void CFuelModelParams::setDescription(const char* description)
+{
+	m_description = description;
+}
+void CFuelModelParams::setSG1(int sg1)
+{
+	m_SG1 = sg1;
+}
+void CFuelModelParams::setSG10(int sg10)
+{
+	m_SG10 = sg10;
+}
+void CFuelModelParams::setSG100(int sg100)
+{
+	m_SG100 = sg100;
+}
+void CFuelModelParams::setSG1000(int sg1000)
+{
+	m_SG1000 = sg1000;
+}
+void CFuelModelParams::setSGHerb(int sgHerb)
+{
+	m_SGHERB = sgHerb;
+}
+void CFuelModelParams::setSGWood(int sgWood)
+{
+	m_SGWOOD = sgWood;
+}
+void CFuelModelParams::setL1(double l1)
+{
+	m_L1 = l1;
+}
+void CFuelModelParams::setL10(double l10)
+{
+	m_L10 = l10;
+}
+void CFuelModelParams::setL100(double l100)
+{
+	m_L100 = l100;
+}
+void CFuelModelParams::setL1000(double l1000)
+{
+	m_L1000 = l1000;
+}
+void CFuelModelParams::setLHerb(double lHerb)
+{
+	m_LHERB = lHerb;
+}
+void CFuelModelParams::setLWood(double lWood)
+{
+	m_LWOOD = lWood;
+}
+void CFuelModelParams::setDepth(double depth)
+{
+	m_DEPTH = depth;
+}
+void CFuelModelParams::setMXD(int mxd)
+{
+	m_MXD = mxd;
+}
+void CFuelModelParams::setHD(int hd)
+{
+	m_HD = hd;
+}
+void CFuelModelParams::setSCM(int scm)
+{
+	m_SCM = scm;
+}
+void CFuelModelParams::setLDrought(double ldrought)
+{
+	m_LDROUGHT = ldrought;
+}
+void CFuelModelParams::setWNDFC(double wndfc)
+{
+	m_WNDFC = wndfc;
+}
 
 CGSIParams::CGSIParams()
 {
@@ -111,6 +309,7 @@ CNFDRSParams::CNFDRSParams(const CNFDRSParams& rhs)
 	m_10HourParams = rhs.m_10HourParams;
 	m_100HourParams = rhs.m_100HourParams;
 	m_1000HourParams = rhs.m_1000HourParams;
+	m_fuelParams = rhs.m_fuelParams;
 }
 
 CNFDRSParams::~CNFDRSParams()
@@ -122,9 +321,15 @@ void CNFDRSParams::InitNFDRS(NFDRS4* pNFDRS)
 {
 	if (!pNFDRS)
 		return;
-	pNFDRS->Init(getLatitude(), getFuelModel(), getSlopeClass(), getAvgAnnualPrecip(), getUseLoadTransfer(), getUseCure(),
+	char fm = getFuelModel();
+	if (fm == 'C' || fm == 'c')
+	{
+		pNFDRS->AddCustomFuel(m_fuelParams);
+		fm = m_fuelParams.getFuelModel();
+	}
+	pNFDRS->Init(getLatitude(), fm, getSlopeClass(), getAvgAnnualPrecip(), getUseLoadTransfer(), getUseCure(),
 		getIsAnnual(), getKbdiThreshold());
-	pNFDRS->iSetFuelModel(getFuelModel());
+	pNFDRS->iSetFuelModel(fm);
 	pNFDRS->SetOneHourParams(m_1HourParams.getRadius(), m_1HourParams.getAdsorptionRate(), m_1HourParams.getMaxLocalMoisture(), m_1HourParams.getStickDensity(), m_1HourParams.getDesorptionRate());
 	pNFDRS->SetTenHourParams(m_10HourParams.getRadius(), m_10HourParams.getAdsorptionRate(), m_10HourParams.getMaxLocalMoisture(), m_10HourParams.getStickDensity(), m_10HourParams.getDesorptionRate());
 	pNFDRS->SetHundredHourParams(m_100HourParams.getRadius(), m_100HourParams.getAdsorptionRate(), m_100HourParams.getMaxLocalMoisture(), m_100HourParams.getStickDensity(), m_100HourParams.getDesorptionRate());

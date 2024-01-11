@@ -17,6 +17,9 @@
 #include "nfdrs4.h"
 #include <time.h>
 
+
+
+
 #define SNOWDAYS_TRIGGER 5
 const double NORECORD = -999.0;
 
@@ -44,7 +47,8 @@ using namespace utctime;
 
 NFDRS4::NFDRS4()
 {
-	CTA = 0.0459137;
+    CreateFuelModels();
+    CTA = 0.0459137;
 	NFDRSVersion = 16;                                          // NFDRS Model Version
 	CummPrecip = 0.0;                                           // Place to store cummulative precip
 	YKBDI = KBDI = KBDIThreshold = 100;                                                // Starting KBDI
@@ -67,7 +71,8 @@ NFDRS4::NFDRS4()
 //
 NFDRS4::NFDRS4(double inLat, char FuelModel,int inSlopeClass, double inAvgAnnPrecip,bool LT,bool Cure, bool IsAnnual)
 {
-	StartKBDI = 100;
+    CreateFuelModels();
+    StartKBDI = 100;
 	Init(inLat, FuelModel, inSlopeClass, inAvgAnnPrecip, LT, Cure, IsAnnual, 100);// , 1.0, 0.5);
    
 	//the below commented out as now done in Init
@@ -696,8 +701,157 @@ void NFDRS4::UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, 
 
 }*/
 
+void NFDRS4::CreateFuelModels()
+{
+    CFuelModelParams fmV;
+    fmV.setFuelModel('V');
+    fmV.setDescription("Grass");
+    fmV.setSG1(2000);
+    fmV.setSG10(109);
+    fmV.setSG100(30);
+    fmV.setSG1000(8);
+    fmV.setSGWood(1500);
+    fmV.setSGHerb(2000);
+    fmV.setHD(8000);
+    fmV.setL1(0.1);
+    fmV.setL10(0.0);
+    fmV.setL100(0.0);
+    fmV.setL1000(0.0);
+    fmV.setLWood(0.0);
+    fmV.setLHerb(1.0);
+    fmV.setDepth(1);
+    fmV.setMXD(15);
+    fmV.setSCM(108);
+    fmV.setLDrought(0.0);
+    fmV.setWNDFC(0.6);
 
-void NFDRS4::iSetFuelModel (char cFM)
+    CFuelModelParams fmW;
+    fmW.setFuelModel('W');
+    fmW.setDescription("Grass-Shrub");
+    fmW.setSG1(2000);
+    fmW.setSG10(109);
+    fmW.setSG100(30);
+    fmW.setSG1000(8);
+    fmW.setSGWood(1500);
+    fmW.setSGHerb(2000);
+    fmW.setHD(8000);
+    fmW.setL1(0.5);
+    fmW.setL10(0.5);
+    fmW.setL100(0.0);
+    fmW.setL1000(0.0);
+    fmW.setLWood(1.0);
+    fmW.setLHerb(0.6);
+    fmW.setDepth(1.5);
+    fmW.setMXD(15);
+    fmW.setSCM(62);
+    fmW.setLDrought(1.0);
+    fmW.setWNDFC(0.4);
+
+    CFuelModelParams fmX;
+    fmX.setFuelModel('X');
+    fmX.setDescription("Brush");
+    fmX.setSG1(2000);
+    fmX.setSG10(109);
+    fmX.setSG100(30);
+    fmX.setSG1000(8);
+    fmX.setSGWood(1500);
+    fmX.setSGHerb(2000);
+    fmX.setHD(8000);
+    fmX.setL1(4.5);
+    fmX.setL10(2.45);
+    fmX.setL100(0.0);
+    fmX.setL1000(0.0);
+    fmX.setLWood(7.0);
+    fmX.setLHerb(1.55);
+    fmX.setDepth(4.4);
+    fmX.setMXD(25);
+    fmX.setSCM(104);
+    fmX.setLDrought(2.5);
+    fmX.setWNDFC(0.4);
+
+    CFuelModelParams fmY;
+    fmY.setFuelModel('Y');
+    fmY.setDescription("Timber");
+    fmY.setSG1(2000);
+    fmY.setSG10(109);
+    fmY.setSG100(30);
+    fmY.setSG1000(8);
+    fmY.setSGWood(1500);
+    fmY.setSGHerb(2000);
+    fmY.setHD(8000);
+    fmY.setL1(2.5);
+    fmY.setL10(2.2);
+    fmY.setL100(3.6);
+    fmY.setL1000(10.16);
+    fmY.setLWood(0.0);
+    fmY.setLHerb(0.0);
+    fmY.setDepth(0.6);
+    fmY.setMXD(25);
+    fmY.setSCM(5);
+    fmY.setLDrought(5.0);
+    fmY.setWNDFC(0.2);
+
+    CFuelModelParams fmZ;
+    fmZ.setFuelModel('Z');
+    fmZ.setDescription("Slash/Blowdown");
+    fmZ.setSG1(2000);
+    fmZ.setSG10(109);
+    fmZ.setSG100(30);
+    fmZ.setSG1000(8);
+    fmZ.setSGWood(1500);
+    fmZ.setSGHerb(2000);
+    fmZ.setHD(8000);
+    fmZ.setL1(4.5);
+    fmZ.setL10(4.25);
+    fmZ.setL100(4.0);
+    fmZ.setL1000(4.0);
+    fmZ.setLWood(0.0);
+    fmZ.setLHerb(0.0);
+    fmZ.setDepth(1.0);
+    fmZ.setMXD(25);
+    fmZ.setSCM(19);
+    fmZ.setLDrought(7.0);
+    fmZ.setWNDFC(0.4);
+
+    mapFuels.emplace(fmV.getFuelModel(), fmV);
+    mapFuels.emplace(fmW.getFuelModel(), fmW);
+    mapFuels.emplace(fmX.getFuelModel(), fmX);
+    mapFuels.emplace(fmY.getFuelModel(), fmY);
+    mapFuels.emplace(fmZ.getFuelModel(), fmZ);
+}
+
+bool NFDRS4::iSetFuelModel(char cFM)
+{
+    auto it = mapFuels.equal_range(cFM).first;
+    if (it != mapFuels.end())
+    {
+        CFuelModelParams fm = (*it).second;
+        FuelModel = fm.getFuelModel();
+        FuelDescription = fm.getDescription();
+        SG1 = fm.getSG1();
+        SG10 = fm.getSG10();
+        SG100 = fm.getSG100();
+        SG1000 = fm.getSG1000();
+        SGWOOD = fm.getSGWood();
+        SGHERB = fm.getSGHerb();
+        HD = fm.getHD();
+        L1 = fm.getL1();
+        L10 = fm.getL10();
+        L100 = fm.getL100();
+        L1000 = fm.getL1000();
+        LWOOD = fm.getLWood();
+        LHERB = fm.getLHerb();
+        DEPTH = fm.getDepth();
+        MXD = fm.getMXD();
+        SCM = fm.getSCM();
+        LDROUGHT = fm.getLDrought();
+        WNDFC = fm.getWNDFC();
+        return true;
+    }
+    return false;
+}
+
+/*void NFDRS4::iSetFuelModel(char cFM)
 {
 
     SG1 = 2000;
@@ -810,7 +964,7 @@ void NFDRS4::iSetFuelModel (char cFM)
         WNDFC = 0.4;
     }
 
-}
+}*/
 
 // Calculates all Components and Indices for NFDRS4
 // iWS: Windspeed (mph)
@@ -1612,3 +1766,33 @@ double NFDRS4::GetPcp24()
     }
     return pcp24;
 }
+
+void NFDRS4::AddCustomFuel(CFuelModelParams fmParams)
+{
+    mapFuels.emplace(fmParams.getFuelModel(), fmParams);
+    //iSetFuelModel(fmParams.getFuelModel());
+}
+
+/*bool NFDRS4::SetCustomFuelModel(CFuelModelParams fmParams)
+{
+    FuelModel = fmParams.getFuelModel();
+    SG1 = fmParams.getSG1();
+    SG10 = fmParams.getSG10();
+    SG100 = fmParams.getSG100();
+    SG1000 = fmParams.getSG1000();
+    SGHERB = fmParams.getSGHerb();
+    SGWOOD = fmParams.getSGWood();
+    HD = fmParams.getHD();
+    L1 = fmParams.getL1();
+    L10 = fmParams.getL10();
+    L100 = fmParams.getL100();
+    L1000 = fmParams.getL1000();
+    LHERB = fmParams.getLHerb();
+    LWOOD = fmParams.getLWood();
+    DEPTH = fmParams.getDepth();
+    MXD = fmParams.getMXD();
+    SCM = fmParams.getSCM();
+    LDROUGHT = fmParams.getLDrought();
+    WNDFC = fmParams.getWNDFC();
+    return true;
+}*/

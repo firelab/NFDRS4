@@ -167,6 +167,31 @@ void NFDRSConfiguration::parse(
 		thousandHourParams.setMaxLocalMoisture(cfg->lookupFloat(cfgScope, "1000hr_opts.maxLocalMoisture"));
 		thousandHourParams.setDesortionRate(cfg->lookupFloat(cfgScope, "1000hr_opts.desorptionRate"));
 		m_nfdrsParams.set1000HourParams(thousandHourParams);
+		if (m_nfdrsParams.getFuelModel() == 'C' || m_nfdrsParams.getFuelModel() == 'c')//custom fuel model expected
+		{
+			CFuelModelParams fmParams;
+			fmParams.setFuelModel(cfg->lookupString(cfgScope, "customFuelModel.FuelModel")[0]);
+			fmParams.setDescription(cfg->lookupString(cfgScope, "customFuelModel.Description"));
+			fmParams.setSG1(cfg->lookupInt(cfgScope, "customFuelModel.SG1"));
+			fmParams.setSG10(cfg->lookupInt(cfgScope, "customFuelModel.SG10"));
+			fmParams.setSG100(cfg->lookupInt(cfgScope, "customFuelModel.SG100"));
+			fmParams.setSG1000(cfg->lookupInt(cfgScope, "customFuelModel.SG1000"));
+			fmParams.setSGHerb(cfg->lookupInt(cfgScope, "customFuelModel.SGHERB"));
+			fmParams.setSGWood(cfg->lookupInt(cfgScope, "customFuelModel.SGWOOD"));
+			fmParams.setL1(cfg->lookupFloat(cfgScope, "customFuelModel.L1"));
+			fmParams.setL10(cfg->lookupFloat(cfgScope, "customFuelModel.L10"));
+			fmParams.setL100(cfg->lookupFloat(cfgScope, "customFuelModel.L100"));
+			fmParams.setL1000(cfg->lookupFloat(cfgScope, "customFuelModel.L1000"));
+			fmParams.setLHerb(cfg->lookupFloat(cfgScope, "customFuelModel.LHERB"));
+			fmParams.setLWood(cfg->lookupFloat(cfgScope, "customFuelModel.LWOOD"));
+			fmParams.setHD(cfg->lookupInt(cfgScope, "customFuelModel.HD"));
+			fmParams.setDepth(cfg->lookupFloat(cfgScope, "customFuelModel.DEPTH"));
+			fmParams.setLDrought(cfg->lookupFloat(cfgScope, "customFuelModel.LDROUGHT"));
+			fmParams.setMXD(cfg->lookupInt(cfgScope, "customFuelModel.MXD"));
+			fmParams.setSCM(cfg->lookupInt(cfgScope, "customFuelModel.SCM"));
+			fmParams.setWNDFC(cfg->lookupFloat(cfgScope, "customFuelModel.WNDFC"));
+			m_nfdrsParams.setFuelModelParams(fmParams);
+		}
 		//let's try dump to see what we get!
 		//saveAs("Dummyfile.cfg");
 	}
