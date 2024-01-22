@@ -40,6 +40,7 @@ public:
 	const char *	getIndexOutputFile() { return m_indexOutputFile; }
 	const char *	getFuelMoisturesOutputsFile() { return m_fuelMoisturesOutputsFile; }
 	int getOutputInterval() { return m_outputInterval; }
+	int getUseStoredOutputs() { return m_bUseStoredOutputs; }
 private:
 	void * m_cfg;
 	bool m_wantDiagnostics;
@@ -53,6 +54,7 @@ private:
 	const char * m_indexOutputFile;
 	const char * m_fuelMoisturesOutputsFile;
 	int m_outputInterval;//0 = hourly(each record), 1 = daily
+	int m_bUseStoredOutputs; //non-zero value causes NFDRS4_cli to bypass Nelson and GSI models
 	//--------
 	// Not implemented
 	//--------

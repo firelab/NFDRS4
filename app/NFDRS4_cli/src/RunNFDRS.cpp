@@ -68,7 +68,6 @@ int main(int argc, char* argv[])
 		allOutputsFileName = cfg->getAllOutputsFile();
 		indexOutputsFileName = cfg->getIndexOutputFile();
 		fuelMoistureOutputsFileName = cfg->getFuelMoisturesOutputsFile();
-		//delete cfg;
 	}
 	catch(const RunNFDRSConfigurationException & ex)
 	{
@@ -120,7 +119,6 @@ int main(int argc, char* argv[])
 	//at this point we should have everything we need
 	NFDRS4 fw21Calc;
 	//use NFDRSParams to initialize NFDRS4 object
-	//params.InitNFDRS(&thisCalc);
 	params.InitNFDRS(&fw21Calc);
 	//do we have a state file?
 	if (strlen(loadStateFileName) > 0)
@@ -130,22 +128,21 @@ int main(int argc, char* argv[])
 		fw21Calc.LoadState(state);
 	}
 	CFW21Data FW21data;
-	int status = FW21data.LoadFile(wxFileName, params.getTimeZoneOffsetHours());
+	int status = FW21data.LoadFile(wxFileName, params.getTimeZoneOffsetHours(), cfg->getUseStoredOutputs() != 0 ? true : false);
 	if (status != 0)
 	{
 		printf("Error loading %s as FW21 file\n", wxFileName);
+		if (cfg->getUseStoredOutputs() != 0)
+			printf("useStoredOutputs was not zero, is %s an 'allOutputsFile' from a previous NFDRS4_cli run?\n", wxFileName);
 		delete nfdrsCfg;
 		delete cfg;
 		return -5;
 	}
 	//also need any output files for dumping data
 	FILE* allOut = NULL, * indexOut = NULL, * moistOut = NULL, * wxAllOut = NULL;// , * fw21Out = NULL;
-	//fw21Out = fopen("G:\\FFP5Data\\FW21\\Run241513\\241513_output_FW21.csv", "wt");
-	//fprintf(fw21Out, "DateTime, Temp, RH, Precip, WindSpeed, SolarRadiation, SnowFlag, MinTemp, MaxTemp, MinRH, Pcp24, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM, BI, ERC, SC, IC, GSI, KBDI\n");
 
 	if (allOutputsFileName && strlen(allOutputsFileName) > 0)
 	{
-		//bool allExists = fileExists(allOutputsFileName);
 		allOut = fopen(allOutputsFileName, "wt");
 		if (!allOut)
 		{
@@ -154,13 +151,17 @@ int main(int argc, char* argv[])
 			delete cfg;
 			return -3;
 		}
-		//if(!allExists)
-			//fprintf(allOut, "DateTime, Temp, RH, Precip, WindSpeed, SolarRadiation, SnowFlag, 1HourDFM, 10HourDFM, 100HourDFM, 1000HourDFM, HerbLFM, WoodyLFM, BI, ERC, SC, IC, GSI, KBDI\n");
-		fprintf(allOut, "DateTime,Temperature(F),RelativeHumidity(%%),Precipitation(in),WindSpeed(mph),SolarRadiation(W/m2),SnowFlag,MinTemp,MaxTemp,MinRH,Pcp24,1HourDFM,10HourDFM,100HourDFM,1000HourDFM,HerbLFM,WoodyLFM,BI,ERC,SC,IC,GSI,KBDI\n");
+		for (int fieldNum = CFW21Data::FW21_DATE; fieldNum < CFW21Data::FW21_TEMPC; fieldNum++)
+		{
+			if (fieldNum == 0)
+				fprintf(allOut, "%s", CFW21Data::GetFieldName((CFW21Data::FW21FIELDS)fieldNum).c_str());
+			else
+				fprintf(allOut, ",%s", CFW21Data::GetFieldName((CFW21Data::FW21FIELDS)fieldNum).c_str());
+		}
+		fprintf(allOut, "\n");
 	}
 	if (indexOutputsFileName && strlen(indexOutputsFileName) > 0)
 	{
-		//bool exists = fileExists(allOutputsFileName);
 		indexOut = fopen(indexOutputsFileName, "wt");
 		if (!indexOut)
 		{
@@ -172,12 +173,13 @@ int main(int argc, char* argv[])
 			delete cfg;
 			return -3;
 		}
-		//if (!exists)
-		fprintf(indexOut, "DateTime,BI,ERC,SC,IC,GSI,KBDI\n");
+		fprintf(indexOut, "%s", CFW21Data::GetFieldName(CFW21Data::FW21_DATE).c_str());
+		for (int f = CFW21Data::FW21_BI; f < CFW21Data::FW21_TEMPC; f++)
+			fprintf(indexOut, ",%s", CFW21Data::GetFieldName((CFW21Data::FW21FIELDS)f).c_str());
+		fprintf(indexOut, "\n");
 	}
 	if (fuelMoistureOutputsFileName && strlen(fuelMoistureOutputsFileName) > 0)
 	{
-		//bool fExists = fileExists(fuelMoistureOutputsFileName);
 		moistOut = fopen(fuelMoistureOutputsFileName, "wt");
 		if (!moistOut)
 		{
@@ -191,8 +193,10 @@ int main(int argc, char* argv[])
 			delete cfg;
 			return -3;
 		}
-		//if(!fExists)
-		fprintf(moistOut, "DateTime,1HourDFM,10HourDFM,100HourDFM,1000HourDFM,HerbLFM,WoodyLFM\n");
+		fprintf(moistOut, "%s", CFW21Data::GetFieldName(CFW21Data::FW21_DATE).c_str());
+		for (int f = CFW21Data::FW21_DFM1; f <= CFW21Data::FW21_FUELTEMPC; f++)
+			fprintf(moistOut, ",%s", CFW21Data::GetFieldName((CFW21Data::FW21FIELDS)f).c_str());
+		fprintf(moistOut, "\n");
 	}
 
 	//now need to read the wxFile and process the records
@@ -200,20 +204,35 @@ int main(int argc, char* argv[])
 	for (size_t r = 0; r < FW21data.GetNumRecs(); r++)
 	{
 		FW21Record fw21Rec = FW21data.GetRec(r);
-
-		fw21Calc.Update(fw21Rec.GetYear(), fw21Rec.GetMonth(), fw21Rec.GetDay(), fw21Rec.GetHour(), fw21Rec.GetTemp(), fw21Rec.GetRH(), fw21Rec.GetPrecip(),
-			fw21Rec.GetSolarRadiation(), fw21Rec.GetWindSpeed(), fw21Rec.GetSnowFlag());
+		if (cfg->getUseStoredOutputs() != 0)
+		{
+			fw21Calc.iSetFuelMoistures(fw21Rec.GetMx1(), fw21Rec.GetMx10(),
+				fw21Rec.GetMx100(), fw21Rec.GetMx1000(), fw21Rec.GetMxHerb(),
+				fw21Rec.GetMxWood(), fw21Rec.GetFuelTTempC());
+			double tSC, tERC, tBI, tIC;
+			fw21Calc.iCalcIndexes(fw21Rec.GetWindSpeed(), params.getSlopeClass(), &tSC, &tERC, &tBI, &tIC, fw21Rec.GetGSI(), fw21Rec.GetKBDI());
+			//are these even necessary?????????
+			fw21Calc.SC = tSC;
+			fw21Calc.ERC = tERC;
+			fw21Calc.BI = tBI;
+			fw21Calc.IC = tIC;
+			fw21Calc.m_GSI = fw21Rec.GetGSI();
+			fw21Calc.KBDI = fw21Rec.GetKBDI();
+		}
+		else
+			fw21Calc.Update(fw21Rec.GetYear(), fw21Rec.GetMonth(), fw21Rec.GetDay(), fw21Rec.GetHour(), fw21Rec.GetTemp(), fw21Rec.GetRH(), fw21Rec.GetPrecip(),
+				fw21Rec.GetSolarRadiation(), fw21Rec.GetWindSpeed(), fw21Rec.GetSnowFlag());
 		if (cfg->getOutputInterval() == 0 || (cfg->getOutputInterval() == 1 && fw21Rec.GetHour() == params.getObsHour()))
 		{
 			//output to open csv files
 			if (allOut)
 			{
-				fprintf(allOut, "%s,%.1f,%.1f,%.3f,%.1f,%.0f,%d,%.1f,%.1f,%.1f,%.3f,"
-					"%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.6f,%d\n", 
+				fprintf(allOut, "%s,%.1f,%.1f,%.3f,%.1f,%d,%.1f,%d,%.1f,%d,%.10f,"
+					"%.10f,%.10f,%.10f,%.10f,%.10f,%.10f,%.2f,%.2f,%.2f,%.2f,%.2f,%d\n", 
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
-					fw21Rec.GetTemp(), fw21Rec.GetRH(), fw21Rec.GetPrecip(), fw21Rec.GetWindSpeed(), fw21Rec.GetSolarRadiation(),
-					fw21Rec.GetSnowFlag(), fw21Calc.GetMinTemp(), fw21Calc.GetMaxTemp(), fw21Calc.GetMinRH(), fw21Calc.GetPcp24(),
-					fw21Calc.MC1, fw21Calc.MC10, fw21Calc.MC100, fw21Calc.MC1000, fw21Calc.MCHERB, fw21Calc.MCWOOD,
+					fw21Rec.GetTemp(), fw21Rec.GetRH(), fw21Rec.GetPrecip(), fw21Rec.GetWindSpeed(), fw21Rec.GetWindAzimuth(), fw21Rec.GetSolarRadiation(),
+					fw21Rec.GetSnowFlag(), fw21Rec.GetGustSpeed(), fw21Rec.GetGustAzimuth(), 
+					fw21Calc.MC1, fw21Calc.MC10, fw21Calc.MC100, fw21Calc.MC1000, fw21Calc.MCHERB, fw21Calc.MCWOOD, fw21Calc.GetFuelTemperature(),
 					fw21Calc.BI, fw21Calc.ERC, fw21Calc.SC, fw21Calc.IC, fw21Calc.m_GSI, fw21Calc.KBDI);
 			}
 			if (indexOut)
@@ -224,9 +243,9 @@ int main(int argc, char* argv[])
 			}
 			if (moistOut)
 			{
-				fprintf(moistOut, "%s,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n",
+				fprintf(moistOut, "%s,%.10f,%.10f,%.10f,%.10f,%.10f,%.10f,%.10f\n",
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
-					fw21Calc.MC1, fw21Calc.MC10, fw21Calc.MC100, fw21Calc.MC1000, fw21Calc.MCHERB, fw21Calc.MCWOOD);
+					fw21Calc.MC1, fw21Calc.MC10, fw21Calc.MC100, fw21Calc.MC1000, fw21Calc.MCHERB, fw21Calc.MCWOOD, fw21Calc.GetFuelTemperature());
 			}
 		}
 	}

@@ -120,6 +120,15 @@ FW21Record::FW21Record()
 	m_snowFlag = iNODATA;
 	m_gustSpeed = dNODATA;
 	m_gustAzimuth = iNODATA;
+	m_mx1 = dNODATA;
+	m_mx10 = dNODATA;
+	m_mx100 = dNODATA;
+	m_mx1000 = dNODATA;
+	m_mxHerb = dNODATA;
+	m_mxWood = dNODATA;
+	m_fuelTempC = dNODATA;
+	m_GSI = dNODATA;
+	m_KBDI = iNODATA;
 }
 
 FW21Record::FW21Record(const FW21Record& rhs)
@@ -134,6 +143,15 @@ FW21Record::FW21Record(const FW21Record& rhs)
 	m_snowFlag = rhs.m_snowFlag;
 	m_gustSpeed = rhs.m_gustSpeed;
 	m_gustAzimuth = rhs.m_gustAzimuth;
+	m_mx1 = rhs.m_mx1;
+	m_mx10 = rhs.m_mx10;
+	m_mx100 = rhs.m_mx100;
+	m_mx1000 = rhs.m_mx1000;
+	m_mxHerb = rhs.m_mxHerb;
+	m_mxWood = rhs.m_mxWood;
+	m_fuelTempC = rhs.m_fuelTempC;
+	m_GSI = rhs.m_GSI;
+	m_KBDI = rhs.m_KBDI;
 }
 FW21Record::~FW21Record()
 {
@@ -176,6 +194,15 @@ NFDRSDailyRec::~NFDRSDailyRec()
 
 }
 
+vector<string> CFW21Data::m_vFieldNames = { "DateTime","Temperature(F)","RelativeHumidity(%)","Precipitation(in)",
+		"WindSpeed(mph)","WindAzimuth(degrees)","SolarRadiation(W/m2)","SnowFlag","GustSpeed(mph)","GustAzimuth(degrees)",
+		"1HourDFM(%)","10HourDFM(%)","100HourDFM(%)",
+		"1000HourDFM(%)","HerbLFM(%)","WoodyLFM(%)","FuelTemp(C)",
+		//"MinTemp(F)","MaxTemp(F)","MinRH(%)","Pcp24(in)",
+		"BI","ERC","SC","IC","GSI","KBDI",
+		"Temperature(C)","Precipitation(mm)","WindSpeed(kph)","GustSpeed(kph)"
+};
+
 CFW21Data::CFW21Data()
 {
 	m_fileName = "";
@@ -193,8 +220,14 @@ CFW21Data::~CFW21Data()
 
 }
 
+std::string CFW21Data::GetFieldName(FW21FIELDS fieldNum)
+{
+	if (fieldNum >= FW21_DATE && fieldNum < FW21_END)
+		return CFW21Data::m_vFieldNames[fieldNum];
+	return "";
+}
 
-int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
+int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/, bool needMxFields/* = false*/)
 {
 	m_timeZoneOffset = tzOffsetHours;
 	m_fileName = fw21FileName;
@@ -214,7 +247,11 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 	int nExpectedFields = vFields.size();
 	//get field Indexes
 	int dtIdx, tmpIdx, rhIdx, pcpIdx, wsIdx, wdirIdx, srIdx, snowIdx, gsIdx, gdirIdx, 
-		tmpCIdx, pcpmmIdx, wsKphIdx, gsKphIdx;
+		tmpCIdx, pcpmmIdx, wsKphIdx, gsKphIdx, fm1Idx, fm10Idx, fm100Idx, fm1000Idx, fmHerbIdx, fmWoodIdx,
+		fuelTempIdx, 
+		//minTempFIdx, maxTempFIdx, minRhIdx, pcp24Idx, 
+		biIdx, ercIdx, scIdx, icIdx,
+		gsiIdx, kbdiIdx;
 	dtIdx = getColIndex(m_vFieldNames[FW21_DATE], vFields);
 	tmpIdx = getColIndex(m_vFieldNames[FW21_TEMPF], vFields);
 	rhIdx = getColIndex(m_vFieldNames[FW21_RH], vFields);
@@ -229,6 +266,19 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 	pcpmmIdx = getColIndex(m_vFieldNames[FW21_PCPMM], vFields);
 	wsKphIdx = getColIndex(m_vFieldNames[FW21_WSKPH], vFields);
 	gsKphIdx = getColIndex(m_vFieldNames[FW21_GSKPH], vFields);
+	fm1Idx = getColIndex(m_vFieldNames[FW21_DFM1], vFields);
+	fm10Idx = getColIndex(m_vFieldNames[FW21_DFM10], vFields);
+	fm100Idx = getColIndex(m_vFieldNames[FW21_DFM100], vFields);
+	fm1000Idx = getColIndex(m_vFieldNames[FW21_DFM1000], vFields);
+	fmHerbIdx = getColIndex(m_vFieldNames[FW21_LFMHERB], vFields);
+	fmWoodIdx = getColIndex(m_vFieldNames[FW21_LFMWOOD], vFields);
+	fuelTempIdx = getColIndex(m_vFieldNames[FW21_FUELTEMPC], vFields);
+	biIdx = getColIndex(m_vFieldNames[FW21_BI], vFields);
+	ercIdx = getColIndex(m_vFieldNames[FW21_ERC], vFields);
+	scIdx = getColIndex(m_vFieldNames[FW21_SC], vFields);
+	icIdx = getColIndex(m_vFieldNames[FW21_IC], vFields);
+	gsiIdx = getColIndex(m_vFieldNames[FW21_GSI], vFields);
+	kbdiIdx = getColIndex(m_vFieldNames[FW21_KBDI], vFields);
 
 	string strDate, strTemp, strRH, strPcp, strWindSpeed, strWDir, strSolRad, strSnow, strGustSpeed, strGustDir;
 	//basic check for required fields
@@ -254,6 +304,29 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 		printf("Header line is:\n%s\n", buf);
 		stream.close();
 		return -2;
+	}
+	if (needMxFields && (fm1Idx < 0 || fm10Idx < 0 || fm100Idx < 0 || fm1000Idx < 0 || fmHerbIdx < 0 
+		|| fmWoodIdx < 0 || fuelTempIdx < 0 || gsiIdx < 0))
+	{
+		if (fm1Idx < 0)
+			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_DFM1].c_str());
+		if (fm10Idx < 0)
+			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_DFM10].c_str());
+		if (fm100Idx < 0)
+			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_DFM100].c_str());
+		if (fm1000Idx < 0)
+			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_DFM1000].c_str());
+		if (fmHerbIdx < 0)
+			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_LFMHERB].c_str());
+		if (fmWoodIdx < 0)
+			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_LFMWOOD].c_str());
+		if (fuelTempIdx < 0)
+			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_FUELTEMPC].c_str());
+		if(gsiIdx < 0)
+			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_GSI].c_str());
+		printf("Header line is:\n%s\n", buf);
+		stream.close();
+		return -3;
 	}
 	//ok, ready to parse the data...
 	bool firstRec = false;
@@ -433,7 +506,118 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/)
 		{
 			printf("Warning: Bad WindAzimuth(degrees) line %d, %d, DateTime: %s\n", lineNo, thisRec.GetWindAzimuth(), strDate.c_str());
 		}
-
+		if (needMxFields)
+		{
+			string fm1, fm10, fm100, fm1000, fmHerb, fmWood, gsi, fuelTemp, kbdi;
+			fm1 = vFields[fm1Idx];
+			trim(fm1);
+			if (!fm1.empty())
+				thisRec.SetMx1(atof(fm1.c_str()));
+			else
+			{
+				printf("Error: %s is blank, line %d, DateTime:: %s\n",
+					m_vFieldNames[FW21_DFM1].c_str(),
+					lineNo,
+					strDate.c_str());
+				continue;
+			}
+			fm10 = vFields[fm10Idx];
+			trim(fm10);
+			if (!fm10.empty())
+				thisRec.SetMx10(atof(fm10.c_str()));
+			else
+			{
+				printf("Error: %s is blank, line %d, DateTime:: %s\n",
+					m_vFieldNames[FW21_DFM10].c_str(),
+					lineNo,
+					strDate.c_str());
+				continue;
+			}
+			fm100 = vFields[fm100Idx];
+			trim(fm100);
+			if (!fm100.empty())
+				thisRec.SetMx100(atof(fm100.c_str()));
+			else
+			{
+				printf("Error: %s is blank, line %d, DateTime:: %s\n",
+					m_vFieldNames[FW21_DFM100].c_str(),
+					lineNo,
+					strDate.c_str());
+				continue;
+			}
+			fm1000 = vFields[fm1000Idx];
+			trim(fm1000);
+			if (!fm1000.empty())
+				thisRec.SetMx1000(atof(fm1000.c_str()));
+			else
+			{
+				printf("Error: %s is blank, line %d, DateTime:: %s\n",
+					m_vFieldNames[FW21_DFM1000].c_str(),
+					lineNo,
+					strDate.c_str());
+				continue;
+			}
+			fmHerb = vFields[fmHerbIdx];
+			trim(fmHerb);
+			if (!fmHerb.empty())
+				thisRec.SetMxHerb(atof(fmHerb.c_str()));
+			else
+			{
+				printf("Error: %s is blank, line %d, DateTime:: %s\n",
+					m_vFieldNames[FW21_LFMHERB].c_str(),
+					lineNo,
+					strDate.c_str());
+				continue;
+			}
+			fmWood = vFields[fmWoodIdx];
+			trim(fmWood);
+			if (!fmWood.empty())
+				thisRec.SetMxWood(atof(fmWood.c_str()));
+			else
+			{
+				printf("Error: %s is blank, line %d, DateTime:: %s\n",
+					m_vFieldNames[FW21_LFMWOOD].c_str(),
+					lineNo,
+					strDate.c_str());
+				continue;
+			}
+			fuelTemp = vFields[fuelTempIdx];
+			trim(fuelTemp);
+			if (!fuelTemp.empty())
+				thisRec.SetFuelTempC(atof(fuelTemp.c_str()));
+			else
+			{
+				printf("Error: %s is blank, line %d, DateTime:: %s\n",
+					m_vFieldNames[FW21_FUELTEMPC].c_str(),
+					lineNo,
+					strDate.c_str());
+				continue;
+			}
+			gsi = vFields[gsiIdx];
+			trim(gsi);
+			if (!gsi.empty())
+				thisRec.SetGSI(atof(gsi.c_str()));
+			else
+			{
+				printf("Error: %s is blank, line %d, DateTime:: %s\n",
+					m_vFieldNames[FW21_GSI].c_str(),
+					lineNo,
+					strDate.c_str());
+				continue;
+			}
+			kbdi = vFields[kbdiIdx];
+			trim(kbdi);
+			if (!kbdi.empty())
+				thisRec.SetKBDI(atoi(kbdi.c_str()));
+			else
+			{
+				printf("Error: %s is blank, line %d, DateTime:: %s\n",
+					m_vFieldNames[FW21_KBDI].c_str(),
+					lineNo,
+					strDate.c_str());
+				continue;
+			}
+		}
 		//if we got here record is acceptable
 		m_recs.push_back(thisRec);
 	}

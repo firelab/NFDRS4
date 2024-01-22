@@ -23,3 +23,8 @@ indexOutputFile = "/NFDRSIndexes.csv";
 fuelMoisturesOutputFile = "/NFDRSMoistures.csv";
 #outputInterval 0 = hourly (each record), 1 = daily (at ObsHour from NFDRSInit file)
 outputInterval = "0";
+#Option to use stored outputs from previously run 'allOutputsFile' output 
+#causes NFDRS4 to bypass running of Nelson and GSI models, calculating indexes using stored NFDRS4 outputs
+#an error will be returned if 'wxFile' does not contain necessary fields
+#any record missing necessary any fields will be skipped
+useStoredOutputs = "0";

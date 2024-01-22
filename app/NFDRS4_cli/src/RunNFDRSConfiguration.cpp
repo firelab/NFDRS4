@@ -52,6 +52,7 @@ RunNFDRSConfiguration::~RunNFDRSConfiguration()
 	m_indexOutputFile = "";
 	m_fuelMoisturesOutputsFile = "";
 	m_outputInterval = 0;//default to hourly
+	m_bUseStoredOutputs = 0;
 }
 
 void RunNFDRSConfiguration::parse(
@@ -84,6 +85,7 @@ void RunNFDRSConfiguration::parse(
 		m_indexOutputFile = cfg->lookupString(cfgScope, "indexOutputFile");
 		m_fuelMoisturesOutputsFile = cfg->lookupString(cfgScope, "fuelMoisturesOutputFile");
 		m_outputInterval = cfg->lookupInt(cfgScope, "outputInterval");
+		m_bUseStoredOutputs = cfg->lookupInt(cfgScope, "useStoredOutputs");
 	}
 	catch (const ConfigurationException & ex) {
 		//do nothing but print the message

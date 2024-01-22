@@ -30,7 +30,16 @@ public:
 	int GetSnowFlag() { return (m_snowFlag != dNODATA) ? m_snowFlag : 0; }
 	double GetGustSpeed() { return m_gustSpeed; }
 	int GetGustAzimuth() { return m_gustAzimuth; }
-
+	//reading MX's for calculation of indexes without Nelson model
+	double GetMx1() { return m_mx1; }
+	double GetMx10() { return m_mx10; }
+	double GetMx100() { return m_mx100; }
+	double GetMx1000() { return m_mx1000; }
+	double GetMxHerb() { return m_mxHerb; }
+	double GetMxWood() { return m_mxWood; }
+	double GetFuelTTempC() { return m_fuelTempC; }
+	double GetGSI() { return m_GSI; }
+	int GetKBDI() { return m_KBDI; }
 	//setters
 	void SetDateTime(TM dateTime) { m_dateTime = dateTime; }
 	void SetTemp(double temp) { m_temp = temp; }
@@ -42,7 +51,16 @@ public:
 	void SetSnowFlag(int snowDay) { m_snowFlag = snowDay; }
 	void SetGustSpeed(double gs) { m_gustSpeed = gs; }
 	void SetGustAzimuth(int azi) { m_gustAzimuth = azi; }
-	 
+	//storing MX's for calculation of indexes without Nelson model
+	void SetMx1(double fm1) { m_mx1 = fm1; }
+	void SetMx10(double fm10) { m_mx10 = fm10; }
+	void SetMx100(double fm100) { m_mx100 = fm100; }
+	void SetMx1000(double fm1000) { m_mx1000 = fm1000; }
+	void SetMxHerb(double fmHerb) { m_mxHerb = fmHerb; }
+	void SetMxWood(double fmWood) { m_mxWood = fmWood; }
+	void SetFuelTempC(double fuelTempC) { m_fuelTempC = fuelTempC; }
+	void SetGSI(double gsi) { m_GSI = gsi; }
+	void SetKBDI(int kbdi) { m_KBDI = kbdi; }
 private:
 	TM m_dateTime;
 	double m_temp;//always stored in degrees F
@@ -54,6 +72,18 @@ private:
 	int m_snowFlag;
 	double m_gustSpeed;//always stored in MPH
 	int m_gustAzimuth;
+
+	//added for reading MX's and calculating indexes without running Nelson model
+	double m_mx1;
+	double m_mx10;
+	double m_mx100;
+	double m_mx1000;
+	double m_mxHerb;
+	double m_mxWood;
+	double m_fuelTempC;
+	int m_KBDI;
+	double m_GSI;
+
 };
 
 //record needed to pass to NFDRS4::Update()
@@ -88,8 +118,19 @@ public:
 	CFW21Data();
 	CFW21Data(const CFW21Data& rhs);
 	~CFW21Data();
+	//this enum is used to match string in m_vFieldNames, available with GetFieldName()
+	enum FW21FIELDS {
+		FW21_DATE, FW21_TEMPF, FW21_RH, FW21_PCPIN, FW21_WSMPH, FW21_WAZI, 
+		FW21_SOLRAD, FW21_SNOWFLAG, FW21_GSMPH, FW21_GAZI,
+		FW21_DFM1, FW21_DFM10, FW21_DFM100, FW21_DFM1000, 
+		FW21_LFMHERB, FW21_LFMWOOD, FW21_FUELTEMPC, 
+		//FW21_MINTEMPF, FW21_MAXTEMPF, FW21_MINRH, FW21_PCP24,
+		FW21_BI, FW21_ERC, FW21_SC, FW21_IC, FW21_GSI, FW21_KBDI,
+		FW21_TEMPC, FW21_PCPMM, FW21_WSKPH, FW21_GSKPH, FW21_END
+	};
+	static std::string GetFieldName(FW21FIELDS fieldNum);
 
-	int LoadFile(const char *fw21FileName, int tzOffsetHours = 0);
+	int LoadFile(const char *fw21FileName, int tzOffsetHours = 0, bool needMxFields = false);
 	FW21Record GetRec(size_t recNum);//zero based! valid: 0->GetNumRecs() - 1
 	NFDRSDailyRec GetNFDRSDailyRec(size_t recNum);//zero based! valid: 0->GetNumRecs() - 1
 	size_t GetNumRecs() { return m_recs.size(); }
@@ -97,20 +138,18 @@ public:
 	TM ParseISO8061(const std::string input);
 	int AddRecord(FW21Record rec);
 	int WriteFile(const char* fw21FileName, int offsetHours);
-
 private:
 	std::string m_fileName;
 	std::vector< FW21Record> m_recs;
 	bool m_bTimeIsZulu;
 	int m_timeZoneOffset;
-	//this enum is used to match string in m_vFieldNames
-	enum FW21FIELDS  { FW21_DATE, FW21_TEMPF, FW21_RH, FW21_PCPIN, FW21_WSMPH, FW21_WAZI, FW21_SOLRAD, 
-		FW21_SNOWFLAG, FW21_GSMPH, FW21_GAZI, FW21_TEMPC, FW21_PCPMM, FW21_WSKPH, FW21_GSKPH};
-	//ensure field names match enum values if any additions made
-	std::vector<std::string> m_vFieldNames = { "DateTime","Temperature(F)","RelativeHumidity(%)","Precipitation(in)",
-		"WindSpeed(mph)","WindAzimuth(degrees)","SolarRadiation(W/m2)","SnowFlag","GustSpeed(mph)","GustAzimuth(degrees)",
-		"Temperature(C)","Precipitation(mm)","WindSpeed(kph)","GustSpeed(kph)"
-	};
+	//ensure field names match FW21FIELDS enum values if any additions made
+	static std::vector<std::string> m_vFieldNames;// = { "DateTime","Temperature(F)","RelativeHumidity(%)","Precipitation(in)",
+		//"WindSpeed(mph)","WindAzimuth(degrees)","SolarRadiation(W/m2)","SnowFlag","GustSpeed(mph)","GustAzimuth(degrees)",
+		//"Temperature(C)","Precipitation(mm)","WindSpeed(kph)","GustSpeed(kph)","1HourDFM(%)","10HourDFM(%)","100HourDFM(%)",
+		//"1000HourDFM(%)","HerbLFM(%)","WoodyLFM(%)","FuelTemp(C)","MinTemp(F)","MaxTemp(F)","MinRH(%)","Pcp24(in)",
+		//"BI","ERC","SC","IC","GSI","KBDI"
+	//}; 
 
 };
 
