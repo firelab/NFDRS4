@@ -250,8 +250,8 @@ int main(int argc, char* argv[])
 		}
 	}
 	time_t endTime = clock();
-	int total = endTime - startTime;
-	printf("Total milliseconds time for NFDRS: %d\n", total);
+	double total = endTime - startTime;
+	printf("Total seconds time for NFDRS: %.2f\n", total / (double) CLOCKS_PER_SEC);
 	if (saveStateFileName && strlen(saveStateFileName) > 0)
 	{
 		bool success = fw21Calc.SaveState(saveStateFileName);
