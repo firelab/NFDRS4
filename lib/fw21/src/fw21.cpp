@@ -110,6 +110,7 @@ TM CFW21Data::ParseISO8061(const string input)
 
 FW21Record::FW21Record()
 {
+	m_station = "";
 	memset(&m_dateTime, 0, sizeof(m_dateTime));
 	m_temp = dNODATA;
 	m_RH = dNODATA;
@@ -133,6 +134,7 @@ FW21Record::FW21Record()
 
 FW21Record::FW21Record(const FW21Record& rhs)
 {
+	m_station = rhs.m_station;
 	m_dateTime = rhs.m_dateTime;
 	m_temp = rhs.m_temp;
 	m_RH = rhs.m_RH;
@@ -194,7 +196,7 @@ NFDRSDailyRec::~NFDRSDailyRec()
 
 }
 
-vector<string> CFW21Data::m_vFieldNames = { "DateTime","Temperature(F)","RelativeHumidity(%)","Precipitation(in)",
+vector<string> CFW21Data::m_vFieldNames = { "StationID","DateTime","Temperature(F)","RelativeHumidity(%)","Precipitation(in)",
 		"WindSpeed(mph)","WindAzimuth(degrees)","SolarRadiation(W/m2)","SnowFlag","GustSpeed(mph)","GustAzimuth(degrees)",
 		"1HourDFM(%)","10HourDFM(%)","100HourDFM(%)",
 		"1000HourDFM(%)","HerbLFM(%)","WoodyLFM(%)","FuelTemp(C)",
@@ -222,12 +224,12 @@ CFW21Data::~CFW21Data()
 
 std::string CFW21Data::GetFieldName(FW21FIELDS fieldNum)
 {
-	if (fieldNum >= FW21_DATE && fieldNum < FW21_END)
+	if (fieldNum >= FW21_STATION && fieldNum < FW21_END)
 		return CFW21Data::m_vFieldNames[fieldNum];
 	return "";
 }
 
-int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/, bool needMxFields/* = false*/)
+int CFW21Data::LoadFile(const char *fw21FileName, std::string station, int tzOffsetHours/* = 0*/, bool needMxFields/* = false*/)
 {
 	m_timeZoneOffset = tzOffsetHours;
 	m_fileName = fw21FileName;
@@ -246,12 +248,13 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/, boo
 	vector<string> vFields = csv_read_row(line, ',');
 	int nExpectedFields = vFields.size();
 	//get field Indexes
-	int dtIdx, tmpIdx, rhIdx, pcpIdx, wsIdx, wdirIdx, srIdx, snowIdx, gsIdx, gdirIdx, 
+	int staIdx, dtIdx, tmpIdx, rhIdx, pcpIdx, wsIdx, wdirIdx, srIdx, snowIdx, gsIdx, gdirIdx, 
 		tmpCIdx, pcpmmIdx, wsKphIdx, gsKphIdx, fm1Idx, fm10Idx, fm100Idx, fm1000Idx, fmHerbIdx, fmWoodIdx,
 		fuelTempIdx, 
 		//minTempFIdx, maxTempFIdx, minRhIdx, pcp24Idx, 
 		biIdx, ercIdx, scIdx, icIdx,
 		gsiIdx, kbdiIdx;
+	staIdx = getColIndex(m_vFieldNames[FW21_STATION], vFields);
 	dtIdx = getColIndex(m_vFieldNames[FW21_DATE], vFields);
 	tmpIdx = getColIndex(m_vFieldNames[FW21_TEMPF], vFields);
 	rhIdx = getColIndex(m_vFieldNames[FW21_RH], vFields);
@@ -280,11 +283,13 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/, boo
 	gsiIdx = getColIndex(m_vFieldNames[FW21_GSI], vFields);
 	kbdiIdx = getColIndex(m_vFieldNames[FW21_KBDI], vFields);
 
-	string strDate, strTemp, strRH, strPcp, strWindSpeed, strWDir, strSolRad, strSnow, strGustSpeed, strGustDir;
+	string strStation, strDate, strTemp, strRH, strPcp, strWindSpeed, strWDir, strSolRad, strSnow, strGustSpeed, strGustDir;
 	//basic check for required fields
-	if (dtIdx < 0 || (tmpIdx < 0 && tmpCIdx < 0) || rhIdx < 0 || (pcpIdx < 0 && pcpmmIdx < 0) || (wsIdx < 0 && wsKphIdx < 0) 
+	if (staIdx < 0 || dtIdx < 0 || (tmpIdx < 0 && tmpCIdx < 0) || rhIdx < 0 || (pcpIdx < 0 && pcpmmIdx < 0) || (wsIdx < 0 && wsKphIdx < 0) 
 		|| wdirIdx < 0 || srIdx < 0 || snowIdx < 0)
 	{
+		if(staIdx < 0)
+			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_STATION].c_str());
 		if (dtIdx < 0)
 			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_DATE].c_str());
 		if (tmpIdx < 0 && tmpCIdx < 0)
@@ -342,7 +347,13 @@ int CFW21Data::LoadFile(const char *fw21FileName, int tzOffsetHours/* = 0*/, boo
 			printf("Warning, line %d has less than %d fields, skipping record\n", lineNo, nExpectedFields);
 			continue;
 		}
+		//added 4/26/2024 StationID is now required, and we only process one station at a time
+		strStation = vFields[staIdx];
+		if (station.compare(strStation) != 0)
+			continue;
+
 		FW21Record thisRec;
+		thisRec.SetStation(strStation);
 		strDate = vFields[dtIdx];
 		trim(strDate);
 		if (strDate.empty())
@@ -719,9 +730,9 @@ int CFW21Data::WriteFile(const char* fw21FileName, int offsetHours)
 	ofstream out;
 	out.open(fw21FileName, ofstream::out | ofstream::trunc);
 	//we only output English units, so disregard metric fields
-	for (int f = FW21_DATE; f <= FW21_GAZI; f++)
+	for (int f = FW21_STATION; f <= FW21_GAZI; f++)
 	{
-		if(f > FW21_DATE)
+		if(f > FW21_STATION)
 			out << ",";
 		out << m_vFieldNames[f];
 	}
@@ -731,6 +742,7 @@ int CFW21Data::WriteFile(const char* fw21FileName, int offsetHours)
 	for (vector<FW21Record>::iterator it = m_recs.begin(); it != m_recs.end(); ++it)
 	{
 		FW21Record rec = *it;
+		out << rec.GetStation() << ",";
 		string dateStr = FormatTM(rec.GetDateTime(), offsetHours);
 		out << dateStr << ",";
 		
@@ -742,7 +754,7 @@ int CFW21Data::WriteFile(const char* fw21FileName, int offsetHours)
 		out << std::fixed << std::setw(1) << std::setprecision(0) << rec.GetSolarRadiation() << ",";
 		out << rec.GetSnowFlag() << ",";
 		out << std::fixed << std::setw(1) << std::setprecision(0) << rec.GetGustSpeed() << ",";
-		out << rec.GetGustAzimuth() << "\n";
+		out << rec.GetGustAzimuth() << endl;
 	}
 
 	out.close();

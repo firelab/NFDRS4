@@ -34,7 +34,7 @@ public:
 	static void getSchema(const char **& schema, int & schemaSize)
 	{
 		schema = s_singleton.m_schema;
-		schemaSize = 134;
+		schemaSize = 136;
 	}
 	static const char ** getSchema() // null terminated array
 	{
@@ -46,7 +46,7 @@ private:
 	// Variables
 	//--------
 	CONFIG4CPP_NAMESPACE::StringBuffer m_str;
-	const char *                       m_schema[135];
+	const char *                       m_schema[137];
 	static NFDRSInitConfig s_singleton;
 
 	//--------

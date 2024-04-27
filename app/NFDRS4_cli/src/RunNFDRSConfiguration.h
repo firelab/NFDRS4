@@ -32,7 +32,8 @@ public:
 	//--------
 	// Acccessors for configuration variables.
 	//--------
-	const char *	getInitFile() { return m_initFile; }
+	const char* getStationID() { return m_stationID; }
+	const char* getInitFile() { return m_initFile; }
 	const char *	getWxFile() { return m_wxFile; }
 	const char *	getLoadStateFile() { return m_loadStateFile; }
 	const char *	getSaveStateFile() { return m_saveStateFile; }
@@ -46,6 +47,7 @@ private:
 	bool m_wantDiagnostics;
 
 	//instance variables
+	const char* m_stationID;
 	const char * m_initFile;
 	const char * m_wxFile;
 	const char * m_loadStateFile;

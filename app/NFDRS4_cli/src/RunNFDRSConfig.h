@@ -7,7 +7,7 @@
 #ifndef RunNFDRSConfig_h
 #define RunNFDRSConfig_h
 
-#include "config4cpp/Configuration.h"
+#include <config4cpp/Configuration.h>
 
 
 class RunNFDRSConfig
@@ -33,7 +33,7 @@ public:
 	void getSchema(const char **& schema, int & schemaSize)
 	{
 		schema = m_schema;
-		schemaSize = 8;
+		schemaSize = 10;
 	}
 	const char ** getSchema() // null terminated array
 	{
@@ -45,7 +45,7 @@ private:
 	// Variables
 	//--------
 	CONFIG4CPP_NAMESPACE::StringBuffer m_str;
-	const char *                       m_schema[9];
+	const char *                       m_schema[11];
 
 	//--------
 	// The following are not implemented

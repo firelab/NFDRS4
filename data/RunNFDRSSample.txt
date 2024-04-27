@@ -28,3 +28,7 @@ outputInterval = "0";
 #an error will be returned if 'wxFile' does not contain necessary fields
 #any record missing necessary any fields will be skipped
 useStoredOutputs = "0";
+#Added as required, 4/27/2024
+#to accomodate multiple stations in a single FW21 format file
+#StationID was added as a required data element to FW21 and runnfdrs config file
+stationID = "241513";

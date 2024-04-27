@@ -97,9 +97,11 @@ public:
 	//to initialize an NFDRS4 object
 	void InitNFDRS(NFDRS4* pNFDRS);
 	//getters
+	const char* getStationID() { return m_stationID; }
 	char getFuelModel() { return m_fuelModel; }
 	int getMaxSC() { return m_maxSC; }
 	double getLatitude() { return m_latitude; }
+	double getLongitude() { return m_longitude; }
 	int getSlopeClass() { return m_slopeClass; }
 	double getAvgAnnualPrecip() { return m_avgAnnualPrecip; }
 	bool getUseLoadTransfer() { return m_loadTransfer; }
@@ -119,9 +121,11 @@ public:
 	CDeadFuelMoistureParams get1000HourParams() { return m_1000HourParams; }
 	CFuelModelParams getFuelModelParams() { return m_fuelParams; }
 	//setters
+	void setStationID(const char* stationID) { m_stationID = stationID; }
 	void setFuelModel(char fuelModel) { m_fuelModel = fuelModel; }
 	void setMaxSC(int maxSC) { m_maxSC = maxSC; }
 	void setLatitude(double latitude) { m_latitude = latitude; }
+	void setLongitude(double longitude) { m_longitude = longitude; }
 	void setSlopeClass(int slopeClass) { m_slopeClass = slopeClass; }
 	void setAvgAnnualPrecip(double avgAnnualPrecip) { m_avgAnnualPrecip = avgAnnualPrecip; }
 	void setUseLoadTransfer(bool useLoadTransfer) { m_loadTransfer = useLoadTransfer; }
@@ -143,9 +147,11 @@ public:
 	void setFuelModelParams(CFuelModelParams fuelModelParams) { m_fuelParams = fuelModelParams; }
 private:
 	//init params
+	const char* m_stationID;
 	char m_fuelModel;
 	int m_maxSC;
 	double m_latitude;
+	double m_longitude;
 	int m_slopeClass;
 	double m_avgAnnualPrecip;
 	bool m_loadTransfer;

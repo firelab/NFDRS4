@@ -17,8 +17,10 @@ RunNFDRSConfig::RunNFDRSConfig()
 	m_schema[4] = "loadFromStateFile = string";
 	m_schema[5] = "outputInterval = int";
 	m_schema[6] = "saveToStateFile = string";
-	m_schema[7] = "wxFile = string";
-	m_schema[8] = 0;
+	m_schema[7] = "stationID = int";
+	m_schema[8] = "useStoredOutputs = int";
+	m_schema[9] = "wxFile = string";
+	m_schema[10] = 0;
 
 	m_str << "# Sample RunNFDRS configuration file\n";
 	m_str << "# required to initialize RunNFDRS program\n";
@@ -55,7 +57,23 @@ RunNFDRSConfig::RunNFDRSConfig()
 	m_str << "fuelMoisturesOutputFile = \"/NFDRSMoistures.csv\";\n";
 	m_str << "#outputInterval 0 = hourly (each record), 1 = dail";
 	m_str << "y (at ObsHour from NFDRSInit file)\n";
-	m_str << "outputInterval = \"0\";";
+	m_str << "outputInterval = \"0\";\n";
+	m_str << "#Option to use stored outputs from previously run ";
+	m_str << "'allOutputsFile' output \n";
+	m_str << "#causes NFDRS4 to bypass running of Nelson and GSI";
+	m_str << " models, calculating indexes using stored NFDRS4 o";
+	m_str << "utputs\n";
+	m_str << "#an error will be returned if 'wxFile' does not co";
+	m_str << "ntain necessary fields\n";
+	m_str << "#any record missing necessary any fields will be s";
+	m_str << "kipped\n";
+	m_str << "useStoredOutputs = \"0\";\n";
+	m_str << "#Added as required, 4/27/2024\n";
+	m_str << "#to accomodate multiple stations in a single FW21 ";
+	m_str << "format file\n";
+	m_str << "#StationID was added as a required data element to";
+	m_str << " FW21 and runnfdrs config file\n";
+	m_str << "stationID = \"241513\";";
 }
 
 

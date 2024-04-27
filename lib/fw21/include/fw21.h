@@ -14,6 +14,7 @@ public:
 	~FW21Record();
 
 	//accessors
+	std::string GetStation() { return m_station; }
 	TM GetDateTime() { return m_dateTime; }
 	int GetYear() { return m_dateTime.tm_year + 1900;}
 	int GetMonth() { return m_dateTime.tm_mon + 1;}
@@ -41,6 +42,7 @@ public:
 	double GetGSI() { return m_GSI; }
 	int GetKBDI() { return m_KBDI; }
 	//setters
+	void SetStation(std::string station) { m_station = station; }
 	void SetDateTime(TM dateTime) { m_dateTime = dateTime; }
 	void SetTemp(double temp) { m_temp = temp; }
 	void SetRH(double rh) { m_RH = rh; }
@@ -62,6 +64,7 @@ public:
 	void SetGSI(double gsi) { m_GSI = gsi; }
 	void SetKBDI(int kbdi) { m_KBDI = kbdi; }
 private:
+	std::string m_station;
 	TM m_dateTime;
 	double m_temp;//always stored in degrees F
 	double m_RH;
@@ -120,17 +123,16 @@ public:
 	~CFW21Data();
 	//this enum is used to match string in m_vFieldNames, available with GetFieldName()
 	enum FW21FIELDS {
-		FW21_DATE, FW21_TEMPF, FW21_RH, FW21_PCPIN, FW21_WSMPH, FW21_WAZI, 
+		FW21_STATION, FW21_DATE, FW21_TEMPF, FW21_RH, FW21_PCPIN, FW21_WSMPH, FW21_WAZI, 
 		FW21_SOLRAD, FW21_SNOWFLAG, FW21_GSMPH, FW21_GAZI,
 		FW21_DFM1, FW21_DFM10, FW21_DFM100, FW21_DFM1000, 
 		FW21_LFMHERB, FW21_LFMWOOD, FW21_FUELTEMPC, 
-		//FW21_MINTEMPF, FW21_MAXTEMPF, FW21_MINRH, FW21_PCP24,
 		FW21_BI, FW21_ERC, FW21_SC, FW21_IC, FW21_GSI, FW21_KBDI,
 		FW21_TEMPC, FW21_PCPMM, FW21_WSKPH, FW21_GSKPH, FW21_END
 	};
 	static std::string GetFieldName(FW21FIELDS fieldNum);
 
-	int LoadFile(const char *fw21FileName, int tzOffsetHours = 0, bool needMxFields = false);
+	int LoadFile(const char *fw21FileName, std::string station, int tzOffsetHours = 0, bool needMxFields = false);
 	FW21Record GetRec(size_t recNum);//zero based! valid: 0->GetNumRecs() - 1
 	NFDRSDailyRec GetNFDRSDailyRec(size_t recNum);//zero based! valid: 0->GetNumRecs() - 1
 	size_t GetNumRecs() { return m_recs.size(); }
@@ -144,7 +146,7 @@ private:
 	bool m_bTimeIsZulu;
 	int m_timeZoneOffset;
 	//ensure field names match FW21FIELDS enum values if any additions made
-	static std::vector<std::string> m_vFieldNames;// = { "DateTime","Temperature(F)","RelativeHumidity(%)","Precipitation(in)",
+	static std::vector<std::string> m_vFieldNames;// = { "StationID",DateTime","Temperature(F)","RelativeHumidity(%)","Precipitation(in)",
 		//"WindSpeed(mph)","WindAzimuth(degrees)","SolarRadiation(W/m2)","SnowFlag","GustSpeed(mph)","GustAzimuth(degrees)",
 		//"Temperature(C)","Precipitation(mm)","WindSpeed(kph)","GustSpeed(kph)","1HourDFM(%)","10HourDFM(%)","100HourDFM(%)",
 		//"1000HourDFM(%)","HerbLFM(%)","WoodyLFM(%)","FuelTemp(C)","MinTemp(F)","MaxTemp(F)","MinRH(%)","Pcp24(in)",

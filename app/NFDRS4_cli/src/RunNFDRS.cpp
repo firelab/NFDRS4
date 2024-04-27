@@ -128,7 +128,7 @@ int main(int argc, char* argv[])
 		fw21Calc.LoadState(state);
 	}
 	CFW21Data FW21data;
-	int status = FW21data.LoadFile(wxFileName, params.getTimeZoneOffsetHours(), cfg->getUseStoredOutputs() != 0 ? true : false);
+	int status = FW21data.LoadFile(wxFileName, params.getStationID(), params.getTimeZoneOffsetHours(), cfg->getUseStoredOutputs() != 0 ? true : false);
 	if (status != 0)
 	{
 		printf("Error loading %s as FW21 file\n", wxFileName);
@@ -151,7 +151,7 @@ int main(int argc, char* argv[])
 			delete cfg;
 			return -3;
 		}
-		for (int fieldNum = CFW21Data::FW21_DATE; fieldNum < CFW21Data::FW21_TEMPC; fieldNum++)
+		for (int fieldNum = CFW21Data::FW21_STATION; fieldNum < CFW21Data::FW21_TEMPC; fieldNum++)
 		{
 			if (fieldNum == 0)
 				fprintf(allOut, "%s", CFW21Data::GetFieldName((CFW21Data::FW21FIELDS)fieldNum).c_str());
@@ -227,8 +227,9 @@ int main(int argc, char* argv[])
 			//output to open csv files
 			if (allOut)
 			{
-				fprintf(allOut, "%s,%.1f,%.1f,%.3f,%.1f,%d,%.1f,%d,%.1f,%d,%.10f,"
-					"%.10f,%.10f,%.10f,%.10f,%.10f,%.10f,%.2f,%.2f,%.2f,%.2f,%.2f,%d\n", 
+				fprintf(allOut, "%s,%s,%.1f,%.1f,%.3f,%.1f,%d,%.1f,%d,%.1f,%d,%.10f,"
+					"%.10f,%.10f,%.10f,%.10f,%.10f,%.10f,%.2f,%.2f,%.2f,%.2f,%.2f,%d\n",
+					fw21Rec.GetStation().c_str(),
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
 					fw21Rec.GetTemp(), fw21Rec.GetRH(), fw21Rec.GetPrecip(), fw21Rec.GetWindSpeed(), fw21Rec.GetWindAzimuth(), fw21Rec.GetSolarRadiation(),
 					fw21Rec.GetSnowFlag(), fw21Rec.GetGustSpeed(), fw21Rec.GetGustAzimuth(), 
@@ -237,13 +238,15 @@ int main(int argc, char* argv[])
 			}
 			if (indexOut)
 			{
-				fprintf(indexOut, "%s,%.2f,%.2f,%.2f,%.2f,%.2f,%d\n",
+				fprintf(indexOut, "%s,%s,%.2f,%.2f,%.2f,%.2f,%.2f,%d\n",
+					fw21Rec.GetStation().c_str(),
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
 					fw21Calc.BI, fw21Calc.ERC, fw21Calc.SC, fw21Calc.IC, fw21Calc.m_GSI, fw21Calc.KBDI);
 			}
 			if (moistOut)
 			{
-				fprintf(moistOut, "%s,%.10f,%.10f,%.10f,%.10f,%.10f,%.10f,%.10f\n",
+				fprintf(moistOut, "%s,%s,%.10f,%.10f,%.10f,%.10f,%.10f,%.10f,%.10f\n",
+					fw21Rec.GetStation().c_str(),
 					FormatToISO8061Offset(fw21Rec.GetDateTime(), params.getTimeZoneOffsetHours()).c_str(),
 					fw21Calc.MC1, fw21Calc.MC10, fw21Calc.MC100, fw21Calc.MC1000, fw21Calc.MCHERB, fw21Calc.MCWOOD, fw21Calc.GetFuelTemperature());
 			}

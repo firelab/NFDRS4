@@ -251,10 +251,10 @@ int main(int argc, char* argv[])
 			continue;
 		}
 		string tempSta = sta;// .TrimLeft();
-		if (tempSta.length() == 5)
-		{
-			sta = "0" + tempSta;
-		}
+		//if (tempSta.length() == 5)
+		//{
+			//sta = "0" + tempSta;
+		//}
 		strncpy(temp, &buf[9], 4);
 		temp[4] = 0;
 		y = atoi(temp);
@@ -305,6 +305,7 @@ int main(int argc, char* argv[])
 
 		UTCTime thisTime(y, m, d, hr, mn, 0);
 		FW21Record rec;
+		rec.SetStation(sta);
 		rec.SetDateTime(thisTime.get_tm());
 		strncpy(temp, &buf[23], 3);
 		temp[3] = 0;

@@ -44,6 +44,7 @@ RunNFDRSConfiguration::RunNFDRSConfiguration(bool wantDiagnostics/* = false*/)
 RunNFDRSConfiguration::~RunNFDRSConfiguration()
 {
 	((Configuration *)m_cfg)->destroy();
+	m_stationID = "";
 	m_initFile = "";
 	m_wxFile = "";
 	m_loadStateFile = "";
@@ -77,6 +78,7 @@ void RunNFDRSConfiguration::parse(
 		//sv.validate(cfg->getFallbackConfiguration(), "", "",
 		//	SchemaValidator::FORCE_REQUIRED);
 		//sv.validate(cfg, cfgScope, "");
+		m_stationID = cfg->lookupString(cfgScope, "stationID");
 		m_initFile = cfg->lookupString(cfgScope, "initFile");
 		m_wxFile = cfg->lookupString(cfgScope, "wxFile");
 		m_loadStateFile = cfg->lookupString(cfgScope, "loadFromStateFile");
