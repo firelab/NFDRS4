@@ -283,13 +283,16 @@ int CFW21Data::LoadFile(const char *fw21FileName, std::string station, int tzOff
 	gsiIdx = getColIndex(m_vFieldNames[FW21_GSI], vFields);
 	kbdiIdx = getColIndex(m_vFieldNames[FW21_KBDI], vFields);
 
+	bool hasStationID = false;
+	if (staIdx >= 0)
+		hasStationID = true;
 	string strStation, strDate, strTemp, strRH, strPcp, strWindSpeed, strWDir, strSolRad, strSnow, strGustSpeed, strGustDir;
 	//basic check for required fields
-	if (staIdx < 0 || dtIdx < 0 || (tmpIdx < 0 && tmpCIdx < 0) || rhIdx < 0 || (pcpIdx < 0 && pcpmmIdx < 0) || (wsIdx < 0 && wsKphIdx < 0) 
+	if (dtIdx < 0 || (tmpIdx < 0 && tmpCIdx < 0) || rhIdx < 0 || (pcpIdx < 0 && pcpmmIdx < 0) || (wsIdx < 0 && wsKphIdx < 0) 
 		|| wdirIdx < 0 || srIdx < 0 || snowIdx < 0)
 	{
-		if(staIdx < 0)
-			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_STATION].c_str());
+		//if(staIdx < 0)
+		//	printf("Error, field %s not found in header\n", m_vFieldNames[FW21_STATION].c_str());
 		if (dtIdx < 0)
 			printf("Error, field %s not found in header\n", m_vFieldNames[FW21_DATE].c_str());
 		if (tmpIdx < 0 && tmpCIdx < 0)
@@ -347,11 +350,15 @@ int CFW21Data::LoadFile(const char *fw21FileName, std::string station, int tzOff
 			printf("Warning, line %d has less than %d fields, skipping record\n", lineNo, nExpectedFields);
 			continue;
 		}
-		//added 4/26/2024 StationID is now required, and we only process one station at a time
-		strStation = vFields[staIdx];
-		if (station.compare(strStation) != 0)
-			continue;
-
+		//added 4/26/2024 StationID is now optional, if not present all are assumed to be 'station' parameter
+		if (staIdx >= 0)
+		{
+			strStation = vFields[staIdx];
+			if (station.compare(strStation) != 0)
+				continue;
+		}
+		else
+			strStation = station;
 		FW21Record thisRec;
 		thisRec.SetStation(strStation);
 		strDate = vFields[dtIdx];
