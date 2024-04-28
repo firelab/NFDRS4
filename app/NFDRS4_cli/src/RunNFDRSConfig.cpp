@@ -17,7 +17,7 @@ RunNFDRSConfig::RunNFDRSConfig()
 	m_schema[4] = "loadFromStateFile = string";
 	m_schema[5] = "outputInterval = int";
 	m_schema[6] = "saveToStateFile = string";
-	m_schema[7] = "stationID = int";
+	m_schema[7] = "stationID = string";
 	m_schema[8] = "useStoredOutputs = int";
 	m_schema[9] = "wxFile = string";
 	m_schema[10] = 0;
@@ -71,9 +71,11 @@ RunNFDRSConfig::RunNFDRSConfig()
 	m_str << "#Added as required, 4/27/2024\n";
 	m_str << "#to accomodate multiple stations in a single FW21 ";
 	m_str << "format file\n";
-	m_str << "#StationID was added as a required data element to";
-	m_str << " FW21 and runnfdrs config file\n";
-	m_str << "stationID = \"241513\";";
+	m_str << "#stationID was added as a data element to FW21 and";
+	m_str << " NFDRS4_cli config file\n";
+	m_str << "#this stationID will be used when StationID is not";
+	m_str << " present in FW21\n";
+	m_str << "stationID = \"some_stationID\";";
 }
 
 

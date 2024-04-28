@@ -128,7 +128,7 @@ int main(int argc, char* argv[])
 		fw21Calc.LoadState(state);
 	}
 	CFW21Data FW21data;
-	int status = FW21data.LoadFile(wxFileName, params.getStationID(), params.getTimeZoneOffsetHours(), cfg->getUseStoredOutputs() != 0 ? true : false);
+	int status = FW21data.LoadFile(wxFileName, cfg->getStationID(), params.getTimeZoneOffsetHours(), cfg->getUseStoredOutputs() != 0 ? true : false);
 	if (status != 0)
 	{
 		printf("Error loading %s as FW21 file\n", wxFileName);

@@ -268,11 +268,11 @@ CDeadFuelMoistureParams::~CDeadFuelMoistureParams()
 
 CNFDRSParams::CNFDRSParams()
 {
-	m_stationID = "";
+//	m_stationID = "";
 	m_fuelModel = 'Y';
 	m_maxSC = 5;
 	m_latitude = 47.0;
-	m_longitude = -114;
+//	m_longitude = -114;
 	m_slopeClass = 1;
 	m_avgAnnualPrecip = 13.2;
 	m_loadTransfer = true;
@@ -291,11 +291,11 @@ CNFDRSParams::CNFDRSParams()
 
 CNFDRSParams::CNFDRSParams(const CNFDRSParams& rhs)
 {
-	m_stationID = rhs.m_stationID;
+//	m_stationID = rhs.m_stationID;
 	m_fuelModel = rhs.m_fuelModel;
 	m_maxSC = rhs.m_maxSC;
 	m_latitude = rhs.m_latitude;
-	m_longitude = rhs.m_longitude;
+//	m_longitude = rhs.m_longitude;
 	m_slopeClass = rhs.m_slopeClass;
 	m_avgAnnualPrecip = rhs.m_avgAnnualPrecip;
 	m_loadTransfer = rhs.m_loadTransfer;

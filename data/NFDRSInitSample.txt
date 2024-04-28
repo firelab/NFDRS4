@@ -6,11 +6,11 @@
 #these must be copied to RunNFDRS directory to replace old versions in the project
 #
 #stationID addded 4/27/2024 to accomodate multiple stations in an FW21 file
-stationID = "241513";
+#stationID = "text";
 #latitude decimal degrees
 latitude = "46.82056";
 #longitude decimal degrees
-longitude = "-114.10056";
+#longitude = "-114.10056";
 #NFDRS2016 fuel model (one of V, W, X, Y, Z, or C for a custom defined model)
 fuelModel = "Y";
 #standard NFDRS Slope Class (1 = 0.25%, 2 = 26-40%, 3 = 41 - 55%, 4 = 56 - 75%, 5 = 76%+)
@@ -27,9 +27,6 @@ isAnnuals = "1";
 kbdiThreshold = "100";
 # initial KBDI value on Init
 startKBDI = "100";
-# flag to indicate Humid climate
-# flag removed  8/26/2023 SB
-#isHumid = "1";
 #MXD added 8/26/2023 SB
 #Moisture of Extinction (%), any positive value other than zero (0) will override fuel model default MXD for the fuel model
 MXD = "0";

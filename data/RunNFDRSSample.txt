@@ -30,5 +30,6 @@ outputInterval = "0";
 useStoredOutputs = "0";
 #Added as required, 4/27/2024
 #to accomodate multiple stations in a single FW21 format file
-#StationID was added as a required data element to FW21 and runnfdrs config file
-stationID = "241513";
+#stationID was added as a data element to FW21 and NFDRS4_cli config file
+#this stationID will be used when StationID is not present in FW21
+stationID = "some_stationID";

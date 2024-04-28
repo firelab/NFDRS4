@@ -67,7 +67,7 @@ void NFDRSConfiguration::parse(
 		sv.validate(cfg->getFallbackConfiguration(), "", "",
 			SchemaValidator::FORCE_REQUIRED);
 		sv.validate(cfg, cfgScope, "");
-		m_nfdrsParams.setStationID(cfg->lookupString(cfgScope, "stationID"));
+		//m_nfdrsParams.setStationID(cfg->lookupString(cfgScope, "stationID"));
 		m_nfdrsParams.setAvgAnnualPrecip(cfg->lookupFloat(cfgScope, "avgAnnualPrecip"));
 		const char *fm = cfg->lookupString(cfgScope, "fuelModel");
 		if(strlen(fm) > 0)
@@ -76,7 +76,7 @@ void NFDRSConfiguration::parse(
 		m_nfdrsParams.setMXD(cfg->lookupInt(cfgScope, "MXD"));
 		m_nfdrsParams.setKbdiThreshold(cfg->lookupInt(cfgScope, "kbdiThreshold"));
 		m_nfdrsParams.setLatitude(cfg->lookupFloat(cfgScope, "latitude"));
-		m_nfdrsParams.setLongitude(cfg->lookupFloat(cfgScope, "longitude"));
+		//m_nfdrsParams.setLongitude(cfg->lookupFloat(cfgScope, "longitude"));
 		m_nfdrsParams.setMaxSC(cfg->lookupInt(cfgScope, "maxSC"));
 		m_nfdrsParams.setObsHour(cfg->lookupInt(cfgScope, "obsHour"));
 		m_nfdrsParams.setSlopeClass(cfg->lookupInt(cfgScope, "slopeClass"));
