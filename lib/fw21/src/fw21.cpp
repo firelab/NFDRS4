@@ -705,9 +705,9 @@ int CFW21Data::AddRecord(FW21Record rec)
 		FW21Record lastRec = m_recs[m_recs.size() - 1];
 		UTCTime lastUtc(lastRec.GetYear(), lastRec.GetMonth(), lastRec.GetDay(), lastRec.GetHour(), lastRec.GetMinutes(), 0);
 		UTCTime recUtc(rec.GetYear(), rec.GetMonth(), rec.GetDay(), rec.GetHour(), rec.GetMinutes(), 0);
-		if (recUtc <= lastUtc)
+		if (rec.GetStation().compare(lastRec.GetStation()) == 0 && recUtc <= lastUtc)
 		{
-			cout << "Error, rectime is <= last record time\n";
+			cout << "Error, rectime is <= last record time" << endl;
 			return -1;
 		}
 	}

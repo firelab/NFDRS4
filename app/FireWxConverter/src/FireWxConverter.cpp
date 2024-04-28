@@ -250,7 +250,7 @@ int main(int argc, char* argv[])
 			errors++;
 			continue;
 		}
-		string tempSta = sta;// .TrimLeft();
+		//string tempSta = sta;// .TrimLeft();
 		//if (tempSta.length() == 5)
 		//{
 			//sta = "0" + tempSta;
@@ -278,8 +278,9 @@ int main(int argc, char* argv[])
 		{
 			if (std::find(staList.begin(), staList.end(), sta) == staList.end())
 			{
-				cout << "\tError: Multpile stations encountered, line number " << lineNo << ", ignoring record for " << sta << "\n";
-				continue;
+				staList.push_back(sta);
+				//cout << "\tError: Multpile stations encountered, line number " << lineNo << ", ignoring record for " << sta << "\n";
+				//continue;
 			}
 		}
 
@@ -491,14 +492,18 @@ int main(int argc, char* argv[])
                                                             
     //int errors = 0;
 
-	//data.
-
 	CFW21Data data;
-	for (vector<FW21Record>::iterator it = vRecs.begin(); it != vRecs.end(); ++it)
+	for (auto sIt = staList.begin(); sIt != staList.end(); ++sIt)
 	{
-		if (data.AddRecord(*it) != 1)
+		for (vector<FW21Record>::iterator it = vRecs.begin(); it != vRecs.end(); ++it)
 		{
-			cout << "Error adding record to FW21Data, " << (*it).GetYear() << "/" << (*it).GetMonth() << "/" << (*it).GetDay() << " : " << (*it).GetHour() << "\n";
+			if ((*sIt).compare((*it).GetStation()) == 0)
+			{
+				if (data.AddRecord(*it) != 1)
+				{
+					cout << "Error adding record to FW21Data, " << (*it).GetStation() << ", " << (*it).GetYear() << "/" << (*it).GetMonth() << "/" << (*it).GetDay() << " : " << (*it).GetHour() << endl;
+				}
+			}
 		}
 	}
 	if (data.WriteFile(outFileName.c_str(), tzOffset) == 1)
