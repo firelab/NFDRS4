@@ -1,4 +1,4 @@
-This directory contains an interface file ```nfrds.i``` for generating SWIG bindings for NFDRS4
+This directory contains an interface file ```nfdrs.i``` for generating SWIG bindings for NFDRS4
 
 **How to compile the SWIG module for Python:**
 
