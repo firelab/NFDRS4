@@ -16,6 +16,7 @@ public:
 	//accessors
 	std::string GetStation() { return m_station; }
 	TM GetDateTime() { return m_dateTime; }
+	int GetTimeZoneOffset() { return m_tzOffset; }
 	int GetYear() { return m_dateTime.tm_year + 1900;}
 	int GetMonth() { return m_dateTime.tm_mon + 1;}
 	int GetDay() { return m_dateTime.tm_mday; }
@@ -44,6 +45,7 @@ public:
 	//setters
 	void SetStation(std::string station) { m_station = station; }
 	void SetDateTime(TM dateTime) { m_dateTime = dateTime; }
+	void SetTimeZoneOffset(int tzOffset) { m_tzOffset = tzOffset; }
 	void SetTemp(double temp) { m_temp = temp; }
 	void SetRH(double rh) { m_RH = rh; }
 	void SetPrecip(double pcp) { m_pcp = pcp; }
@@ -66,6 +68,7 @@ public:
 private:
 	std::string m_station;
 	TM m_dateTime;
+	int m_tzOffset;
 	double m_temp;//always stored in degrees F
 	double m_RH;
 	double m_pcp; //always stored in inches
@@ -137,7 +140,8 @@ public:
 	NFDRSDailyRec GetNFDRSDailyRec(size_t recNum);//zero based! valid: 0->GetNumRecs() - 1
 	size_t GetNumRecs() { return m_recs.size(); }
 	bool TimeIsZulu() {return m_bTimeIsZulu; }
-	TM ParseISO8061(const std::string input);
+	TM ParseISO8061(const std::string input, int *tzOffset);
+	std::string DateToOriginal(TM inTm, int tzOffset);
 	int AddRecord(FW21Record rec);
 	int WriteFile(const char* fw21FileName, int offsetHours);
 private:

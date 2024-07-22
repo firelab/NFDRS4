@@ -11,7 +11,7 @@ using namespace std;
 using namespace utctime;
 
 
-TM CFW21Data::ParseISO8061(const string input)
+TM CFW21Data::ParseISO8061(const string input, int* tzOffset)
 {
 	TM thisTime = { 0 };
 	//first, need to know if extended or basic ISO 8061 format, and if Zulu time or time zone offset, also if milliseconds are included(but we'll ignore them...)
@@ -28,6 +28,7 @@ TM CFW21Data::ParseISO8061(const string input)
 	found = input.find('.');
 	if (found != string::npos)
 		hasMillisecs = true;
+	*tzOffset = m_timeZoneOffset;
 	//then do appropriate sscanf!
 	int nRead;
 	int y = -1, M = -1, d = -1, h = -1, m = 0, s = 0, tzh = 0, tzm = 0;
@@ -47,6 +48,7 @@ TM CFW21Data::ParseISO8061(const string input)
 				nRead = sscanf(input.c_str(), "%d-%d-%dT%d:%d:%f%d%d", &y, &M, &d, &h, &m, &ms, &tzh, &tzm);
 			else
 				nRead = sscanf(input.c_str(), "%d-%d-%dT%d:%d:%d%3d:%d", &y, &M, &d, &h, &m, &s, &tzh, &tzm);
+			*tzOffset = tzh;
 		}
 	}
 	else//basic
@@ -64,6 +66,7 @@ TM CFW21Data::ParseISO8061(const string input)
 				nRead = sscanf(input.c_str(), "%4d%2d%2dT%2d%2d%f%3d%2d", &y, &M, &d, &h, &m, &ms, &tzh, &tzm);
 			else
 				nRead = sscanf(input.c_str(), "%4d%2d%2dT%2d%2d%2d%3d%2d", &y, &M, &d, &h, &m, &s, &tzh, &tzm);
+			*tzOffset = tzh;
 		}
 	}
 	if (y < 0 || M <= 0 || M > 12 || d <= 0 || d > 31 || h < 0 || h > 23 || m < 0 || m > 59 || s < 0 || s > 59)
@@ -108,10 +111,37 @@ TM CFW21Data::ParseISO8061(const string input)
 	return thisTime;
 }
 
+string CFW21Data::DateToOriginal(TM inTm, int tzOffset)
+{
+	if (m_bTimeIsZulu)
+	{
+		//convert local time to Zulu
+		char buf[64];
+		tm lTime = inTm;
+		//tm_increment_hour(&lTime, m_timeZoneOffset);
+		tm_decrement_hour(&lTime, tzOffset);
+		sprintf(buf, "%04d%02d%02dT%02d%02d%02dZ", lTime.tm_year, lTime.tm_mon + 1, lTime.tm_mday, lTime.tm_hour,
+			lTime.tm_min, lTime.tm_sec);
+		string ret = buf;
+		return ret;
+	}
+	else
+	{	
+		//output in local time
+		char buf[64];
+		sprintf(buf, "%04d%02d%02dT%02d%02d%02d%+03d:00", inTm.tm_year + 1900, inTm.tm_mon + 1,
+			inTm.tm_mday, inTm.tm_hour, inTm.tm_min, inTm.tm_sec, tzOffset);
+		string ret = buf;
+		return ret;
+	}
+}
+
+
 FW21Record::FW21Record()
 {
 	m_station = "";
 	memset(&m_dateTime, 0, sizeof(m_dateTime));
+	m_tzOffset = 0;
 	m_temp = dNODATA;
 	m_RH = dNODATA;
 	m_pcp = dNODATA;
@@ -136,6 +166,7 @@ FW21Record::FW21Record(const FW21Record& rhs)
 {
 	m_station = rhs.m_station;
 	m_dateTime = rhs.m_dateTime;
+	m_tzOffset = rhs.m_tzOffset;
 	m_temp = rhs.m_temp;
 	m_RH = rhs.m_RH;
 	m_pcp = rhs.m_pcp;
@@ -337,7 +368,7 @@ int CFW21Data::LoadFile(const char *fw21FileName, std::string station, int tzOff
 		return -3;
 	}
 	//ok, ready to parse the data...
-	bool firstRec = false;
+	bool firstRec = true;
 	int lineNo = 2;
 	while (stream.good())
 	{
@@ -375,13 +406,15 @@ int CFW21Data::LoadFile(const char *fw21FileName, std::string station, int tzOff
 				m_bTimeIsZulu = true;
 			firstRec = false;
 		}
-		TM recTime = ParseISO8061(strDate);
+		int tzOffset = 0;
+		TM recTime = ParseISO8061(strDate, &tzOffset);
 		if (recTime.tm_mon < 0 || recTime.tm_mday <= 0 || recTime.tm_hour < 0 || recTime.tm_min < 0 || recTime.tm_sec < 0)
 		{
 			printf("Error, line %d date (%s) is invalid, skipping record\n", lineNo, strDate.c_str());
 			continue;
 		}
 		thisRec.SetDateTime(recTime);
+		thisRec.SetTimeZoneOffset(tzOffset);
 		if (tmpIdx >= 0)//use Fahrenheit if present
 		{
 			strTemp = vFields[tmpIdx];
