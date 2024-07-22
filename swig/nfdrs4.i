@@ -1,6 +1,6 @@
 // nfdrs.i
 
-%module nfdrs
+%module nfdrs4
 %{
 #include "../lib/NFDRS4/include/nfdrs4.h"
 %}
