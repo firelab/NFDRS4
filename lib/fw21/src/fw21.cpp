@@ -753,11 +753,11 @@ string FormatTM(TM in, int offsetHours)
 	char buf[64];
 	string ret = "";
 	if(offsetHours < 0)
-		sprintf(buf, "%4ld-%02d-%02dT%02d:%02d:00%03d:00",
+		sprintf(buf, "%4d-%02d-%02dT%02d:%02d:00%03d:00",
 			in.tm_year + 1900, in.tm_mon + 1, in.tm_mday,
 			in.tm_hour, in.tm_min, offsetHours);
 	else
-		sprintf(buf, "%4ld-%02d-%02dT%02d:%02d:00%02d:00",
+		sprintf(buf, "%4d-%02d-%02dT%02d:%02d:00%02d:00",
 			in.tm_year + 1900, in.tm_mon + 1, in.tm_mday,
 			in.tm_hour, in.tm_min, offsetHours);
 
