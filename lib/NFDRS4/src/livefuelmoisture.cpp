@@ -38,14 +38,14 @@ void LiveFuelMoisture::Initialize(double Lat,bool IsHerb, bool IsAnnual = false)
     m_IsHerb = IsHerb;
     m_IsAnnual = IsAnnual;
 
-    /*if(m_IsHerb)
+    if(m_IsHerb)
     {
         SetLFMParameters(1.0,0.5,30,250);
     }
     else
     {
        SetLFMParameters(1.0,0.5,60,200);
-    }*/
+    }
 	//if (iGSI.size() > 0)
 	//	iGSI.clear();
 	while (qGSI.size() > 0)
