@@ -173,7 +173,7 @@ int main(int argc, char* argv[])
 			delete cfg;
 			return -3;
 		}
-		fprintf(indexOut, "%s", CFW21Data::GetFieldName(CFW21Data::FW21_DATE).c_str());
+		fprintf(indexOut, "%s,%s", CFW21Data::GetFieldName(CFW21Data::FW21_STATION).c_str(),CFW21Data::GetFieldName(CFW21Data::FW21_DATE).c_str());
 		for (int f = CFW21Data::FW21_BI; f < CFW21Data::FW21_TEMPC; f++)
 			fprintf(indexOut, ",%s", CFW21Data::GetFieldName((CFW21Data::FW21FIELDS)f).c_str());
 		fprintf(indexOut, "\n");
@@ -193,7 +193,7 @@ int main(int argc, char* argv[])
 			delete cfg;
 			return -3;
 		}
-		fprintf(moistOut, "%s", CFW21Data::GetFieldName(CFW21Data::FW21_DATE).c_str());
+		fprintf(moistOut, "%s,%s", CFW21Data::GetFieldName(CFW21Data::FW21_STATION).c_str(), CFW21Data::GetFieldName(CFW21Data::FW21_DATE).c_str());
 		for (int f = CFW21Data::FW21_DFM1; f <= CFW21Data::FW21_FUELTEMPC; f++)
 			fprintf(moistOut, ",%s", CFW21Data::GetFieldName((CFW21Data::FW21FIELDS)f).c_str());
 		fprintf(moistOut, "\n");
@@ -207,8 +207,8 @@ int main(int argc, char* argv[])
 		if (cfg->getUseStoredOutputs() != 0)
 		{
 			fw21Calc.iSetFuelMoistures(fw21Rec.GetMx1(), fw21Rec.GetMx10(),
-				fw21Rec.GetMx100(), fw21Rec.GetMx1000(), fw21Rec.GetMxHerb(),
-				fw21Rec.GetMxWood(), fw21Rec.GetFuelTTempC());
+				fw21Rec.GetMx100(), fw21Rec.GetMx1000(), fw21Rec.GetMxWood(), fw21Rec.GetMxHerb(),
+				fw21Rec.GetFuelTTempC());
 			double tSC, tERC, tBI, tIC;
 			fw21Calc.iCalcIndexes(fw21Rec.GetWindSpeed(), params.getSlopeClass(), &tSC, &tERC, &tBI, &tIC, fw21Rec.GetGSI(), fw21Rec.GetKBDI());
 			//are these even necessary?????????
