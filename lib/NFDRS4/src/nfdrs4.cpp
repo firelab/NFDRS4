@@ -23,9 +23,6 @@
 #define SNOWDAYS_TRIGGER 5
 const double NORECORD = -999.0;
 
-/*#ifdef _DEBUG
-#include <windows.h>
-#endif*/
 // Converts degrees to radians.
 #define degreesToRadians(angleDegrees) (angleDegrees * 3.14159 / 180.0)
 
@@ -60,7 +57,6 @@ NFDRS4::NFDRS4()
 	FuelTemperature = -999;
 	m_GSI = 0.0;
 	nConsectiveSnowDays = 0;
-	//lastUpdateTime = 0;
     Init(45, 'Y', 1, 0.0, true, true, true, 100, 13);
 }
 
@@ -73,33 +69,7 @@ NFDRS4::NFDRS4(double inLat, char FuelModel,int inSlopeClass, double inAvgAnnPre
 {
     CreateFuelModels();
     StartKBDI = 100;
-	Init(inLat, FuelModel, inSlopeClass, inAvgAnnPrecip, LT, Cure, IsAnnual, 100);// , 1.0, 0.5);
-   
-	//the below commented out as now done in Init
-  /*  
-	CTA = 0.0459137;
-    NFDRSVersion = 16;                                          // NFDRS Model Version
-    Lat = inLat;                                                // Latitude (degrees)
-    num_updates = 0;                                            // Counter for number of fuel moisture update cycles
-    AvgPrecip = inAvgAnnPrecip;                                    // Average Annual Precip
-    CummPrecip = 0.0;                                           // Place to store cummulative precip
-    // Initialize the live fuel moisture models
-    HerbFM.Initialize(Lat,true,true);                           // Live Herb FM model init
-    WoodyFM.Initialize(Lat,false,false);                        // Live Woody FM model init
-    // Initialize the dead fuel moisture models
-    OneHourFM.initializeParameters(0.2,"One Hour");             // 1hr Dead FM model init
-    TenHourFM.initializeParameters(0.64,"Ten Hour");            // 10hr Dead FM model init
-    HundredHourFM.initializeParameters(2.0,"Hundred Hour");     // 100hr Dead FM model init
-    ThousandHourFM.initializeParameters(6.4,"Thousand Hour");   // 1000hr Dead FM model init
-    iSetFuelModel(FuelModel);                                   // Set the Fuel model
-    UseLoadTransfer = LT;                                       // Use Load Transfer? (bool)
-    UseCuring = Cure;                                           // Use Curing? (bool)
-    YKBDI = KBDI = 100;                                                // Starting KBDI
-    SlopeClass = inSlopeClass;
-
-    MCHERB = 30.0;
-    MCWOOD = 60.0;*/
-
+	Init(inLat, FuelModel, inSlopeClass, inAvgAnnPrecip, LT, Cure, IsAnnual, 100);
 }
 
 NFDRS4::~NFDRS4()
@@ -117,10 +87,8 @@ void NFDRS4::Init(double inLat, char iFuelModel, int inSlopeClass, double inAvgA
 	KBDIThreshold = kbdiThreshold;	
     if (!isReinit)// Initialize the live fuel moisture models
     {
-        GsiFM.Initialize(Lat, true, isAnnual);
         HerbFM.Initialize(Lat, true, isAnnual);                           // Live Herb FM model init
         WoodyFM.Initialize(Lat, false, false);                        // Live Woody FM model init
-        GsiFM.SetLFMParameters(GsiFM.GetMaxGSI(), GsiFM.GetGreenupThreshold(), GsiFM.GetMinLFMVal(), GsiFM.GetMaxLFMVal());
         HerbFM.SetLFMParameters(HerbFM.GetMaxGSI(), HerbFM.GetGreenupThreshold(), HerbFM.GetMinLFMVal(), HerbFM.GetMaxLFMVal());
         WoodyFM.SetLFMParameters(WoodyFM.GetMaxGSI(), WoodyFM.GetGreenupThreshold(), WoodyFM.GetMinLFMVal(), WoodyFM.GetMaxLFMVal());
     }
@@ -163,11 +131,8 @@ void NFDRS4::Init(double inLat, char iFuelModel, int inSlopeClass, double inAvgA
 	FuelTemperature = -999;
 	m_GSI = 0.0;
 	nConsectiveSnowDays = 0;
-	//lastUpdateTime = 0;
-	iSetFuelModel(iFuelModel);
-	//fill the 24 hours pcparray with 0's
-//	for (int h = 0; h < 24; h++)
-//		prcp.push_back(0.0);
+    if(!isReinit)
+	    iSetFuelModel(iFuelModel);
     m_regObsHour = RegObsHour;
     for (int h = 0; h < nHoursPerDay; h++)
     {
@@ -198,40 +163,7 @@ int NFDRS4::GetMXD()
     return MXD;
 }
 
-/*void NFDRS4::SetMxdHumid(bool isHumid)
-{
-	mxdHumid = isHumid;
-	if (isHumid)
-	{
-		MXD = 40;
-	}
-	else
-	{
-		switch (FuelModel)
-		{
-		case 'v':
-		case 'V':
-		case 'w':
-		case 'W':
-			MXD = 15;
-			break;
-		case 'x':
-		case 'X':
-		case 'y':
-		case 'Y':
-		case 'z':
-		case 'Z':
-			MXD = 25;
-			break;
-		}
-	}
-}
 
-bool NFDRS4::GetMxdHumid()
-{
-	return mxdHumid;
-}
-*/
 
 double NFDRS4::GetFuelTemperature()
 {
@@ -294,7 +226,6 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, int Julian, double T
 	//Herb and 1-Hour reset every year.... Verify we want to do this
     if (Julian < YesterdayJDay || YesterdayJDay < 0) {
         HerbFM.ResetHerbState();
-      //  OneHourFM.initializeStick();
     }
 	if (PrevYear != Year)
 	{		
@@ -311,8 +242,6 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, int Julian, double T
 	double nelrh = rh, nelsr = sr, nelppt = pptamnt;
 
     // Update dead fuel moistures for each time period
-    //cout << wxRec.m_Year << " " << wxRec.m_Month << " " << wxRec.m_Day << " " << wxRec.m_Hour << endl;
-    //if (Temp < 28 && PPTAmt > 0) SnowDay = 1;
     // Need to set the date / time of the sticks to one hour before the first observation time
     if (SnowCovered)
     {
@@ -403,11 +332,10 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, int Julian, double T
 		while (qPrecip.size() > nPrecipQueueDays)
 			qPrecip.pop_front();
 
-		GsiFM.Update(Temp, MaxTemp, MinTemp, RH, MinRH, Julian, GetXDaysPrecipitation(GsiFM.GetNumPrecipDays()), thisUtcTime.timestamp());
 		HerbFM.Update(Temp, MaxTemp, MinTemp, RH, MinRH, Julian, GetXDaysPrecipitation(HerbFM.GetNumPrecipDays()), thisUtcTime.timestamp());
 		WoodyFM.Update(Temp, MaxTemp, MinTemp, RH, MinRH, Julian, GetXDaysPrecipitation(WoodyFM.GetNumPrecipDays()), thisUtcTime.timestamp());
 
-		m_GSI = GsiFM.CalcRunningAvgGSI();
+		m_GSI = HerbFM.CalcRunningAvgGSI();
         MCHERB = HerbFM.GetMoisture(nConsectiveSnowDays >= SNOWDAYS_TRIGGER ? true : false);
         MCWOOD = WoodyFM.GetMoisture(nConsectiveSnowDays >= SNOWDAYS_TRIGGER ? true : false);
         // Calculate the daily KBDI that is used for the drought fuel loading
@@ -442,7 +370,6 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, double Temp, double 
     //Herb and 1-Hour reset every year.... Verify we want to do this
     if (Julian < YesterdayJDay || YesterdayJDay < 0) {
         HerbFM.ResetHerbState();
-        //  OneHourFM.initializeStick();
     }
     if (PrevYear != Year)
     {
@@ -458,8 +385,6 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, double Temp, double 
     double nelrh = rh, nelsr = sr, nelppt = pptamnt;
 
     // Update dead fuel moistures for each time period
-    //cout << wxRec.m_Year << " " << wxRec.m_Month << " " << wxRec.m_Day << " " << wxRec.m_Hour << endl;
-    //if (Temp < 28 && PPTAmt > 0) SnowDay = 1;
     // Need to set the date / time of the sticks to one hour before the first observation time
     if (SnowCovered)
     {
@@ -587,11 +512,10 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, double Temp, double 
         while (qPrecip.size() > nPrecipQueueDays)
             qPrecip.pop_front();
 
-        GsiFM.Update(Temp, MaxTemp, MinTemp, RH, MinRH, Julian, GetXDaysPrecipitation(GsiFM.GetNumPrecipDays()), thisUtcTime.timestamp());
         HerbFM.Update(Temp, MaxTemp, MinTemp, RH, MinRH, Julian, GetXDaysPrecipitation(HerbFM.GetNumPrecipDays()), thisUtcTime.timestamp());
         WoodyFM.Update(Temp, MaxTemp, MinTemp, RH, MinRH, Julian, GetXDaysPrecipitation(WoodyFM.GetNumPrecipDays()), thisUtcTime.timestamp());
 
-        m_GSI = GsiFM.CalcRunningAvgGSI();
+        m_GSI = HerbFM.CalcRunningAvgGSI();
         MCHERB = HerbFM.GetMoisture(nConsectiveSnowDays >= SNOWDAYS_TRIGGER ? true : false);
         MCWOOD = WoodyFM.GetMoisture(nConsectiveSnowDays >= SNOWDAYS_TRIGGER ? true : false);
         // Calculate the daily KBDI that is used for the drought fuel loading
@@ -637,17 +561,6 @@ void NFDRS4::UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, 
 		nConsectiveSnowDays = 0;
 
     UTCTime thisUtcTime(Year, Month, Day, m_regObsHour, 0, 0);
-   // tm thisTM;
-	/*thisTM.tm_year = Year - 1900;
-	thisTM.tm_mon = Month;
-	thisTM.tm_mday = Day;
-	thisTM.tm_hour = 13;
-	thisTM.tm_min = 0;
-	thisTM.tm_sec = 0;
-	thisTM.tm_isdst = 0;*/
-	//time_t 
-	//time_t thisTime = mktime(&thisTM);
-   // int secs = difftime(thisTime, lastUpdateTime);
     int secs = thisUtcTime.timestamp() - lastDailyUpdateTime.timestamp(); //difftime(thisTime, lastUpdateTime);
     int days = secs / 86400;//86400 seconds per day
 
@@ -663,11 +576,10 @@ void NFDRS4::UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, 
 		qPrecip.pop_front();
 
 	// Update live fuel moisture once per day
-	GsiFM.Update(Temp, MaxTemp, MinTemp, RH, MinRH, Julian, GetXDaysPrecipitation(GsiFM.GetNumPrecipDays()), thisUtcTime.timestamp());
 	HerbFM.Update(Temp, MaxTemp, MinTemp, RH, MinRH, Julian, GetXDaysPrecipitation(HerbFM.GetNumPrecipDays()), thisUtcTime.timestamp());
 		WoodyFM.Update(Temp, MaxTemp, MinTemp, RH, MinRH, Julian, GetXDaysPrecipitation(WoodyFM.GetNumPrecipDays()), thisUtcTime.timestamp());
 
-		m_GSI = GsiFM.CalcRunningAvgGSI();
+		m_GSI = HerbFM.CalcRunningAvgGSI();
 		MCHERB = HerbFM.GetMoisture(nConsectiveSnowDays >= SNOWDAYS_TRIGGER ? true : false);
 		MCWOOD = WoodyFM.GetMoisture(nConsectiveSnowDays >= SNOWDAYS_TRIGGER ? true : false);
 		// Calculate the daily KBDI that is used for the drought fuel loading
@@ -688,18 +600,6 @@ void NFDRS4::UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, 
     lastUtcUpdateTime = lastUtcUpdateTime = thisUtcTime;
 }
 
-/*void NFDRS4::Update(Wx wxRec)
-{
-    // "old" method of determining daily obs -   Type 'O', or 1300hr
-    int RegObsHr=13;
-    if (wxRec.m_ObsType == "O")
-        RegObsHr = wxRec.m_Hour;
-
-	//Changed 3/1/2017 SB to pass RHMin
-	//Update(wxRec.m_Year, wxRec.m_Month, wxRec.m_Day, wxRec.m_Hour, wxRec.m_JDay, wxRec.m_Temp, wxRec.m_TmpMin, wxRec.m_TmpMax, wxRec.m_RH, wxRec.m_PPTACC, wxRec.m_PPTAMT24, wxRec.m_SolarRadiation, wxRec.m_WS, wxRec.m_SnowDay, 13);
-	Update(wxRec.m_Year, wxRec.m_Month, wxRec.m_Day, wxRec.m_Hour, wxRec.m_JDay, wxRec.m_Temp, wxRec.m_TmpMin, wxRec.m_TmpMax, wxRec.m_RH, wxRec.m_RHMin, wxRec.m_PPTAMT, wxRec.m_PPTAMT24, wxRec.m_SolarRadiation, wxRec.m_WS, wxRec.m_SnowDay, 13);
-
-}*/
 
 void NFDRS4::CreateFuelModels()
 {
@@ -851,120 +751,6 @@ bool NFDRS4::iSetFuelModel(char cFM)
     return false;
 }
 
-/*void NFDRS4::iSetFuelModel(char cFM)
-{
-
-    SG1 = 2000;
-    SG10 = 109;
-    SG100 = 30;
-    SG1000 = 8;
-    SGWOOD = 1500;
-    SGHERB = 2000;
-    HD = 8000;
-    FuelModel = static_cast<char>(cFM);
-
-    // Fuel Model V: Grass
-    if (cFM == 'V' || cFM == 'v')
-    {
-        //cout << "Setting fuel model V" << endl;
-
-        L1 = 0.1;
-        L10 = 0;
-        L100 = 0;
-        L1000 = 0;
-        LWOOD = 0;
-        LHERB = 1.0;
-        DEPTH = 1;
-        MXD = 15;
-        SCM = 108;
-        LDROUGHT = 0; // From 1988, Fuel Model A
-        WNDFC = 0.6;
-    }
-    // Fuel Model W: Grass-Shrub
-    else if (cFM == 'W' || cFM == 'w')
-    {
-        //cout << "Setting fuel model W" << endl;
-
-        L1 = 0.5;
-        L10 = 0.5;
-        L100 = 0;
-        L1000 = 0;
-        LWOOD = 1.0;
-        LHERB = 0.6;
-        DEPTH = 1.5;
-        MXD = 15;
-        SCM = 62;
-        LDROUGHT = 1.0; // From 1988, Fuel Model T
-        WNDFC = 0.4;
-    }
-    // Fuel Model X: Brush
-    else if (cFM == 'X' || cFM == 'x')
-    {
-        //cout << "Setting fuel model X" << endl;
-
-        L1 = 4.5;
-        L10 = 2.45;
-        L100 = 0;
-        L1000 = 0;
-        LWOOD = 7;
-        LHERB = 1.55;
-        DEPTH = 4.4;
-        MXD = 25;
-        SCM = 104;
-        LDROUGHT = 2.5; // From 1988, Fuel Model F
-        WNDFC = 0.4;
-    }
-    // Fuel Model Y: Timber
-    else if (cFM == 'Y' || cFM == 'y')
-    {
-        //cout << "Setting fuel model Y" << endl;
-
-        L1 = 2.5;       // Set 1 hour loading from Fuel Model G
-        L10 = 2.2;
-        L100 = 3.6;
-        L1000 = 10.16;
-        LWOOD = 0.0;
-        LHERB = 0.0;
-        DEPTH = 0.6;
-        MXD = 25;
-        SCM = 5;
-        LDROUGHT = 5;   // From 1988, Fuel Model G
-        WNDFC = 0.2;
-		
-    }
-    // Fuel Model Z: Slash / Blowdown
-    else if (cFM == 'Z' || cFM == 'z')
-    {
-        //cout << "Setting fuel model Z" << endl;
-
-        L1 = 4.5;
-        L10 = 4.25;
-        L100 = 4;
-        L1000 = 4;
-        LWOOD = 0;
-        LHERB = 0;
-        DEPTH = 1;
-        MXD = 25;
-        SCM = 19;
-        LDROUGHT = 7;   // From 1988, Fuel Model J
-        WNDFC = 0.4;
-    }
-    else
-    {
-        L1 = 2.5;       // Set 1 hour loading from Fuel Model G
-        L10 = 2.2;
-        L100 = 3.6;
-        L1000 = 10.16;
-        LWOOD = 0.0;
-        LHERB = 0.0;
-        DEPTH = 0.6;
-        MXD = 25;
-        SCM = 30;
-        LDROUGHT = 5;   // From 1988, Fuel Model G
-        WNDFC = 0.4;
-    }
-
-}*/
 
 // Calculates all Components and Indices for NFDRS4
 // iWS: Windspeed (mph)
@@ -1009,7 +795,6 @@ int NFDRS4::iCalcIndexes (int iWS, int iSlopeCls,double* fSC,double* fERC, doubl
     WHERB = LHERB * CTA;
     WWOOD = LWOOD * CTA;
     WDROUGHT = LDROUGHT * CTA;
-    //cout << W1 << " " << W10 << " " << W100 << " " << W1000 << " " << WHERB << " " << WWOOD << endl;
     fDEPTH = DEPTH;
 
     double tmpKBDI = KBDI;
@@ -1039,6 +824,8 @@ int NFDRS4::iCalcIndexes (int iWS, int iSlopeCls,double* fSC,double* fERC, doubl
 
     // Herbaceous Load Transfers
 	//fTemp = Cure(MCHERB, fGSI, HerbFM.GetGreenupThreshold(), HerbFM.GetMaxGSI());
+    if (fGSI >= 0.0)
+        m_GSI = fGSI;
 	fTemp = Cure(fGSI, HerbFM.GetGreenupThreshold(), HerbFM.GetMaxGSI());
 	
 	WTOTD = W1P + W10 + W100 + W1000;					// Total Dead Fuel Loading
@@ -1153,7 +940,6 @@ int NFDRS4::iCalcIndexes (int iWS, int iSlopeCls,double* fSC,double* fERC, doubl
 
     /* HL = HD */
     IR = GMAOP * ((WDEADN * HD * ETASD * ETAMD) + (WLIVEN * HD * ETASL * ETAML));
-    //cout << GMAOP << " " << WDEADN << " " << HD << " " << ETASD << " " << ETAMD << " " << WLIVEN << " " << ETASL <<" " << ETAML << endl;
     fWNDFC = WNDFC;
 
     if (88.0 * (double) (iWS) * fWNDFC > 0.9 * IR)
@@ -1271,13 +1057,13 @@ int NFDRS4::iCalcIndexes (int iWS, int iSlopeCls,double* fSC,double* fERC, doubl
     else
     {
         CHI = (344.0 - QIGN) / 10.0;
-        if ((pow(CHI, 3.66) * 0.000923 / 50) <= PNORM1) 
+        if ((pow(CHI, 3.66) * 0.000923 / 50.0) <= PNORM1) 
             IC = 0;
         else
         {
-            PI = ((pow(CHI, 3.66) * 0.000923 / 50) - PNORM1) * 100.0 / PNORM2;
-            if (PI < 0) PI = 0;
-            if (PI > 100) PI = 100;
+            PI = ((pow(CHI, 3.66) * 0.000923 / 50.0) - PNORM1) * 100.0 / PNORM2;
+            if (PI < 0.0) PI = 0.0;
+            if (PI > 100.0) PI = 100.0;
             SCN = 100.0 * SC / SCM;
             if (SCN > 100.0) SCN = 100.0;
             PFI = pow(SCN, 0.5);
@@ -1285,7 +1071,7 @@ int NFDRS4::iCalcIndexes (int iWS, int iSlopeCls,double* fSC,double* fERC, doubl
         }
     }
 
-    if (SC < 0.00001) IC = 0;
+    if (SC < 0.00001) IC = 0.0;
     *fIC = IC;
 
     /* Reset Just To Be Safe */
@@ -1295,6 +1081,7 @@ int NFDRS4::iCalcIndexes (int iWS, int iSlopeCls,double* fSC,double* fERC, doubl
     W1000 = L1000 * CTA;
     WWOOD = LWOOD * CTA;
     WDROUGHT = LDROUGHT * CTA;
+
     return (1);
 
 }
@@ -1352,27 +1139,15 @@ int NFDRS4::iCalcKBDI (double fPrecipAmt, int iMaxTemp,
 //double NFDRS4::Cure(double fMCHerb, double fGSI, double fGreenupThreshold, double fGSIMax)
 double NFDRS4::Cure(double fGSI, double fGreenupThreshold, double fGSIMax)
 {
-   double GreenupThreshold,MaxGSI,MinLFMVal,MaxLFMVal;
-    
-   double GSI = 0.0; 
-   if(fGSI >= 0 && fGSI <= 1){ 
-	   GSI = fGSI; 
-	   GreenupThreshold = fGreenupThreshold;
-	   MaxGSI = fGSIMax;
-	   GreenupThreshold = fGreenupThreshold;
-   }
-   else
-   {
-	   HerbFM.GetLFMParameters(&MaxGSI, &GreenupThreshold, &MinLFMVal, &MaxLFMVal);
-	   GSI = HerbFM.CalcRunningAvgGSI();
-   }
-   (GSI < GreenupThreshold)? fctCur = 1 : fctCur = -1.0 /(1.0 - GreenupThreshold) * (GSI/MaxGSI) + 1.0/(1.0 - GreenupThreshold);
+
+   (m_GSI < fGreenupThreshold)? fctCur = 1 : fctCur = -1.0 /(1.0 - fGreenupThreshold) * (m_GSI/fGSIMax) + 1.0/(1.0 - fGreenupThreshold);
 
    if (fctCur < 0) fctCur = 0.0;
    if (fctCur > 1) fctCur = 1.0;
 
    W1P = W1 + WHERB * fctCur;
    WHERBP = WHERB * (1 - fctCur);
+
    return (fctCur);
 }
 
@@ -1433,12 +1208,12 @@ void NFDRS4::SetGSIParams(double MaxGSI, double GreenupThreshold, double TminMin
 	double DaylMin /*= 36000*/, double DaylMax /*= 39600*/, unsigned int MAPeriod/* = 21U*/, bool UseVPDAvg, unsigned int nPrecipDays/* = 30*/, double rtPrecipMin /*= 0.5*/, 
     double rtPrecipMax /*= 1.5*/, bool UseRTPrecip /* = false*/)
 {
-	GsiFM.SetLimits(TminMin, TminMax, VPDMin, VPDMax, DaylMin, DaylMax, rtPrecipMin, rtPrecipMax);
-	GsiFM.SetMAPeriod(MAPeriod);
-	GsiFM.SetUseVPDAvg(UseVPDAvg);
-	GsiFM.SetLFMParameters(MaxGSI, GreenupThreshold, 30, 250);
-	GsiFM.SetNumPrecipDays(nPrecipDays);
-    GsiFM.SetUseRTPrecip(UseRTPrecip);
+	///GsiFM.SetLimits(TminMin, TminMax, VPDMin, VPDMax, DaylMin, DaylMax, rtPrecipMin, rtPrecipMax);
+	//GsiFM.SetMAPeriod(MAPeriod);
+	//GsiFM.SetUseVPDAvg(UseVPDAvg);
+	//GsiFM.SetLFMParameters(MaxGSI, GreenupThreshold, 30, 250);
+	//GsiFM.SetNumPrecipDays(nPrecipDays);
+   // GsiFM.SetUseRTPrecip(UseRTPrecip);
 }
 
 void NFDRS4::SetHerbGSIparams(double MaxGSI, double GreenupThreshold, double TminMin /*= -2.0*/, double TminMax /*= 5.0*/ , double VPDMin /*= 900 */ , double VPDMax /*= 4100 */ ,
@@ -1625,7 +1400,6 @@ double NFDRS4::GetXDaysPrecipitation(int nDays)
 		val = std::accumulate(qPrecip.begin(), qPrecip.end(), startVal);
 	else
 	{
-		//return std::accumulate(qPrecip._Get_container()., qPrecip._Get_container().end(), startVal);
 		int startDay = qPrecip.size() - nDays;
 		for (int d = startDay; d < qPrecip.size(); d++)
 		{
@@ -1660,7 +1434,7 @@ bool NFDRS4::LoadState(NFDRS4State state)
 	UseCuring = state.m_UseCuring;
 	UseLoadTransfer = state.m_UseLoadTransfer;
 	KBDIThreshold = state.m_KBDIThreshold;
-	Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, state.gsiState.m_IsAnnual, KBDIThreshold);
+	Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, state.herbState.m_IsAnnual, KBDIThreshold);
 
 
 	BI = state.m_BI;
@@ -1705,7 +1479,7 @@ bool NFDRS4::LoadState(NFDRS4State state)
 	ThousandHourFM.SetState(state.fm1000State);
 	HerbFM.SetState(state.herbState);
 	WoodyFM.SetState(state.woodyState);
-	GsiFM.SetState(state.gsiState);
+	//GsiFM.SetState(state.gsiState);
 
 	return true;
 }
@@ -1773,26 +1547,3 @@ void NFDRS4::AddCustomFuel(CFuelModelParams fmParams)
     //iSetFuelModel(fmParams.getFuelModel());
 }
 
-/*bool NFDRS4::SetCustomFuelModel(CFuelModelParams fmParams)
-{
-    FuelModel = fmParams.getFuelModel();
-    SG1 = fmParams.getSG1();
-    SG10 = fmParams.getSG10();
-    SG100 = fmParams.getSG100();
-    SG1000 = fmParams.getSG1000();
-    SGHERB = fmParams.getSGHerb();
-    SGWOOD = fmParams.getSGWood();
-    HD = fmParams.getHD();
-    L1 = fmParams.getL1();
-    L10 = fmParams.getL10();
-    L100 = fmParams.getL100();
-    L1000 = fmParams.getL1000();
-    LHERB = fmParams.getLHerb();
-    LWOOD = fmParams.getLWood();
-    DEPTH = fmParams.getDepth();
-    MXD = fmParams.getMXD();
-    SCM = fmParams.getSCM();
-    LDROUGHT = fmParams.getLDrought();
-    WNDFC = fmParams.getWNDFC();
-    return true;
-}*/

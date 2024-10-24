@@ -18,7 +18,6 @@ NFDRS4State::NFDRS4State(const NFDRS4State& rhs)
 	fm10State = rhs.fm10State;
 	fm100State = rhs.fm100State;
 	fm1000State = rhs.fm1000State;
-	gsiState = rhs.gsiState;
 	herbState = rhs.herbState;
 	woodyState = rhs.woodyState;
 	m_Lat = rhs.m_Lat;
@@ -46,7 +45,6 @@ NFDRS4State::NFDRS4State(const NFDRS4State& rhs)
 	m_IC = rhs.m_IC;
 	m_GSI = rhs.m_GSI;
 	m_nConsectiveSnowDays = rhs.m_nConsectiveSnowDays;
-	//m_lastUpdateTime = rhs.m_lastUpdateTime;
 	m_KBDIThreshold = rhs.m_KBDIThreshold;
 	m_qPrecip = rhs.m_qPrecip;
 	m_qHourlyPrecip = rhs.m_qHourlyPrecip;
@@ -69,7 +67,6 @@ NFDRS4State::NFDRS4State(NFDRS4 *pNFDRS)
 	m_IC = pNFDRS->IC;
 	m_KBDI = pNFDRS->KBDI;
 	m_KBDIThreshold = pNFDRS->KBDIThreshold;
-	//m_lastUpdateTime = pNFDRS->lastUpdateTime;
 	m_lastUtcUpdateTime = pNFDRS->lastUtcUpdateTime;
 	m_lastDailyUpdateTime = pNFDRS->lastDailyUpdateTime;
 	m_Lat = pNFDRS->Lat;
@@ -115,7 +112,6 @@ NFDRS4State::NFDRS4State(NFDRS4 *pNFDRS)
 	fm10State = pNFDRS->TenHourFM.GetState();
 	fm100State = pNFDRS->HundredHourFM.GetState();
 	fm1000State = pNFDRS->ThousandHourFM.GetState();
-	gsiState = pNFDRS->GsiFM.GetState();
 	herbState = pNFDRS->HerbFM.GetState();
 	woodyState = pNFDRS->WoodyFM.GetState();
 }
@@ -154,12 +150,6 @@ bool NFDRS4State::LoadState(std::string fileName)
 		return false;
 	}
 	status = fm1000State.ReadState(in);
-	if (!status)
-	{
-		fclose(in);
-		return false;
-	}
-	status = gsiState.ReadState(in);
 	if (!status)
 	{
 		fclose(in);
@@ -334,12 +324,6 @@ bool NFDRS4State::LoadState(std::string fileName)
 		fclose(in);
 		return false;
 	}
-	/*nRead = fread(&m_lastUpdateTime, sizeof(m_lastUpdateTime), 1, in);
-	if (nRead != 1)
-	{
-		fclose(in);
-		return false;
-	}*/
 	int nPcp;
 	nRead = fread(&nPcp, sizeof(nPcp), 1, in);
 	if (nRead != 1)
@@ -488,12 +472,6 @@ bool NFDRS4State::SaveState(std::string fileName)
 		return false;
 	}
 	status = fm1000State.SaveState(out);
-	if (!status)
-	{
-		fclose(out);
-		return false;
-	}
-	status = gsiState.SaveState(out);
 	if (!status)
 	{
 		fclose(out);
@@ -667,12 +645,6 @@ bool NFDRS4State::SaveState(std::string fileName)
 		fclose(out);
 		return false;
 	}
-	/*nWrite = fwrite(&m_lastUpdateTime, sizeof(m_lastUpdateTime), 1, out);
-	if (nWrite != 1)
-	{
-		fclose(out);
-		return false;
-	}*/
 	int nPcp = m_qPrecip.size();
 	nWrite = fwrite(&nPcp, sizeof(nPcp), 1, out);
 	if (nWrite != 1)
@@ -727,9 +699,6 @@ bool NFDRS4State::SaveState(std::string fileName)
 		fclose(out);
 		return false;
 	}
-	//	nWrite = fwrite(&m_lastUtcUpdateTime, sizeof(m_lastUtcUpdateTime), 1, out);
-//	if (nWrite != 1)
-//		return false;
 	int utcYear, utcMonth, utcDay, utcHour;
 	utcYear = m_lastUtcUpdateTime.get_tm().tm_year;
 	utcMonth = m_lastUtcUpdateTime.get_tm().tm_mon;

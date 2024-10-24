@@ -168,12 +168,10 @@ class NFDRS4
 		void CreateFuelModels();
 
 		void Init(double Lat, char FuelModel, int SlopeClass, double AvgAnnPrecip, bool LT, bool Cure, bool isAnnual, int kbdiThreshold, int RegObsHour = 13, bool isReinit = false);
-      // void Update(Wx);
-	   void Update(int Year, int Month, int Day, int Hour, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double PPTAmt, double pcp24, double SolarRad, double WS, bool SnowDay, int RegObsHr);
+ 	   void Update(int Year, int Month, int Day, int Hour, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double PPTAmt, double pcp24, double SolarRad, double WS, bool SnowDay, int RegObsHr);
        void Update(int Year, int Month, int Day, int Hour, double Temp, double RH, double PPTAmt, double SolarRad, double WS, bool SnowDay);
        void UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double pcp24, double WS, double fMC1, double fMC10, double fMC100, double fMC1000, double fuelTemp, bool SnowDay/* = false*/);
-        //void iSetFuelModel (char cFM);
-		bool iSetFuelModel(char cFM);
+ 		bool iSetFuelModel(char cFM);
         int iSetFuelMoistures (double fMC1, double fMC10,double fMC100, double fMC1000, double fMCWood, double fMCHerb, double fuelTempC);
         int iCalcIndexes (int iWS, int iSlopeCls,double* fSC,double* fERC, double* fBI, double* fIC,double fGSI = -999,double fKBDI = -999);
         int iCalcKBDI (double fPrecipAmt, int iMaxTemp,double fCummPrecip, int iYKBDI, double fAvgPrecip);
@@ -221,10 +219,8 @@ class NFDRS4
 
 		void SetSCMax(int maxSC);
 		int GetSCMax();
-		//void SetMxdHumid(bool isHumid);
         void SetMXD(int mxd);
         int GetMXD();
-		//bool GetMxdHumid();
 		double GetFuelTemperature();
 		double GetXDaysPrecipitation(int nDays);
 		bool ReadState(std::string fileName);
@@ -237,7 +233,6 @@ class NFDRS4
         double GetMinRH();
         double GetPcp24();
 
-        //bool SetCustomFuelModel(CFuelModelParams fmParams);
 		void AddCustomFuel(CFuelModelParams fmParams);
 		double CTA;
         double Lat;
@@ -249,7 +244,7 @@ class NFDRS4
         DeadFuelMoisture TenHourFM;
         DeadFuelMoisture HundredHourFM;
         DeadFuelMoisture ThousandHourFM;
-		LiveFuelMoisture GsiFM;
+		//LiveFuelMoisture GsiFM;
 		LiveFuelMoisture HerbFM;
 		LiveFuelMoisture WoodyFM;
 
@@ -260,7 +255,7 @@ class NFDRS4
         double L1, L10, L100, L1000, LWOOD, LHERB, LDROUGHT;
 		double DroughtUnit, fctCur;
 		double DEPTH, WNDFC;
-        int MXD, HD, SCM;
+        double MXD, HD, SCM;
         double MC1, MC10, MC100, MC1000, MCWOOD, MCHERB;
 		double BI, ERC, SC, IC;
 		int PrevYear;

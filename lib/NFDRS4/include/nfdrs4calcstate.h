@@ -28,7 +28,7 @@ public:
 	DFMCalcState fm1000State;
 
 	//gsi and live fuel moisture states
-	LFMCalcState gsiState;
+	//LFMCalcState gsiState;
 	LFMCalcState herbState;
 	LFMCalcState woodyState;
 
