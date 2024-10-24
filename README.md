@@ -33,7 +33,7 @@ Building for MS Windows has been tested with MS Visual Studio 2022
 *Steps*<br>
 *Build config4cpp*<br>
 Build config4cpp.lib is easiest accomplished by use of the x64 Native Tools Command Prompt for VS 2022.<br>
-Open the x64 Native Tools Command Prompt for VS 2022, navigate to the NFDRS4/extern/config4cpp directory and enter: ```nmake -f Makefile.win all```<br> 
+Open the x64 Native Tools Command Prompt for VS 2022, navigate to the NFDRS4/extern/config4cpp directory and enter: ```nmake -f Makefile.win all64```<br> 
 This should produce config4cpp.lib static library in NFDRS4/extern/config4cpp/lib<br><br>
 Navigate back to the root NFDRS4 directory<br>
 Run ```cmake -G "NMake Makefiles" .```<br>
