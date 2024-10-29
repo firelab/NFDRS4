@@ -4,7 +4,7 @@ This directory contains an interface file ```nfdrs.i``` for generating SWIG bind
 
 Swig ver 4 or newer is needed. To generate the bindings and compile the module for Python, execute the following from within this directory in the NFDRS source tree:
 ```/bin/bash
-swig -python -py3 -c++ nfdrs.i
+swig -python -py3 -c++ nfdrs4.i
 g++ -fPIC -I /usr/include/python3.10  -I ../lib/NFDRS4/include/ \
    -I ../lib/time64/include/ -I ../lib/utctime/include/ \
    -c ../lib/NFDRS4/src/deadfuelmoisture.cpp \
