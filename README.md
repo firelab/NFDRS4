@@ -1,6 +1,8 @@
 
 # NFDRS4 - National Fire Danger Rating System 4.0
+The repository houses the source code for the US National Fire Danger Rating System Version 4.0.
 
+[Modernizing the US National Fire Danger Rating System (version 4): Simplified fuel models and improved live and dead fuel moisture calculations]{https://www.sciencedirect.com/science/article/pii/S1364815224002421}
 
 ## Multiplatform source for NFDRS4 static library
 This library provides all of the source code for NFDRS Version 4.0 including the Nelson Dead Fuel Moisture Model, the Growing Season Index-based Live Fuel Moisture Model and the NFDRS calculator.
