@@ -5,7 +5,7 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-from cgitb import html
+#from cgitb import html
 
 project = 'US National Fire Danger Rating System'
 copyright = '2025, W. Matt Jolly'
@@ -29,4 +29,4 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 # Breathe configuration
-breathe_default_project = "my_project"
+breathe_default_project = "nfdrs4"
