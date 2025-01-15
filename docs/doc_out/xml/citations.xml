@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="citations" kind="page">
+    <compoundname>citations</compoundname>
+    <title>Cited Documents</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="citations_1carlson2007">
+<title>Carlson, J. D., et al. 2007.</title><para>Application of the Nelson model to four timelag fuel classes using Oklahoma field observations: model evaluation and comparison with National Fire Danger Rating System algorithms. In International Journal of Wildland Fire (Vol. 16, Issue 2, p. 204). CSIRO Publishing. <ulink url="https://doi.org/10.1071/wf06073">https://doi.org/10.1071/wf06073</ulink></para>
+</sect1>
+<sect1 id="citations_1bevins2005">
+<title>Bevins, Collin D. 2005.</title><para>Adapting Nelson&apos;s dead fuel moisture model for wildland fire modeling.</para>
+</sect1>
+<sect1 id="citations_1carlson2003">
+<title>Carlson, J. D. 2003.</title><para>Evaluation of a new dead fuel moisture model in a near-real-time data assimilation and forecast environment. Progress report on file at USDA Forest Service Intermountain Research Station, Fire Sciences Laboratory, Missoula, MT. September 15, 2003.</para>
+</sect1>
+<sect1 id="citations_1carlson2004a">
+<title>Carlson, J. D. 2004a.</title><para>Evaluation of a new dead fuel moisture model in a near-real-time data assimilation and forecast environment. Progress report on file at USDA Forest Service Intermountain Research Station, Fire Sciences Laboratory, Missoula, MT. February 10, 2004.</para>
+</sect1>
+<sect1 id="citations_1carlson2004b">
+<title>Carlson, J. D. 2004b.</title><para>Evaluation of a new dead fuel moisture model in a near-real-time data assimilation and forecast environment. Progress report on file at USDA Forest Service Intermountain Research Station, Fire Sciences Laboratory, Missoula, MT. July 13, 2004.</para>
+</sect1>
+<sect1 id="citations_1meeus1982">
+<title>Meeus, Jean. 1982.</title><para>Astronomical formulae for calculators. Fourth Ed. Willman-Bell, Inc. 218p.</para>
+</sect1>
+<sect1 id="citations_1nelson2000">
+<title>Nelson, Ralph M. Jr. 2000.</title><para>Prediction of diurnal change in 1-h fuel stick moisture content. <emphasis>Can. J. For. Res.</emphasis> <bold>30</bold>: 1071-1087. (2000).</para>
+</sect1>
+<sect1 id="citations_1jolly2005">
+<title>Jolly, William M, Running, SR, and Rama Nemani. 2005.</title><para>A generalized, bioclimatic index to predict foliar phenology in response to climate <emphasis>Glob. Chan. Biol.</emphasis> 11<bold>(4)</bold>: 619-632. </para>
+</sect1>
+    </detaileddescription>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/deadfuelmoisture.h"/>
+  </compounddef>
+</doxygen>

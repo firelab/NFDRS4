@@ -1,0 +1,52 @@
+\doxysection{lfmcalcstate.\+h}
+\hypertarget{lfmcalcstate_8h_source}{}\label{lfmcalcstate_8h_source}\index{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h@{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}nfdrs4statesizes.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalcState}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalcState}}();}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalcState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalcState}}\&\ rhs);}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_l_f_m_calc_state}{\string~LFMCalcState}}();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ ReadState(FILE\ *in);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ SaveState(FILE\ *out);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ time\_t\ m\_lastUpdateTime;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_UseVPDAvg;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_IsHerb;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_IsAnnual;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_LFIdaysAvg;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_nDaysPrecip;}
+\DoxyCodeLine{00023\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_Lat;}
+\DoxyCodeLine{00024\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_TminMin;}
+\DoxyCodeLine{00025\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_TminMax;}
+\DoxyCodeLine{00026\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_VPDMin;}
+\DoxyCodeLine{00027\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_VPDMax;}
+\DoxyCodeLine{00028\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_DaylenMin;}
+\DoxyCodeLine{00029\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_DaylenMax;}
+\DoxyCodeLine{00030\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_MaxGSI;}
+\DoxyCodeLine{00031\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_GreenupThreshold;}
+\DoxyCodeLine{00032\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_MaxLFMVal;}
+\DoxyCodeLine{00033\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_MinLFMVal;}
+\DoxyCodeLine{00034\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_Slope;}
+\DoxyCodeLine{00035\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_Intercept;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_hasGreenedUpThisYear;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_hasExceeded120ThisYear;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_canIncreaseHerb;}
+\DoxyCodeLine{00039\ \ \ \ \ FP\_STORAGE\_TYPE\ lastHerbFM;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_useRTPrecip;}
+\DoxyCodeLine{00041\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_pcpMin;}
+\DoxyCodeLine{00042\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_pcpMax;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<FP\_STORAGE\_TYPE>\ m\_qGSI;}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+
+\end{DoxyCode}

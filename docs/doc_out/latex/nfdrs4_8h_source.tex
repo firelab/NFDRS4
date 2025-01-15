@@ -1,0 +1,284 @@
+\doxysection{nfdrs4.\+h}
+\hypertarget{nfdrs4_8h_source}{}\label{nfdrs4_8h_source}\index{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h@{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_NFDRS4\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_NFDRS4\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Standard\ include\ files}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{deadfuelmoisture_8h}{deadfuelmoisture.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}livefuelmoisture.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}nfdrs4calcstate.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}utctime.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/*Fuel\ Model\ Definition*/}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_fuel_model_params}{CFuelModelParams}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_c_fuel_model_params}{CFuelModelParams}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_c_fuel_model_params}{CFuelModelParams}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_c_fuel_model_params}{CFuelModelParams}}\&\ rhs);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_c_fuel_model_params}{\string~CFuelModelParams}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{char}\ getFuelModel();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ getDescription();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ getSG1();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ getSG10();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ getSG100();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ getSG1000();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ getSGHerb();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getSGWood();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ getL1();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ getL10();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ getL100();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{double}\ getL1000();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ getLHerb();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{double}\ getLWood();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ getDepth();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ getMXD();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ getHD();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ getSCM();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{double}\ getLDrought();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{double}\ getWNDFC();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ setFuelModel(\textcolor{keywordtype}{char}\ fm);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ setDescription(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ description);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ setSG1(\textcolor{keywordtype}{int}\ sg1);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ setSG10(\textcolor{keywordtype}{int}\ sg10);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ setSG100(\textcolor{keywordtype}{int}\ sg100);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ setSG1000(\textcolor{keywordtype}{int}\ sg1000);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ setSGHerb(\textcolor{keywordtype}{int}\ sgHerb);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ setSGWood(\textcolor{keywordtype}{int}\ sgWood);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ setL1(\textcolor{keywordtype}{double}\ l1);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ setL10(\textcolor{keywordtype}{double}\ l10);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ setL100(\textcolor{keywordtype}{double}\ l100);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ setL1000(\textcolor{keywordtype}{double}\ l1000);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ setLHerb(\textcolor{keywordtype}{double}\ lHerb);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ setLWood(\textcolor{keywordtype}{double}\ lWood);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ setDepth(\textcolor{keywordtype}{double}\ depth);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ setMXD(\textcolor{keywordtype}{int}\ mxd);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ setHD(\textcolor{keywordtype}{int}\ hd);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ setSCM(\textcolor{keywordtype}{int}\ scm);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ setLDrought(\textcolor{keywordtype}{double}\ ldrought);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ setWNDFC(\textcolor{keywordtype}{double}\ wndfc);}
+\DoxyCodeLine{00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_fuelModel;}
+\DoxyCodeLine{00073\ \ \ \ \ std::string\ m\_description;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_SG1;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_SG10;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_SG100;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_SG1000;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_SGHERB;}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_SGWOOD;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_L1;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_L10;}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_L100;}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_L1000;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_LHERB;}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_LWOOD;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_DEPTH;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_MXD;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_HD;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_SCM;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_LDROUGHT;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_WNDFC;}
+\DoxyCodeLine{00092\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{comment}{/****************************\ nfdrs4.h\ ***********************************}}
+\DoxyCodeLine{00095\ \textcolor{comment}{}}
+\DoxyCodeLine{00096\ \textcolor{comment}{First\ Letter\ of\ Variable\ or\ Function\ Name:}}
+\DoxyCodeLine{00097\ \textcolor{comment}{}}
+\DoxyCodeLine{00098\ \textcolor{comment}{Variable\ Names\ Used\ in\ Function\ Calls:}}
+\DoxyCodeLine{00099\ \textcolor{comment}{}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ \ \ \ iAdjust\ \ \ \ \ \ \ \ \ <desired\ +/-\/\ addition\ to\ 1-\/hour\ fuel\ moisture>}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ iAspect\ \ \ \ \ \ \ \ \ 1=N,\ 2=E,\ 3=S,\ 4=W}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ \ \ iBI\ \ \ \ \ \ \ \ \ \ \ \ \ \ Burning\ Index}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ \ \ fDEPTH\ \ \ \ \ \ \ \ \ \ \ Fuel\ Model's\ depth}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ \ \ iDoHerbXfer\ \ \ \ \ \ 1=Transfer\ (appropriate\ amt\ of)\ Herb\ Load\ to\ 1Hr,\ 0=No}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ \ \ fERC\ \ \ \ \ \ \ \ \ \ \ \ \ Energy\ Release\ Component}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ \ \ iExposure\ \ \ \ \ \ \ \ 1=Exposed,\ 0=Not}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ \ \ iFIL\ \ \ \ \ \ \ \ \ \ \ \ \ Fire\ Intensity\ Level}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ \ \ \ fFL\ \ \ \ \ \ \ \ \ \ \ \ \ Flame\ Length}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ \ \ iFM\ \ \ \ \ \ \ \ \ \ \ \ \ \ ASCII\ Value\ of\ Fuel\ Model\ ID:\ \ 65=A,\ 66=B,\ ...}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ \ \ iHD\ \ \ \ \ \ \ \ \ \ \ \ \ \ Fuel\ Model's\ Dead\ (\&\ Live)\ Heat\ of\ Combustion}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ \ \ iHour\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 2,\ ...\ 24}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ \ \ iIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ Ignition\ Component}}
+\DoxyCodeLine{00113\ \textcolor{comment}{\ \ \ iJulian\ \ \ \ \ \ \ \ \ \ Annualized\ Julian:\ \ 1=Jan1,...\ ,\ 365=Dec31}}
+\DoxyCodeLine{00114\ \textcolor{comment}{\ \ \ iLat\ \ \ \ \ \ \ \ \ \ \ \ \ Nearest\ Degree\ of\ Latitude}}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ \ \ iMaxRH\ \ \ \ \ \ \ \ \ \ \ 24-\/Hour\ Max\ RH\ (-\/999\ means\ missing)}}
+\DoxyCodeLine{00116\ \textcolor{comment}{\ \ \ iMaxTemp\ \ \ \ \ \ \ \ \ 24-\/Hour\ Max\ Temp\ (F)\ (-\/999\ means\ missing)}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ \ \ fMCn\ \ \ \ \ \ \ \ \ \ \ \ \ Fuel\ Moistures\ for\ fuel\ class\ "{}n"{}}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ \ \ iMinRH\ \ \ \ \ \ \ \ \ \ \ 24-\/Hour\ Min\ RH\ (-\/999\ means\ missing)}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ \ \ iMinTemp\ \ \ \ \ \ \ \ \ 24-\/Hour\ Min\ Temp\ (F)\ (-\/999\ means\ missing)}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ \ \ \ iMonth\ \ \ \ \ \ \ \ \ \ 1=Jan,\ ...\ 12=Dec}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\ \ \ iMXD\ \ \ \ \ \ \ \ \ \ \ \ \ Fuel\ Model's\ Moisture\ of\ Extinction\ (\%)}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ \ \ iNFMAS\ \ \ \ \ \ \ \ \ \ \ 1=Use\ NFMAS\ Variations,\ 0=No\ (Use\ standard)}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ \ \ iRH\ \ \ \ \ \ \ \ \ \ \ \ \ \ Observed\ RH}}
+\DoxyCodeLine{00124\ \textcolor{comment}{\ \ \ fROS\ \ \ \ \ \ \ \ \ \ \ \ \ Rate\ of\ Spread}}
+\DoxyCodeLine{00125\ \textcolor{comment}{\ \ \ iSAn\ \ \ \ \ \ \ \ \ \ \ \ \ Fuel\ Model's\ Surface/Area\ for\ fuel\ class\ "{}n"{}}}
+\DoxyCodeLine{00126\ \textcolor{comment}{\ \ \ iSC\ \ \ \ \ \ \ \ \ \ \ \ \ \ Spread\ Component}}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ \ \ iSCM\ \ \ \ \ \ \ \ \ \ \ \ \ Fuel\ Model's\ Spread\ At\ Which\ All\ Ignitiona\ -\/>\ Reportable}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ iSite\ \ \ \ \ \ \ \ \ \ 1=Low,\ 2=Mid,\ 3=Upper}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ \ \ iSlope30\ \ \ \ \ \ \ 1=30\%\ or\ less,\ 2=greater\ than\ 30\%}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ \ \ iSlopeCls\ \ \ \ \ \ \ \ NFDRS\ Slope\ Class\ (1-\/5)}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ \ \ iSOW\ \ \ \ \ \ \ \ \ \ \ \ \ State\ of\ Weather\ (0=Clear,\ ...)\ (-\/1\ allowed\ in\ iCalcIC)}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ \ \ iTemp\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Observed\ Temp\ (F)\ (Can\ be\ fuel\ temp\ in\ iCalcIC)}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ \ \ fWn\ \ \ \ \ \ \ \ \ \ \ \ \ \ Fuel\ Model's\ Loading\ for\ fuel\ class\ "{}n"{}}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ \ \ fWNDFC\ \ \ \ \ \ \ \ \ \ \ Fuel\ Model's\ (or\ desired)\ Wind\ Reduction\ Factor}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ \ \ iWS\ \ \ \ \ \ \ \ \ \ \ \ \ \ 20-\/Foot\ Windspeed}}
+\DoxyCodeLine{00136\ \textcolor{comment}{}}
+\DoxyCodeLine{00137\ \textcolor{comment}{}}
+\DoxyCodeLine{00138\ \textcolor{comment}{Functions:}}
+\DoxyCodeLine{00139\ \textcolor{comment}{}}
+\DoxyCodeLine{00140\ \textcolor{comment}{\ \ \ \ Keywords\ in\ function\ names:}}
+\DoxyCodeLine{00141\ \textcolor{comment}{}}
+\DoxyCodeLine{00142\ \textcolor{comment}{\ \ \ \ Calc\ \ \ \ \ \ \ \ Performs\ a\ calculation,\ returns\ value(s)}}
+\DoxyCodeLine{00143\ \textcolor{comment}{\ \ \ \ Do\ \ \ \ \ \ \ \ \ \ Performs\ an\ action}}
+\DoxyCodeLine{00144\ \textcolor{comment}{\ \ \ \ Get\ \ \ \ \ Returns\ values}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ \ \ \ Set\ \ \ \ \ Sets\ values}}
+\DoxyCodeLine{00146\ \textcolor{comment}{}}
+\DoxyCodeLine{00147\ \textcolor{comment}{\ \ \ \ Some\ functions\ return\ calculated\ values.\ Most,\ especially\ integer}}
+\DoxyCodeLine{00148\ \textcolor{comment}{\ \ \ typed\ functions,\ return\ "{}success\ status"{}:\ 1=Success,\ 0=Failure.}}
+\DoxyCodeLine{00149\ \textcolor{comment}{}}
+\DoxyCodeLine{00150\ \textcolor{comment}{\ \ \ Most\ requested\ values\ are\ returned\ as\ function\ arguments.}}
+\DoxyCodeLine{00151\ \textcolor{comment}{}}
+\DoxyCodeLine{00152\ \textcolor{comment}{}}
+\DoxyCodeLine{00153\ \textcolor{comment}{***************************************************************************/}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00160\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_n_f_d_r_s4}{NFDRS4}}}
+\DoxyCodeLine{00161\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_n_f_d_r_s4}{NFDRS4}}();}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_n_f_d_r_s4}{NFDRS4}}(\textcolor{keywordtype}{double}\ Lat,\textcolor{keywordtype}{char}\ FuelModel,\textcolor{keywordtype}{int}\ SlopeClass,\ \textcolor{keywordtype}{double}\ AvgAnnPrecip,\textcolor{keywordtype}{bool}\ LT,\textcolor{keywordtype}{bool}\ Cure,\ \textcolor{keywordtype}{bool}\ IsAnnual);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_n_f_d_r_s4}{\string~NFDRS4}}();}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Member\ functions}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//CreateFuelModels\ called\ in\ constructors}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateFuelModels();}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_f_d_r_s4_a51a0a2f713869fcb29a48e696e5e5c6a}{Init}}(\textcolor{keywordtype}{double}\ Lat,\ \textcolor{keywordtype}{char}\ FuelModel,\ \textcolor{keywordtype}{int}\ SlopeClass,\ \textcolor{keywordtype}{double}\ AvgAnnPrecip,\ \textcolor{keywordtype}{bool}\ LT,\ \textcolor{keywordtype}{bool}\ Cure,\ \textcolor{keywordtype}{bool}\ isAnnual,\ \textcolor{keywordtype}{int}\ kbdiThreshold,\ \textcolor{keywordtype}{int}\ RegObsHour\ =\ 13,\ \textcolor{keywordtype}{bool}\ isReinit\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{int}\ Year,\ \textcolor{keywordtype}{int}\ Month,\ \textcolor{keywordtype}{int}\ Day,\ \textcolor{keywordtype}{int}\ Hour,\ \textcolor{keywordtype}{int}\ Julian,\ \textcolor{keywordtype}{double}\ Temp,\ \textcolor{keywordtype}{double}\ MinTemp,\ \textcolor{keywordtype}{double}\ MaxTemp,\ \textcolor{keywordtype}{double}\ RH,\ \textcolor{keywordtype}{double}\ MinRH,\ \textcolor{keywordtype}{double}\ PPTAmt,\ \textcolor{keywordtype}{double}\ pcp24,\ \textcolor{keywordtype}{double}\ SolarRad,\ \textcolor{keywordtype}{double}\ WS,\ \textcolor{keywordtype}{bool}\ SnowDay,\ \textcolor{keywordtype}{int}\ RegObsHr);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{int}\ Year,\ \textcolor{keywordtype}{int}\ Month,\ \textcolor{keywordtype}{int}\ Day,\ \textcolor{keywordtype}{int}\ Hour,\ \textcolor{keywordtype}{double}\ Temp,\ \textcolor{keywordtype}{double}\ RH,\ \textcolor{keywordtype}{double}\ PPTAmt,\ \textcolor{keywordtype}{double}\ SolarRad,\ \textcolor{keywordtype}{double}\ WS,\ \textcolor{keywordtype}{bool}\ SnowDay);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateDaily(\textcolor{keywordtype}{int}\ Year,\ \textcolor{keywordtype}{int}\ Month,\ \textcolor{keywordtype}{int}\ Day,\ \textcolor{keywordtype}{int}\ Julian,\ \textcolor{keywordtype}{double}\ Temp,\ \textcolor{keywordtype}{double}\ MinTemp,\ \textcolor{keywordtype}{double}\ MaxTemp,\ \textcolor{keywordtype}{double}\ RH,\ \textcolor{keywordtype}{double}\ MinRH,\ \textcolor{keywordtype}{double}\ pcp24,\ \textcolor{keywordtype}{double}\ WS,\ \textcolor{keywordtype}{double}\ fMC1,\ \textcolor{keywordtype}{double}\ fMC10,\ \textcolor{keywordtype}{double}\ fMC100,\ \textcolor{keywordtype}{double}\ fMC1000,\ \textcolor{keywordtype}{double}\ fuelTemp,\ \textcolor{keywordtype}{bool}\ SnowDay\textcolor{comment}{/*\ =\ false*/});}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ iSetFuelModel(\textcolor{keywordtype}{char}\ cFM);}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iSetFuelMoistures\ (\textcolor{keywordtype}{double}\ fMC1,\ \textcolor{keywordtype}{double}\ fMC10,\textcolor{keywordtype}{double}\ fMC100,\ \textcolor{keywordtype}{double}\ fMC1000,\ \textcolor{keywordtype}{double}\ fMCWood,\ \textcolor{keywordtype}{double}\ fMCHerb,\ \textcolor{keywordtype}{double}\ fuelTempC);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iCalcIndexes\ (\textcolor{keywordtype}{int}\ iWS,\ \textcolor{keywordtype}{int}\ iSlopeCls,\textcolor{keywordtype}{double}*\ fSC,\textcolor{keywordtype}{double}*\ fERC,\ \textcolor{keywordtype}{double}*\ fBI,\ \textcolor{keywordtype}{double}*\ fIC,\textcolor{keywordtype}{double}\ fGSI\ =\ -\/999,\textcolor{keywordtype}{double}\ fKBDI\ =\ -\/999);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iCalcKBDI\ (\textcolor{keywordtype}{double}\ fPrecipAmt,\ \textcolor{keywordtype}{int}\ iMaxTemp,\textcolor{keywordtype}{double}\ fCummPrecip,\ \textcolor{keywordtype}{int}\ iYKBDI,\ \textcolor{keywordtype}{double}\ fAvgPrecip);}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cure(\textcolor{keywordtype}{double}\ fGSI\ =\ -\/999,\ \textcolor{keywordtype}{double}\ fGreenupThreshold\ =\ 0.5,\ \textcolor{keywordtype}{double}\ fGSIMax\ =\ 1.0);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_f_d_r_s4_af449e83d0eb7622b841b8f039e2bf575}{SetGSIParams}}(\textcolor{keywordtype}{double}\ MaxGSI,\ \textcolor{keywordtype}{double}\ GreenupThreshold,\ \textcolor{keywordtype}{double}\ TminMin\ =\ -\/2.0,\ \textcolor{keywordtype}{double}\ TminMax\ =\ 5.0,\ \textcolor{keywordtype}{double}\ VPDMin\ =\ 900,\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ VPDMax\ =\ 4100,\ \textcolor{keywordtype}{double}\ DaylMin\ =\ 36000,\ \textcolor{keywordtype}{double}\ DaylMax\ =\ 39600,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ MAPeriod\ =\ 21U,\ \textcolor{keywordtype}{bool}\ UseVPDAvg\ =\ \textcolor{keyword}{false},\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nPrecipDays\ =\ 30,\ \textcolor{keywordtype}{double}\ rtPrecipMin\ =\ 0.5,\ \textcolor{keywordtype}{double}\ rtPrecipMax\ =\ 1.5,\ \textcolor{keywordtype}{bool}\ UseRTPrecip\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetHerbGSIparams(\textcolor{keywordtype}{double}\ MaxGSI,\ \textcolor{keywordtype}{double}\ GreenupThreshold,\ \textcolor{keywordtype}{double}\ TminMin\ =\ -\/2.0,\ \textcolor{keywordtype}{double}\ TminMax\ =\ 5.0,\ \textcolor{keywordtype}{double}\ VPDMin\ =\ 900,\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ VPDMax\ =\ 4100,\ \textcolor{keywordtype}{double}\ DaylMin\ =\ 36000,\ \textcolor{keywordtype}{double}\ DaylMax\ =\ 39600,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ MAPeriod\ =\ 21U,\ \textcolor{keywordtype}{bool}\ UseVPDAvg\ =\ \textcolor{keyword}{false},\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nPrecipDays\ =\ 30,\ \textcolor{keywordtype}{double}\ rtPrecipMin\ =\ 0.5,\ \textcolor{keywordtype}{double}\ rtPrecipMax\ =\ 1.5,\ \textcolor{keywordtype}{bool}\ UseRTPrecip\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ herbMin\ =\ 30.0,\ \textcolor{keywordtype}{double}\ herbMax\ =\ 250.0);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetWoodyGSIparams(\textcolor{keywordtype}{double}\ MaxGSI,\ \textcolor{keywordtype}{double}\ GreenupThreshold,\ \textcolor{keywordtype}{double}\ TminMin\ =\ -\/2.0,\ \textcolor{keywordtype}{double}\ TminMax\ =\ 5.0,\ \textcolor{keywordtype}{double}\ VPDMin\ =\ 900,\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ VPDMax\ =\ 4100,\ \textcolor{keywordtype}{double}\ DaylMin\ =\ 36000,\ \textcolor{keywordtype}{double}\ DaylMax\ =\ 39600,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ MAPeriod\ =\ 21U,\ \textcolor{keywordtype}{bool}\ UseVPDAvg\ =\ \textcolor{keyword}{false},\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nPrecipDays\ =\ 30,\ \textcolor{keywordtype}{double}\ rtPrecipMin\ =\ 0.5,\ \textcolor{keywordtype}{double}\ rtPrecipMax\ =\ 1.5,\ \textcolor{keywordtype}{bool}\ UseRTPrecip\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ woodyMin\ =\ 60.0,\ \textcolor{keywordtype}{double}\ woodyMax\ =\ 200.0);}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetOneHourParams(\textcolor{keywordtype}{double}\ radius,\ \textcolor{keywordtype}{double}\ adsorptionRate,\ \textcolor{keywordtype}{double}\ maxLocalMoisture,\ \textcolor{keywordtype}{double}\ stickDensity,\ \textcolor{keywordtype}{double}\ desorptionRate);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetTenHourParams(\textcolor{keywordtype}{double}\ radius,\ \textcolor{keywordtype}{double}\ adsorptionRate,\ \textcolor{keywordtype}{double}\ maxLocalMoisture,\ \textcolor{keywordtype}{double}\ stickDensity,\ \textcolor{keywordtype}{double}\ desorptionRate);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetHundredHourParams(\textcolor{keywordtype}{double}\ radius,\ \textcolor{keywordtype}{double}\ adsorptionRate,\ \textcolor{keywordtype}{double}\ maxLocalMoisture,\ \textcolor{keywordtype}{double}\ stickDensity,\ \textcolor{keywordtype}{double}\ desorptionRate);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetThousandHourParams(\textcolor{keywordtype}{double}\ radius,\ \textcolor{keywordtype}{double}\ adsorptionRate,\ \textcolor{keywordtype}{double}\ maxLocalMoisture,\ \textcolor{keywordtype}{double}\ stickDensity,\ \textcolor{keywordtype}{double}\ desorptionRate);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1HourRadius(\textcolor{keywordtype}{double}\ radius);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1HourAdsorptionRate(\textcolor{keywordtype}{double}\ adsorptionRate);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1HourStickDensity(\textcolor{keywordtype}{double}\ stickDensity);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1HourMaxLocalMoisture(\textcolor{keywordtype}{double}\ maxLocalMoisture);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1HourDesorptionRate(\textcolor{keywordtype}{double}\ desorptionRate);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set10HourRadius(\textcolor{keywordtype}{double}\ radius);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set10HourAdsorptionRate(\textcolor{keywordtype}{double}\ adsorptionRate);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set10HourStickDensity(\textcolor{keywordtype}{double}\ stickDensity);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set10HourMaxLocalMoisture(\textcolor{keywordtype}{double}\ maxLocalMoisture);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set10HourDesorptionRate(\textcolor{keywordtype}{double}\ desorptionRate);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set100HourRadius(\textcolor{keywordtype}{double}\ radius);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set100HourAdsorptionRate(\textcolor{keywordtype}{double}\ adsorptionRate);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set100HourStickDensity(\textcolor{keywordtype}{double}\ stickDensity);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set100HourMaxLocalMoisture(\textcolor{keywordtype}{double}\ maxLocalMoisture);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set100HourDesorptionRate(\textcolor{keywordtype}{double}\ desorptionRate);}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1000HourRadius(\textcolor{keywordtype}{double}\ radius);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1000HourAdsorptionRate(\textcolor{keywordtype}{double}\ adsorptionRate);}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1000HourStickDensity(\textcolor{keywordtype}{double}\ stickDensity);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1000HourMaxLocalMoisture(\textcolor{keywordtype}{double}\ maxLocalMoisture);}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set1000HourDesorptionRate(\textcolor{keywordtype}{double}\ desorptionRate);}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetStartKBDI(\textcolor{keywordtype}{int}\ sKBDI);}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ GetStartKBDI();}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetSCMax(\textcolor{keywordtype}{int}\ maxSC);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ GetSCMax();}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetMXD(\textcolor{keywordtype}{int}\ mxd);}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ GetMXD();}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetFuelTemperature();}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetXDaysPrecipitation(\textcolor{keywordtype}{int}\ nDays);}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ReadState(std::string\ fileName);}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ SaveState(std::string\ fileName);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ LoadState(\mbox{\hyperlink{class_n_f_d_r_s4_state}{NFDRS4State}}\ state);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nPrecipQueueDays\ =\ 90;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nHoursPerDay\ =\ 24;}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetMinTemp();}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetMaxTemp();}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetMinRH();}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetPcp24();}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddCustomFuel(\mbox{\hyperlink{class_c_fuel_model_params}{CFuelModelParams}}\ fmParams);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CTA;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Lat;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ NFDRSVersion;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ YesterdayJDay;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ SlopeClass;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \textcolor{comment}{//\ double\ AvgAnnPrecip;\ \ \ \ \ \ \ \ //\ Average\ Annual\ Precipitation\ (inches)}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}\ OneHourFM;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}\ TenHourFM;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}\ HundredHourFM;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}\ ThousandHourFM;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{comment}{//LiveFuelMoisture\ GsiFM;}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_live_fuel_moisture}{LiveFuelMoisture}}\ HerbFM;}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_live_fuel_moisture}{LiveFuelMoisture}}\ WoodyFM;}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ FuelModel;}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ std::string\ FuelDescription;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ SG1,\ SG10,\ SG100,\ SG1000,\ SGWOOD,\ SGHERB;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ W1,\ W10,\ W100,\ W1000,\ WWOOD,\ WHERB,\ WDROUGHT,\ W1P,\ WHERBP,WTOT;}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ L1,\ L10,\ L100,\ L1000,\ LWOOD,\ LHERB,\ LDROUGHT;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ DroughtUnit,\ fctCur;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ DEPTH,\ WNDFC;}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MXD,\ HD,\ SCM;}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MC1,\ MC10,\ MC100,\ MC1000,\ MCWOOD,\ MCHERB;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ BI,\ ERC,\ SC,\ IC;}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ PrevYear;}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ KBDI,\ YKBDI,\ StartKBDI,\ KBDIThreshold;}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CummPrecip,\ AvgPrecip;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ UseLoadTransfer,\ UseCuring;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ SnowCovered;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ WTMCD,\ WTMCL,WTMCDE,\ WTMCLE;}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ FuelTemperature;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_GSI;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nConsectiveSnowDays;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_regObsHour;}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ time\_t\ utcHourDiff;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ utctime::UTCTime\ lastUtcUpdateTime;}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ utctime::UTCTime\ lastDailyUpdateTime;}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ std::deque<double>\ qPrecip;}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ std::deque<double>\ qHourlyPrecip;}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ std::deque<double>\ qHourlyTemp;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ std::deque<double>\ qHourlyRH;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ std::unordered\_map<char,\ CFuelModelParams>\ mapFuels;}
+\DoxyCodeLine{00304\ \};}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

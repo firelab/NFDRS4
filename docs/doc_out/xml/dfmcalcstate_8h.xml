@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dfmcalcstate_8h" kind="file" language="C++">
+    <compoundname>dfmcalcstate.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">string</includes>
+    <includes refid="nfdrs4statesizes_8h" local="yes">nfdrs4statesizes.h</includes>
+    <includedby refid="deadfuelmoisture_8h" local="yes">D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/deadfuelmoisture.h</includedby>
+    <includedby refid="nfdrs4calcstate_8h" local="yes">D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h</includedby>
+    <includedby refid="dfmcalcstate_8cpp" local="yes">D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/dfmcalcstate.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h</label>
+        <link refid="dfmcalcstate_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>nfdrs4statesizes.h</label>
+        <link refid="nfdrs4statesizes_8h_source"/>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/deadfuelmoisture.h</label>
+        <link refid="deadfuelmoisture_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h</label>
+        <link refid="dfmcalcstate_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h</label>
+        <link refid="nfdrs4_8h_source"/>
+      </node>
+      <node id="5">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h</label>
+        <link refid="nfdrs4calcstate_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/deadfuelmoisture.cpp</label>
+        <link refid="deadfuelmoisture_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_d_f_m_calc_state" prot="public">DFMCalcState</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;nfdrs4statesizes.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="class_d_f_m_calc_state" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_f_m_calc_state" kindref="compound">DFMCalcState</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_f_m_calc_state" kindref="compound">DFMCalcState</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_f_m_calc_state" kindref="compound">DFMCalcState</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_d_f_m_calc_state" kindref="compound">DFMCalcState</ref><sp/>&amp;rhs);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_f_m_calc_state" kindref="compound">~DFMCalcState</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/>ReadState(FILE<sp/>*in);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>SaveState(FILE<sp/>*out);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//use<sp/>to<sp/>construct<sp/>obstime<sp/>member</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>m_JDay;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>m_Year;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>m_Month;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>m_Day;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>m_Hour;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>m_Min;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>m_Sec;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>time_t<sp/>m_obstime;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//internal<sp/>members<sp/>set<sp/>explicitly</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//float<sp/><sp/>m_bp0;<sp/><sp/><sp/><sp/><sp/><sp/>//!&lt;<sp/>Previous<sp/>observation&apos;s<sp/>barometric<sp/>presure<sp/>(cal/cm3).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//float<sp/><sp/>m_ha0;<sp/><sp/><sp/><sp/><sp/><sp/>//!&lt;<sp/>Previous<sp/>observation&apos;s<sp/>air<sp/>humidity<sp/>(dl).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//float<sp/><sp/>m_rc0;<sp/><sp/><sp/><sp/><sp/><sp/>//!&lt;<sp/>Previous<sp/>observation&apos;s<sp/>cumulative<sp/>rainfall<sp/>amount<sp/>(cm).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//float<sp/><sp/>m_sv0;<sp/><sp/><sp/><sp/><sp/><sp/>//!&lt;<sp/>Previous<sp/>observation&apos;s<sp/>solar<sp/>radiation<sp/>(mV).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//float<sp/><sp/>m_ta0;<sp/><sp/><sp/><sp/><sp/><sp/>//!&lt;<sp/>Previous<sp/>observation&apos;s<sp/>air<sp/>temperature<sp/>(oC).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//use<sp/>in<sp/>initialize<sp/>environment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//NOTE:<sp/>set<sp/>bp0<sp/>=<sp/>bp1<sp/>first!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_d_f_m_calc_state_1ab749bb10d34b0de93f07e45d144dfbc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/><sp/><ref refid="class_d_f_m_calc_state_1ab749bb10d34b0de93f07e45d144dfbc0" kindref="member">m_bp1</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="class_d_f_m_calc_state_1ac300bcde0ee96e5f53801824b7d997a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/><sp/><ref refid="class_d_f_m_calc_state_1ac300bcde0ee96e5f53801824b7d997a5" kindref="member">m_et</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37" refid="class_d_f_m_calc_state_1abf9bdccda20042f194834dea2dafa599" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/><sp/><ref refid="class_d_f_m_calc_state_1abf9bdccda20042f194834dea2dafa599" kindref="member">m_ha1</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38" refid="class_d_f_m_calc_state_1afc5bedeb2a9fd2224fdf3d3eb7b59706" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/><sp/><ref refid="class_d_f_m_calc_state_1afc5bedeb2a9fd2224fdf3d3eb7b59706" kindref="member">m_rc1</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="class_d_f_m_calc_state_1aa34100f082bf3dc4f190d2ba4862eb50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/><sp/><ref refid="class_d_f_m_calc_state_1aa34100f082bf3dc4f190d2ba4862eb50" kindref="member">m_sv1</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40" refid="class_d_f_m_calc_state_1a5e667bf33005516f653c1cff73fba209" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/><sp/><ref refid="class_d_f_m_calc_state_1a5e667bf33005516f653c1cff73fba209" kindref="member">m_ta1</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41" refid="class_d_f_m_calc_state_1a68c0bbfe3af11d1a4e24888a8360d520" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/><sp/><ref refid="class_d_f_m_calc_state_1a68c0bbfe3af11d1a4e24888a8360d520" kindref="member">m_hf</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42" refid="class_d_f_m_calc_state_1a0637ead41eeb1ef22a5150d156d9d116" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/><sp/><ref refid="class_d_f_m_calc_state_1a0637ead41eeb1ef22a5150d156d9d116" kindref="member">m_wsa</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//needed<sp/>to<sp/>be<sp/>maintained<sp/>for<sp/>update<sp/>to<sp/>work</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/>m_rdur;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>FP_STORAGE_TYPE<sp/>m_ra1;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stick<sp/>moisture<sp/>condition<sp/>variables<sp/>derived<sp/>in<sp/>update():<sp/>need<sp/>stored<sp/>for<sp/>diffusivity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="class_d_f_m_calc_state_1a11d16caab2a11ae7a4d3c7bbcc73d6b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_f_m_calc_state_1a11d16caab2a11ae7a4d3c7bbcc73d6b1" kindref="member">m_nodes</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50" refid="class_d_f_m_calc_state_1ac80529d708119261eeaebffc4c4a32d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;FP_STORAGE_TYPE&gt;<sp/><ref refid="class_d_f_m_calc_state_1ac80529d708119261eeaebffc4c4a32d9" kindref="member">m_t</ref>;<sp/></highlight></codeline>
+<codeline lineno="51" refid="class_d_f_m_calc_state_1a0d560c0f15aa3de34d1c15f72b4f7b31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;FP_STORAGE_TYPE&gt;<sp/><ref refid="class_d_f_m_calc_state_1a0d560c0f15aa3de34d1c15f72b4f7b31" kindref="member">m_s</ref>;<sp/></highlight></codeline>
+<codeline lineno="52" refid="class_d_f_m_calc_state_1a204ba3a883754b36b18098d10bad1ea5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;FP_STORAGE_TYPE&gt;<sp/><ref refid="class_d_f_m_calc_state_1a204ba3a883754b36b18098d10bad1ea5" kindref="member">m_d</ref>;<sp/></highlight></codeline>
+<codeline lineno="53" refid="class_d_f_m_calc_state_1ab6a43b6e435dff4d58b60ce9a3aeb762" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;FP_STORAGE_TYPE&gt;<sp/><ref refid="class_d_f_m_calc_state_1ab6a43b6e435dff4d58b60ce9a3aeb762" kindref="member">m_w</ref>;<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h"/>
+  </compounddef>
+</doxygen>

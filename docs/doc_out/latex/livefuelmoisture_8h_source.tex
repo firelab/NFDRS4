@@ -1,0 +1,100 @@
+\doxysection{livefuelmoisture.\+h}
+\hypertarget{livefuelmoisture_8h_source}{}\label{livefuelmoisture_8h_source}\index{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h@{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LIVEFUELMOISTURE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LIVEFUELMOISTURE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}lfmcalcstate.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ NOVALUE\ -\/9999.9}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ RADPERDAY\ 0.017214}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ RADPERDEG\ 0.01745329}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MINDECL\ -\/0.4092797}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ SECPERRAD\ 13750.9871}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ DAYSOFF\ 10.25}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_live_fuel_moisture}{LiveFuelMoisture}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_live_fuel_moisture}{LiveFuelMoisture}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_live_fuel_moisture}{LiveFuelMoisture}}(\textcolor{keywordtype}{double}\ Lat,\textcolor{keywordtype}{bool}\ IsHerb,\ \textcolor{keywordtype}{bool}\ IsAnnual);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize(\textcolor{keywordtype}{double}\ Lat,\textcolor{keywordtype}{bool}\ IsHerb,\ \textcolor{keywordtype}{bool}\ IsAnnual);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_live_fuel_moisture_aba6e3ce4103bf20a83935ca8922a13ce}{SetLimits}}(\textcolor{keywordtype}{double},\textcolor{keywordtype}{double},\textcolor{keywordtype}{double},\textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{double}\ TempF,\ \textcolor{keywordtype}{double}\ MaxTempF,\ \textcolor{keywordtype}{double}\ MinTempF,\ \textcolor{keywordtype}{double}\ RH,\ \textcolor{keywordtype}{double}\ minRH,\ \textcolor{keywordtype}{int}\ Jday,\ \textcolor{keywordtype}{double}\ RTPrcp,\ time\_t\ thisTime);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetMAPeriod(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ MAPeriod);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetLFMParameters(\textcolor{keywordtype}{double}\ MaxGSI,\textcolor{keywordtype}{double}\ GreenupThreshold,\textcolor{keywordtype}{double}\ MinLFMVal,\ \textcolor{keywordtype}{double}\ MaxLFMVal);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ GetLFMParameters(\textcolor{keywordtype}{double}\ *\ MaxGSI,\textcolor{keywordtype}{double}\ *\ GreenupThreshold\ ,\textcolor{keywordtype}{double}\ *\ MinLFMVal,\ \textcolor{keywordtype}{double}\ *\ MaxLFMVal);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetNumPrecipDays(\textcolor{keywordtype}{int}\ numDays);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ GetNumPrecipDays();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_live_fuel_moisture_ae097b6a9d208142b0ce9b361b6a1eda4}{GetMoisture}}(\textcolor{keywordtype}{bool}\ SnowDay\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcRunningAvgGSI();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcRunningAvgHerbFM(\textcolor{keywordtype}{bool}\ SnowDay\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResetHerbState();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcRunningAvgWoodyFM(\textcolor{keywordtype}{bool}\ SnowDay\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcGSI(\textcolor{keywordtype}{double}\ minRH,\ \textcolor{keywordtype}{double}\ maxTempF,\ \textcolor{keywordtype}{double}\ minTempF,\ \textcolor{keywordtype}{double}\ RTPrcp,\ \textcolor{keywordtype}{double}\ lat,\ \textcolor{keywordtype}{int}\ doy);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcGSI\_VPDAvg(\textcolor{keywordtype}{double}\ RH,\ \textcolor{keywordtype}{double}\ TempF,\ \textcolor{keywordtype}{double}\ maxTempF,\ \textcolor{keywordtype}{double}\ minTempF,\ \textcolor{keywordtype}{double}\ RTPrcp,\ \textcolor{keywordtype}{double}\ lat,\ \textcolor{keywordtype}{int}\ doy);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetTminInd(\textcolor{keywordtype}{double}\ Tmin);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetVPDInd(\textcolor{keywordtype}{double}\ VPD);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetDaylInd(\textcolor{keywordtype}{double}\ Dayl);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetPrcpInd(\textcolor{keywordtype}{double}\ RTPrcp);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcDayl(\textcolor{keywordtype}{double}\ lat,\textcolor{keywordtype}{int}\ yday);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcVPDavg(\textcolor{keywordtype}{double}\ TempDewF,\ \textcolor{keywordtype}{double}\ TempAvgF);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcVPD(\textcolor{keywordtype}{double}\ RH,\ \textcolor{keywordtype}{double}\ TempF);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcDPT(\textcolor{keywordtype}{double}\ tempF,\ \textcolor{keywordtype}{double}\ RH);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ CalcVP(\textcolor{keywordtype}{double}\ tempF);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetMaxGSI();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetGreenupThreshold();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetMinLFMVal();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetMaxLFMVal();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetUseVPDAvg(\textcolor{keywordtype}{bool}\ set);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ GetUseVPDAvg();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ GetIsAnnual();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalcState}}\ GetState();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ SetState(\mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalcState}}\ state);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetUseRTPrecip(\textcolor{keywordtype}{bool}\ set);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ GetUseRTPrecip();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_UseVPDAvg;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_IsHerb;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_IsAnnual;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_LFIdaysAvg;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Lat;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::deque<double>\ qGSI;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_TminMin;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_TminMax;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_VPDMin;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_VPDMax;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_DaylenMin;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_DaylenMax;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_RTPrcpMin;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_RTPrcpMax;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_useRTPrecip;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//added\ for\ live\ fuel\ moistues}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_MaxGSI;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_GreenupThreshold;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_MaxLFMVal;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_MinLFMVal;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Slope;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Intercept;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasGreenedUpThisYear;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasExceeded120ThisYear;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ canIncreaseHerb;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lastHerbFM;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_nDaysPrecip;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ time\_t\ lastUpdateTime;}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LIVEFUELMOISTURE\_H}}
+
+\end{DoxyCode}

@@ -23,10 +23,10 @@
 //------------------------------------------------------------------------------
 /*! \class LiveFuelMoisture LiveFuelMoisture.h
     \brief Determines moisture content of live herbaceous and woody fuels
-    from ambient air temperature, relative humidity, and time of year.
+    from ambient air temperature, relative humidity, rainfall and time of year.
 
-    DeadFuelMoisture is an implementation of Nelson's dead fuel moisture model
-    \ref jolly2005. This section describes LiveFuelMoisture class usage only;
+    LiveFuelMoisture is an implementation of the GSI-based LFMC model
+    
 
  */
 class LiveFuelMoisture

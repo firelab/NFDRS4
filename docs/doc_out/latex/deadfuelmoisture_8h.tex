@@ -1,0 +1,57 @@
+\doxysection{D\+:/\+Source/\+Public\+Github/\+NFDRS4/lib/\+NFDRS4/include/deadfuelmoisture.h File Reference}
+\hypertarget{deadfuelmoisture_8h}{}\label{deadfuelmoisture_8h}\index{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/deadfuelmoisture.h@{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/deadfuelmoisture.h}}
+
+
+\doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class interface and declarations.  
+
+
+{\ttfamily \#include "{}dfmcalcstate.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}}
+\begin{DoxyCompactList}\small\item\em Determines moisture content of dead and down woody fuels from ambient air temperature, relative humidity, insolation, and rainfall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{deadfuelmoisture_8h_a897f5d1dbd177fafd4132958961f87e7}\label{deadfuelmoisture_8h_a897f5d1dbd177fafd4132958961f87e7} 
+enum {\bfseries DFM\+\_\+\+State} \{ \newline
+{\bfseries DFM\+\_\+\+State\+\_\+\+None} = 0
+, {\bfseries DFM\+\_\+\+State\+\_\+\+Adsorption} = 1
+, {\bfseries DFM\+\_\+\+State\+\_\+\+Desorption} = 2
+, {\bfseries DFM\+\_\+\+State\+\_\+\+Condensation1} = 3
+, \newline
+{\bfseries DFM\+\_\+\+State\+\_\+\+Condensation2} = 4
+, {\bfseries DFM\+\_\+\+State\+\_\+\+Evaporation} = 5
+, {\bfseries DFM\+\_\+\+State\+\_\+\+Rainfall1} = 6
+, {\bfseries DFM\+\_\+\+State\+\_\+\+Rainfall2} = 7
+, \newline
+{\bfseries DFM\+\_\+\+State\+\_\+\+Rainstorm} = 8
+, {\bfseries DFM\+\_\+\+State\+\_\+\+Stagnation} = 9
+, {\bfseries DFM\+\_\+\+State\+\_\+\+Error} = 10
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class interface and declarations. 
+
+\begin{DoxyAuthor}{Author}
+Copyright (C) 2005 by Collin D. Bevins. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 -\/ Uses C++ and STL only (i.\+e., no threads, Qt libraries, Loki Singletons, or Sem\+Messages).
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Licensed under GNU GPL}
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+\end{DoxyParagraph}
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+If you have not received a copy of the GNU General Public License along with this program; write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-\/1301, USA. The GNU GPL is also available in full from \href{http://www.opensource.org/licenses/gpl-license.php}{\texttt{ http\+://www.\+opensource.\+org/licenses/gpl-\/license.\+php}} 

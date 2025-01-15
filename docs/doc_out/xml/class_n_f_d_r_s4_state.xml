@@ -1,0 +1,732 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="class_n_f_d_r_s4_state" kind="class" language="C++" prot="public">
+    <compoundname>NFDRS4State</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a7545714c946dd63058d6f9ce3cc3086b" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short NFDRS4State::m_NFDRSVersion</definition>
+        <argsstring></argsstring>
+        <name>m_NFDRSVersion</name>
+        <qualifiedname>NFDRS4State::m_NFDRSVersion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="22" column="7" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1aaf06e4e29323edf736b78b8d5381e7f4" prot="public" static="no" mutable="no">
+        <type><ref refid="class_d_f_m_calc_state" kindref="compound">DFMCalcState</ref></type>
+        <definition>DFMCalcState NFDRS4State::fm1State</definition>
+        <argsstring></argsstring>
+        <name>fm1State</name>
+        <qualifiedname>NFDRS4State::fm1State</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="25" column="14" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1ab6a04a279357cee706194fb1a2e2652b" prot="public" static="no" mutable="no">
+        <type><ref refid="class_d_f_m_calc_state" kindref="compound">DFMCalcState</ref></type>
+        <definition>DFMCalcState NFDRS4State::fm10State</definition>
+        <argsstring></argsstring>
+        <name>fm10State</name>
+        <qualifiedname>NFDRS4State::fm10State</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="26" column="14" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a2c87546c8a941f3d150759a196e53330" prot="public" static="no" mutable="no">
+        <type><ref refid="class_d_f_m_calc_state" kindref="compound">DFMCalcState</ref></type>
+        <definition>DFMCalcState NFDRS4State::fm100State</definition>
+        <argsstring></argsstring>
+        <name>fm100State</name>
+        <qualifiedname>NFDRS4State::fm100State</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="27" column="14" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1ada38112573ddb6b5c1e3b829d1a22ebd" prot="public" static="no" mutable="no">
+        <type><ref refid="class_d_f_m_calc_state" kindref="compound">DFMCalcState</ref></type>
+        <definition>DFMCalcState NFDRS4State::fm1000State</definition>
+        <argsstring></argsstring>
+        <name>fm1000State</name>
+        <qualifiedname>NFDRS4State::fm1000State</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="28" column="14" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1ad7a669cdf6759f4c0eb396c24261d1a5" prot="public" static="no" mutable="no">
+        <type><ref refid="class_l_f_m_calc_state" kindref="compound">LFMCalcState</ref></type>
+        <definition>LFMCalcState NFDRS4State::herbState</definition>
+        <argsstring></argsstring>
+        <name>herbState</name>
+        <qualifiedname>NFDRS4State::herbState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="32" column="14" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a90d622481b9aaae69850fc047de65804" prot="public" static="no" mutable="no">
+        <type><ref refid="class_l_f_m_calc_state" kindref="compound">LFMCalcState</ref></type>
+        <definition>LFMCalcState NFDRS4State::woodyState</definition>
+        <argsstring></argsstring>
+        <name>woodyState</name>
+        <qualifiedname>NFDRS4State::woodyState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="33" column="14" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a4aeb32e2fa5de8e3911414193f14f57a" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_Lat</definition>
+        <argsstring></argsstring>
+        <name>m_Lat</name>
+        <qualifiedname>NFDRS4State::m_Lat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="36" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1abfba38f98807674050d9042112954655" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short NFDRS4State::m_YesterdayJDay</definition>
+        <argsstring></argsstring>
+        <name>m_YesterdayJDay</name>
+        <qualifiedname>NFDRS4State::m_YesterdayJDay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="37" column="7" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1afd53f08a301d3af783047ca47a86497f" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char NFDRS4State::m_SlopeClass</definition>
+        <argsstring></argsstring>
+        <name>m_SlopeClass</name>
+        <qualifiedname>NFDRS4State::m_SlopeClass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="38" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1aeba662ff63b2dbe16b56732c0e343274" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char NFDRS4State::m_FuelModel</definition>
+        <argsstring></argsstring>
+        <name>m_FuelModel</name>
+        <qualifiedname>NFDRS4State::m_FuelModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="39" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1af5cea800b8db8e7029e40a4aac6da95e" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_MC1</definition>
+        <argsstring></argsstring>
+        <name>m_MC1</name>
+        <qualifiedname>NFDRS4State::m_MC1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="40" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a26cd8e4795d27fd3eeaf1a662fd2ff3e" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_MC10</definition>
+        <argsstring></argsstring>
+        <name>m_MC10</name>
+        <qualifiedname>NFDRS4State::m_MC10</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="40" column="23" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1af16f9f7999acc4d60c775d3c7649e1f2" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_MC100</definition>
+        <argsstring></argsstring>
+        <name>m_MC100</name>
+        <qualifiedname>NFDRS4State::m_MC100</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="40" column="30" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a06b3a2164059df44eae810067ac1dd09" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_MC1000</definition>
+        <argsstring></argsstring>
+        <name>m_MC1000</name>
+        <qualifiedname>NFDRS4State::m_MC1000</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="40" column="38" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1af1a0d15b51780da9758ec9b12c3f358e" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_MCWOOD</definition>
+        <argsstring></argsstring>
+        <name>m_MCWOOD</name>
+        <qualifiedname>NFDRS4State::m_MCWOOD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="40" column="47" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1af95f34997f78b8e2c8dd4d8de9c69d20" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_MCHERB</definition>
+        <argsstring></argsstring>
+        <name>m_MCHERB</name>
+        <qualifiedname>NFDRS4State::m_MCHERB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="40" column="56" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a4337933ff5e4dde604d758fc4c68b5bb" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short NFDRS4State::m_PrevYear</definition>
+        <argsstring></argsstring>
+        <name>m_PrevYear</name>
+        <qualifiedname>NFDRS4State::m_PrevYear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="41" column="7" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1adf65cc0e40575b61c90183677e3570ad" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short NFDRS4State::m_KBDI</definition>
+        <argsstring></argsstring>
+        <name>m_KBDI</name>
+        <qualifiedname>NFDRS4State::m_KBDI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="42" column="7" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a38c591240d73731ca44b0f29076bf770" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short NFDRS4State::m_YKBDI</definition>
+        <argsstring></argsstring>
+        <name>m_YKBDI</name>
+        <qualifiedname>NFDRS4State::m_YKBDI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="42" column="14" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1aa5dd6310e6dec50fb8d7b4df6c276da1" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short NFDRS4State::m_StartKBDI</definition>
+        <argsstring></argsstring>
+        <name>m_StartKBDI</name>
+        <qualifiedname>NFDRS4State::m_StartKBDI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="42" column="22" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a9d125da26c13992c85af250ecb06e79c" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short NFDRS4State::m_KBDIThreshold</definition>
+        <argsstring></argsstring>
+        <name>m_KBDIThreshold</name>
+        <qualifiedname>NFDRS4State::m_KBDIThreshold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="42" column="34" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a108aa4805402cdc8e13dad5bf5ed09fb" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_CummPrecip</definition>
+        <argsstring></argsstring>
+        <name>m_CummPrecip</name>
+        <qualifiedname>NFDRS4State::m_CummPrecip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="43" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1af56a899062d73412950d2a268943c3c4" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_AvgPrecip</definition>
+        <argsstring></argsstring>
+        <name>m_AvgPrecip</name>
+        <qualifiedname>NFDRS4State::m_AvgPrecip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="43" column="30" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1af4adbf235d5ea6db863d6924092af4c4" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char NFDRS4State::m_UseLoadTransfer</definition>
+        <argsstring></argsstring>
+        <name>m_UseLoadTransfer</name>
+        <qualifiedname>NFDRS4State::m_UseLoadTransfer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="44" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a265deaaeceaa4cb3c760fca4fded8972" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char NFDRS4State::m_UseCuring</definition>
+        <argsstring></argsstring>
+        <name>m_UseCuring</name>
+        <qualifiedname>NFDRS4State::m_UseCuring</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="44" column="24" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a0aed0833a72da3032ebcfc6b33b5578a" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_FuelTemperature</definition>
+        <argsstring></argsstring>
+        <name>m_FuelTemperature</name>
+        <qualifiedname>NFDRS4State::m_FuelTemperature</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="45" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a35242f201192a5d93a2d465d57f962d2" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_BI</definition>
+        <argsstring></argsstring>
+        <name>m_BI</name>
+        <qualifiedname>NFDRS4State::m_BI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="46" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a44fc7f8ecd369853e439d71af9215cda" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_ERC</definition>
+        <argsstring></argsstring>
+        <name>m_ERC</name>
+        <qualifiedname>NFDRS4State::m_ERC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="46" column="22" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a2c4fdac25f5db937197c88ca717db16a" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_SC</definition>
+        <argsstring></argsstring>
+        <name>m_SC</name>
+        <qualifiedname>NFDRS4State::m_SC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="46" column="28" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1addb169daf62f9983a0fd4dcc152da798" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_IC</definition>
+        <argsstring></argsstring>
+        <name>m_IC</name>
+        <qualifiedname>NFDRS4State::m_IC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="46" column="33" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a828c1ba55e0e210b90ddbc62b8d3e733" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE NFDRS4State::m_GSI</definition>
+        <argsstring></argsstring>
+        <name>m_GSI</name>
+        <qualifiedname>NFDRS4State::m_GSI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="46" column="38" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a2abcdd418f3d0160be6846117c4bdea4" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short NFDRS4State::m_nConsectiveSnowDays</definition>
+        <argsstring></argsstring>
+        <name>m_nConsectiveSnowDays</name>
+        <qualifiedname>NFDRS4State::m_nConsectiveSnowDays</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="47" column="7" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1aaefd247f100efb7ba0241a8158f1fca5" prot="public" static="no" mutable="no">
+        <type>utctime::UTCTime</type>
+        <definition>utctime::UTCTime NFDRS4State::m_lastUtcUpdateTime</definition>
+        <argsstring></argsstring>
+        <name>m_lastUtcUpdateTime</name>
+        <qualifiedname>NFDRS4State::m_lastUtcUpdateTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="49" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1aef7e7fc8a49cb31e3de685618d1dfa71" prot="public" static="no" mutable="no">
+        <type>utctime::UTCTime</type>
+        <definition>utctime::UTCTime NFDRS4State::m_lastDailyUpdateTime</definition>
+        <argsstring></argsstring>
+        <name>m_lastDailyUpdateTime</name>
+        <qualifiedname>NFDRS4State::m_lastDailyUpdateTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="50" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1ac54ff35193a0f3dac71e07c379fd2319" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; NFDRS4State::m_qPrecip</definition>
+        <argsstring></argsstring>
+        <name>m_qPrecip</name>
+        <qualifiedname>NFDRS4State::m_qPrecip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="55" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a32e5c218d87f12baa06192cc99510693" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; NFDRS4State::m_qHourlyPrecip</definition>
+        <argsstring></argsstring>
+        <name>m_qHourlyPrecip</name>
+        <qualifiedname>NFDRS4State::m_qHourlyPrecip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="56" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1a566d777c9be5253410363fcb578a6571" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; NFDRS4State::m_qHourlyTemp</definition>
+        <argsstring></argsstring>
+        <name>m_qHourlyTemp</name>
+        <qualifiedname>NFDRS4State::m_qHourlyTemp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="57" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_f_d_r_s4_state_1ab10c9d3edf23e3ef44006f785a4e1e25" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; NFDRS4State::m_qHourlyRH</definition>
+        <argsstring></argsstring>
+        <name>m_qHourlyRH</name>
+        <qualifiedname>NFDRS4State::m_qHourlyRH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="58" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_f_d_r_s4_state_1a68ace47da0558c7d05d8a8f744c2b011" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NFDRS4State::NFDRS4State</definition>
+        <argsstring>()</argsstring>
+        <name>NFDRS4State</name>
+        <qualifiedname>NFDRS4State::NFDRS4State</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="14" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/nfdrs4calcstate.cpp" bodystart="5" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_f_d_r_s4_state_1a9873b2da9f60a1ed5ae7a9b0a1735304" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NFDRS4State::NFDRS4State</definition>
+        <argsstring>(NFDRS4 *pNFDRS)</argsstring>
+        <name>NFDRS4State</name>
+        <qualifiedname>NFDRS4State::NFDRS4State</qualifiedname>
+        <param>
+          <type><ref refid="class_n_f_d_r_s4" kindref="compound">NFDRS4</ref> *</type>
+          <declname>pNFDRS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="15" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/nfdrs4calcstate.cpp" bodystart="58" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_f_d_r_s4_state_1a2a2791bcda1484664042799c070433df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NFDRS4State::NFDRS4State</definition>
+        <argsstring>(const NFDRS4State &amp;rhs)</argsstring>
+        <name>NFDRS4State</name>
+        <qualifiedname>NFDRS4State::NFDRS4State</qualifiedname>
+        <param>
+          <type>const <ref refid="class_n_f_d_r_s4_state" kindref="compound">NFDRS4State</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="16" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/nfdrs4calcstate.cpp" bodystart="14" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_f_d_r_s4_state_1a327920ae551d813db6d3dcadda8428b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NFDRS4State::~NFDRS4State</definition>
+        <argsstring>()</argsstring>
+        <name>~NFDRS4State</name>
+        <qualifiedname>NFDRS4State::~NFDRS4State</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="17" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/nfdrs4calcstate.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_f_d_r_s4_state_1a6c501537639dd654d7df05ee2010186a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool NFDRS4State::LoadState</definition>
+        <argsstring>(std::string fileName)</argsstring>
+        <name>LoadState</name>
+        <qualifiedname>NFDRS4State::LoadState</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="19" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/nfdrs4calcstate.cpp" bodystart="120" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_f_d_r_s4_state_1a1ed1b8f1d6b1361f764792fa32b1f442" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool NFDRS4State::SaveState</definition>
+        <argsstring>(std::string fileName)</argsstring>
+        <name>SaveState</name>
+        <qualifiedname>NFDRS4State::SaveState</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="20" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/nfdrs4calcstate.cpp" bodystart="442" bodyend="761"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>DFMCalcState</label>
+        <link refid="class_d_f_m_calc_state"/>
+      </node>
+      <node id="3">
+        <label>LFMCalcState</label>
+        <link refid="class_l_f_m_calc_state"/>
+      </node>
+      <node id="1">
+        <label>NFDRS4State</label>
+        <link refid="class_n_f_d_r_s4_state"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>fm1000State</edgelabel>
+          <edgelabel>fm100State</edgelabel>
+          <edgelabel>fm10State</edgelabel>
+          <edgelabel>fm1State</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>herbState</edgelabel>
+          <edgelabel>woodyState</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" line="11" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h" bodystart="12" bodyend="59"/>
+    <listofallmembers>
+      <member refid="class_n_f_d_r_s4_state_1ada38112573ddb6b5c1e3b829d1a22ebd" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>fm1000State</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a2c87546c8a941f3d150759a196e53330" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>fm100State</name></member>
+      <member refid="class_n_f_d_r_s4_state_1ab6a04a279357cee706194fb1a2e2652b" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>fm10State</name></member>
+      <member refid="class_n_f_d_r_s4_state_1aaf06e4e29323edf736b78b8d5381e7f4" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>fm1State</name></member>
+      <member refid="class_n_f_d_r_s4_state_1ad7a669cdf6759f4c0eb396c24261d1a5" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>herbState</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a6c501537639dd654d7df05ee2010186a" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>LoadState</name></member>
+      <member refid="class_n_f_d_r_s4_state_1af56a899062d73412950d2a268943c3c4" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_AvgPrecip</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a35242f201192a5d93a2d465d57f962d2" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_BI</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a108aa4805402cdc8e13dad5bf5ed09fb" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_CummPrecip</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a44fc7f8ecd369853e439d71af9215cda" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_ERC</name></member>
+      <member refid="class_n_f_d_r_s4_state_1aeba662ff63b2dbe16b56732c0e343274" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_FuelModel</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a0aed0833a72da3032ebcfc6b33b5578a" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_FuelTemperature</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a828c1ba55e0e210b90ddbc62b8d3e733" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_GSI</name></member>
+      <member refid="class_n_f_d_r_s4_state_1addb169daf62f9983a0fd4dcc152da798" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_IC</name></member>
+      <member refid="class_n_f_d_r_s4_state_1adf65cc0e40575b61c90183677e3570ad" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_KBDI</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a9d125da26c13992c85af250ecb06e79c" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_KBDIThreshold</name></member>
+      <member refid="class_n_f_d_r_s4_state_1aef7e7fc8a49cb31e3de685618d1dfa71" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_lastDailyUpdateTime</name></member>
+      <member refid="class_n_f_d_r_s4_state_1aaefd247f100efb7ba0241a8158f1fca5" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_lastUtcUpdateTime</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a4aeb32e2fa5de8e3911414193f14f57a" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_Lat</name></member>
+      <member refid="class_n_f_d_r_s4_state_1af5cea800b8db8e7029e40a4aac6da95e" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_MC1</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a26cd8e4795d27fd3eeaf1a662fd2ff3e" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_MC10</name></member>
+      <member refid="class_n_f_d_r_s4_state_1af16f9f7999acc4d60c775d3c7649e1f2" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_MC100</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a06b3a2164059df44eae810067ac1dd09" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_MC1000</name></member>
+      <member refid="class_n_f_d_r_s4_state_1af95f34997f78b8e2c8dd4d8de9c69d20" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_MCHERB</name></member>
+      <member refid="class_n_f_d_r_s4_state_1af1a0d15b51780da9758ec9b12c3f358e" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_MCWOOD</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a2abcdd418f3d0160be6846117c4bdea4" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_nConsectiveSnowDays</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a7545714c946dd63058d6f9ce3cc3086b" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_NFDRSVersion</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a4337933ff5e4dde604d758fc4c68b5bb" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_PrevYear</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a32e5c218d87f12baa06192cc99510693" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_qHourlyPrecip</name></member>
+      <member refid="class_n_f_d_r_s4_state_1ab10c9d3edf23e3ef44006f785a4e1e25" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_qHourlyRH</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a566d777c9be5253410363fcb578a6571" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_qHourlyTemp</name></member>
+      <member refid="class_n_f_d_r_s4_state_1ac54ff35193a0f3dac71e07c379fd2319" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_qPrecip</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a2c4fdac25f5db937197c88ca717db16a" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_SC</name></member>
+      <member refid="class_n_f_d_r_s4_state_1afd53f08a301d3af783047ca47a86497f" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_SlopeClass</name></member>
+      <member refid="class_n_f_d_r_s4_state_1aa5dd6310e6dec50fb8d7b4df6c276da1" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_StartKBDI</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a265deaaeceaa4cb3c760fca4fded8972" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_UseCuring</name></member>
+      <member refid="class_n_f_d_r_s4_state_1af4adbf235d5ea6db863d6924092af4c4" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_UseLoadTransfer</name></member>
+      <member refid="class_n_f_d_r_s4_state_1abfba38f98807674050d9042112954655" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_YesterdayJDay</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a38c591240d73731ca44b0f29076bf770" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>m_YKBDI</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a68ace47da0558c7d05d8a8f744c2b011" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>NFDRS4State</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a9873b2da9f60a1ed5ae7a9b0a1735304" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>NFDRS4State</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a2a2791bcda1484664042799c070433df" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>NFDRS4State</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a1ed1b8f1d6b1361f764792fa32b1f442" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>SaveState</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a90d622481b9aaae69850fc047de65804" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>woodyState</name></member>
+      <member refid="class_n_f_d_r_s4_state_1a327920ae551d813db6d3dcadda8428b2" prot="public" virt="non-virtual"><scope>NFDRS4State</scope><name>~NFDRS4State</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

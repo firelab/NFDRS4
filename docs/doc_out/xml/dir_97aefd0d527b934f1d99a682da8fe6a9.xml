@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir">
+    <compoundname>D:/Source/PublicGithub/NFDRS4/lib</compoundname>
+    <innerdir refid="dir_2826ec08f5a914f71873cfe389ada39f">D:/Source/PublicGithub/NFDRS4/lib/NFDRS4</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/"/>
+  </compounddef>
+</doxygen>

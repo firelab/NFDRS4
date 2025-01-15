@@ -1,0 +1,61 @@
+\doxysection{D\+:/\+Source/\+Public\+Github/\+NFDRS4/lib/\+NFDRS4/src/deadfuelmoisture.cpp File Reference}
+\hypertarget{deadfuelmoisture_8cpp}{}\label{deadfuelmoisture_8cpp}\index{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/deadfuelmoisture.cpp@{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/deadfuelmoisture.cpp}}
+
+
+\doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class definition and implementation.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}deadfuelmoisture.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{deadfuelmoisture_8cpp_a0cde1002ea6d4b9e945f3db1133a658a}\label{deadfuelmoisture_8cpp_a0cde1002ea6d4b9e945f3db1133a658a} 
+\#define {\bfseries USE\+\_\+\+CDB\+\_\+\+METHOD}
+\begin{DoxyCompactList}\small\item\em Disables Nelson\textquotesingle{}s rainstorm sections, making the storm transition value unnecessary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{deadfuelmoisture_8cpp_ab7f4b8fdca66d7d67a1fb2d2a18db50f}\label{deadfuelmoisture_8cpp_ab7f4b8fdca66d7d67a1fb2d2a18db50f} 
+bool {\bfseries is\+Leap\+Year} (int year)
+\item 
+\Hypertarget{deadfuelmoisture_8cpp_afa603f360044533282eeacd28860ac73}\label{deadfuelmoisture_8cpp_afa603f360044533282eeacd28860ac73} 
+time\+\_\+t {\bfseries mkgmtime} (short year, short month, short day, short hour, short minute, short second, int \texorpdfstring{$\ast$}{*}j\+Day)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{deadfuelmoisture_8cpp_ab04c7d13e752aa9883fc832644bfdbb4}\label{deadfuelmoisture_8cpp_ab04c7d13e752aa9883fc832644bfdbb4} 
+const int {\bfseries Seconds\+Per\+Minute} = 60
+\item 
+\Hypertarget{deadfuelmoisture_8cpp_a50e68360bc76cb632c560c93a450c7cb}\label{deadfuelmoisture_8cpp_a50e68360bc76cb632c560c93a450c7cb} 
+const int {\bfseries Seconds\+Per\+Hour} = 3600
+\item 
+\Hypertarget{deadfuelmoisture_8cpp_a67a042a6f35bb1aed60b4b2c335c609f}\label{deadfuelmoisture_8cpp_a67a042a6f35bb1aed60b4b2c335c609f} 
+const int {\bfseries Seconds\+Per\+Day} = 86400
+\item 
+\Hypertarget{deadfuelmoisture_8cpp_a86fa03e7b0e088e89eba2d3fc550057b}\label{deadfuelmoisture_8cpp_a86fa03e7b0e088e89eba2d3fc550057b} 
+const int {\bfseries Days\+Of\+Month} \mbox{[}12\mbox{]} = \{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class definition and implementation. 
+
+\begin{DoxyAuthor}{Author}
+Copyright (C) 2005 by Collin D. Bevins. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 -\/ Uses C++ and STL only (i.\+e., no threads, Qt libraries, Loki Singletons, or Sem\+Messages).
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Licensed under GNU GPL}
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+\end{DoxyParagraph}
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+If you have not received a copy of the GNU General Public License along with this program; write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-\/1301, USA. The GNU GPL is also available in full from \href{http://www.opensource.org/licenses/gpl-license.php}{\texttt{ http\+://www.\+opensource.\+org/licenses/gpl-\/license.\+php}} 

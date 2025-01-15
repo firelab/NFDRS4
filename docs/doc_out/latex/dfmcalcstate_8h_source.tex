@@ -1,0 +1,62 @@
+\doxysection{dfmcalcstate.\+h}
+\hypertarget{dfmcalcstate_8h_source}{}\label{dfmcalcstate_8h_source}\index{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h@{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}nfdrs4statesizes.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}();}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}\ \&rhs);}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_d_f_m_calc_state}{\string~DFMCalcState}}();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ ReadState(FILE\ *in);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ SaveState(FILE\ *out);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//use\ to\ construct\ obstime\ member}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{short}\ m\_JDay;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{short}\ m\_Year;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_Month;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_Day;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_Hour;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_Min;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_Sec;}
+\DoxyCodeLine{00025\ \ \ \ \ time\_t\ m\_obstime;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//internal\ members\ set\ explicitly}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//float\ \ m\_bp0;\ \ \ \ \ \ //!<\ Previous\ observation's\ barometric\ presure\ (cal/cm3).}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//float\ \ m\_ha0;\ \ \ \ \ \ //!<\ Previous\ observation's\ air\ humidity\ (dl).}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//float\ \ m\_rc0;\ \ \ \ \ \ //!<\ Previous\ observation's\ cumulative\ rainfall\ amount\ (cm).}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//float\ \ m\_sv0;\ \ \ \ \ \ //!<\ Previous\ observation's\ solar\ radiation\ (mV).}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//float\ \ m\_ta0;\ \ \ \ \ \ //!<\ Previous\ observation's\ air\ temperature\ (oC).}}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//use\ in\ initialize\ environment}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//NOTE:\ set\ bp0\ =\ bp1\ first!}}
+\DoxyCodeLine{00035\ \ \ \ \ FP\_STORAGE\_TYPE\ \ \mbox{\hyperlink{class_d_f_m_calc_state_ab749bb10d34b0de93f07e45d144dfbc0}{m\_bp1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ FP\_STORAGE\_TYPE\ \ \mbox{\hyperlink{class_d_f_m_calc_state_ac300bcde0ee96e5f53801824b7d997a5}{m\_et}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ FP\_STORAGE\_TYPE\ \ \mbox{\hyperlink{class_d_f_m_calc_state_abf9bdccda20042f194834dea2dafa599}{m\_ha1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ FP\_STORAGE\_TYPE\ \ \mbox{\hyperlink{class_d_f_m_calc_state_afc5bedeb2a9fd2224fdf3d3eb7b59706}{m\_rc1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ FP\_STORAGE\_TYPE\ \ \mbox{\hyperlink{class_d_f_m_calc_state_aa34100f082bf3dc4f190d2ba4862eb50}{m\_sv1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ FP\_STORAGE\_TYPE\ \ \mbox{\hyperlink{class_d_f_m_calc_state_a5e667bf33005516f653c1cff73fba209}{m\_ta1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ FP\_STORAGE\_TYPE\ \ \mbox{\hyperlink{class_d_f_m_calc_state_a68c0bbfe3af11d1a4e24888a8360d520}{m\_hf}};\ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ FP\_STORAGE\_TYPE\ \ \mbox{\hyperlink{class_d_f_m_calc_state_a0637ead41eeb1ef22a5150d156d9d116}{m\_wsa}};\ \ \ \ \ \ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//needed\ to\ be\ maintained\ for\ update\ to\ work}}
+\DoxyCodeLine{00045\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_rdur;}
+\DoxyCodeLine{00046\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_ra1;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Stick\ moisture\ condition\ variables\ derived\ in\ update():\ need\ stored\ for\ diffusivity}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{short}\ \ \ \ \ \mbox{\hyperlink{class_d_f_m_calc_state_a11d16caab2a11ae7a4d3c7bbcc73d6b1}{m\_nodes}};\ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ std::vector<FP\_STORAGE\_TYPE>\ \mbox{\hyperlink{class_d_f_m_calc_state_ac80529d708119261eeaebffc4c4a32d9}{m\_t}};\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::vector<FP\_STORAGE\_TYPE>\ \mbox{\hyperlink{class_d_f_m_calc_state_a0d560c0f15aa3de34d1c15f72b4f7b31}{m\_s}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::vector<FP\_STORAGE\_TYPE>\ \mbox{\hyperlink{class_d_f_m_calc_state_a204ba3a883754b36b18098d10bad1ea5}{m\_d}};\ }
+\DoxyCodeLine{00053\ \ \ \ \ std::vector<FP\_STORAGE\_TYPE>\ \mbox{\hyperlink{class_d_f_m_calc_state_ab6a43b6e435dff4d58b60ce9a3aeb762}{m\_w}};\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+
+\end{DoxyCode}

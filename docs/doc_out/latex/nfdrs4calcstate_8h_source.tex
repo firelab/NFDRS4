@@ -1,0 +1,66 @@
+\doxysection{nfdrs4calcstate.\+h}
+\hypertarget{nfdrs4calcstate_8h_source}{}\label{nfdrs4calcstate_8h_source}\index{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h@{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}dfmcalcstate.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}lfmcalcstate.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}nfdrs4statesizes.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}utctime.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_n_f_d_r_s4}{NFDRS4}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_n_f_d_r_s4_state}{NFDRS4State}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_n_f_d_r_s4_state}{NFDRS4State}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_n_f_d_r_s4_state}{NFDRS4State}}(\mbox{\hyperlink{class_n_f_d_r_s4}{NFDRS4}}\ *pNFDRS);}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_n_f_d_r_s4_state}{NFDRS4State}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_n_f_d_r_s4_state}{NFDRS4State}}\&\ rhs);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_n_f_d_r_s4_state}{\string~NFDRS4State}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ LoadState(std::string\ fileName);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ SaveState(std::string\ fileName);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{short}\ m\_NFDRSVersion;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//dead\ fuel\ moisture\ states}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}\ fm1State;}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}\ fm10State;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}\ fm100State;}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}\ fm1000State;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//gsi\ and\ live\ fuel\ moisture\ states}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//LFMCalcState\ gsiState;}}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalcState}}\ herbState;}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalcState}}\ woodyState;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//local\ variables}}
+\DoxyCodeLine{00036\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_Lat;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{short}\ m\_YesterdayJDay;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_SlopeClass;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_FuelModel;}
+\DoxyCodeLine{00040\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_MC1,\ m\_MC10,\ m\_MC100,\ m\_MC1000,\ m\_MCWOOD,\ m\_MCHERB;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{short}\ m\_PrevYear;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{short}\ m\_KBDI,\ m\_YKBDI,\ m\_StartKBDI,\ m\_KBDIThreshold;}
+\DoxyCodeLine{00043\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_CummPrecip,\ m\_AvgPrecip;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{char}\ m\_UseLoadTransfer,\ m\_UseCuring;}
+\DoxyCodeLine{00045\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_FuelTemperature;}
+\DoxyCodeLine{00046\ \ \ \ \ FP\_STORAGE\_TYPE\ m\_BI,\ m\_ERC,\ m\_SC,\ m\_IC,\ m\_GSI;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{short}\ m\_nConsectiveSnowDays;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//time\_t\ m\_lastUpdateTime;}}
+\DoxyCodeLine{00049\ \ \ \ \ utctime::UTCTime\ m\_lastUtcUpdateTime;}
+\DoxyCodeLine{00050\ \ \ \ \ utctime::UTCTime\ m\_lastDailyUpdateTime;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//int\ m\_KBDIThreshold;}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//precip\ we\ can\ always\ store\ as\ float}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//as\ we\ only\ read\ to\ 3\ decimal\ places}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//on\ import\ (FW13\ format)}}
+\DoxyCodeLine{00055\ \ \ \ \ std::vector<float>\ m\_qPrecip;}
+\DoxyCodeLine{00056\ \ \ \ \ std::vector<float>\ m\_qHourlyPrecip;}
+\DoxyCodeLine{00057\ \ \ \ \ std::vector<float>\ m\_qHourlyTemp;}
+\DoxyCodeLine{00058\ \ \ \ \ std::vector<float>\ m\_qHourlyRH;}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+
+\end{DoxyCode}

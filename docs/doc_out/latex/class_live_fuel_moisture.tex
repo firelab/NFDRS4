@@ -1,0 +1,198 @@
+\doxysection{Live\+Fuel\+Moisture Class Reference}
+\hypertarget{class_live_fuel_moisture}{}\label{class_live_fuel_moisture}\index{LiveFuelMoisture@{LiveFuelMoisture}}
+
+
+Determines moisture content of live herbaceous and woody fuels from ambient air temperature, relative humidity, rainfall and time of year.  
+
+
+
+
+{\ttfamily \#include $<$Live\+Fuel\+Moisture.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_live_fuel_moisture_aefd5a8ee519e03fee77b3fd4d7836ac1}\label{class_live_fuel_moisture_aefd5a8ee519e03fee77b3fd4d7836ac1} 
+{\bfseries Live\+Fuel\+Moisture} (double Lat, bool Is\+Herb, bool Is\+Annual)
+\item 
+\Hypertarget{class_live_fuel_moisture_a705a0c103d7772857a9a20ee0e3e127b}\label{class_live_fuel_moisture_a705a0c103d7772857a9a20ee0e3e127b} 
+void {\bfseries Initialize} (double Lat, bool Is\+Herb, bool Is\+Annual)
+\item 
+void \mbox{\hyperlink{class_live_fuel_moisture_aba6e3ce4103bf20a83935ca8922a13ce}{Set\+Limits}} (double, double, double, double, double, double, double, double)
+\begin{DoxyCompactList}\small\item\em Update function for GSI-\/based fuel moistures based on daily weather data. Note\+: Latitude is set during initialization. \end{DoxyCompactList}\item 
+\Hypertarget{class_live_fuel_moisture_a7c04692ce334fe415606b2fd2835b98a}\label{class_live_fuel_moisture_a7c04692ce334fe415606b2fd2835b98a} 
+void {\bfseries Update} (double TempF, double Max\+TempF, double Min\+TempF, double RH, double min\+RH, int Jday, double RTPrcp, time\+\_\+t this\+Time)
+\item 
+\Hypertarget{class_live_fuel_moisture_ac8e3457d6304ab9fd48346b4bceaa33f}\label{class_live_fuel_moisture_ac8e3457d6304ab9fd48346b4bceaa33f} 
+void {\bfseries Set\+MAPeriod} (unsigned int MAPeriod)
+\item 
+\Hypertarget{class_live_fuel_moisture_a9e16cb0bf6cd22c0ddad807f53c06adf}\label{class_live_fuel_moisture_a9e16cb0bf6cd22c0ddad807f53c06adf} 
+void {\bfseries Set\+LFMParameters} (double Max\+GSI, double Greenup\+Threshold, double Min\+LFMVal, double Max\+LFMVal)
+\item 
+\Hypertarget{class_live_fuel_moisture_a8e92741503444dd87f06d460ae5ec5ea}\label{class_live_fuel_moisture_a8e92741503444dd87f06d460ae5ec5ea} 
+void {\bfseries Get\+LFMParameters} (double \texorpdfstring{$\ast$}{*}Max\+GSI, double \texorpdfstring{$\ast$}{*}Greenup\+Threshold, double \texorpdfstring{$\ast$}{*}Min\+LFMVal, double \texorpdfstring{$\ast$}{*}Max\+LFMVal)
+\item 
+\Hypertarget{class_live_fuel_moisture_a799acc76a4ee563bf1a1994acb860e87}\label{class_live_fuel_moisture_a799acc76a4ee563bf1a1994acb860e87} 
+void {\bfseries Set\+Num\+Precip\+Days} (int num\+Days)
+\item 
+\Hypertarget{class_live_fuel_moisture_a80d0e3bf84ffc43db773b6b588249b88}\label{class_live_fuel_moisture_a80d0e3bf84ffc43db773b6b588249b88} 
+int {\bfseries Get\+Num\+Precip\+Days} ()
+\item 
+double \mbox{\hyperlink{class_live_fuel_moisture_ae097b6a9d208142b0ce9b361b6a1eda4}{Get\+Moisture}} (bool Snow\+Day=false)
+\begin{DoxyCompactList}\small\item\em Method to retrieve calculated live fuel moisture for a given instance of the class. \end{DoxyCompactList}\item 
+\Hypertarget{class_live_fuel_moisture_a0831bec0107e0c0f426f900734e30577}\label{class_live_fuel_moisture_a0831bec0107e0c0f426f900734e30577} 
+double {\bfseries Calc\+Running\+Avg\+GSI} ()
+\item 
+\Hypertarget{class_live_fuel_moisture_ad601f47bf3aecbd61719fdbaff79fdd5}\label{class_live_fuel_moisture_ad601f47bf3aecbd61719fdbaff79fdd5} 
+double {\bfseries Calc\+Running\+Avg\+Herb\+FM} (bool Snow\+Day=false)
+\item 
+\Hypertarget{class_live_fuel_moisture_a5e4b691676ec172dad1c52d2d9c9a403}\label{class_live_fuel_moisture_a5e4b691676ec172dad1c52d2d9c9a403} 
+void {\bfseries Reset\+Herb\+State} ()
+\item 
+\Hypertarget{class_live_fuel_moisture_a20caf8b6c63369ffd70faea72b865dde}\label{class_live_fuel_moisture_a20caf8b6c63369ffd70faea72b865dde} 
+double {\bfseries Calc\+Running\+Avg\+Woody\+FM} (bool Snow\+Day=false)
+\item 
+\Hypertarget{class_live_fuel_moisture_ab9aaecfe9633ff5e3b804f8858bc7004}\label{class_live_fuel_moisture_ab9aaecfe9633ff5e3b804f8858bc7004} 
+double {\bfseries Calc\+GSI} (double min\+RH, double max\+TempF, double min\+TempF, double RTPrcp, double lat, int doy)
+\item 
+\Hypertarget{class_live_fuel_moisture_a15ddcba8d829d12b5bdf0f1bb2de6e82}\label{class_live_fuel_moisture_a15ddcba8d829d12b5bdf0f1bb2de6e82} 
+double {\bfseries Calc\+GSI\+\_\+\+VPDAvg} (double RH, double TempF, double max\+TempF, double min\+TempF, double RTPrcp, double lat, int doy)
+\item 
+\Hypertarget{class_live_fuel_moisture_ac4ae55297d60af4129c4fd11df59414f}\label{class_live_fuel_moisture_ac4ae55297d60af4129c4fd11df59414f} 
+double {\bfseries Get\+Tmin\+Ind} (double Tmin)
+\item 
+\Hypertarget{class_live_fuel_moisture_a39e81afd557d10d93d34255a20406f5b}\label{class_live_fuel_moisture_a39e81afd557d10d93d34255a20406f5b} 
+double {\bfseries Get\+VPDInd} (double VPD)
+\item 
+\Hypertarget{class_live_fuel_moisture_a016e01880fafa7dcdb42cf7b65f8466d}\label{class_live_fuel_moisture_a016e01880fafa7dcdb42cf7b65f8466d} 
+double {\bfseries Get\+Dayl\+Ind} (double Dayl)
+\item 
+\Hypertarget{class_live_fuel_moisture_a3191bec671bec8859a84545366d5db74}\label{class_live_fuel_moisture_a3191bec671bec8859a84545366d5db74} 
+double {\bfseries Get\+Prcp\+Ind} (double RTPrcp)
+\item 
+\Hypertarget{class_live_fuel_moisture_a99ae684cecb296042e960c8ec63ada84}\label{class_live_fuel_moisture_a99ae684cecb296042e960c8ec63ada84} 
+double {\bfseries Calc\+Dayl} (double lat, int yday)
+\item 
+\Hypertarget{class_live_fuel_moisture_a759bb2f425e0f44fc6b1eb00ee60e0ee}\label{class_live_fuel_moisture_a759bb2f425e0f44fc6b1eb00ee60e0ee} 
+double {\bfseries Calc\+VPDavg} (double Temp\+DewF, double Temp\+AvgF)
+\item 
+\Hypertarget{class_live_fuel_moisture_ad6cff4ef06b8654c4a3c3966a6608763}\label{class_live_fuel_moisture_ad6cff4ef06b8654c4a3c3966a6608763} 
+double {\bfseries Calc\+VPD} (double RH, double TempF)
+\item 
+\Hypertarget{class_live_fuel_moisture_a34b3e540de50424c1a76aaa1621bc3fa}\label{class_live_fuel_moisture_a34b3e540de50424c1a76aaa1621bc3fa} 
+double {\bfseries Calc\+DPT} (double tempF, double RH)
+\item 
+\Hypertarget{class_live_fuel_moisture_aadf9b171bc4a93a162726d803f6ddaf8}\label{class_live_fuel_moisture_aadf9b171bc4a93a162726d803f6ddaf8} 
+double {\bfseries Calc\+VP} (double tempF)
+\item 
+\Hypertarget{class_live_fuel_moisture_aba1a81c9a1b7dc4e5accf2fb8f670abd}\label{class_live_fuel_moisture_aba1a81c9a1b7dc4e5accf2fb8f670abd} 
+double {\bfseries Get\+Max\+GSI} ()
+\item 
+\Hypertarget{class_live_fuel_moisture_aa1ed81661125f656980b280241001f99}\label{class_live_fuel_moisture_aa1ed81661125f656980b280241001f99} 
+double {\bfseries Get\+Greenup\+Threshold} ()
+\item 
+\Hypertarget{class_live_fuel_moisture_ab353350a88b4a63ee69294cd88807829}\label{class_live_fuel_moisture_ab353350a88b4a63ee69294cd88807829} 
+double {\bfseries Get\+Min\+LFMVal} ()
+\item 
+\Hypertarget{class_live_fuel_moisture_a1d6c67c275c711c53efa127007a5b6f5}\label{class_live_fuel_moisture_a1d6c67c275c711c53efa127007a5b6f5} 
+double {\bfseries Get\+Max\+LFMVal} ()
+\item 
+\Hypertarget{class_live_fuel_moisture_a42f089948730c610204829698ba74d15}\label{class_live_fuel_moisture_a42f089948730c610204829698ba74d15} 
+void {\bfseries Set\+Use\+VPDAvg} (bool set)
+\item 
+\Hypertarget{class_live_fuel_moisture_a8d6f84b8ec0f6059a1a5d17f474d216b}\label{class_live_fuel_moisture_a8d6f84b8ec0f6059a1a5d17f474d216b} 
+bool {\bfseries Get\+Use\+VPDAvg} ()
+\item 
+\Hypertarget{class_live_fuel_moisture_a3ec35bd1a1009bedc01e12e36e046cfa}\label{class_live_fuel_moisture_a3ec35bd1a1009bedc01e12e36e046cfa} 
+bool {\bfseries Get\+Is\+Annual} ()
+\item 
+\Hypertarget{class_live_fuel_moisture_a1bef8ec9ca5cd873aa71f723b72ad37b}\label{class_live_fuel_moisture_a1bef8ec9ca5cd873aa71f723b72ad37b} 
+\mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalc\+State}} {\bfseries Get\+State} ()
+\item 
+\Hypertarget{class_live_fuel_moisture_ada5400074ca56bb280d4ddb5e2a9e7a8}\label{class_live_fuel_moisture_ada5400074ca56bb280d4ddb5e2a9e7a8} 
+bool {\bfseries Set\+State} (\mbox{\hyperlink{class_l_f_m_calc_state}{LFMCalc\+State}} state)
+\item 
+\Hypertarget{class_live_fuel_moisture_aaf2876629dd5cc1d32ed9d5c75c8340f}\label{class_live_fuel_moisture_aaf2876629dd5cc1d32ed9d5c75c8340f} 
+void {\bfseries Set\+Use\+RTPrecip} (bool set)
+\item 
+\Hypertarget{class_live_fuel_moisture_acecab9cbadc6ccc1c21846aff5ee6a26}\label{class_live_fuel_moisture_acecab9cbadc6ccc1c21846aff5ee6a26} 
+bool {\bfseries Get\+Use\+RTPrecip} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Determines moisture content of live herbaceous and woody fuels from ambient air temperature, relative humidity, rainfall and time of year. 
+
+\doxylink{class_live_fuel_moisture}{Live\+Fuel\+Moisture} is an implementation of the GSI-\/based LFMC model 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_live_fuel_moisture_ae097b6a9d208142b0ce9b361b6a1eda4}\index{LiveFuelMoisture@{LiveFuelMoisture}!GetMoisture@{GetMoisture}}
+\index{GetMoisture@{GetMoisture}!LiveFuelMoisture@{LiveFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{GetMoisture()}{GetMoisture()}}
+{\footnotesize\ttfamily \label{class_live_fuel_moisture_ae097b6a9d208142b0ce9b361b6a1eda4} 
+double Live\+Fuel\+Moisture\+::\+Get\+Moisture (\begin{DoxyParamCaption}\item[{bool}]{Snow\+Day}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Method to retrieve calculated live fuel moisture for a given instance of the class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em NONE.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated live fuel moisture (\% dry wt) 
+\end{DoxyReturn}
+\Hypertarget{class_live_fuel_moisture_aba6e3ce4103bf20a83935ca8922a13ce}\index{LiveFuelMoisture@{LiveFuelMoisture}!SetLimits@{SetLimits}}
+\index{SetLimits@{SetLimits}!LiveFuelMoisture@{LiveFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{SetLimits()}{SetLimits()}}
+{\footnotesize\ttfamily \label{class_live_fuel_moisture_aba6e3ce4103bf20a83935ca8922a13ce} 
+void Live\+Fuel\+Moisture\+::\+Set\+Limits (\begin{DoxyParamCaption}\item[{double}]{Tmin\+Min}{ = {\ttfamily -\/2.0}, }\item[{double}]{Tmin\+Max}{ = {\ttfamily 5.0}, }\item[{double}]{VPDMin}{ = {\ttfamily 900}, }\item[{double}]{VPDMax}{ = {\ttfamily 4100}, }\item[{double}]{Dayl\+Min}{ = {\ttfamily 36000}, }\item[{double}]{Dayl\+Max}{ = {\ttfamily 39600}, }\item[{double}]{Pcp\+Min}{ = {\ttfamily 0.5}, }\item[{double}]{Pcp\+Max}{ = {\ttfamily 1.5}}\end{DoxyParamCaption})}
+
+
+
+Update function for GSI-\/based fuel moistures based on daily weather data. Note\+: Latitude is set during initialization. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em RH} & Relative Humidity (1-\/100\%). \\
+\hline
+\mbox{\texttt{ in}}  & {\em TempF} & Air temperature (F). \\
+\hline
+\mbox{\texttt{ in}}  & {\em Min\+TempF} & 24-\/hour minimum temperature (F) \\
+\hline
+\mbox{\texttt{ in}}  & {\em Jday} & Day of Year (1-\/366) \\
+\hline
+\mbox{\texttt{ in}}  & {\em Precip24} & 24 hour precipitation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NONE
+\end{DoxyReturn}
+Set the environmental limits for the GSI calculations This function defines the environmental limits for the minimum temperature, vapor pressure deficit and daylength indicator functions used to calculate GSI.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Tmin\+Min} & Lower limit for minimum temperature (C). \\
+\hline
+\mbox{\texttt{ in}}  & {\em Tmin\+Max} & Upper limit for minimum temperature (C). \\
+\hline
+\mbox{\texttt{ in}}  & {\em VPDMin} & Lower limit for vapor pressure deficit (Pa). \\
+\hline
+\mbox{\texttt{ in}}  & {\em VPDMax} & Upper limit for vapor pressure deficit (Pa). \\
+\hline
+\mbox{\texttt{ in}}  & {\em Dayl\+Min} & Lower limit for daylength (minutes) \\
+\hline
+\mbox{\texttt{ in}}  & {\em Dayl\+Max} & Upper limit for daylength (minutes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NONE 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Source/\+Public\+Github/\+NFDRS4/lib/\+NFDRS4/include/livefuelmoisture.\+h\item 
+D\+:/\+Source/\+Public\+Github/\+NFDRS4/lib/\+NFDRS4/src/\mbox{\hyperlink{livefuelmoisture_8cpp}{livefuelmoisture.\+cpp}}\end{DoxyCompactItemize}

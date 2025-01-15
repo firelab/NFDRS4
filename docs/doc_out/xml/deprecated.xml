@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="deprecated" kind="page">
+    <compoundname>deprecated</compoundname>
+    <title>Deprecated List</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Member <ref refid="class_dead_fuel_moisture_1a1eca4a133de0836b7f49809acfeb411f" kindref="member">DeadFuelMoisture::meanMoisture</ref>  (void) const</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000001"/>Use Fms_MeanWtdMoisture() for a volume-weighted mean moisture content.</para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="deprecated"/>
+  </compounddef>
+</doxygen>

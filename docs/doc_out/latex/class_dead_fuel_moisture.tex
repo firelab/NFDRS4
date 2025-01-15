@@ -1,0 +1,1552 @@
+\doxysection{Dead\+Fuel\+Moisture Class Reference}
+\hypertarget{class_dead_fuel_moisture}{}\label{class_dead_fuel_moisture}\index{DeadFuelMoisture@{DeadFuelMoisture}}
+
+
+Determines moisture content of dead and down woody fuels from ambient air temperature, relative humidity, insolation, and rainfall.  
+
+
+
+
+{\ttfamily \#include $<$Dead\+Fuel\+Moisture.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dead_fuel_moisture_a19e55d231ddf2868318ab165d9f9d599}\label{class_dead_fuel_moisture_a19e55d231ddf2868318ab165d9f9d599} 
+{\bfseries Dead\+Fuel\+Moisture} (double radius=0.\+64, const std\+::string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}="{}"{})
+\item 
+\Hypertarget{class_dead_fuel_moisture_a75d2dbe6a187396527c3aa14c8669374}\label{class_dead_fuel_moisture_a75d2dbe6a187396527c3aa14c8669374} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Dead\+Fuel\+Moisture} (void)
+\begin{DoxyCompactList}\small\item\em Virtual class destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dead_fuel_moisture_a70ebcb7002a257043d2443920addd051}{Dead\+Fuel\+Moisture}} (const \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \& \mbox{\hyperlink{class_dead_fuel_moisture_a8317a670602ff7a8a907fc4c466e6870}{operator=}} (const \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_dead_fuel_moisture_adc75c2d8be220236beefd8129806effd}{class\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33}{initialize\+Environment}} (int year, int month, int day, int hour, int minute, int second, double at, double rh, double sr, double rcum, double ti, double hi, double wi, double bp=0.\+0218)
+\begin{DoxyCompactList}\small\item\em Initializes a dead fuel moisture stick\textquotesingle{}s internal and external environment and its Date\+Time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_ab439df7ff3310d846cb87783d96402b0}{initialize\+Environment}} (double at, double rh, double sr, double rcum, double ti, double hi, double wi, double bp=0.\+0218)
+\begin{DoxyCompactList}\small\item\em Initializes a dead fuel moisture stick\textquotesingle{}s internal and external environment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update}} (int year, int month, int day, int hour, int minute, int second, double at, double rh, double sW, double rcum, double bpr=0.\+0218, bool prcp\+As\+Amnt=false)
+\begin{DoxyCompactList}\small\item\em Updates a dead moisture stick\textquotesingle{}s internal and external environment based on the current weather observation values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dead_fuel_moisture_ab41bf746f4b03c5af17232df5308419a}{update}} (double et, double at, double rh, double sW, double rcum, double bpr=0.\+0218, bool prcp\+As\+Amnt=false)
+\begin{DoxyCompactList}\small\item\em Updates a dead moisture stick\textquotesingle{}s internal and external environment based on the passed (current) weather observation values. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ae9f35a88ff35ce2a2e826a228bcc6740}\label{class_dead_fuel_moisture_ae9f35a88ff35ce2a2e826a228bcc6740} 
+void {\bfseries zero} (void)
+\begin{DoxyCompactList}\small\item\em Sets everything to zero. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a8c01ee5143395c34027cf372cda580f2}{elapsed\+Time}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the current total running elapsed time. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dead_fuel_moisture_afedbf690e873ed73adc1350820386650}{initialized}} (void) const
+\begin{DoxyCompactList}\small\item\em Reports whether the client has called \doxylink{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33}{initialize\+Environment()}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s name. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a1eca4a133de0836b7f49809acfeb411f}{mean\+Moisture}} (void) const
+\begin{DoxyCompactList}\small\item\em Determines the mean moisture content of the stick\textquotesingle{}s radial profile. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a41288d4072c396d959b9f212ea5c868e}{mean\+Wtd\+Moisture}} (void) const
+\begin{DoxyCompactList}\small\item\em Determines the volume-\/weighted mean moisture content of the stick\textquotesingle{}s radial profile. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_af1062728fc8b6df70ca4660f72783998}{median\+Radial\+Moisture}} (void) const
+\begin{DoxyCompactList}\small\item\em Determines the median of the radial moisture profile. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a453ce81d6d0ba9d4ce73129c59f73452}{mean\+Wtd\+Temperature}} (void) const
+\begin{DoxyCompactList}\small\item\em Determines the volume-\/weighted mean temperature of the stick\textquotesingle{}s radial profile. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a5faa6c8cfc5b43c315f1ff8f93c7ff3a}{ppt\+Rate}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s current precipitation rate (cm/h). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dead_fuel_moisture_ae4d7efab6198134758706a2ef4e45ca7}{state}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to prevailing state for most recent update. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_dead_fuel_moisture_a9aa34f74d33b473633c0e640e9cefe2f}{state\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s current state name. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a45db9c0fe5035e815d94abd53a3a0641}{surface\+Moisture}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s surface fuel moisture content. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_aab5c9670cabbc2cda4ea2a30b4466f80}{surface\+Temperature}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s surface fuel temperature. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_dead_fuel_moisture_a98eb38730baffb5f2535c2ba8d59cefe}{updates}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the current number of observation updates. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_ae9d3802f75938aa853b9f9dfc3a1ced7}{adsorption\+Rate}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s adsorption surface mass transfer rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_ac2421beaae88b27b370fab42c5230192}{desorption\+Rate}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s desorption surface mass transfer rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dead_fuel_moisture_af325e2676e70e9ce355a2d73dc5cbfa5}{diffusivity\+Steps}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s number of moisture diffusivity computation time steps per observation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_ac2db8237057baa92d96e9fbb9311bb1d}{maximum\+Local\+Moisture}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s current maximum local moisture content. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dead_fuel_moisture_a3765d6f27160fc2f9dbd5d75b6ad8bde}{moisture\+Steps}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s number of moisture content computation time steps per observation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a5d91e3db37f99d784a5f86f3ffb29559}{planar\+Heat\+Transfer\+Rate}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s current planar heat transfer rate.. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a53fc3e78cd9f69f84730c4643e88251a}{rainfall\+Runoff\+Factor}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s current rainfall runoff factor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a310579f10acabb20414599b0751a29d7}{stick\+Density}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s particle density. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a3b9e1595ddb846bd0056077988f349c8}{stick\+Length}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s length. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dead_fuel_moisture_a86296efb7e6f27334df9b3f5d5b4ae51}{stick\+Nodes}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s number of moisture content radial computation nodes. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_a0dbf829327feb16730696f29cba3cb09}{water\+Film\+Contribution}} (void) const
+\begin{DoxyCompactList}\small\item\em Access to the stick\textquotesingle{}s current water film contribution to the moisture content. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_af1aea194ca002e88620657680b1cc668}{initialize\+Stick}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes a dead fuel moisture stick\textquotesingle{}s model parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a41ecec10c0309a304b365bac0dd0c6b2}{set\+Adsorption\+Rate}} (double \mbox{\hyperlink{class_dead_fuel_moisture_ae9d3802f75938aa853b9f9dfc3a1ced7}{adsorption\+Rate}})
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s adsorption rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_ab03c63a5da350d85aa7a87e01a7a8151}{set\+Allow\+Rainstorm}} (bool allow=true)
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s configuration to toggle Nelson\textquotesingle{}s logic to allow the Rainstorm state and rainfall-\/to-\/rainstorm transition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a43b7a07f731f76c2ce20d6d01f5263e2}{set\+Allow\+Rainfall2}} (bool allow=true)
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s configuration to toggle Nelson\textquotesingle{}s logic for rainfall runoff factor after the first hour of rain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a2344d3de8d8687e1b6d57e0cd47cfabe}{set\+Desorption\+Rate}} (double \mbox{\hyperlink{class_dead_fuel_moisture_ac2421beaae88b27b370fab42c5230192}{desorption\+Rate}}=0.\+06)
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s desorption rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a245657398705b47bd1839817359dfc40}{set\+Diffusivity\+Steps}} (int \mbox{\hyperlink{class_dead_fuel_moisture_af325e2676e70e9ce355a2d73dc5cbfa5}{diffusivity\+Steps}})
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s diffusivity computation steps per \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a8a7ab69e0c6e7cf1b8fec86e2aea8c2f}{set\+Maximum\+Local\+Moisture}} (double local\+Max\+Mc=0.\+6)
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s maximum local moisture content. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a705bdb0f79b5585b7d4d1ac051a8fb3f}{set\+Moisture\+Steps}} (int \mbox{\hyperlink{class_dead_fuel_moisture_a3765d6f27160fc2f9dbd5d75b6ad8bde}{moisture\+Steps}})
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s moisture content computation steps per \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a07c7ae6bbceefbedbcc722d703e54a7d}{set\+Pertubate\+Column}} (bool pertubate=true)
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s column pertubation configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_af6d83322cc111426a01983717af08077}{set\+Planar\+Heat\+Transfer\+Rate}} (double \mbox{\hyperlink{class_dead_fuel_moisture_a5d91e3db37f99d784a5f86f3ffb29559}{planar\+Heat\+Transfer\+Rate}})
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s planar heat transfer rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a1439d17c94259f61c7929bd908905ac6}{set\+Rainfall\+Runoff\+Factor}} (double \mbox{\hyperlink{class_dead_fuel_moisture_a53fc3e78cd9f69f84730c4643e88251a}{rainfall\+Runoff\+Factor}})
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s rainfall runoff factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a3a1326dacf769eb705e3aedc94ba21d9}{set\+Random\+Seed}} (int randseed=0)
+\begin{DoxyCompactList}\small\item\em Sets the ransom seed behavior. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_ae7edacca19522e18a9123491331e0755}{set\+Ramp\+Rai0}} (bool ramp=true)
+\begin{DoxyCompactList}\small\item\em Updates the stick\textquotesingle{}s configuration to toggle Bevins\textquotesingle{} logic that ramps the rainfall runoff factor during falling humidity, rather than use Nelson\textquotesingle{}s rai0 \texorpdfstring{$\ast$}{*}= 0.\+15. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a50eaae9356d01e8e423693425fa7a17e}{set\+Stick\+Density}} (double \mbox{\hyperlink{class_dead_fuel_moisture_a310579f10acabb20414599b0751a29d7}{stick\+Density}}=0.\+4)
+\begin{DoxyCompactList}\small\item\em Updates the stick density. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a59011a0bec6368a3db4fbcec6bbe757b}{set\+Stick\+Length}} (double \mbox{\hyperlink{class_dead_fuel_moisture_a3b9e1595ddb846bd0056077988f349c8}{stick\+Length}}=41.\+0)
+\begin{DoxyCompactList}\small\item\em Updates the stick length. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a8704fd1a9cc73fba78b13ac32d353853}{set\+Stick\+Nodes}} (int \mbox{\hyperlink{class_dead_fuel_moisture_a86296efb7e6f27334df9b3f5d5b4ae51}{stick\+Nodes}}=11)
+\begin{DoxyCompactList}\small\item\em Updates the number of stick radial computation nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_ad9566d785add658a7e901a97534db484}{set\+Water\+Film\+Contribution}} (double water\+Film=0.\+0)
+\begin{DoxyCompactList}\small\item\em Updates the water film contribution to stick weight. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_a41f960cc972d0f5be384492289fd9546}{set\+Moisture}} (float init\+FM)
+\begin{DoxyCompactList}\small\item\em Set all the nodes of a stick to a startup value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dead_fuel_moisture_ad031ca0debab1ef9561d230be866879f}{eqmc}} (double f\+Temp, double f\+RH)
+\begin{DoxyCompactList}\small\item\em EQMC equation from NFDRS 1978. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_abc5631a03451e46509c0e4025958cc52}\label{class_dead_fuel_moisture_abc5631a03451e46509c0e4025958cc52} 
+void {\bfseries initialize\+Parameters} (double radius, const std\+::string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}})
+\item 
+\Hypertarget{class_dead_fuel_moisture_a1ca53766674db7a84975c4ad41004010}\label{class_dead_fuel_moisture_a1ca53766674db7a84975c4ad41004010} 
+\mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalc\+State}} {\bfseries Get\+State} ()
+\item 
+\Hypertarget{class_dead_fuel_moisture_a75dcbf652a2f075e1c0880089b8e65d5}\label{class_dead_fuel_moisture_a75dcbf652a2f075e1c0880089b8e65d5} 
+bool {\bfseries Set\+State} (\mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalc\+State}} \mbox{\hyperlink{class_dead_fuel_moisture_ae4d7efab6198134758706a2ef4e45ca7}{state}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dead_fuel_moisture_a4993656e84ace8cbddfa482af50c0c1d}\label{class_dead_fuel_moisture_a4993656e84ace8cbddfa482af50c0c1d} 
+static \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} {\bfseries create\+Dead\+Fuel\+Moisture1} (const std\+::string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}="{}"{})
+\item 
+\Hypertarget{class_dead_fuel_moisture_ac2f1ea3b47294648ca20436ae5e4ea3f}\label{class_dead_fuel_moisture_ac2f1ea3b47294648ca20436ae5e4ea3f} 
+static \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} {\bfseries create\+Dead\+Fuel\+Moisture10} (const std\+::string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}="{}"{})
+\item 
+\Hypertarget{class_dead_fuel_moisture_a74a1f5bb595c012a53d8bd1eaff6fd7f}\label{class_dead_fuel_moisture_a74a1f5bb595c012a53d8bd1eaff6fd7f} 
+static \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} {\bfseries create\+Dead\+Fuel\+Moisture100} (const std\+::string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}="{}"{})
+\item 
+\Hypertarget{class_dead_fuel_moisture_aef03548d5d45f1d72d3566cd0ae40123}\label{class_dead_fuel_moisture_aef03548d5d45f1d72d3566cd0ae40123} 
+static \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} {\bfseries create\+Dead\+Fuel\+Moisture1000} (const std\+::string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}="{}"{})
+\item 
+static double \mbox{\hyperlink{class_dead_fuel_moisture_aa2b6dcba8e0e0464dc2c9042aab926bd}{derive\+Adsorption\+Rate}} (double radius)
+\begin{DoxyCompactList}\small\item\em Static convenience method to determine the adsorption surface mass transfer rate for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_dead_fuel_moisture_aa9b2da5e0370bb062946a612d9c76417}{derive\+Diffusivity\+Steps}} (double radius)
+\begin{DoxyCompactList}\small\item\em Static convenience method to determine the minimum number of diffusivity computation time steps per observation for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_dead_fuel_moisture_afa052d97c6e89f6e975ec40456f27d35}{derive\+Moisture\+Steps}} (double radius)
+\begin{DoxyCompactList}\small\item\em Static convenience method to determine the minimum number of moisture content computation time steps per observation for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_dead_fuel_moisture_a2b0237de11984743cf046cd3b9a45653}{derive\+Planar\+Heat\+Transfer\+Rate}} (double radius)
+\begin{DoxyCompactList}\small\item\em Static convenience method to determine the planar heat transfer rate for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_dead_fuel_moisture_af960d6d577dd9aae28268556b2e1656b}{derive\+Rainfall\+Runoff\+Factor}} (double radius)
+\begin{DoxyCompactList}\small\item\em Static convenience method to determine the rainfall runoff factor for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_dead_fuel_moisture_ae1835a05a1e2165ae11d7b78cbcd27ae}{derive\+Stick\+Nodes}} (double radius)
+\begin{DoxyCompactList}\small\item\em Static convenience method to determine the number of moisture content radial computation nodes for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_dead_fuel_moisture_a3b8498c6f9dd1209a71b31a668b720af}{uniform\+Random}} (double min, double max)
+\begin{DoxyCompactList}\small\item\em Static convenience method to derive a random number uniformly distributed in the range \mbox{[}{\itshape min} .. {\itshape max}\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dead_fuel_moisture_acddefa26df19357465f5a2fc18d5a599}{diffusivity}} (double bp)
+\begin{DoxyCompactList}\small\item\em Determines bound water diffusivity at each radial nodes. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a5f64f18675de8e1471e335988b6f7d48}\label{class_dead_fuel_moisture_a5f64f18675de8e1471e335988b6f7d48} 
+void {\bfseries initialize\+Parameters} (const std\+::string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}, double radius, int \mbox{\hyperlink{class_dead_fuel_moisture_a86296efb7e6f27334df9b3f5d5b4ae51}{stick\+Nodes}}, int \mbox{\hyperlink{class_dead_fuel_moisture_a3765d6f27160fc2f9dbd5d75b6ad8bde}{moisture\+Steps}}, int \mbox{\hyperlink{class_dead_fuel_moisture_af325e2676e70e9ce355a2d73dc5cbfa5}{diffusivity\+Steps}}, double \mbox{\hyperlink{class_dead_fuel_moisture_a5d91e3db37f99d784a5f86f3ffb29559}{planar\+Heat\+Transfer\+Rate}}, double \mbox{\hyperlink{class_dead_fuel_moisture_ae9d3802f75938aa853b9f9dfc3a1ced7}{adsorption\+Rate}}, double \mbox{\hyperlink{class_dead_fuel_moisture_a53fc3e78cd9f69f84730c4643e88251a}{rainfall\+Runoff\+Factor}}, double \mbox{\hyperlink{class_dead_fuel_moisture_a3b9e1595ddb846bd0056077988f349c8}{stick\+Length}}=41., double \mbox{\hyperlink{class_dead_fuel_moisture_a310579f10acabb20414599b0751a29d7}{stick\+Density}}=0.\+4, double \mbox{\hyperlink{class_dead_fuel_moisture_a0dbf829327feb16730696f29cba3cb09}{water\+Film\+Contribution}}=0., double local\+Max\+Mc=0.\+6, double \mbox{\hyperlink{class_dead_fuel_moisture_ac2421beaae88b27b370fab42c5230192}{desorption\+Rate}}=0.\+06, double rainfall\+Adjustment\+Factor=0.\+5, double storm\+Transition\+Value=99999., int randseed=0, bool allow\+Rainfall2=false, bool allow\+Rainstorm=false, bool pertubate\+Column=false, bool ramp\+Rai0=false)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dead_fuel_moisture_ac317638e433b791797cd97665d9b24df}\label{class_dead_fuel_moisture_ac317638e433b791797cd97665d9b24df} 
+double {\bfseries m\+\_\+\+Jday}
+\item 
+\Hypertarget{class_dead_fuel_moisture_aaeb028d609e3766223c0d0edb9159101}\label{class_dead_fuel_moisture_aaeb028d609e3766223c0d0edb9159101} 
+double {\bfseries m\+\_\+\+Year}
+\item 
+\Hypertarget{class_dead_fuel_moisture_a0c25221c664b3a59be24f1174b38fa54}\label{class_dead_fuel_moisture_a0c25221c664b3a59be24f1174b38fa54} 
+double {\bfseries m\+\_\+\+Month}
+\item 
+\Hypertarget{class_dead_fuel_moisture_a4a30563b197d1107393b436842f205e2}\label{class_dead_fuel_moisture_a4a30563b197d1107393b436842f205e2} 
+double {\bfseries m\+\_\+\+Day}
+\item 
+\Hypertarget{class_dead_fuel_moisture_af2613a13a3b99cb28834dfb7e4bcd957}\label{class_dead_fuel_moisture_af2613a13a3b99cb28834dfb7e4bcd957} 
+double {\bfseries m\+\_\+\+Hour}
+\item 
+\Hypertarget{class_dead_fuel_moisture_ae7765338ec2e2e873f22372305bd9ffb}\label{class_dead_fuel_moisture_ae7765338ec2e2e873f22372305bd9ffb} 
+double {\bfseries m\+\_\+\+Min}
+\item 
+\Hypertarget{class_dead_fuel_moisture_a70e40c31f9e530395671014a15692bc3}\label{class_dead_fuel_moisture_a70e40c31f9e530395671014a15692bc3} 
+double {\bfseries m\+\_\+\+Sec}
+\item 
+\Hypertarget{class_dead_fuel_moisture_af2d7c8d4209901fba6db5124cb072db9}\label{class_dead_fuel_moisture_af2d7c8d4209901fba6db5124cb072db9} 
+time\+\_\+t {\bfseries obstime}
+\item 
+\Hypertarget{class_dead_fuel_moisture_a73a248b5ff434e6b599e4d56135a077d}\label{class_dead_fuel_moisture_a73a248b5ff434e6b599e4d56135a077d} 
+double {\bfseries m\+\_\+density}
+\begin{DoxyCompactList}\small\item\em Stick density (g/cm3). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ae7095f74ef42967ab6d12ec39c386e4d}\label{class_dead_fuel_moisture_ae7095f74ef42967ab6d12ec39c386e4d} 
+int {\bfseries m\+\_\+d\+Steps}
+\begin{DoxyCompactList}\small\item\em Number of diffusivity computation steps per observation. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a221c72ae93c1142ab064eaa501f9a789}\label{class_dead_fuel_moisture_a221c72ae93c1142ab064eaa501f9a789} 
+double {\bfseries m\+\_\+hc}
+\begin{DoxyCompactList}\small\item\em Stick planar heat transfer rate (cal/cm2-\/h-\/C). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_aa226a2ac01b271740d62db99838b86fe}\label{class_dead_fuel_moisture_aa226a2ac01b271740d62db99838b86fe} 
+double {\bfseries m\+\_\+length}
+\begin{DoxyCompactList}\small\item\em Stick length (cm). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ac27468a7000225676a26530a5ab58876}\label{class_dead_fuel_moisture_ac27468a7000225676a26530a5ab58876} 
+std\+::string {\bfseries m\+\_\+name}
+\begin{DoxyCompactList}\small\item\em Stick name or other descriptive text. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_aa95bed309db6f0e811d83bd8346d7997}\label{class_dead_fuel_moisture_aa95bed309db6f0e811d83bd8346d7997} 
+int {\bfseries m\+\_\+nodes}
+\begin{DoxyCompactList}\small\item\em Number of stick nodes in the radial direction. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a1b825ee89f9b496abc4b7905be3a5f51}\label{class_dead_fuel_moisture_a1b825ee89f9b496abc4b7905be3a5f51} 
+double {\bfseries m\+\_\+radius}
+\begin{DoxyCompactList}\small\item\em Stick radius (cm). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a216b9916bcfb1c476c242168db1a7e30}\label{class_dead_fuel_moisture_a216b9916bcfb1c476c242168db1a7e30} 
+double {\bfseries m\+\_\+rai0}
+\begin{DoxyCompactList}\small\item\em Rain runoff factor during the initial hour of rainfall (dl). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ae9ed8d702e8e9d81d71b49a308e4429d}\label{class_dead_fuel_moisture_ae9ed8d702e8e9d81d71b49a308e4429d} 
+double {\bfseries m\+\_\+rai1}
+\begin{DoxyCompactList}\small\item\em Rain runoff factor after the initial hour of rainfall (dl) \mbox{[}no longer used\mbox{]}. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a5f01be8a94cd9db773e926a70582bb54}\label{class_dead_fuel_moisture_a5f01be8a94cd9db773e926a70582bb54} 
+double {\bfseries m\+\_\+stca}
+\begin{DoxyCompactList}\small\item\em Adsorption surface mass transfer rate ((cm3/cm2)/h). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_aefe3d6907f83cd65218d4e8b2ec4bdcf}\label{class_dead_fuel_moisture_aefe3d6907f83cd65218d4e8b2ec4bdcf} 
+double {\bfseries m\+\_\+stcd}
+\begin{DoxyCompactList}\small\item\em Desorption surface mass transfer rate ((cm3/cm2)/h). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ac30b8d7aa15f000fbb1b6cdd0dbd7d2c}\label{class_dead_fuel_moisture_ac30b8d7aa15f000fbb1b6cdd0dbd7d2c} 
+int {\bfseries m\+\_\+m\+Steps}
+\begin{DoxyCompactList}\small\item\em Number of moisture content computation steps per observation. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a129cf5c29da4bc3ceefd523abc666642}\label{class_dead_fuel_moisture_a129cf5c29da4bc3ceefd523abc666642} 
+double {\bfseries m\+\_\+stv}
+\begin{DoxyCompactList}\small\item\em Storm transition value (cm/h) \mbox{[}no longer used\mbox{]}. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a6395d043e3d5dcb533b8f9d21230a691}\label{class_dead_fuel_moisture_a6395d043e3d5dcb533b8f9d21230a691} 
+double {\bfseries m\+\_\+wfilmk}
+\begin{DoxyCompactList}\small\item\em Water film contribution to stick moisture content (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ac9075ffa494f19ee3e7e5b7c107fc81e}\label{class_dead_fuel_moisture_ac9075ffa494f19ee3e7e5b7c107fc81e} 
+double {\bfseries m\+\_\+wmx}
+\begin{DoxyCompactList}\small\item\em Stick maximum local moisture due to rain (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a31a5565140ff9d8b72df9f813294dd18}\label{class_dead_fuel_moisture_a31a5565140ff9d8b72df9f813294dd18} 
+bool {\bfseries m\+\_\+allow\+Rainfall2}
+\item 
+\Hypertarget{class_dead_fuel_moisture_aea176efc15a5c7220158fce16023fd4a}\label{class_dead_fuel_moisture_aea176efc15a5c7220158fce16023fd4a} 
+bool {\bfseries m\+\_\+allow\+Rainstorm}
+\item 
+\Hypertarget{class_dead_fuel_moisture_afeb885c53f790f091037a936f342ebf5}\label{class_dead_fuel_moisture_afeb885c53f790f091037a936f342ebf5} 
+bool {\bfseries m\+\_\+pertubate\+Column}
+\item 
+\Hypertarget{class_dead_fuel_moisture_af3634bf0617e3ee241565b2dee3e119e}\label{class_dead_fuel_moisture_af3634bf0617e3ee241565b2dee3e119e} 
+bool {\bfseries m\+\_\+ramp\+Rai0}
+\item 
+\Hypertarget{class_dead_fuel_moisture_abecf5bddd562ffcc8af26e94ad9bea99}\label{class_dead_fuel_moisture_abecf5bddd562ffcc8af26e94ad9bea99} 
+double {\bfseries m\+\_\+dx}
+\begin{DoxyCompactList}\small\item\em Internodal radial distance (cm). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a77dd9eea161bcf7118095f11d0f98be6}\label{class_dead_fuel_moisture_a77dd9eea161bcf7118095f11d0f98be6} 
+double {\bfseries m\+\_\+wmax}
+\begin{DoxyCompactList}\small\item\em Maximum possible stick moisture content (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_afddf141aaa71ff135686fbc1625fcbdf}\label{class_dead_fuel_moisture_afddf141aaa71ff135686fbc1625fcbdf} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+x}
+\begin{DoxyCompactList}\small\item\em Array of nodal radial distances from stick center (cm). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ad38d47ec2be741ee337a7f3cea68813e}\label{class_dead_fuel_moisture_ad38d47ec2be741ee337a7f3cea68813e} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+v}
+\begin{DoxyCompactList}\small\item\em Array of nodal volume weighting fractions (cm3 node/cm3 stick). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a8df0ebfaa6821266d2fb49ef24374516}\label{class_dead_fuel_moisture_a8df0ebfaa6821266d2fb49ef24374516} 
+double {\bfseries m\+\_\+amlf}
+\begin{DoxyCompactList}\small\item\em {\itshape aml} optimization factor. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a1abc2c5a56eb30b8b1a4c9fa3a2ca6de}\label{class_dead_fuel_moisture_a1abc2c5a56eb30b8b1a4c9fa3a2ca6de} 
+double {\bfseries m\+\_\+capf}
+\begin{DoxyCompactList}\small\item\em {\itshape cap} optimization factor. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ac2571ce997589a18469ebbf84cef2d9d}\label{class_dead_fuel_moisture_ac2571ce997589a18469ebbf84cef2d9d} 
+double {\bfseries m\+\_\+hwf}
+\begin{DoxyCompactList}\small\item\em {\itshape hw} and {\itshape aml} computation factor. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_aaa3f46c3b5d90b89752835beaa68b44f}\label{class_dead_fuel_moisture_aaa3f46c3b5d90b89752835beaa68b44f} 
+double {\bfseries m\+\_\+dx\+\_\+2}
+\begin{DoxyCompactList}\small\item\em 2 times the internodal distance {\itshape m\+\_\+dx} (cm). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a433fd304ed8f97c1aaf9675921787115}\label{class_dead_fuel_moisture_a433fd304ed8f97c1aaf9675921787115} 
+double {\bfseries m\+\_\+vf}
+\begin{DoxyCompactList}\small\item\em optimization factor used in \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a7f38b29f788aa0e8e3eb0ab65a04b7d9}\label{class_dead_fuel_moisture_a7f38b29f788aa0e8e3eb0ab65a04b7d9} 
+double {\bfseries m\+\_\+bp0}
+\begin{DoxyCompactList}\small\item\em Previous observation\textquotesingle{}s barometric presure (cal/cm3). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a272c85c15c79c4d9f5f20935a961ca28}\label{class_dead_fuel_moisture_a272c85c15c79c4d9f5f20935a961ca28} 
+double {\bfseries m\+\_\+ha0}
+\begin{DoxyCompactList}\small\item\em Previous observation\textquotesingle{}s air humidity (dl). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_aa92ff65aed8ac5d445489d61f0904330}\label{class_dead_fuel_moisture_aa92ff65aed8ac5d445489d61f0904330} 
+double {\bfseries m\+\_\+rc0}
+\begin{DoxyCompactList}\small\item\em Previous observation\textquotesingle{}s cumulative rainfall amount (cm). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ad6b1b046b6051067301a110f99f9ef84}\label{class_dead_fuel_moisture_ad6b1b046b6051067301a110f99f9ef84} 
+double {\bfseries m\+\_\+sv0}
+\begin{DoxyCompactList}\small\item\em Previous observation\textquotesingle{}s solar radiation (mV). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a1a1c36cb455535b0fb026f1ac67710f0}\label{class_dead_fuel_moisture_a1a1c36cb455535b0fb026f1ac67710f0} 
+double {\bfseries m\+\_\+ta0}
+\begin{DoxyCompactList}\small\item\em Previous observation\textquotesingle{}s air temperature (oC). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a65aa84ff477d84bbec782c5f05e0e785}\label{class_dead_fuel_moisture_a65aa84ff477d84bbec782c5f05e0e785} 
+bool {\bfseries m\+\_\+init}
+\begin{DoxyCompactList}\small\item\em Flag set by initialize(). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a1203a439428bc4b6148f16705233cff6}\label{class_dead_fuel_moisture_a1203a439428bc4b6148f16705233cff6} 
+double {\bfseries m\+\_\+bp1}
+\begin{DoxyCompactList}\small\item\em Current observation\textquotesingle{}s barometric pressure (cal/cm3). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a41aa3bdd0c365b36b41390140d2c3a45}\label{class_dead_fuel_moisture_a41aa3bdd0c365b36b41390140d2c3a45} 
+double {\bfseries m\+\_\+et}
+\begin{DoxyCompactList}\small\item\em Elapsed time since previous observation (h). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ac25528f285398e59300ac7d1791e1d45}\label{class_dead_fuel_moisture_ac25528f285398e59300ac7d1791e1d45} 
+double {\bfseries m\+\_\+ha1}
+\begin{DoxyCompactList}\small\item\em Current observation\textquotesingle{}s air humidity (dl). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a9d23a92bbec63478a3c5155325e080e8}\label{class_dead_fuel_moisture_a9d23a92bbec63478a3c5155325e080e8} 
+double {\bfseries m\+\_\+rc1}
+\begin{DoxyCompactList}\small\item\em Current observation\textquotesingle{}s cumulative rainfall amount (cm). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_aaac33602b16e0bfbb0b3bc44f7e3cbf1}\label{class_dead_fuel_moisture_aaac33602b16e0bfbb0b3bc44f7e3cbf1} 
+double {\bfseries m\+\_\+sv1}
+\begin{DoxyCompactList}\small\item\em Current observation\textquotesingle{}s solar radiation (mV). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a6b2eddcbd49409aee495966f86dc3235}\label{class_dead_fuel_moisture_a6b2eddcbd49409aee495966f86dc3235} 
+double {\bfseries m\+\_\+ta1}
+\begin{DoxyCompactList}\small\item\em Current observation\textquotesingle{}s air temperature (oC). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_afbeecfa8977fb81e1fb042458c46d0ca}\label{class_dead_fuel_moisture_afbeecfa8977fb81e1fb042458c46d0ca} 
+double {\bfseries m\+\_\+ddt}
+\begin{DoxyCompactList}\small\item\em Stick diffusivity computation interval (h). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_abe1f5e25750ecb5f771d215c23129ebe}\label{class_dead_fuel_moisture_abe1f5e25750ecb5f771d215c23129ebe} 
+double {\bfseries m\+\_\+mdt}
+\begin{DoxyCompactList}\small\item\em Stick moisture content computation interval (h). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ae41498df4d126abb1519c75ff0b5d500}\label{class_dead_fuel_moisture_ae41498df4d126abb1519c75ff0b5d500} 
+double {\bfseries m\+\_\+mdt\+\_\+2}
+\begin{DoxyCompactList}\small\item\em 2 times the moisture time step {\itshape m\+\_\+mdt} (h). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a419ac52d334b5ce52618542de4660a85}\label{class_dead_fuel_moisture_a419ac52d334b5ce52618542de4660a85} 
+double {\bfseries m\+\_\+pptrate}
+\begin{DoxyCompactList}\small\item\em Current observation period\textquotesingle{}s rainfall rate (cm/h). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_abffa3c90d94e61dacf6914bdfd8e1fa3}\label{class_dead_fuel_moisture_abffa3c90d94e61dacf6914bdfd8e1fa3} 
+double {\bfseries m\+\_\+ra0}
+\begin{DoxyCompactList}\small\item\em Previous observation period\textquotesingle{}s rainfall amount (cm). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ac70c8137d59e9511c871980a15276477}\label{class_dead_fuel_moisture_ac70c8137d59e9511c871980a15276477} 
+double {\bfseries m\+\_\+ra1}
+\begin{DoxyCompactList}\small\item\em Current observation period\textquotesingle{}s rainfall amount (cm). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_aca0c8cf1873fc90965fc260d3e0b8df0}\label{class_dead_fuel_moisture_aca0c8cf1873fc90965fc260d3e0b8df0} 
+double {\bfseries m\+\_\+rdur}
+\begin{DoxyCompactList}\small\item\em Current rainfall event duration (h) \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a99e5fe4b1437ef83cccf48f8d2fd849a}\label{class_dead_fuel_moisture_a99e5fe4b1437ef83cccf48f8d2fd849a} 
+double {\bfseries m\+\_\+sf}
+\begin{DoxyCompactList}\small\item\em optimization factor used in \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a2b9f253da74614c8e5636eb37f04caad}\label{class_dead_fuel_moisture_a2b9f253da74614c8e5636eb37f04caad} 
+double {\bfseries m\+\_\+hf}
+\begin{DoxyCompactList}\small\item\em Stick surface humidity (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a7317ac4a21ed69cbb264c33c303a1160}\label{class_dead_fuel_moisture_a7317ac4a21ed69cbb264c33c303a1160} 
+double {\bfseries m\+\_\+wsa}
+\begin{DoxyCompactList}\small\item\em Stick fiber saturation point (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ae9ed5b2f6606e9a56a2593237761f9dd}\label{class_dead_fuel_moisture_ae9ed5b2f6606e9a56a2593237761f9dd} 
+double {\bfseries m\+\_\+sem}
+\begin{DoxyCompactList}\small\item\em Stick equilibrium moisture content (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a47f1c59e6dcc4a352169e3fc2bc90c83}\label{class_dead_fuel_moisture_a47f1c59e6dcc4a352169e3fc2bc90c83} 
+double {\bfseries m\+\_\+wfilm}
+\begin{DoxyCompactList}\small\item\em Amount of water film (0 or {\itshape m\+\_\+wfilmk}) (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a36e0ce672c819114097bae568fcb4fe9}\label{class_dead_fuel_moisture_a36e0ce672c819114097bae568fcb4fe9} 
+double {\bfseries m\+\_\+elapsed}
+\begin{DoxyCompactList}\small\item\em Total simulation elapsed time (h). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a1ccea8741286d352af8fb0d21e7a5c59}\label{class_dead_fuel_moisture_a1ccea8741286d352af8fb0d21e7a5c59} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Array of nodal temperatures (oC). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a1e81a9af0b50ed12cde1eae217bd38df}\label{class_dead_fuel_moisture_a1e81a9af0b50ed12cde1eae217bd38df} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+s}
+\begin{DoxyCompactList}\small\item\em Array of nodal fiber saturation points (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a7c7cc53692281e448fb9f5029f9aef40}\label{class_dead_fuel_moisture_a7c7cc53692281e448fb9f5029f9aef40} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+d}
+\begin{DoxyCompactList}\small\item\em Array of nodal bound water diffusivities (cm2/h). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_abbd29164ac91fbe564e92077c40a6948}\label{class_dead_fuel_moisture_abbd29164ac91fbe564e92077c40a6948} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+w}
+\begin{DoxyCompactList}\small\item\em Array of nodal moisture contents (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a9ec41879bc9a47362c6cf8f95a93fdbc}\label{class_dead_fuel_moisture_a9ec41879bc9a47362c6cf8f95a93fdbc} 
+long {\bfseries m\+\_\+updates}
+\begin{DoxyCompactList}\small\item\em Number of calls made to \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a784e800d40445780d3b6793386ee82e2}\label{class_dead_fuel_moisture_a784e800d40445780d3b6793386ee82e2} 
+int {\bfseries m\+\_\+state}
+\begin{DoxyCompactList}\small\item\em Prevailing dead fuel moisture state. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a488b2dc5d16d77543e0d91d83ca220ee}\label{class_dead_fuel_moisture_a488b2dc5d16d77543e0d91d83ca220ee} 
+int {\bfseries m\+\_\+randseed}
+\begin{DoxyCompactList}\small\item\em If not zero, nodal temperature, saturation, and moisture contents are pertubated by some small amount. If \texorpdfstring{$<$}{<} 0, uses system clock for seed. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ac31e90481310538ac838ea228943fdc7}\label{class_dead_fuel_moisture_ac31e90481310538ac838ea228943fdc7} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+\+Ttold}
+\begin{DoxyCompactList}\small\item\em Temporary array of nodal temperatures (oC). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_aff2ad22f4f18d67134b29d7292982037}\label{class_dead_fuel_moisture_aff2ad22f4f18d67134b29d7292982037} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+\+Tsold}
+\begin{DoxyCompactList}\small\item\em Temporary array of nodal fiber saturation points (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_ac14bc458bee6f8fc1671c70f53e34fbd}\label{class_dead_fuel_moisture_ac14bc458bee6f8fc1671c70f53e34fbd} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+\+Twold}
+\begin{DoxyCompactList}\small\item\em Temporary array of nodal moisture contents (g water/g dry fuel). \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a645700c1d4eedd07389b84d8c7d61fb4}\label{class_dead_fuel_moisture_a645700c1d4eedd07389b84d8c7d61fb4} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+\+Tv}
+\begin{DoxyCompactList}\small\item\em Temporary array used to redistribute nodal temperatures. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a7a0fc8e022bc8e50bd4ad1ddd2657e36}\label{class_dead_fuel_moisture_a7a0fc8e022bc8e50bd4ad1ddd2657e36} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+\+To}
+\begin{DoxyCompactList}\small\item\em Temporary array used to redistribute moisture contents. \end{DoxyCompactList}\item 
+\Hypertarget{class_dead_fuel_moisture_a07156ce652c23c19e2fe869e75c72c3e}\label{class_dead_fuel_moisture_a07156ce652c23c19e2fe869e75c72c3e} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+\+Tg}
+\begin{DoxyCompactList}\small\item\em Temporary array of nodal free water transport coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dead_fuel_moisture_afa33f29c30a3eda1d8bf040d11dab98a}\label{class_dead_fuel_moisture_afa33f29c30a3eda1d8bf040d11dab98a} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&output, const \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&r)
+\item 
+\Hypertarget{class_dead_fuel_moisture_a86bd8cd5bb66c4f1b4808804c94d06db}\label{class_dead_fuel_moisture_a86bd8cd5bb66c4f1b4808804c94d06db} 
+std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&input, \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&r)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_dead_fuel_moisture_af92de90856f40f16230da4b800317c21}{create\+Dead\+Fuel\+Moisture1}} (const string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}})
+\begin{DoxyCompactList}\small\item\em Static convenience method to create a 1-\/h time lag \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance with a 0.\+20-\/cm radius (0.\+16-\/in diameter). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_dead_fuel_moisture_ab91d9be2f19cc2752a032fcee3961f8e}{create\+Dead\+Fuel\+Moisture10}} (const string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}})
+\begin{DoxyCompactList}\small\item\em Static convenience method to create a 10-\/h time lag \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance with a 0.\+64-\/cm radius (0.\+5-\/in diameter). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_dead_fuel_moisture_add1a532961e2f06273c40605a1fac8d8}{create\+Dead\+Fuel\+Moisture100}} (const string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}})
+\begin{DoxyCompactList}\small\item\em Static convenience method to create a 100-\/h time lag \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance with a 2.\+0-\/cm radius (1.\+57-\/in diameter). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_dead_fuel_moisture_a25ab7f9ca2a99d1f940e430dbe5ad253}{create\+Dead\+Fuel\+Moisture1000}} (const string \&\mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}})
+\begin{DoxyCompactList}\small\item\em Static convenience method to create a 1000-\/h time lag lag \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance with a 6.\+4-\/cm radius (5-\/in diameter). \end{DoxyCompactList}\item 
+ostream \& \mbox{\hyperlink{class_dead_fuel_moisture_aee1dbb3a01ad5d20fcc7c744eb8a4b10}{operator$<$$<$}} (ostream \&output, const \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&r)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stream insertion operator. \end{DoxyCompactList}\item 
+istream \& \mbox{\hyperlink{class_dead_fuel_moisture_a678ecb2fa5d10d2c86bf616b2c9e6a1a}{operator$>$$>$}} (istream \&input, \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&r)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stream extraction operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Determines moisture content of dead and down woody fuels from ambient air temperature, relative humidity, insolation, and rainfall. 
+
+\doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} is an implementation of Nelson\textquotesingle{}s dead fuel moisture model \doxysectlink{citations_nelson2000}{Nelson, Ralph M. Jr. 2000.}{1}. This section describes \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class usage only; for a more complete discussion of the Nelson model, see \doxysectlink{_dead_fuel_moisture}{Dead Fuel Moisture}{0}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_dead_fuel_moisture_a70ebcb7002a257043d2443920addd051}\index{DeadFuelMoisture@{DeadFuelMoisture}!DeadFuelMoisture@{DeadFuelMoisture}}
+\index{DeadFuelMoisture@{DeadFuelMoisture}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{DeadFuelMoisture()}{DeadFuelMoisture()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a70ebcb7002a257043d2443920addd051} 
+Dead\+Fuel\+Moisture\+::\+Dead\+Fuel\+Moisture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em r} & Reference to the \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} from which to copy. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dead_fuel_moisture_ae9d3802f75938aa853b9f9dfc3a1ced7}\index{DeadFuelMoisture@{DeadFuelMoisture}!adsorptionRate@{adsorptionRate}}
+\index{adsorptionRate@{adsorptionRate}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{adsorptionRate()}{adsorptionRate()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ae9d3802f75938aa853b9f9dfc3a1ced7} 
+double Dead\+Fuel\+Moisture\+::adsorption\+Rate (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s adsorption surface mass transfer rate. 
+
+\begin{DoxyReturn}{Returns}
+Current surface mass transfer rate for adsorption ( $\frac {cm^{3}} {cm^{2} \cdot h}$). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_adc75c2d8be220236beefd8129806effd}\index{DeadFuelMoisture@{DeadFuelMoisture}!className@{className}}
+\index{className@{className}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{className()}{className()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_adc75c2d8be220236beefd8129806effd} 
+const char \texorpdfstring{$\ast$}{*} Dead\+Fuel\+Moisture\+::class\+Name (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class name. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to static \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} char string. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_aa2b6dcba8e0e0464dc2c9042aab926bd}\index{DeadFuelMoisture@{DeadFuelMoisture}!deriveAdsorptionRate@{deriveAdsorptionRate}}
+\index{deriveAdsorptionRate@{deriveAdsorptionRate}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{deriveAdsorptionRate()}{deriveAdsorptionRate()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_aa2b6dcba8e0e0464dc2c9042aab926bd} 
+double Dead\+Fuel\+Moisture\+::derive\+Adsorption\+Rate (\begin{DoxyParamCaption}\item[{double}]{radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static convenience method to determine the adsorption surface mass transfer rate for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. 
+
+The adsorption surface mass transfer rate is determined from \doxysectlink{citations_bevins2005}{Bevins, Collin D. 2005.}{1} \[\alpha = 0.0004509 + \frac {0.006126}{r^2.6}\] where
+\begin{DoxyItemize}
+\item $\alpha$ is the adsorption surface mass transfer rate ( $\frac {cm^{3}} {cm^{2} \cdot h}$), and
+\item $r$ is the stick radius ( $cm$).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em radius} & Dead fuel stick radius ( $cm$).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estimated surface mass transfer rate for adsorption ( $\frac {cm^{3}} {cm^{2} \cdot h}$). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_aa9b2da5e0370bb062946a612d9c76417}\index{DeadFuelMoisture@{DeadFuelMoisture}!deriveDiffusivitySteps@{deriveDiffusivitySteps}}
+\index{deriveDiffusivitySteps@{deriveDiffusivitySteps}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{deriveDiffusivitySteps()}{deriveDiffusivitySteps()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_aa9b2da5e0370bb062946a612d9c76417} 
+int Dead\+Fuel\+Moisture\+::derive\+Diffusivity\+Steps (\begin{DoxyParamCaption}\item[{double}]{radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static convenience method to determine the minimum number of diffusivity computation time steps per observation for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. 
+
+The minimum number of diffusivity computation time steps per observation must be large enough to provide stability in the model computations (\doxysectlink{citations_carlson2004a}{Carlson, J. D. 2004a.}{1} ), and is used to determine the internal diffusivity computation time step within \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}.
+
+The minumum number of diffusivity computation time steps is determined from \doxysectlink{citations_bevins2005}{Bevins, Collin D. 2005.}{1} \[$n_{d} = int( 4.777 + \frac {2.496}{r^1.3} )\] where
+\begin{DoxyItemize}
+\item $n_{d}$ is the minimum number of diffusivity computation time steps per observation, and
+\item $r$ is the stick radius ( $cm$).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em radius} & Dead fuel stick radius ( $cm$).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Minimum number of diffusivity computation time steps per observation. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_afa052d97c6e89f6e975ec40456f27d35}\index{DeadFuelMoisture@{DeadFuelMoisture}!deriveMoistureSteps@{deriveMoistureSteps}}
+\index{deriveMoistureSteps@{deriveMoistureSteps}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{deriveMoistureSteps()}{deriveMoistureSteps()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_afa052d97c6e89f6e975ec40456f27d35} 
+int Dead\+Fuel\+Moisture\+::derive\+Moisture\+Steps (\begin{DoxyParamCaption}\item[{double}]{radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static convenience method to determine the minimum number of moisture content computation time steps per observation for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. 
+
+The number of moisture computation time steps per observation must be large enough to provide stability in the model computations (\doxysectlink{citations_carlson2004a}{Carlson, J. D. 2004a.}{1} ), and is used to determine the internal moisture content computation time step within \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}.
+
+The minimum number of moisture content computation time steps is determined from \doxysectlink{citations_bevins2005}{Bevins, Collin D. 2005.}{1} \[$n_{m} = int( 9.8202 + \frac {26.865}{r^1.4} )\] where
+\begin{DoxyItemize}
+\item $n_{m}$ is the minimum number of moisture content computation time steps per observation, and
+\item $r$ is the stick radius ( $cm$).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em radius} & Dead fuel stick radius ( $cm$).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Minimum number of moisture computation time steps per observation. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a2b0237de11984743cf046cd3b9a45653}\index{DeadFuelMoisture@{DeadFuelMoisture}!derivePlanarHeatTransferRate@{derivePlanarHeatTransferRate}}
+\index{derivePlanarHeatTransferRate@{derivePlanarHeatTransferRate}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{derivePlanarHeatTransferRate()}{derivePlanarHeatTransferRate()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a2b0237de11984743cf046cd3b9a45653} 
+double Dead\+Fuel\+Moisture\+::derive\+Planar\+Heat\+Transfer\+Rate (\begin{DoxyParamCaption}\item[{double}]{radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static convenience method to determine the planar heat transfer rate for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. 
+
+The planar heat transfer rate is determined from \doxysectlink{citations_bevins2005}{Bevins, Collin D. 2005.}{1} \[$h_{c} = 0.2195 + \frac {0.05260}{r^2.5}\] where
+\begin{DoxyItemize}
+\item $h_{c}$ is the planar heat transfer rate ( $\frac {cal} {cm^{2} \cdot h \cdot C}$), and
+\item $r$ is the stick radius ( $cm$).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em radius} & Dead fuel stick radius ( $cm$).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estimated planar heat transfer rate ( $\frac {cal} {cm^{2} \cdot h \cdot C}$). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_af960d6d577dd9aae28268556b2e1656b}\index{DeadFuelMoisture@{DeadFuelMoisture}!deriveRainfallRunoffFactor@{deriveRainfallRunoffFactor}}
+\index{deriveRainfallRunoffFactor@{deriveRainfallRunoffFactor}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{deriveRainfallRunoffFactor()}{deriveRainfallRunoffFactor()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_af960d6d577dd9aae28268556b2e1656b} 
+double Dead\+Fuel\+Moisture\+::derive\+Rainfall\+Runoff\+Factor (\begin{DoxyParamCaption}\item[{double}]{radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static convenience method to determine the rainfall runoff factor for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. 
+
+The initial rainfall runoff factor is determined from \doxysectlink{citations_bevins2005}{Bevins, Collin D. 2005.}{1} \[$f_{0} = 0.02822 + \frac {0.1056}{r^2.2}\] where
+\begin{DoxyItemize}
+\item $f_{0}$ is the initial rainfall runoff rate ( $dl$), and
+\item $r$ is the stick radius ( $cm$).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em radius} & Dead fuel stick radius ( $cm$).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estimated initial rainfall runoff factor ( $dl$). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_ae1835a05a1e2165ae11d7b78cbcd27ae}\index{DeadFuelMoisture@{DeadFuelMoisture}!deriveStickNodes@{deriveStickNodes}}
+\index{deriveStickNodes@{deriveStickNodes}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{deriveStickNodes()}{deriveStickNodes()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ae1835a05a1e2165ae11d7b78cbcd27ae} 
+int Dead\+Fuel\+Moisture\+::derive\+Stick\+Nodes (\begin{DoxyParamCaption}\item[{double}]{radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static convenience method to determine the number of moisture content radial computation nodes for a \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stick of given {\itshape radius}. 
+
+The number of moisture computation nodes must be large enough to provide stability in the model computations (\doxysectlink{citations_carlson2004a}{Carlson, J. D. 2004a.}{1} ).
+
+The minimum number of moisture content computation nodes is determined from \doxysectlink{citations_bevins2005}{Bevins, Collin D. 2005.}{1} \[$n_{m} = int( 10.727 + \frac {0.1746}{r} )\] where
+\begin{DoxyItemize}
+\item $n_{m}$ is the minimum number of moisture content computation radial nodes,
+\item $r$ is the stick radius ( $cm$).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em radius} & Dead fuel stick radius ( $cm$).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Minimum number of moisture computation radial nodes. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_ac2421beaae88b27b370fab42c5230192}\index{DeadFuelMoisture@{DeadFuelMoisture}!desorptionRate@{desorptionRate}}
+\index{desorptionRate@{desorptionRate}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{desorptionRate()}{desorptionRate()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ac2421beaae88b27b370fab42c5230192} 
+double Dead\+Fuel\+Moisture\+::desorption\+Rate (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s desorption surface mass transfer rate. 
+
+\begin{DoxyReturn}{Returns}
+Current surface mass transfer rate for desorption ( $\frac {cm^{3}} {cm^{2} \cdot h}$). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_acddefa26df19357465f5a2fc18d5a599}\index{DeadFuelMoisture@{DeadFuelMoisture}!diffusivity@{diffusivity}}
+\index{diffusivity@{diffusivity}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{diffusivity()}{diffusivity()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_acddefa26df19357465f5a2fc18d5a599} 
+void Dead\+Fuel\+Moisture\+::diffusivity (\begin{DoxyParamCaption}\item[{double}]{bp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Determines bound water diffusivity at each radial nodes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em bp} & Barometric pressure (cal/m3) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_af325e2676e70e9ce355a2d73dc5cbfa5}\index{DeadFuelMoisture@{DeadFuelMoisture}!diffusivitySteps@{diffusivitySteps}}
+\index{diffusivitySteps@{diffusivitySteps}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{diffusivitySteps()}{diffusivitySteps()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_af325e2676e70e9ce355a2d73dc5cbfa5} 
+int Dead\+Fuel\+Moisture\+::diffusivity\+Steps (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s number of moisture diffusivity computation time steps per observation. 
+
+\begin{DoxyReturn}{Returns}
+Current number of moisture diffusivity computation time steps per observation. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a8c01ee5143395c34027cf372cda580f2}\index{DeadFuelMoisture@{DeadFuelMoisture}!elapsedTime@{elapsedTime}}
+\index{elapsedTime@{elapsedTime}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{elapsedTime()}{elapsedTime()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a8c01ee5143395c34027cf372cda580f2} 
+double Dead\+Fuel\+Moisture\+::elapsed\+Time (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the current total running elapsed time. 
+
+\begin{DoxyReturn}{Returns}
+The current total running elapsed time (h). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_ad031ca0debab1ef9561d230be866879f}\index{DeadFuelMoisture@{DeadFuelMoisture}!eqmc@{eqmc}}
+\index{eqmc@{eqmc}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{eqmc()}{eqmc()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ad031ca0debab1ef9561d230be866879f} 
+double Dead\+Fuel\+Moisture\+::eqmc (\begin{DoxyParamCaption}\item[{double}]{f\+Temp}{, }\item[{double}]{f\+RH}{}\end{DoxyParamCaption})}
+
+
+
+EQMC equation from NFDRS 1978. 
+
+\begin{DoxyReturn}{Returns}
+Calculated EQMC 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_afedbf690e873ed73adc1350820386650}\index{DeadFuelMoisture@{DeadFuelMoisture}!initialized@{initialized}}
+\index{initialized@{initialized}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{initialized()}{initialized()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_afedbf690e873ed73adc1350820386650} 
+bool Dead\+Fuel\+Moisture\+::initialized (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Reports whether the client has called \doxylink{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33}{initialize\+Environment()}. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em TRUE} & if client has called \doxylink{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33}{initialize\+Environment()}. \\
+\hline
+{\em FALSE} & if client has not called \doxylink{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33}{initialize\+Environment()}. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{class_dead_fuel_moisture_ab439df7ff3310d846cb87783d96402b0}\index{DeadFuelMoisture@{DeadFuelMoisture}!initializeEnvironment@{initializeEnvironment}}
+\index{initializeEnvironment@{initializeEnvironment}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{initializeEnvironment()}{initializeEnvironment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ab439df7ff3310d846cb87783d96402b0} 
+void Dead\+Fuel\+Moisture\+::initialize\+Environment (\begin{DoxyParamCaption}\item[{double}]{ta}{, }\item[{double}]{ha}{, }\item[{double}]{sr}{, }\item[{double}]{rc}{, }\item[{double}]{ti}{, }\item[{double}]{hi}{, }\item[{double}]{wi}{, }\item[{double}]{bp}{ = {\ttfamily 0.0218}}\end{DoxyParamCaption})}
+
+
+
+Initializes a dead fuel moisture stick\textquotesingle{}s internal and external environment. 
+
+Initializes the stick\textquotesingle{}s internal and external environmental variables. The stick\textquotesingle{}s internal temperature and water content are presumed to be uniformly distributed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ta} & Initial ambient air temperature (oC). \\
+\hline
+\mbox{\texttt{ in}}  & {\em ha} & Initial ambient air relative humidity (g/g). \\
+\hline
+\mbox{\texttt{ in}}  & {\em sr} & Initial solar radiation (W/m2). \\
+\hline
+\mbox{\texttt{ in}}  & {\em rc} & Initial cumulative rainfall amount (cm). \\
+\hline
+\mbox{\texttt{ in}}  & {\em ti} & Initial stick temperature (oC). \\
+\hline
+\mbox{\texttt{ in}}  & {\em hi} & Initial stick surface relative humidty (g/g). \\
+\hline
+\mbox{\texttt{ in}}  & {\em wi} & Initial stick fuel moisture fraction (g/g). \\
+\hline
+\mbox{\texttt{ in}}  & {\em bp} & Initial stick barometric pressure (cal/cm3). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33}\index{DeadFuelMoisture@{DeadFuelMoisture}!initializeEnvironment@{initializeEnvironment}}
+\index{initializeEnvironment@{initializeEnvironment}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{initializeEnvironment()}{initializeEnvironment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33} 
+void Dead\+Fuel\+Moisture\+::initialize\+Environment (\begin{DoxyParamCaption}\item[{int}]{year}{, }\item[{int}]{month}{, }\item[{int}]{day}{, }\item[{int}]{hour}{, }\item[{int}]{minute}{, }\item[{int}]{second}{, }\item[{double}]{ta}{, }\item[{double}]{ha}{, }\item[{double}]{sr}{, }\item[{double}]{rc}{, }\item[{double}]{ti}{, }\item[{double}]{hi}{, }\item[{double}]{wi}{, }\item[{double}]{bp}{ = {\ttfamily 0.0218}}\end{DoxyParamCaption})}
+
+
+
+Initializes a dead fuel moisture stick\textquotesingle{}s internal and external environment and its Date\+Time. 
+
+Initializes the stick\textquotesingle{}s internal and external environmental variables. The stick\textquotesingle{}s internal temperature and water content are presumed to be uniformly distributed.
+
+This overloaded version also initializes the stick\textquotesingle{}s Julian date from the passed date and time parameters. The first call to \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()} calculates elapsed time from the date/time passed here.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em year} & Observation year (4 digits). \\
+\hline
+\mbox{\texttt{ in}}  & {\em month} & Observation month (Jan==1, Dec==12). \\
+\hline
+\mbox{\texttt{ in}}  & {\em day} & Observation day-\/of-\/the-\/month \mbox{[}1..31\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em hour} & Observation elapsed hours in the day \mbox{[}0..23\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em minute} & Observation elapsed minutes in the hour (0..59\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em second} & Observation elapsed seconds in the minute \mbox{[}0..59\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em ta} & Initial ambient air temperature (oC). \\
+\hline
+\mbox{\texttt{ in}}  & {\em ha} & Initial ambient air relative humidity (g/g). \\
+\hline
+\mbox{\texttt{ in}}  & {\em sr} & Initial solar radiation (W/m2). \\
+\hline
+\mbox{\texttt{ in}}  & {\em rc} & Initial cumulative rainfall amount (cm). \\
+\hline
+\mbox{\texttt{ in}}  & {\em ti} & Initial stick temperature (oC). \\
+\hline
+\mbox{\texttt{ in}}  & {\em hi} & Initial stick surface relative humidty (g/g). \\
+\hline
+\mbox{\texttt{ in}}  & {\em wi} & Initial stick fuel moisture fraction (g/g). \\
+\hline
+\mbox{\texttt{ in}}  & {\em bp} & Initial stick barometric pressure (cal/cm3). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_af1aea194ca002e88620657680b1cc668}\index{DeadFuelMoisture@{DeadFuelMoisture}!initializeStick@{initializeStick}}
+\index{initializeStick@{initializeStick}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{initializeStick()}{initializeStick()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_af1aea194ca002e88620657680b1cc668} 
+void Dead\+Fuel\+Moisture\+::initialize\+Stick (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a dead fuel moisture stick\textquotesingle{}s model parameters. 
+
+\begin{DoxyNote}{Note}
+Should be called after and set$<$parameter$>$(). 
+\end{DoxyNote}
+\Hypertarget{class_dead_fuel_moisture_ac2db8237057baa92d96e9fbb9311bb1d}\index{DeadFuelMoisture@{DeadFuelMoisture}!maximumLocalMoisture@{maximumLocalMoisture}}
+\index{maximumLocalMoisture@{maximumLocalMoisture}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{maximumLocalMoisture()}{maximumLocalMoisture()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ac2db8237057baa92d96e9fbb9311bb1d} 
+double Dead\+Fuel\+Moisture\+::maximum\+Local\+Moisture (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s current maximum local moisture content. 
+
+\begin{DoxyReturn}{Returns}
+Stick\textquotesingle{}s current maximum local moisture content (g/g). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a1eca4a133de0836b7f49809acfeb411f}\index{DeadFuelMoisture@{DeadFuelMoisture}!meanMoisture@{meanMoisture}}
+\index{meanMoisture@{meanMoisture}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{meanMoisture()}{meanMoisture()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a1eca4a133de0836b7f49809acfeb411f} 
+double Dead\+Fuel\+Moisture\+::mean\+Moisture (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Determines the mean moisture content of the stick\textquotesingle{}s radial profile. 
+
+\begin{DoxyNote}{Note}
+The integral average of the stick\textquotesingle{}s nodal moisture contents is calculated without consideration to the nodes\textquotesingle{} volumetric representation.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Use Fms\+\_\+\+Mean\+Wtd\+Moisture() for a volume-\/weighted mean moisture content.\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+The mean moisture content of the stick\textquotesingle{}s radial profile (g/g). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a41288d4072c396d959b9f212ea5c868e}\index{DeadFuelMoisture@{DeadFuelMoisture}!meanWtdMoisture@{meanWtdMoisture}}
+\index{meanWtdMoisture@{meanWtdMoisture}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{meanWtdMoisture()}{meanWtdMoisture()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a41288d4072c396d959b9f212ea5c868e} 
+double Dead\+Fuel\+Moisture\+::mean\+Wtd\+Moisture (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Determines the volume-\/weighted mean moisture content of the stick\textquotesingle{}s radial profile. 
+
+\begin{DoxyReturn}{Returns}
+The volume-\/weighted mean moisture content of the stick\textquotesingle{}s radial profile (g/g). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a453ce81d6d0ba9d4ce73129c59f73452}\index{DeadFuelMoisture@{DeadFuelMoisture}!meanWtdTemperature@{meanWtdTemperature}}
+\index{meanWtdTemperature@{meanWtdTemperature}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{meanWtdTemperature()}{meanWtdTemperature()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a453ce81d6d0ba9d4ce73129c59f73452} 
+double Dead\+Fuel\+Moisture\+::mean\+Wtd\+Temperature (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Determines the volume-\/weighted mean temperature of the stick\textquotesingle{}s radial profile. 
+
+\begin{DoxyReturn}{Returns}
+The volume-\/weighted mean temperature of the stick\textquotesingle{}s radial profile (oC). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_af1062728fc8b6df70ca4660f72783998}\index{DeadFuelMoisture@{DeadFuelMoisture}!medianRadialMoisture@{medianRadialMoisture}}
+\index{medianRadialMoisture@{medianRadialMoisture}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{medianRadialMoisture()}{medianRadialMoisture()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_af1062728fc8b6df70ca4660f72783998} 
+double Dead\+Fuel\+Moisture\+::median\+Radial\+Moisture (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Determines the median of the radial moisture profile. 
+
+\begin{DoxyReturn}{Returns}
+The volume-\/weighted mean moisture content of the stick\textquotesingle{}s radial profile (g/g). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a3765d6f27160fc2f9dbd5d75b6ad8bde}\index{DeadFuelMoisture@{DeadFuelMoisture}!moistureSteps@{moistureSteps}}
+\index{moistureSteps@{moistureSteps}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{moistureSteps()}{moistureSteps()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a3765d6f27160fc2f9dbd5d75b6ad8bde} 
+int Dead\+Fuel\+Moisture\+::moisture\+Steps (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s number of moisture content computation time steps per observation. 
+
+\begin{DoxyReturn}{Returns}
+Current number of moisture content computation time steps per observation. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}\index{DeadFuelMoisture@{DeadFuelMoisture}!name@{name}}
+\index{name@{name}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08} 
+string Dead\+Fuel\+Moisture\+::name (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s name. 
+
+\begin{DoxyReturn}{Returns}
+The stick\textquotesingle{}s name. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a8317a670602ff7a8a907fc4c466e6870}\index{DeadFuelMoisture@{DeadFuelMoisture}!operator=@{operator=}}
+\index{operator=@{operator=}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a8317a670602ff7a8a907fc4c466e6870} 
+const \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \& Dead\+Fuel\+Moisture\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em r} & Reference to the \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance from which to copy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a5d91e3db37f99d784a5f86f3ffb29559}\index{DeadFuelMoisture@{DeadFuelMoisture}!planarHeatTransferRate@{planarHeatTransferRate}}
+\index{planarHeatTransferRate@{planarHeatTransferRate}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{planarHeatTransferRate()}{planarHeatTransferRate()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a5d91e3db37f99d784a5f86f3ffb29559} 
+double Dead\+Fuel\+Moisture\+::planar\+Heat\+Transfer\+Rate (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s current planar heat transfer rate.. 
+
+\begin{DoxyReturn}{Returns}
+Stick\textquotesingle{}s current planar heat transfer rate ( $\frac {cal} {cm^{2} \cdot h \cdot C}$). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a5faa6c8cfc5b43c315f1ff8f93c7ff3a}\index{DeadFuelMoisture@{DeadFuelMoisture}!pptRate@{pptRate}}
+\index{pptRate@{pptRate}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{pptRate()}{pptRate()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a5faa6c8cfc5b43c315f1ff8f93c7ff3a} 
+double Dead\+Fuel\+Moisture\+::ppt\+Rate (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s current precipitation rate (cm/h). 
+
+\begin{DoxyReturn}{Returns}
+The current (most recent) precipitation rate (cm/h). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a53fc3e78cd9f69f84730c4643e88251a}\index{DeadFuelMoisture@{DeadFuelMoisture}!rainfallRunoffFactor@{rainfallRunoffFactor}}
+\index{rainfallRunoffFactor@{rainfallRunoffFactor}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{rainfallRunoffFactor()}{rainfallRunoffFactor()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a53fc3e78cd9f69f84730c4643e88251a} 
+double Dead\+Fuel\+Moisture\+::rainfall\+Runoff\+Factor (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s current rainfall runoff factor. 
+
+\begin{DoxyReturn}{Returns}
+Stick\textquotesingle{}s current rainfall runoff factor (dl). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a41ecec10c0309a304b365bac0dd0c6b2}\index{DeadFuelMoisture@{DeadFuelMoisture}!setAdsorptionRate@{setAdsorptionRate}}
+\index{setAdsorptionRate@{setAdsorptionRate}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setAdsorptionRate()}{setAdsorptionRate()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a41ecec10c0309a304b365bac0dd0c6b2} 
+void Dead\+Fuel\+Moisture\+::set\+Adsorption\+Rate (\begin{DoxyParamCaption}\item[{double}]{adsorption\+Rate}{}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s adsorption rate. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em adsorption\+Rate} & Adsorption surface mass transfer rate ((cm3/cm2)/h). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a43b7a07f731f76c2ce20d6d01f5263e2}\index{DeadFuelMoisture@{DeadFuelMoisture}!setAllowRainfall2@{setAllowRainfall2}}
+\index{setAllowRainfall2@{setAllowRainfall2}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setAllowRainfall2()}{setAllowRainfall2()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a43b7a07f731f76c2ce20d6d01f5263e2} 
+void Dead\+Fuel\+Moisture\+::set\+Allow\+Rainfall2 (\begin{DoxyParamCaption}\item[{bool}]{allow}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s configuration to toggle Nelson\textquotesingle{}s logic for rainfall runoff factor after the first hour of rain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em allow} & (default=true). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_ab03c63a5da350d85aa7a87e01a7a8151}\index{DeadFuelMoisture@{DeadFuelMoisture}!setAllowRainstorm@{setAllowRainstorm}}
+\index{setAllowRainstorm@{setAllowRainstorm}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setAllowRainstorm()}{setAllowRainstorm()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ab03c63a5da350d85aa7a87e01a7a8151} 
+void Dead\+Fuel\+Moisture\+::set\+Allow\+Rainstorm (\begin{DoxyParamCaption}\item[{bool}]{allow}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s configuration to toggle Nelson\textquotesingle{}s logic to allow the Rainstorm state and rainfall-\/to-\/rainstorm transition. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em allow} & (default=true). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a2344d3de8d8687e1b6d57e0cd47cfabe}\index{DeadFuelMoisture@{DeadFuelMoisture}!setDesorptionRate@{setDesorptionRate}}
+\index{setDesorptionRate@{setDesorptionRate}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setDesorptionRate()}{setDesorptionRate()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a2344d3de8d8687e1b6d57e0cd47cfabe} 
+void Dead\+Fuel\+Moisture\+::set\+Desorption\+Rate (\begin{DoxyParamCaption}\item[{double}]{desorption\+Rate}{ = {\ttfamily 0.06}}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s desorption rate. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em desorption\+Rate} & Desorption surface mass transfer rate ((cm3/cm2)/h). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a245657398705b47bd1839817359dfc40}\index{DeadFuelMoisture@{DeadFuelMoisture}!setDiffusivitySteps@{setDiffusivitySteps}}
+\index{setDiffusivitySteps@{setDiffusivitySteps}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setDiffusivitySteps()}{setDiffusivitySteps()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a245657398705b47bd1839817359dfc40} 
+void Dead\+Fuel\+Moisture\+::set\+Diffusivity\+Steps (\begin{DoxyParamCaption}\item[{int}]{diffusivity\+Steps}{}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s diffusivity computation steps per \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em diffusivity\+Steps} & Number of diffusivity computation steps per observation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a8a7ab69e0c6e7cf1b8fec86e2aea8c2f}\index{DeadFuelMoisture@{DeadFuelMoisture}!setMaximumLocalMoisture@{setMaximumLocalMoisture}}
+\index{setMaximumLocalMoisture@{setMaximumLocalMoisture}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setMaximumLocalMoisture()}{setMaximumLocalMoisture()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a8a7ab69e0c6e7cf1b8fec86e2aea8c2f} 
+void Dead\+Fuel\+Moisture\+::set\+Maximum\+Local\+Moisture (\begin{DoxyParamCaption}\item[{double}]{local\+Max\+Mc}{ = {\ttfamily 0.6}}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s maximum local moisture content. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em local\+Max\+Mc} & Stick maximum local moisture due to rain (g water/g dry fuel). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a41f960cc972d0f5be384492289fd9546}\index{DeadFuelMoisture@{DeadFuelMoisture}!setMoisture@{setMoisture}}
+\index{setMoisture@{setMoisture}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setMoisture()}{setMoisture()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a41f960cc972d0f5be384492289fd9546} 
+void Dead\+Fuel\+Moisture\+::set\+Moisture (\begin{DoxyParamCaption}\item[{float}]{init\+FM}{}\end{DoxyParamCaption})}
+
+
+
+Set all the nodes of a stick to a startup value. 
+
+\begin{DoxyReturn}{Returns}
+EXIT\+\_\+\+SUCCESS 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a705bdb0f79b5585b7d4d1ac051a8fb3f}\index{DeadFuelMoisture@{DeadFuelMoisture}!setMoistureSteps@{setMoistureSteps}}
+\index{setMoistureSteps@{setMoistureSteps}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setMoistureSteps()}{setMoistureSteps()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a705bdb0f79b5585b7d4d1ac051a8fb3f} 
+void Dead\+Fuel\+Moisture\+::set\+Moisture\+Steps (\begin{DoxyParamCaption}\item[{int}]{moisture\+Steps}{}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s moisture content computation steps per \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em moisture\+Steps} & Number of moisture content computation steps per observation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a07c7ae6bbceefbedbcc722d703e54a7d}\index{DeadFuelMoisture@{DeadFuelMoisture}!setPertubateColumn@{setPertubateColumn}}
+\index{setPertubateColumn@{setPertubateColumn}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setPertubateColumn()}{setPertubateColumn()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a07c7ae6bbceefbedbcc722d703e54a7d} 
+void Dead\+Fuel\+Moisture\+::set\+Pertubate\+Column (\begin{DoxyParamCaption}\item[{bool}]{pertubate}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s column pertubation configuration. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pertubate} & (default=true). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_af6d83322cc111426a01983717af08077}\index{DeadFuelMoisture@{DeadFuelMoisture}!setPlanarHeatTransferRate@{setPlanarHeatTransferRate}}
+\index{setPlanarHeatTransferRate@{setPlanarHeatTransferRate}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setPlanarHeatTransferRate()}{setPlanarHeatTransferRate()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_af6d83322cc111426a01983717af08077} 
+void Dead\+Fuel\+Moisture\+::set\+Planar\+Heat\+Transfer\+Rate (\begin{DoxyParamCaption}\item[{double}]{planar\+Heat\+Transfer\+Rate}{}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s planar heat transfer rate. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em planar\+Heat\+Transfer\+Rate} & Stick planar heat transfer rate (cal/cm2-\/h-\/C). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a1439d17c94259f61c7929bd908905ac6}\index{DeadFuelMoisture@{DeadFuelMoisture}!setRainfallRunoffFactor@{setRainfallRunoffFactor}}
+\index{setRainfallRunoffFactor@{setRainfallRunoffFactor}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setRainfallRunoffFactor()}{setRainfallRunoffFactor()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a1439d17c94259f61c7929bd908905ac6} 
+void Dead\+Fuel\+Moisture\+::set\+Rainfall\+Runoff\+Factor (\begin{DoxyParamCaption}\item[{double}]{rainfall\+Runoff\+Factor}{}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s rainfall runoff factor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rainfall\+Runoff\+Factor} & Rain runoff factor during the initial hour of rainfall (dl). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_ae7edacca19522e18a9123491331e0755}\index{DeadFuelMoisture@{DeadFuelMoisture}!setRampRai0@{setRampRai0}}
+\index{setRampRai0@{setRampRai0}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setRampRai0()}{setRampRai0()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ae7edacca19522e18a9123491331e0755} 
+void Dead\+Fuel\+Moisture\+::set\+Ramp\+Rai0 (\begin{DoxyParamCaption}\item[{bool}]{ramp}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Updates the stick\textquotesingle{}s configuration to toggle Bevins\textquotesingle{} logic that ramps the rainfall runoff factor during falling humidity, rather than use Nelson\textquotesingle{}s rai0 \texorpdfstring{$\ast$}{*}= 0.\+15. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ramp} & (default=true). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a3a1326dacf769eb705e3aedc94ba21d9}\index{DeadFuelMoisture@{DeadFuelMoisture}!setRandomSeed@{setRandomSeed}}
+\index{setRandomSeed@{setRandomSeed}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setRandomSeed()}{setRandomSeed()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a3a1326dacf769eb705e3aedc94ba21d9} 
+void Dead\+Fuel\+Moisture\+::set\+Random\+Seed (\begin{DoxyParamCaption}\item[{int}]{randseed}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Sets the ransom seed behavior. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em randseed} & If not zero, nodal temperature, saturation, and moisture contents are pertubated by some small amount. If \texorpdfstring{$>$}{>} 0, this value is used as the seed. If \texorpdfstring{$<$}{<} 0, uses system clock for seed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a50eaae9356d01e8e423693425fa7a17e}\index{DeadFuelMoisture@{DeadFuelMoisture}!setStickDensity@{setStickDensity}}
+\index{setStickDensity@{setStickDensity}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setStickDensity()}{setStickDensity()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a50eaae9356d01e8e423693425fa7a17e} 
+void Dead\+Fuel\+Moisture\+::set\+Stick\+Density (\begin{DoxyParamCaption}\item[{double}]{stick\+Density}{ = {\ttfamily 0.4}}\end{DoxyParamCaption})}
+
+
+
+Updates the stick density. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stick\+Density} & Stick density (g/cm3) \mbox{[}optional, default = 0.\+40\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a59011a0bec6368a3db4fbcec6bbe757b}\index{DeadFuelMoisture@{DeadFuelMoisture}!setStickLength@{setStickLength}}
+\index{setStickLength@{setStickLength}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setStickLength()}{setStickLength()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a59011a0bec6368a3db4fbcec6bbe757b} 
+void Dead\+Fuel\+Moisture\+::set\+Stick\+Length (\begin{DoxyParamCaption}\item[{double}]{stick\+Length}{ = {\ttfamily 41.0}}\end{DoxyParamCaption})}
+
+
+
+Updates the stick length. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stick\+Length} & Stick length (cm) \mbox{[}optional, default= 41 cm\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_a8704fd1a9cc73fba78b13ac32d353853}\index{DeadFuelMoisture@{DeadFuelMoisture}!setStickNodes@{setStickNodes}}
+\index{setStickNodes@{setStickNodes}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setStickNodes()}{setStickNodes()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a8704fd1a9cc73fba78b13ac32d353853} 
+void Dead\+Fuel\+Moisture\+::set\+Stick\+Nodes (\begin{DoxyParamCaption}\item[{int}]{stick\+Nodes}{ = {\ttfamily 11}}\end{DoxyParamCaption})}
+
+
+
+Updates the number of stick radial computation nodes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stick\+Nodes} & Number of stick nodes in the radial direction \mbox{[}optional, default = 11\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_ad9566d785add658a7e901a97534db484}\index{DeadFuelMoisture@{DeadFuelMoisture}!setWaterFilmContribution@{setWaterFilmContribution}}
+\index{setWaterFilmContribution@{setWaterFilmContribution}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{setWaterFilmContribution()}{setWaterFilmContribution()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ad9566d785add658a7e901a97534db484} 
+void Dead\+Fuel\+Moisture\+::set\+Water\+Film\+Contribution (\begin{DoxyParamCaption}\item[{double}]{water\+Film}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})}
+
+
+
+Updates the water film contribution to stick weight. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em water\+Film} & Water film contribution to stick moisture content (g water/g dry fuel). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dead_fuel_moisture_ae4d7efab6198134758706a2ef4e45ca7}\index{DeadFuelMoisture@{DeadFuelMoisture}!state@{state}}
+\index{state@{state}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{state()}{state()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ae4d7efab6198134758706a2ef4e45ca7} 
+int Dead\+Fuel\+Moisture\+::state (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to prevailing state for most recent update. 
+
+\begin{DoxyReturn}{Returns}
+Prevailing state for most recent update. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a9aa34f74d33b473633c0e640e9cefe2f}\index{DeadFuelMoisture@{DeadFuelMoisture}!stateName@{stateName}}
+\index{stateName@{stateName}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{stateName()}{stateName()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a9aa34f74d33b473633c0e640e9cefe2f} 
+const char \texorpdfstring{$\ast$}{*} Dead\+Fuel\+Moisture\+::state\+Name (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s current state name. 
+
+\begin{DoxyReturn}{Returns}
+The current state name. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a310579f10acabb20414599b0751a29d7}\index{DeadFuelMoisture@{DeadFuelMoisture}!stickDensity@{stickDensity}}
+\index{stickDensity@{stickDensity}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{stickDensity()}{stickDensity()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a310579f10acabb20414599b0751a29d7} 
+double Dead\+Fuel\+Moisture\+::stick\+Density (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s particle density. 
+
+\begin{DoxyReturn}{Returns}
+Current stick density (g/cm3). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a3b9e1595ddb846bd0056077988f349c8}\index{DeadFuelMoisture@{DeadFuelMoisture}!stickLength@{stickLength}}
+\index{stickLength@{stickLength}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{stickLength()}{stickLength()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a3b9e1595ddb846bd0056077988f349c8} 
+double Dead\+Fuel\+Moisture\+::stick\+Length (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s length. 
+
+\begin{DoxyReturn}{Returns}
+Current stick length (cm). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a86296efb7e6f27334df9b3f5d5b4ae51}\index{DeadFuelMoisture@{DeadFuelMoisture}!stickNodes@{stickNodes}}
+\index{stickNodes@{stickNodes}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{stickNodes()}{stickNodes()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a86296efb7e6f27334df9b3f5d5b4ae51} 
+int Dead\+Fuel\+Moisture\+::stick\+Nodes (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s number of moisture content radial computation nodes. 
+
+\begin{DoxyReturn}{Returns}
+Current number of moisture content radial computation nodes. per observation. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a45db9c0fe5035e815d94abd53a3a0641}\index{DeadFuelMoisture@{DeadFuelMoisture}!surfaceMoisture@{surfaceMoisture}}
+\index{surfaceMoisture@{surfaceMoisture}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{surfaceMoisture()}{surfaceMoisture()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a45db9c0fe5035e815d94abd53a3a0641} 
+double Dead\+Fuel\+Moisture\+::surface\+Moisture (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s surface fuel moisture content. 
+
+\begin{DoxyReturn}{Returns}
+The current surface fuel moisture content (g/g). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_aab5c9670cabbc2cda4ea2a30b4466f80}\index{DeadFuelMoisture@{DeadFuelMoisture}!surfaceTemperature@{surfaceTemperature}}
+\index{surfaceTemperature@{surfaceTemperature}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{surfaceTemperature()}{surfaceTemperature()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_aab5c9670cabbc2cda4ea2a30b4466f80} 
+double Dead\+Fuel\+Moisture\+::surface\+Temperature (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s surface fuel temperature. 
+
+\begin{DoxyReturn}{Returns}
+The current surface fuel temperature (oC). 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a3b8498c6f9dd1209a71b31a668b720af}\index{DeadFuelMoisture@{DeadFuelMoisture}!uniformRandom@{uniformRandom}}
+\index{uniformRandom@{uniformRandom}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{uniformRandom()}{uniformRandom()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a3b8498c6f9dd1209a71b31a668b720af} 
+double Dead\+Fuel\+Moisture\+::uniform\+Random (\begin{DoxyParamCaption}\item[{double}]{min}{, }\item[{double}]{max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static convenience method to derive a random number uniformly distributed in the range \mbox{[}{\itshape min} .. {\itshape max}\mbox{]}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min} & Minimum range value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em max} & Maximum range value.\\
+\hline
+\end{DoxyParams}
+Uses the system rand() to generate the number.
+
+\begin{DoxyReturn}{Returns}
+A uniformly distributed random number within \mbox{[}{\itshape min} .. {\itshape max}\mbox{]}. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_ab41bf746f4b03c5af17232df5308419a}\index{DeadFuelMoisture@{DeadFuelMoisture}!update@{update}}
+\index{update@{update}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ab41bf746f4b03c5af17232df5308419a} 
+bool Dead\+Fuel\+Moisture\+::update (\begin{DoxyParamCaption}\item[{double}]{et}{, }\item[{double}]{at}{, }\item[{double}]{rh}{, }\item[{double}]{sW}{, }\item[{double}]{rcum}{, }\item[{double}]{bpr}{ = {\ttfamily 0.0218}, }\item[{bool}]{prcp\+As\+Amnt}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Updates a dead moisture stick\textquotesingle{}s internal and external environment based on the passed (current) weather observation values. 
+
+This overloaded version accepts the elapsed time since the previous observation, and does not automatically update the Julian date.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em et} & Elapsed time since the previous observation (h). \\
+\hline
+\mbox{\texttt{ in}}  & {\em at} & Current observation\textquotesingle{}s ambient air temperature (oC). \\
+\hline
+\mbox{\texttt{ in}}  & {\em rh} & Current observation\textquotesingle{}s ambient air relative humidity (g/g). \\
+\hline
+\mbox{\texttt{ in}}  & {\em sW} & Current observation\textquotesingle{}s solar radiation (W/m2). \\
+\hline
+\mbox{\texttt{ in}}  & {\em rcum} & Current observation\textquotesingle{}s total cumulative rainfall amount (cm). \\
+\hline
+\mbox{\texttt{ in}}  & {\em bpr} & Current observation\textquotesingle{}s stick barometric pressure (cal/cm3).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The client program should try it\textquotesingle{}s hardest to catch all bad input data and corrected or duplicated records {\bfseries{before}} calling this method.
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em TRUE} & if all inputs are ok and the stick is updated. \\
+\hline
+{\em FALSE} & if inputs are out of range and the stick is {\bfseries{not}} updated. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}\index{DeadFuelMoisture@{DeadFuelMoisture}!update@{update}}
+\index{update@{update}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6} 
+bool Dead\+Fuel\+Moisture\+::update (\begin{DoxyParamCaption}\item[{int}]{year}{, }\item[{int}]{month}{, }\item[{int}]{day}{, }\item[{int}]{hour}{, }\item[{int}]{minute}{, }\item[{int}]{second}{, }\item[{double}]{at}{, }\item[{double}]{rh}{, }\item[{double}]{sW}{, }\item[{double}]{rcum}{, }\item[{double}]{bpr}{ = {\ttfamily 0.0218}, }\item[{bool}]{prcp\+As\+Amnt}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Updates a dead moisture stick\textquotesingle{}s internal and external environment based on the current weather observation values. 
+
+This overloaded version accepts the current date and time as arguments, and automatically calculates elapsed time since the previous \doxylink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update()}.
+
+\begin{DoxyNote}{Note}
+The client must have called the corresponding \doxylink{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33}{initialize\+Environment()} method that accepts date and time arguments to ensure that the date and time has been initialized.
+
+The client program should try it\textquotesingle{}s hardest to catch all bad input data and corrected or duplicated records {\bfseries{before}} calling this method.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em year} & Observation year (4 digits). \\
+\hline
+\mbox{\texttt{ in}}  & {\em month} & Observation month (Jan==1, Dec==12). \\
+\hline
+\mbox{\texttt{ in}}  & {\em day} & Observation day-\/of-\/the-\/month \mbox{[}1..31\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em hour} & Observation elapsed hours in the day \mbox{[}0..23\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em minute} & Observation elapsed minutes in the hour (0..59\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em second} & Observation elapsed seconds in the minute \mbox{[}0..59\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em at} & Current observation\textquotesingle{}s ambient air temperature (oC). \\
+\hline
+\mbox{\texttt{ in}}  & {\em rh} & Current observation\textquotesingle{}s ambient air relative humidity (g/g). \\
+\hline
+\mbox{\texttt{ in}}  & {\em sW} & Current observation\textquotesingle{}s solar radiation (W/m2). \\
+\hline
+\mbox{\texttt{ in}}  & {\em rcum} & Current observation\textquotesingle{}s total cumulative rainfall amount (cm). \\
+\hline
+\mbox{\texttt{ in}}  & {\em bpr} & Current observation\textquotesingle{}s stick barometric pressure (cal/cm3).\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em TRUE} & if all inputs are ok and the stick is updated. \\
+\hline
+{\em FALSE} & if inputs are out of range and the stick is {\bfseries{not}} updated. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{class_dead_fuel_moisture_a98eb38730baffb5f2535c2ba8d59cefe}\index{DeadFuelMoisture@{DeadFuelMoisture}!updates@{updates}}
+\index{updates@{updates}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{updates()}{updates()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a98eb38730baffb5f2535c2ba8d59cefe} 
+long Dead\+Fuel\+Moisture\+::updates (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the current number of observation updates. 
+
+\begin{DoxyReturn}{Returns}
+The current number of observation updates. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a0dbf829327feb16730696f29cba3cb09}\index{DeadFuelMoisture@{DeadFuelMoisture}!waterFilmContribution@{waterFilmContribution}}
+\index{waterFilmContribution@{waterFilmContribution}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{waterFilmContribution()}{waterFilmContribution()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a0dbf829327feb16730696f29cba3cb09} 
+double Dead\+Fuel\+Moisture\+::water\+Film\+Contribution (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Access to the stick\textquotesingle{}s current water film contribution to the moisture content. 
+
+\begin{DoxyReturn}{Returns}
+Stick\textquotesingle{}s current water film contribution to the moisture content (g/g). 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_dead_fuel_moisture_af92de90856f40f16230da4b800317c21}\index{DeadFuelMoisture@{DeadFuelMoisture}!createDeadFuelMoisture1@{createDeadFuelMoisture1}}
+\index{createDeadFuelMoisture1@{createDeadFuelMoisture1}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{createDeadFuelMoisture1()}{createDeadFuelMoisture1()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_af92de90856f40f16230da4b800317c21} 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} create\+Dead\+Fuel\+Moisture1 (\begin{DoxyParamCaption}\item[{const string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Static convenience method to create a 1-\/h time lag \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance with a 0.\+20-\/cm radius (0.\+16-\/in diameter). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Dead fuel moisture stick name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the dynamically-\/allocated \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_ab91d9be2f19cc2752a032fcee3961f8e}\index{DeadFuelMoisture@{DeadFuelMoisture}!createDeadFuelMoisture10@{createDeadFuelMoisture10}}
+\index{createDeadFuelMoisture10@{createDeadFuelMoisture10}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{createDeadFuelMoisture10()}{createDeadFuelMoisture10()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_ab91d9be2f19cc2752a032fcee3961f8e} 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} create\+Dead\+Fuel\+Moisture10 (\begin{DoxyParamCaption}\item[{const string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Static convenience method to create a 10-\/h time lag \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance with a 0.\+64-\/cm radius (0.\+5-\/in diameter). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Dead fuel moisture stick name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the dynamically-\/allocated \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_add1a532961e2f06273c40605a1fac8d8}\index{DeadFuelMoisture@{DeadFuelMoisture}!createDeadFuelMoisture100@{createDeadFuelMoisture100}}
+\index{createDeadFuelMoisture100@{createDeadFuelMoisture100}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{createDeadFuelMoisture100()}{createDeadFuelMoisture100()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_add1a532961e2f06273c40605a1fac8d8} 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} create\+Dead\+Fuel\+Moisture100 (\begin{DoxyParamCaption}\item[{const string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Static convenience method to create a 100-\/h time lag \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance with a 2.\+0-\/cm radius (1.\+57-\/in diameter). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Dead fuel moisture stick name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the dynamically-\/allocated \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a25ab7f9ca2a99d1f940e430dbe5ad253}\index{DeadFuelMoisture@{DeadFuelMoisture}!createDeadFuelMoisture1000@{createDeadFuelMoisture1000}}
+\index{createDeadFuelMoisture1000@{createDeadFuelMoisture1000}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{createDeadFuelMoisture1000()}{createDeadFuelMoisture1000()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a25ab7f9ca2a99d1f940e430dbe5ad253} 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \texorpdfstring{$\ast$}{*} create\+Dead\+Fuel\+Moisture1000 (\begin{DoxyParamCaption}\item[{const string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Static convenience method to create a 1000-\/h time lag lag \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance with a 6.\+4-\/cm radius (5-\/in diameter). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Dead fuel moisture stick name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the dynamically-\/allocated \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_aee1dbb3a01ad5d20fcc7c744eb8a4b10}\index{DeadFuelMoisture@{DeadFuelMoisture}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_aee1dbb3a01ad5d20fcc7c744eb8a4b10} 
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{output}{, }\item[{const \mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+\doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stream insertion operator. 
+
+The \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} output format a series of "{}$<$name$>$ $<$value$>$"{} pairs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em output} & Reference to the output stream. \\
+\hline
+\mbox{\texttt{ in}}  & {\em r} & Reference to the \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the output stream. 
+\end{DoxyReturn}
+\Hypertarget{class_dead_fuel_moisture_a678ecb2fa5d10d2c86bf616b2c9e6a1a}\index{DeadFuelMoisture@{DeadFuelMoisture}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!DeadFuelMoisture@{DeadFuelMoisture}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily \label{class_dead_fuel_moisture_a678ecb2fa5d10d2c86bf616b2c9e6a1a} 
+istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{input}{, }\item[{\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} \&}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+\doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} stream extraction operator. 
+
+The \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} input format must be "{}yyyy/mm/dd hh\+:mm\+:ss.\+sss"{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input} & Reference to the input stream. \\
+\hline
+\mbox{\texttt{ in}}  & {\em r} & Reference to the \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Test this!\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to the input stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Source/\+Public\+Github/\+NFDRS4/lib/\+NFDRS4/include/\mbox{\hyperlink{deadfuelmoisture_8h}{deadfuelmoisture.\+h}}\item 
+D\+:/\+Source/\+Public\+Github/\+NFDRS4/lib/\+NFDRS4/src/\mbox{\hyperlink{deadfuelmoisture_8cpp}{deadfuelmoisture.\+cpp}}\end{DoxyCompactItemize}

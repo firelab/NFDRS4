@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="livefuelmoisture_8h" kind="file" language="C++">
+    <compoundname>livefuelmoisture.h</compoundname>
+    <includes local="no">math.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">deque</includes>
+    <includes refid="lfmcalcstate_8h" local="yes">lfmcalcstate.h</includes>
+    <includedby refid="nfdrs4_8h" local="yes">D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h</includedby>
+    <includedby refid="livefuelmoisture_8cpp" local="yes">D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/livefuelmoisture.cpp</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>lfmcalcstate.h</label>
+        <link refid="lfmcalcstate_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h</label>
+        <link refid="livefuelmoisture_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>nfdrs4statesizes.h</label>
+        <link refid="nfdrs4statesizes_8h_source"/>
+      </node>
+      <node id="4">
+        <label>deque</label>
+      </node>
+      <node id="2">
+        <label>math.h</label>
+      </node>
+      <node id="7">
+        <label>stdio.h</label>
+      </node>
+      <node id="8">
+        <label>time.h</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h</label>
+        <link refid="livefuelmoisture_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h</label>
+        <link refid="nfdrs4_8h_source"/>
+      </node>
+      <node id="3">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/livefuelmoisture.cpp</label>
+        <link refid="livefuelmoisture_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_live_fuel_moisture" prot="public">LiveFuelMoisture</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="livefuelmoisture_8h_1a50ba749fe3b48da9ced81cb3a78bd5fc" prot="public" static="no">
+        <name>NOVALUE</name>
+        <initializer>-9999.9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" line="8" column="9" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="livefuelmoisture_8h_1a4915406d503d399a2486513a91ad3971" prot="public" static="no">
+        <name>RADPERDAY</name>
+        <initializer>0.017214</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" line="9" column="9" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="livefuelmoisture_8h_1ab01f8912a3abc3248cda68e910795663" prot="public" static="no">
+        <name>RADPERDEG</name>
+        <initializer>0.01745329</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" line="10" column="9" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="livefuelmoisture_8h_1a416c763d7ffb716c1594754f24cb6808" prot="public" static="no">
+        <name>MINDECL</name>
+        <initializer>-0.4092797</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" line="11" column="9" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="livefuelmoisture_8h_1a71c2e15a184b6551bb6207933d3a3946" prot="public" static="no">
+        <name>SECPERRAD</name>
+        <initializer>13750.9871</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" line="12" column="9" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="livefuelmoisture_8h_1aa800fabd73d41cf527fdf6c0bec0782e" prot="public" static="no">
+        <name>DAYSOFF</name>
+        <initializer>10.25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" line="13" column="9" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>LIVEFUELMOISTURE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIVEFUELMOISTURE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;deque&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;lfmcalcstate.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NOVALUE<sp/>-9999.9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RADPERDAY<sp/>0.017214</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RADPERDEG<sp/>0.01745329</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MINDECL<sp/>-0.4092797</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SECPERRAD<sp/>13750.9871</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DAYSOFF<sp/>10.25</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//-----------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">//------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="32" refid="class_live_fuel_moisture" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_live_fuel_moisture" kindref="compound">LiveFuelMoisture</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_live_fuel_moisture" kindref="compound">LiveFuelMoisture</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_live_fuel_moisture" kindref="compound">LiveFuelMoisture</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Lat,</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsHerb,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsAnnual);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Initialize(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Lat,</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsHerb,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsAnnual);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_live_fuel_moisture_1aba6e3ce4103bf20a83935ca8922a13ce" kindref="member">SetLimits</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Update(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TempF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MaxTempF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MinTempF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RH,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>minRH,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Jday,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RTPrcp,<sp/>time_t<sp/>thisTime);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetMAPeriod(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MAPeriod);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetLFMParameters(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MaxGSI,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GreenupThreshold,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MinLFMVal,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MaxLFMVal);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetLFMParameters(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>MaxGSI,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>GreenupThreshold<sp/>,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>MinLFMVal,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>MaxLFMVal);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetNumPrecipDays(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numDays);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GetNumPrecipDays();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_live_fuel_moisture_1ae097b6a9d208142b0ce9b361b6a1eda4" kindref="member">GetMoisture</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>SnowDay<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcRunningAvgGSI();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcRunningAvgHerbFM(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>SnowDay<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ResetHerbState();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcRunningAvgWoodyFM(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>SnowDay<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcGSI(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>minRH,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>maxTempF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>minTempF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RTPrcp,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>doy);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcGSI_VPDAvg(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RH,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TempF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>maxTempF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>minTempF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RTPrcp,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>doy);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GetTminInd(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Tmin);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GetVPDInd(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>VPD);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GetDaylInd(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Dayl);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GetPrcpInd(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RTPrcp);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcDayl(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>yday);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcVPDavg(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TempDewF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TempAvgF);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcVPD(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RH,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TempF);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcDPT(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tempF,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RH);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CalcVP(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tempF);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GetMaxGSI();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GetGreenupThreshold();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GetMinLFMVal();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>GetMaxLFMVal();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetUseVPDAvg(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>set);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>GetUseVPDAvg();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>GetIsAnnual();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_l_f_m_calc_state" kindref="compound">LFMCalcState</ref><sp/>GetState();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>SetState(<ref refid="class_l_f_m_calc_state" kindref="compound">LFMCalcState</ref><sp/>state);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetUseRTPrecip(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>set);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>GetUseRTPrecip();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_UseVPDAvg;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_IsHerb;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_IsAnnual;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_LFIdaysAvg;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_Lat;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::deque&lt;double&gt;<sp/>qGSI;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_TminMin;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_TminMax;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_VPDMin;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_VPDMax;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_DaylenMin;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_DaylenMax;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_RTPrcpMin;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_RTPrcpMax;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_useRTPrecip;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//added<sp/>for<sp/>live<sp/>fuel<sp/>moistues</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_MaxGSI;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_GreenupThreshold;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_MaxLFMVal;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_MinLFMVal;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_Slope;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_Intercept;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasGreenedUpThisYear;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasExceeded120ThisYear;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>canIncreaseHerb;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lastHerbFM;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_nDaysPrecip;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_t<sp/>lastUpdateTime;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>LIVEFUELMOISTURE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h"/>
+  </compounddef>
+</doxygen>

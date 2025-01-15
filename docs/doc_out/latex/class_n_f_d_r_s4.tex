@@ -1,0 +1,508 @@
+\doxysection{NFDRS4 Class Reference}
+\hypertarget{class_n_f_d_r_s4}{}\label{class_n_f_d_r_s4}\index{NFDRS4@{NFDRS4}}
+
+
+Main calculator for the US National Fire Danger Rating System components and indices.  
+
+
+
+
+{\ttfamily \#include $<$nfdrs4.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_f_d_r_s4_a0cc8899a301c611abeb8046b5b1db253}{NFDRS4}} (double Lat, char Fuel\+Model, int Slope\+Class, double Avg\+Ann\+Precip, bool LT, bool Cure, bool Is\+Annual)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_n_f_d_r_s4}{NFDRS4} class constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_n_f_d_r_s4_a447e2b6e7b10367412a47c5fd7e511b0}\label{class_n_f_d_r_s4_a447e2b6e7b10367412a47c5fd7e511b0} 
+void {\bfseries Create\+Fuel\+Models} ()
+\item 
+void \mbox{\hyperlink{class_n_f_d_r_s4_a51a0a2f713869fcb29a48e696e5e5c6a}{Init}} (double Lat, char Fuel\+Model, int Slope\+Class, double Avg\+Ann\+Precip, bool LT, bool Cure, bool is\+Annual, int kbdi\+Threshold, int Reg\+Obs\+Hour=13, bool is\+Reinit=false)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_n_f_d_r_s4}{NFDRS4} class initialization function. \end{DoxyCompactList}\item 
+\Hypertarget{class_n_f_d_r_s4_a8035ed4f2b9c45f8e2b485bb17e2f37d}\label{class_n_f_d_r_s4_a8035ed4f2b9c45f8e2b485bb17e2f37d} 
+void {\bfseries Update} (int Year, int Month, int Day, int Hour, int Julian, double Temp, double Min\+Temp, double Max\+Temp, double RH, double Min\+RH, double PPTAmt, double pcp24, double Solar\+Rad, double WS, bool Snow\+Day, int Reg\+Obs\+Hr)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a0cd11c9c1ed308c105e3f70382cc71d0}\label{class_n_f_d_r_s4_a0cd11c9c1ed308c105e3f70382cc71d0} 
+void {\bfseries Update} (int Year, int Month, int Day, int Hour, double Temp, double RH, double PPTAmt, double Solar\+Rad, double WS, bool Snow\+Day)
+\item 
+\Hypertarget{class_n_f_d_r_s4_aaf97f6cbecc334ee07b0c1320d259ebf}\label{class_n_f_d_r_s4_aaf97f6cbecc334ee07b0c1320d259ebf} 
+void {\bfseries Update\+Daily} (int Year, int Month, int Day, int Julian, double Temp, double Min\+Temp, double Max\+Temp, double RH, double Min\+RH, double pcp24, double WS, double f\+MC1, double f\+MC10, double f\+MC100, double f\+MC1000, double fuel\+Temp, bool Snow\+Day)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a08f7f5f2db70c3db80afe64f3e027015}\label{class_n_f_d_r_s4_a08f7f5f2db70c3db80afe64f3e027015} 
+bool {\bfseries i\+Set\+Fuel\+Model} (char c\+FM)
+\item 
+\Hypertarget{class_n_f_d_r_s4_ace213fdf16ac6dfc3f7f4b205ef87468}\label{class_n_f_d_r_s4_ace213fdf16ac6dfc3f7f4b205ef87468} 
+int {\bfseries i\+Set\+Fuel\+Moistures} (double f\+MC1, double f\+MC10, double f\+MC100, double f\+MC1000, double f\+MCWood, double f\+MCHerb, double fuel\+TempC)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a3ac12870ecc6e1c1b1dd068b860da162}\label{class_n_f_d_r_s4_a3ac12870ecc6e1c1b1dd068b860da162} 
+int {\bfseries i\+Calc\+Indexes} (int i\+WS, int i\+Slope\+Cls, double \texorpdfstring{$\ast$}{*}f\+SC, double \texorpdfstring{$\ast$}{*}f\+ERC, double \texorpdfstring{$\ast$}{*}f\+BI, double \texorpdfstring{$\ast$}{*}f\+IC, double f\+GSI=-\/999, double f\+KBDI=-\/999)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a09f17517e03ecfc92bc02dfc6b27ef38}\label{class_n_f_d_r_s4_a09f17517e03ecfc92bc02dfc6b27ef38} 
+int {\bfseries i\+Calc\+KBDI} (double f\+Precip\+Amt, int i\+Max\+Temp, double f\+Cumm\+Precip, int i\+YKBDI, double f\+Avg\+Precip)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a3187691e47e88b06bfc5c363898c42b3}\label{class_n_f_d_r_s4_a3187691e47e88b06bfc5c363898c42b3} 
+double {\bfseries Cure} (double f\+GSI=-\/999, double f\+Greenup\+Threshold=0.\+5, double f\+GSIMax=1.\+0)
+\item 
+void \mbox{\hyperlink{class_n_f_d_r_s4_af449e83d0eb7622b841b8f039e2bf575}{Set\+GSIParams}} (double Max\+GSI, double Greenup\+Threshold, double Tmin\+Min=-\/2.\+0, double Tmin\+Max=5.\+0, double VPDMin=900, double VPDMax=4100, double Dayl\+Min=36000, double Dayl\+Max=39600, unsigned int MAPeriod=21U, bool Use\+VPDAvg=false, unsigned int n\+Precip\+Days=30, double rt\+Precip\+Min=0.\+5, double rt\+Precip\+Max=1.\+5, bool Use\+RTPrecip=false)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a523a8cec9b1e8fa6f2b06c7181a583bb}\label{class_n_f_d_r_s4_a523a8cec9b1e8fa6f2b06c7181a583bb} 
+void {\bfseries Set\+Herb\+GSIparams} (double Max\+GSI, double Greenup\+Threshold, double Tmin\+Min=-\/2.\+0, double Tmin\+Max=5.\+0, double VPDMin=900, double VPDMax=4100, double Dayl\+Min=36000, double Dayl\+Max=39600, unsigned int MAPeriod=21U, bool Use\+VPDAvg=false, unsigned int n\+Precip\+Days=30, double rt\+Precip\+Min=0.\+5, double rt\+Precip\+Max=1.\+5, bool Use\+RTPrecip=false, double herb\+Min=30.\+0, double herb\+Max=250.\+0)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a430473db2cb8a27fc019f598ed902475}\label{class_n_f_d_r_s4_a430473db2cb8a27fc019f598ed902475} 
+void {\bfseries Set\+Woody\+GSIparams} (double Max\+GSI, double Greenup\+Threshold, double Tmin\+Min=-\/2.\+0, double Tmin\+Max=5.\+0, double VPDMin=900, double VPDMax=4100, double Dayl\+Min=36000, double Dayl\+Max=39600, unsigned int MAPeriod=21U, bool Use\+VPDAvg=false, unsigned int n\+Precip\+Days=30, double rt\+Precip\+Min=0.\+5, double rt\+Precip\+Max=1.\+5, bool Use\+RTPrecip=false, double woody\+Min=60.\+0, double woody\+Max=200.\+0)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a420431331582812724c14bb32b2f0999}\label{class_n_f_d_r_s4_a420431331582812724c14bb32b2f0999} 
+void {\bfseries Set\+One\+Hour\+Params} (double radius, double adsorption\+Rate, double max\+Local\+Moisture, double stick\+Density, double desorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a885ee5ad31209bf28eab03fc8a69bf12}\label{class_n_f_d_r_s4_a885ee5ad31209bf28eab03fc8a69bf12} 
+void {\bfseries Set\+Ten\+Hour\+Params} (double radius, double adsorption\+Rate, double max\+Local\+Moisture, double stick\+Density, double desorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_aa54932a8b371c17b2f6277c58f0bfe57}\label{class_n_f_d_r_s4_aa54932a8b371c17b2f6277c58f0bfe57} 
+void {\bfseries Set\+Hundred\+Hour\+Params} (double radius, double adsorption\+Rate, double max\+Local\+Moisture, double stick\+Density, double desorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a5f4c44a0c410f6cdefe158fbd3c94041}\label{class_n_f_d_r_s4_a5f4c44a0c410f6cdefe158fbd3c94041} 
+void {\bfseries Set\+Thousand\+Hour\+Params} (double radius, double adsorption\+Rate, double max\+Local\+Moisture, double stick\+Density, double desorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a1a75e2693289b259a36b4115ec538583}\label{class_n_f_d_r_s4_a1a75e2693289b259a36b4115ec538583} 
+void {\bfseries Set1\+Hour\+Radius} (double radius)
+\item 
+\Hypertarget{class_n_f_d_r_s4_acc5ccc832b2df09e8ef4e22f562bd08b}\label{class_n_f_d_r_s4_acc5ccc832b2df09e8ef4e22f562bd08b} 
+void {\bfseries Set1\+Hour\+Adsorption\+Rate} (double adsorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a55daf1b847bfdf154593ec44cb468e7a}\label{class_n_f_d_r_s4_a55daf1b847bfdf154593ec44cb468e7a} 
+void {\bfseries Set1\+Hour\+Stick\+Density} (double stick\+Density)
+\item 
+\Hypertarget{class_n_f_d_r_s4_ab2ad6efd32a6bd90b1b82f2b8232a8cb}\label{class_n_f_d_r_s4_ab2ad6efd32a6bd90b1b82f2b8232a8cb} 
+void {\bfseries Set1\+Hour\+Max\+Local\+Moisture} (double max\+Local\+Moisture)
+\item 
+\Hypertarget{class_n_f_d_r_s4_aa2cb6802132573855cbb449da920a464}\label{class_n_f_d_r_s4_aa2cb6802132573855cbb449da920a464} 
+void {\bfseries Set1\+Hour\+Desorption\+Rate} (double desorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_adcc0c83d8ec050e091cd611bdd0e4f9b}\label{class_n_f_d_r_s4_adcc0c83d8ec050e091cd611bdd0e4f9b} 
+void {\bfseries Set10\+Hour\+Radius} (double radius)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a2bdcbf3c8f2500780f77e4eb7e2ab31e}\label{class_n_f_d_r_s4_a2bdcbf3c8f2500780f77e4eb7e2ab31e} 
+void {\bfseries Set10\+Hour\+Adsorption\+Rate} (double adsorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_ae9f604ab48018585825ea3e87a35d5cc}\label{class_n_f_d_r_s4_ae9f604ab48018585825ea3e87a35d5cc} 
+void {\bfseries Set10\+Hour\+Stick\+Density} (double stick\+Density)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a6d010eb57a83082d50f7110a6da0b976}\label{class_n_f_d_r_s4_a6d010eb57a83082d50f7110a6da0b976} 
+void {\bfseries Set10\+Hour\+Max\+Local\+Moisture} (double max\+Local\+Moisture)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a8a3ca397b4eca6bbd59f9d685454e101}\label{class_n_f_d_r_s4_a8a3ca397b4eca6bbd59f9d685454e101} 
+void {\bfseries Set10\+Hour\+Desorption\+Rate} (double desorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a17656fa18f985e1c48a9f42c9086ae18}\label{class_n_f_d_r_s4_a17656fa18f985e1c48a9f42c9086ae18} 
+void {\bfseries Set100\+Hour\+Radius} (double radius)
+\item 
+\Hypertarget{class_n_f_d_r_s4_ace79658edc2668c1d038e0bd435d30dc}\label{class_n_f_d_r_s4_ace79658edc2668c1d038e0bd435d30dc} 
+void {\bfseries Set100\+Hour\+Adsorption\+Rate} (double adsorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_ada0603bd87b2aee1c955e31d82c748f9}\label{class_n_f_d_r_s4_ada0603bd87b2aee1c955e31d82c748f9} 
+void {\bfseries Set100\+Hour\+Stick\+Density} (double stick\+Density)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a64725c189a3e67a09b9d35e14460ba79}\label{class_n_f_d_r_s4_a64725c189a3e67a09b9d35e14460ba79} 
+void {\bfseries Set100\+Hour\+Max\+Local\+Moisture} (double max\+Local\+Moisture)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a684f41d37f6c03d67943181e2b770017}\label{class_n_f_d_r_s4_a684f41d37f6c03d67943181e2b770017} 
+void {\bfseries Set100\+Hour\+Desorption\+Rate} (double desorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_aa7284dc8d2bb6bdc92f449b3517f8b96}\label{class_n_f_d_r_s4_aa7284dc8d2bb6bdc92f449b3517f8b96} 
+void {\bfseries Set1000\+Hour\+Radius} (double radius)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a44825bcbbe3ec189d463ea31d2433611}\label{class_n_f_d_r_s4_a44825bcbbe3ec189d463ea31d2433611} 
+void {\bfseries Set1000\+Hour\+Adsorption\+Rate} (double adsorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a091055e51c1ece98e2738bcb90e86239}\label{class_n_f_d_r_s4_a091055e51c1ece98e2738bcb90e86239} 
+void {\bfseries Set1000\+Hour\+Stick\+Density} (double stick\+Density)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a63fcbddd517de82304536cd77e9d6e1a}\label{class_n_f_d_r_s4_a63fcbddd517de82304536cd77e9d6e1a} 
+void {\bfseries Set1000\+Hour\+Max\+Local\+Moisture} (double max\+Local\+Moisture)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a265eb44f913ed65953a62355b1f8660c}\label{class_n_f_d_r_s4_a265eb44f913ed65953a62355b1f8660c} 
+void {\bfseries Set1000\+Hour\+Desorption\+Rate} (double desorption\+Rate)
+\item 
+\Hypertarget{class_n_f_d_r_s4_ade07b9d5eef4d74879f66fa4843e25f1}\label{class_n_f_d_r_s4_ade07b9d5eef4d74879f66fa4843e25f1} 
+void {\bfseries Set\+Start\+KBDI} (int s\+KBDI)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a664593aa02dc89dfd49ffa09d7450e02}\label{class_n_f_d_r_s4_a664593aa02dc89dfd49ffa09d7450e02} 
+int {\bfseries Get\+Start\+KBDI} ()
+\item 
+\Hypertarget{class_n_f_d_r_s4_a5ca3e6de08ae3947a621f5e54ace87e3}\label{class_n_f_d_r_s4_a5ca3e6de08ae3947a621f5e54ace87e3} 
+void {\bfseries Set\+SCMax} (int max\+SC)
+\item 
+\Hypertarget{class_n_f_d_r_s4_aab257bf2a5444f8de2f7936cd5746c63}\label{class_n_f_d_r_s4_aab257bf2a5444f8de2f7936cd5746c63} 
+int {\bfseries Get\+SCMax} ()
+\item 
+\Hypertarget{class_n_f_d_r_s4_ab3e1554484b6c202c0713eb955301386}\label{class_n_f_d_r_s4_ab3e1554484b6c202c0713eb955301386} 
+void {\bfseries Set\+MXD} (int mxd)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a4f08d1ebddde9004d3a12c27015ab9dc}\label{class_n_f_d_r_s4_a4f08d1ebddde9004d3a12c27015ab9dc} 
+int {\bfseries Get\+MXD} ()
+\item 
+\Hypertarget{class_n_f_d_r_s4_ab940991b6d744e7eeed0466fbcfdf1e0}\label{class_n_f_d_r_s4_ab940991b6d744e7eeed0466fbcfdf1e0} 
+double {\bfseries Get\+Fuel\+Temperature} ()
+\item 
+\Hypertarget{class_n_f_d_r_s4_aa00488be4c6f3bc5b875b87d8df10ef3}\label{class_n_f_d_r_s4_aa00488be4c6f3bc5b875b87d8df10ef3} 
+double {\bfseries Get\+XDays\+Precipitation} (int n\+Days)
+\item 
+\Hypertarget{class_n_f_d_r_s4_afa4dcd13ac58fc71e0f8d5e5465fa5a6}\label{class_n_f_d_r_s4_afa4dcd13ac58fc71e0f8d5e5465fa5a6} 
+bool {\bfseries Read\+State} (std\+::string file\+Name)
+\item 
+\Hypertarget{class_n_f_d_r_s4_a3f4f4300c11f32d96310bf69ecd600d8}\label{class_n_f_d_r_s4_a3f4f4300c11f32d96310bf69ecd600d8} 
+bool {\bfseries Save\+State} (std\+::string file\+Name)
+\item 
+\Hypertarget{class_n_f_d_r_s4_ad2770515833e7db3f18560a3b8ca3457}\label{class_n_f_d_r_s4_ad2770515833e7db3f18560a3b8ca3457} 
+bool {\bfseries Load\+State} (\mbox{\hyperlink{class_n_f_d_r_s4_state}{NFDRS4\+State}} state)
+\item 
+\Hypertarget{class_n_f_d_r_s4_aa07dac3f21759c5cbe59412941dee80b}\label{class_n_f_d_r_s4_aa07dac3f21759c5cbe59412941dee80b} 
+double {\bfseries Get\+Min\+Temp} ()
+\item 
+\Hypertarget{class_n_f_d_r_s4_a8bbe842dba6cb6aed2a7fe408f7b48f6}\label{class_n_f_d_r_s4_a8bbe842dba6cb6aed2a7fe408f7b48f6} 
+double {\bfseries Get\+Max\+Temp} ()
+\item 
+\Hypertarget{class_n_f_d_r_s4_a80eebd187e6ac3842447bd72d913eb8d}\label{class_n_f_d_r_s4_a80eebd187e6ac3842447bd72d913eb8d} 
+double {\bfseries Get\+Min\+RH} ()
+\item 
+\Hypertarget{class_n_f_d_r_s4_ae6996562711d36bcb8068d13dc3fba81}\label{class_n_f_d_r_s4_ae6996562711d36bcb8068d13dc3fba81} 
+double {\bfseries Get\+Pcp24} ()
+\item 
+\Hypertarget{class_n_f_d_r_s4_ad2f4269d00f38c597f19859c26a81ffc}\label{class_n_f_d_r_s4_ad2f4269d00f38c597f19859c26a81ffc} 
+void {\bfseries Add\+Custom\+Fuel} (\mbox{\hyperlink{class_c_fuel_model_params}{CFuel\+Model\+Params}} fm\+Params)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a993d52262b6faccd5650d6c93e2510b8}\label{class_n_f_d_r_s4_a993d52262b6faccd5650d6c93e2510b8} 
+const int {\bfseries n\+Precip\+Queue\+Days} = 90
+\item 
+\Hypertarget{class_n_f_d_r_s4_a0bb122e55c7b461605da20aa25c5999a}\label{class_n_f_d_r_s4_a0bb122e55c7b461605da20aa25c5999a} 
+const int {\bfseries n\+Hours\+Per\+Day} = 24
+\item 
+\Hypertarget{class_n_f_d_r_s4_a951b46915402a7b178b0eeddb809855c}\label{class_n_f_d_r_s4_a951b46915402a7b178b0eeddb809855c} 
+double {\bfseries CTA}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a19dbd5d96b993e781c0050b64ca1bfeb}\label{class_n_f_d_r_s4_a19dbd5d96b993e781c0050b64ca1bfeb} 
+double {\bfseries Lat}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a8fbb1b01d71b33734486c9255a2e120d}\label{class_n_f_d_r_s4_a8fbb1b01d71b33734486c9255a2e120d} 
+int {\bfseries NFDRSVersion}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ac94426a460d2104d7718b7d78c1839a6}\label{class_n_f_d_r_s4_ac94426a460d2104d7718b7d78c1839a6} 
+int {\bfseries Yesterday\+JDay}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ab784674654d607aae650488a521cc1bf}\label{class_n_f_d_r_s4_ab784674654d607aae650488a521cc1bf} 
+int {\bfseries Slope\+Class}
+\item 
+\Hypertarget{class_n_f_d_r_s4_af68621fdfc252be83235cbddebc62a42}\label{class_n_f_d_r_s4_af68621fdfc252be83235cbddebc62a42} 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} {\bfseries One\+Hour\+FM}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a2b7de5d81f143c72a571fe762dd9d2f1}\label{class_n_f_d_r_s4_a2b7de5d81f143c72a571fe762dd9d2f1} 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} {\bfseries Ten\+Hour\+FM}
+\item 
+\Hypertarget{class_n_f_d_r_s4_acd895b53428578e41fe47c20b15ad251}\label{class_n_f_d_r_s4_acd895b53428578e41fe47c20b15ad251} 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} {\bfseries Hundred\+Hour\+FM}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a38b260f613e933b7e056afd8d33dc864}\label{class_n_f_d_r_s4_a38b260f613e933b7e056afd8d33dc864} 
+\mbox{\hyperlink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}} {\bfseries Thousand\+Hour\+FM}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ac46822b19114dfef1c1d4c9e11baadfd}\label{class_n_f_d_r_s4_ac46822b19114dfef1c1d4c9e11baadfd} 
+\mbox{\hyperlink{class_live_fuel_moisture}{Live\+Fuel\+Moisture}} {\bfseries Herb\+FM}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a2ca5d67b3a7665950b97d6a208b93d15}\label{class_n_f_d_r_s4_a2ca5d67b3a7665950b97d6a208b93d15} 
+\mbox{\hyperlink{class_live_fuel_moisture}{Live\+Fuel\+Moisture}} {\bfseries Woody\+FM}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a9a67c3f5fb3145deb40f6f2803043664}\label{class_n_f_d_r_s4_a9a67c3f5fb3145deb40f6f2803043664} 
+int {\bfseries Fuel\+Model}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a268759f5647e1d994dca0c3b3fa2752d}\label{class_n_f_d_r_s4_a268759f5647e1d994dca0c3b3fa2752d} 
+std\+::string {\bfseries Fuel\+Description}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a37bcb6d888ab1ccaab7367262cc40849}\label{class_n_f_d_r_s4_a37bcb6d888ab1ccaab7367262cc40849} 
+int {\bfseries SG1}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ac213f44c32d546dbd5f84bf4b77e6a85}\label{class_n_f_d_r_s4_ac213f44c32d546dbd5f84bf4b77e6a85} 
+int {\bfseries SG10}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a5fd90ff09fce1427ff7e5fe45b0b507f}\label{class_n_f_d_r_s4_a5fd90ff09fce1427ff7e5fe45b0b507f} 
+int {\bfseries SG100}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a5bb34361477b50f156fb981dea3b5923}\label{class_n_f_d_r_s4_a5bb34361477b50f156fb981dea3b5923} 
+int {\bfseries SG1000}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a68797ec50a0e00116c648c6cd6939951}\label{class_n_f_d_r_s4_a68797ec50a0e00116c648c6cd6939951} 
+int {\bfseries SGWOOD}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a43030847594d67e5ccb24abf0c650689}\label{class_n_f_d_r_s4_a43030847594d67e5ccb24abf0c650689} 
+int {\bfseries SGHERB}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a5463534b5835dff8d3cc7dfcac753dca}\label{class_n_f_d_r_s4_a5463534b5835dff8d3cc7dfcac753dca} 
+double {\bfseries W1}
+\item 
+\Hypertarget{class_n_f_d_r_s4_aa6355795d53e4904c78b03e6952ff685}\label{class_n_f_d_r_s4_aa6355795d53e4904c78b03e6952ff685} 
+double {\bfseries W10}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a09769f9d518f895ea58deba3d67e78df}\label{class_n_f_d_r_s4_a09769f9d518f895ea58deba3d67e78df} 
+double {\bfseries W100}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a9b26d9fef31bf6ff8e8f14a877123aee}\label{class_n_f_d_r_s4_a9b26d9fef31bf6ff8e8f14a877123aee} 
+double {\bfseries W1000}
+\item 
+\Hypertarget{class_n_f_d_r_s4_af8bbb143261591bea9473120cf6fa04e}\label{class_n_f_d_r_s4_af8bbb143261591bea9473120cf6fa04e} 
+double {\bfseries WWOOD}
+\item 
+\Hypertarget{class_n_f_d_r_s4_aea19d5414c8c0f5285547c8e2a40fc7d}\label{class_n_f_d_r_s4_aea19d5414c8c0f5285547c8e2a40fc7d} 
+double {\bfseries WHERB}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a91315060f2b1798ed0ce5226a9849176}\label{class_n_f_d_r_s4_a91315060f2b1798ed0ce5226a9849176} 
+double {\bfseries WDROUGHT}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a8978365a3f389f67c196658a4fcfacd5}\label{class_n_f_d_r_s4_a8978365a3f389f67c196658a4fcfacd5} 
+double {\bfseries W1P}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a304ea62d181e416616c645f29871c5d2}\label{class_n_f_d_r_s4_a304ea62d181e416616c645f29871c5d2} 
+double {\bfseries WHERBP}
+\item 
+\Hypertarget{class_n_f_d_r_s4_aab5496471c7fcf36a8a3363de4aa8b3d}\label{class_n_f_d_r_s4_aab5496471c7fcf36a8a3363de4aa8b3d} 
+double {\bfseries WTOT}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ae76f7a51472b8388a634f0731e854190}\label{class_n_f_d_r_s4_ae76f7a51472b8388a634f0731e854190} 
+double {\bfseries L1}
+\item 
+\Hypertarget{class_n_f_d_r_s4_acd8cccaa936a2e8537b4071f5469c6cd}\label{class_n_f_d_r_s4_acd8cccaa936a2e8537b4071f5469c6cd} 
+double {\bfseries L10}
+\item 
+\Hypertarget{class_n_f_d_r_s4_af6efb64e64986eaa35d938f14ffd38ff}\label{class_n_f_d_r_s4_af6efb64e64986eaa35d938f14ffd38ff} 
+double {\bfseries L100}
+\item 
+\Hypertarget{class_n_f_d_r_s4_aa4bba5e9dc0f129782df33df7955340a}\label{class_n_f_d_r_s4_aa4bba5e9dc0f129782df33df7955340a} 
+double {\bfseries L1000}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a4c35663735115af37b4a7ed3115863eb}\label{class_n_f_d_r_s4_a4c35663735115af37b4a7ed3115863eb} 
+double {\bfseries LWOOD}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ae6b707d81d0e720caa02f75f473ce5c5}\label{class_n_f_d_r_s4_ae6b707d81d0e720caa02f75f473ce5c5} 
+double {\bfseries LHERB}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ae9d6d8cc3009bfced6874865231e3ec7}\label{class_n_f_d_r_s4_ae9d6d8cc3009bfced6874865231e3ec7} 
+double {\bfseries LDROUGHT}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ab32150f9dbc5530b8db2f55238559344}\label{class_n_f_d_r_s4_ab32150f9dbc5530b8db2f55238559344} 
+double {\bfseries Drought\+Unit}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a617d43a570254bf9632f2b108c5ce669}\label{class_n_f_d_r_s4_a617d43a570254bf9632f2b108c5ce669} 
+double {\bfseries fct\+Cur}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ac1d9b75e39bdefcd6592fb835abcc789}\label{class_n_f_d_r_s4_ac1d9b75e39bdefcd6592fb835abcc789} 
+double {\bfseries DEPTH}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a5c234927b929858eb50648ac37c72db3}\label{class_n_f_d_r_s4_a5c234927b929858eb50648ac37c72db3} 
+double {\bfseries WNDFC}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a090cb1cd9a45a40b1ba56cfc5abc6d75}\label{class_n_f_d_r_s4_a090cb1cd9a45a40b1ba56cfc5abc6d75} 
+double {\bfseries MXD}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ab0c4b3daf2c59fa2fc59e01b9907d3b0}\label{class_n_f_d_r_s4_ab0c4b3daf2c59fa2fc59e01b9907d3b0} 
+double {\bfseries HD}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a3ba19296a1f61ec5af08bd33d81ddb60}\label{class_n_f_d_r_s4_a3ba19296a1f61ec5af08bd33d81ddb60} 
+double {\bfseries SCM}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a6b908e31680292c293b0415a45ba678a}\label{class_n_f_d_r_s4_a6b908e31680292c293b0415a45ba678a} 
+double {\bfseries MC1}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ad96c1111e6596571f7e3cdc2e20985be}\label{class_n_f_d_r_s4_ad96c1111e6596571f7e3cdc2e20985be} 
+double {\bfseries MC10}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a93581e271204dad7cca2ce55e2a7af49}\label{class_n_f_d_r_s4_a93581e271204dad7cca2ce55e2a7af49} 
+double {\bfseries MC100}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a847e8b8b59e670aa560e6080b8e60ba9}\label{class_n_f_d_r_s4_a847e8b8b59e670aa560e6080b8e60ba9} 
+double {\bfseries MC1000}
+\item 
+\Hypertarget{class_n_f_d_r_s4_accf66269de65639df5ea579122e12d39}\label{class_n_f_d_r_s4_accf66269de65639df5ea579122e12d39} 
+double {\bfseries MCWOOD}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a62610fe339876e2f9f54d7111bf2c51d}\label{class_n_f_d_r_s4_a62610fe339876e2f9f54d7111bf2c51d} 
+double {\bfseries MCHERB}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ab530e08bfaa081717542d9accbd88420}\label{class_n_f_d_r_s4_ab530e08bfaa081717542d9accbd88420} 
+double {\bfseries BI}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a46a05f9826311c46e7b6208d4360f443}\label{class_n_f_d_r_s4_a46a05f9826311c46e7b6208d4360f443} 
+double {\bfseries ERC}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a595f1f1b9e72ebf6ba8d7c1ec8772061}\label{class_n_f_d_r_s4_a595f1f1b9e72ebf6ba8d7c1ec8772061} 
+double {\bfseries SC}
+\item 
+\Hypertarget{class_n_f_d_r_s4_add6989ec3a7bdad0e3858c6861a80823}\label{class_n_f_d_r_s4_add6989ec3a7bdad0e3858c6861a80823} 
+double {\bfseries IC}
+\item 
+\Hypertarget{class_n_f_d_r_s4_aec617681b24f8edeb22f9d22fab10003}\label{class_n_f_d_r_s4_aec617681b24f8edeb22f9d22fab10003} 
+int {\bfseries Prev\+Year}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ae68ce3f3ed8179abb6ca4e133eee028d}\label{class_n_f_d_r_s4_ae68ce3f3ed8179abb6ca4e133eee028d} 
+int {\bfseries KBDI}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a29b5e78c57ec99f6f90eb60f40ec8eab}\label{class_n_f_d_r_s4_a29b5e78c57ec99f6f90eb60f40ec8eab} 
+int {\bfseries YKBDI}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ab10965ccdba590e88cad727813176fa0}\label{class_n_f_d_r_s4_ab10965ccdba590e88cad727813176fa0} 
+int {\bfseries Start\+KBDI}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a0bdb3e7ffdf82ddb0f26d7d8a11aee70}\label{class_n_f_d_r_s4_a0bdb3e7ffdf82ddb0f26d7d8a11aee70} 
+int {\bfseries KBDIThreshold}
+\item 
+\Hypertarget{class_n_f_d_r_s4_acc03fdbbda84ea611643273e2bec7940}\label{class_n_f_d_r_s4_acc03fdbbda84ea611643273e2bec7940} 
+double {\bfseries Cumm\+Precip}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a12ae90723451a6df5d6468ff225b37c0}\label{class_n_f_d_r_s4_a12ae90723451a6df5d6468ff225b37c0} 
+double {\bfseries Avg\+Precip}
+\item 
+\Hypertarget{class_n_f_d_r_s4_aeecb62f05758ec3d3483cd56f61c0b76}\label{class_n_f_d_r_s4_aeecb62f05758ec3d3483cd56f61c0b76} 
+bool {\bfseries Use\+Load\+Transfer}
+\item 
+\Hypertarget{class_n_f_d_r_s4_acbf3de6fec1805c758bd57df88f6101a}\label{class_n_f_d_r_s4_acbf3de6fec1805c758bd57df88f6101a} 
+bool {\bfseries Use\+Curing}
+\item 
+\Hypertarget{class_n_f_d_r_s4_aff4eb9d1ee569f1c4f9fbf63928ecde2}\label{class_n_f_d_r_s4_aff4eb9d1ee569f1c4f9fbf63928ecde2} 
+bool {\bfseries Snow\+Covered}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a515e0a56c82bbb1005eab6a8011aa2fa}\label{class_n_f_d_r_s4_a515e0a56c82bbb1005eab6a8011aa2fa} 
+double {\bfseries WTMCD}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a03dbcac89af01fb37e88c521cbb030fb}\label{class_n_f_d_r_s4_a03dbcac89af01fb37e88c521cbb030fb} 
+double {\bfseries WTMCL}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ad2d22d7b22cdddce7f78ede4def9fe74}\label{class_n_f_d_r_s4_ad2d22d7b22cdddce7f78ede4def9fe74} 
+double {\bfseries WTMCDE}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a64db5801c7b9cc6086a46c8011f4c3ae}\label{class_n_f_d_r_s4_a64db5801c7b9cc6086a46c8011f4c3ae} 
+double {\bfseries WTMCLE}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a48ac469cdc03ad2c1b2c31930336f0ea}\label{class_n_f_d_r_s4_a48ac469cdc03ad2c1b2c31930336f0ea} 
+double {\bfseries Fuel\+Temperature}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a5d3666a46492de25de9f048910b41475}\label{class_n_f_d_r_s4_a5d3666a46492de25de9f048910b41475} 
+double {\bfseries m\+\_\+\+GSI}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a6b5bf26a204db07e0b2fee54b1845a72}\label{class_n_f_d_r_s4_a6b5bf26a204db07e0b2fee54b1845a72} 
+int {\bfseries n\+Consective\+Snow\+Days}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a48dca83d320ddbc5f05e269c9c3547ce}\label{class_n_f_d_r_s4_a48dca83d320ddbc5f05e269c9c3547ce} 
+int {\bfseries m\+\_\+reg\+Obs\+Hour}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ac73c37aa7c23eabace57857d2277d743}\label{class_n_f_d_r_s4_ac73c37aa7c23eabace57857d2277d743} 
+time\+\_\+t {\bfseries utc\+Hour\+Diff}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a5e4ace0961c8172df74e767e1aa7d567}\label{class_n_f_d_r_s4_a5e4ace0961c8172df74e767e1aa7d567} 
+utctime\+::\+UTCTime {\bfseries last\+Utc\+Update\+Time}
+\item 
+\Hypertarget{class_n_f_d_r_s4_aca83df34425a7a359fb33f77d33f1a10}\label{class_n_f_d_r_s4_aca83df34425a7a359fb33f77d33f1a10} 
+utctime\+::\+UTCTime {\bfseries last\+Daily\+Update\+Time}
+\item 
+\Hypertarget{class_n_f_d_r_s4_afbd4183b64c6a9355971f61310406f35}\label{class_n_f_d_r_s4_afbd4183b64c6a9355971f61310406f35} 
+std\+::deque$<$ double $>$ {\bfseries q\+Precip}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ab9ce997558051c9bdc69501ca92c6af4}\label{class_n_f_d_r_s4_ab9ce997558051c9bdc69501ca92c6af4} 
+std\+::deque$<$ double $>$ {\bfseries q\+Hourly\+Precip}
+\item 
+\Hypertarget{class_n_f_d_r_s4_a251c79b69b3a7aa531333bf5175cff28}\label{class_n_f_d_r_s4_a251c79b69b3a7aa531333bf5175cff28} 
+std\+::deque$<$ double $>$ {\bfseries q\+Hourly\+Temp}
+\item 
+\Hypertarget{class_n_f_d_r_s4_ae83dad5784393bcb7ded29d818f73830}\label{class_n_f_d_r_s4_ae83dad5784393bcb7ded29d818f73830} 
+std\+::deque$<$ double $>$ {\bfseries q\+Hourly\+RH}
+\item 
+\Hypertarget{class_n_f_d_r_s4_aee9b556eb59c369126b4f0723c3ae5cc}\label{class_n_f_d_r_s4_aee9b556eb59c369126b4f0723c3ae5cc} 
+std\+::unordered\+\_\+map$<$ char, \mbox{\hyperlink{class_c_fuel_model_params}{CFuel\+Model\+Params}} $>$ {\bfseries map\+Fuels}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main calculator for the US National Fire Danger Rating System components and indices. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_n_f_d_r_s4_a0cc8899a301c611abeb8046b5b1db253}\index{NFDRS4@{NFDRS4}!NFDRS4@{NFDRS4}}
+\index{NFDRS4@{NFDRS4}!NFDRS4@{NFDRS4}}
+\doxysubsubsection{\texorpdfstring{NFDRS4()}{NFDRS4()}}
+{\footnotesize\ttfamily \label{class_n_f_d_r_s4_a0cc8899a301c611abeb8046b5b1db253} 
+NFDRS4\+::\+NFDRS4 (\begin{DoxyParamCaption}\item[{double}]{Lat}{, }\item[{char}]{Fuel\+Model}{, }\item[{int}]{Slope\+Class}{, }\item[{double}]{Avg\+Ann\+Precip}{, }\item[{bool}]{LT}{, }\item[{bool}]{Cure}{, }\item[{bool}]{Is\+Annual}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_n_f_d_r_s4}{NFDRS4} class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Lat} & The latitude of the simulation point (decimal degrees eg. 46.\+125) \\
+\hline
+{\em Fuel\+Model} & Fuel Model (Fuel model character code eg. "{}\+Y"{}, "{}\+X"{}, etc.... \\
+\hline
+{\em Slope\+Class} & (1-\/5) ~\newline
+ \\
+\hline
+{\em Avg\+Ann\+Precip} & (Mean annual total precip (inches)) \\
+\hline
+{\em LT} & (Use Drought Fuel Load Transfer (boolean) \\
+\hline
+{\em Cure} & (Use herbaceous curing (boolean)) \\
+\hline
+{\em Is\+Annual} & (Treat herbs as annuals, only allow one greenup per year) /// \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_n_f_d_r_s4_a51a0a2f713869fcb29a48e696e5e5c6a}\index{NFDRS4@{NFDRS4}!Init@{Init}}
+\index{Init@{Init}!NFDRS4@{NFDRS4}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{class_n_f_d_r_s4_a51a0a2f713869fcb29a48e696e5e5c6a} 
+void NFDRS4\+::\+Init (\begin{DoxyParamCaption}\item[{double}]{Lat}{, }\item[{char}]{Fuel\+Model}{, }\item[{int}]{Slope\+Class}{, }\item[{double}]{Avg\+Ann\+Precip}{, }\item[{bool}]{LT}{, }\item[{bool}]{Cure}{, }\item[{bool}]{is\+Annual}{, }\item[{int}]{kbdi\+Threshold}{, }\item[{int}]{Reg\+Obs\+Hour}{ = {\ttfamily 13}, }\item[{bool}]{is\+Reinit}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_n_f_d_r_s4}{NFDRS4} class initialization function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Lat} & The latitude of the simulation point (decimal degrees eg. 46.\+125) \\
+\hline
+{\em Fuel\+Model} & Fuel Model (Fuel model character code eg. "{}\+Y"{}, "{}\+X"{}, etc.... \\
+\hline
+{\em Slope\+Class} & (1-\/5) ~\newline
+ \\
+\hline
+{\em Avg\+Ann\+Precip} & (Mean annual total precip (inches)) \\
+\hline
+{\em LT} & (Use Drought Fuel Load Transfer (boolean) \\
+\hline
+{\em Cure} & (Use herbaceous curing (boolean)) \\
+\hline
+{\em is\+Annual} & (Treat herbs as annuals, only allow one greenup per year) \\
+\hline
+{\em kbdi\+Threshold} & Starting KBDI value to beging drought fuel load additions (default is 100) \\
+\hline
+{\em Reg\+Obs\+Hour} & = 13 Regular observation hour (this is used to prompt the GSI-\/\+LFMC calculations to run once a day at this hour) \\
+\hline
+{\em is\+Reinit} & = false (Reinitialize flag (boolean)\+: Set to true if Init is being called mid-\/calculation (Not normally used) /// \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\Hypertarget{class_n_f_d_r_s4_af449e83d0eb7622b841b8f039e2bf575}\index{NFDRS4@{NFDRS4}!SetGSIParams@{SetGSIParams}}
+\index{SetGSIParams@{SetGSIParams}!NFDRS4@{NFDRS4}}
+\doxysubsubsection{\texorpdfstring{SetGSIParams()}{SetGSIParams()}}
+{\footnotesize\ttfamily \label{class_n_f_d_r_s4_af449e83d0eb7622b841b8f039e2bf575} 
+void NFDRS4\+::\+Set\+GSIParams (\begin{DoxyParamCaption}\item[{double}]{Max\+GSI}{, }\item[{double}]{Greenup\+Threshold}{, }\item[{double}]{Tmin\+Min}{ = {\ttfamily -\/2.0}, }\item[{double}]{Tmin\+Max}{ = {\ttfamily 5.0}, }\item[{double}]{VPDMin}{ = {\ttfamily 900}, }\item[{double}]{VPDMax}{ = {\ttfamily 4100}, }\item[{double}]{Dayl\+Min}{ = {\ttfamily 36000}, }\item[{double}]{Dayl\+Max}{ = {\ttfamily 39600}, }\item[{unsigned int}]{MAPeriod}{ = {\ttfamily 21U}, }\item[{bool}]{Use\+VPDAvg}{ = {\ttfamily false}, }\item[{unsigned int}]{n\+Precip\+Days}{ = {\ttfamily 30}, }\item[{double}]{rt\+Precip\+Min}{ = {\ttfamily 0.5}, }\item[{double}]{rt\+Precip\+Max}{ = {\ttfamily 1.5}, }\item[{bool}]{Use\+RTPrecip}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+Gsi\+FM.\+Set\+Limits(\+Tmin\+Min, Tmin\+Max, VPDMin, VPDMax, Dayl\+Min, Dayl\+Max, rt\+Precip\+Min, rt\+Precip\+Max);
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Source/\+Public\+Github/\+NFDRS4/lib/\+NFDRS4/include/nfdrs4.\+h\item 
+D\+:/\+Source/\+Public\+Github/\+NFDRS4/lib/\+NFDRS4/src/nfdrs4.\+cpp\end{DoxyCompactItemize}

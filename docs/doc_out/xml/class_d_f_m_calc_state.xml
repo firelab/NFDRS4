@@ -1,0 +1,462 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="class_d_f_m_calc_state" kind="class" language="C++" prot="public">
+    <compoundname>DFMCalcState</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a2ac92b666e8f2540d3dd04148b10f547" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short DFMCalcState::m_JDay</definition>
+        <argsstring></argsstring>
+        <name>m_JDay</name>
+        <qualifiedname>DFMCalcState::m_JDay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="18" column="7" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a83974a6c6d469f76d40565a40725c8e9" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short DFMCalcState::m_Year</definition>
+        <argsstring></argsstring>
+        <name>m_Year</name>
+        <qualifiedname>DFMCalcState::m_Year</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="19" column="7" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a3532941bc8af74cd0ebe4db1f3651569" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char DFMCalcState::m_Month</definition>
+        <argsstring></argsstring>
+        <name>m_Month</name>
+        <qualifiedname>DFMCalcState::m_Month</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="20" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1adf39c82f57923bb40d5be48c7a320170" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char DFMCalcState::m_Day</definition>
+        <argsstring></argsstring>
+        <name>m_Day</name>
+        <qualifiedname>DFMCalcState::m_Day</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="21" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1aabc737ce4d839eec086f218ea9915f44" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char DFMCalcState::m_Hour</definition>
+        <argsstring></argsstring>
+        <name>m_Hour</name>
+        <qualifiedname>DFMCalcState::m_Hour</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="22" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a826c3c327438f813d3607ed8f32b31e3" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char DFMCalcState::m_Min</definition>
+        <argsstring></argsstring>
+        <name>m_Min</name>
+        <qualifiedname>DFMCalcState::m_Min</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="23" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a5ffd3b60338c4fc813baedb88655bd49" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char DFMCalcState::m_Sec</definition>
+        <argsstring></argsstring>
+        <name>m_Sec</name>
+        <qualifiedname>DFMCalcState::m_Sec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="24" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a4e53d94baa2e8714879ba177d4e0762f" prot="public" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t DFMCalcState::m_obstime</definition>
+        <argsstring></argsstring>
+        <name>m_obstime</name>
+        <qualifiedname>DFMCalcState::m_obstime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="25" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1ab749bb10d34b0de93f07e45d144dfbc0" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_bp1</definition>
+        <argsstring></argsstring>
+        <name>m_bp1</name>
+        <qualifiedname>DFMCalcState::m_bp1</qualifiedname>
+        <briefdescription>
+<para>Current observation&apos;s barometric pressure (cal/cm3). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="35" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1ac300bcde0ee96e5f53801824b7d997a5" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_et</definition>
+        <argsstring></argsstring>
+        <name>m_et</name>
+        <qualifiedname>DFMCalcState::m_et</qualifiedname>
+        <briefdescription>
+<para>Elapsed time since previous observation (h). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="36" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1abf9bdccda20042f194834dea2dafa599" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_ha1</definition>
+        <argsstring></argsstring>
+        <name>m_ha1</name>
+        <qualifiedname>DFMCalcState::m_ha1</qualifiedname>
+        <briefdescription>
+<para>Current observation&apos;s air humidity (dl). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="37" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1afc5bedeb2a9fd2224fdf3d3eb7b59706" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_rc1</definition>
+        <argsstring></argsstring>
+        <name>m_rc1</name>
+        <qualifiedname>DFMCalcState::m_rc1</qualifiedname>
+        <briefdescription>
+<para>Current observation&apos;s cumulative rainfall amount (cm). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="38" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1aa34100f082bf3dc4f190d2ba4862eb50" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_sv1</definition>
+        <argsstring></argsstring>
+        <name>m_sv1</name>
+        <qualifiedname>DFMCalcState::m_sv1</qualifiedname>
+        <briefdescription>
+<para>Current observation&apos;s solar radiation (mV). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="39" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a5e667bf33005516f653c1cff73fba209" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_ta1</definition>
+        <argsstring></argsstring>
+        <name>m_ta1</name>
+        <qualifiedname>DFMCalcState::m_ta1</qualifiedname>
+        <briefdescription>
+<para>Current observation&apos;s air temperature (oC). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="40" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a68c0bbfe3af11d1a4e24888a8360d520" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_hf</definition>
+        <argsstring></argsstring>
+        <name>m_hf</name>
+        <qualifiedname>DFMCalcState::m_hf</qualifiedname>
+        <briefdescription>
+<para>Stick surface humidity (g water/g dry fuel). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="41" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a0637ead41eeb1ef22a5150d156d9d116" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_wsa</definition>
+        <argsstring></argsstring>
+        <name>m_wsa</name>
+        <qualifiedname>DFMCalcState::m_wsa</qualifiedname>
+        <briefdescription>
+<para>Stick fiber saturation point (g water/g dry fuel). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="42" column="18" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a731763ce17721d81ad99400b260f70f6" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_rdur</definition>
+        <argsstring></argsstring>
+        <name>m_rdur</name>
+        <qualifiedname>DFMCalcState::m_rdur</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="45" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a735314aef1b54921f13ad032cd98305d" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE DFMCalcState::m_ra1</definition>
+        <argsstring></argsstring>
+        <name>m_ra1</name>
+        <qualifiedname>DFMCalcState::m_ra1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="46" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a11d16caab2a11ae7a4d3c7bbcc73d6b1" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short DFMCalcState::m_nodes</definition>
+        <argsstring></argsstring>
+        <name>m_nodes</name>
+        <qualifiedname>DFMCalcState::m_nodes</qualifiedname>
+        <briefdescription>
+<para>Number of stick nodes in the radial direction. just for knowing how big vectors are when stored. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="49" column="11" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1ac80529d708119261eeaebffc4c4a32d9" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; FP_STORAGE_TYPE &gt;</type>
+        <definition>std::vector&lt;FP_STORAGE_TYPE&gt; DFMCalcState::m_t</definition>
+        <argsstring></argsstring>
+        <name>m_t</name>
+        <qualifiedname>DFMCalcState::m_t</qualifiedname>
+        <briefdescription>
+<para>Array of nodal temperatures (oC). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="50" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a0d560c0f15aa3de34d1c15f72b4f7b31" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; FP_STORAGE_TYPE &gt;</type>
+        <definition>std::vector&lt;FP_STORAGE_TYPE&gt; DFMCalcState::m_s</definition>
+        <argsstring></argsstring>
+        <name>m_s</name>
+        <qualifiedname>DFMCalcState::m_s</qualifiedname>
+        <briefdescription>
+<para>Array of nodal fiber saturation points (g water/g dry fuel). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="51" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1a204ba3a883754b36b18098d10bad1ea5" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; FP_STORAGE_TYPE &gt;</type>
+        <definition>std::vector&lt;FP_STORAGE_TYPE&gt; DFMCalcState::m_d</definition>
+        <argsstring></argsstring>
+        <name>m_d</name>
+        <qualifiedname>DFMCalcState::m_d</qualifiedname>
+        <briefdescription>
+<para>Array of nodal bound water diffusivities (cm2/h). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="52" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_f_m_calc_state_1ab6a43b6e435dff4d58b60ce9a3aeb762" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; FP_STORAGE_TYPE &gt;</type>
+        <definition>std::vector&lt;FP_STORAGE_TYPE&gt; DFMCalcState::m_w</definition>
+        <argsstring></argsstring>
+        <name>m_w</name>
+        <qualifiedname>DFMCalcState::m_w</qualifiedname>
+        <briefdescription>
+<para>Array of nodal moisture contents (g water/g dry fuel). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="53" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_f_m_calc_state_1addb424183ac814f994b26167cd7c7c24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DFMCalcState::DFMCalcState</definition>
+        <argsstring>()</argsstring>
+        <name>DFMCalcState</name>
+        <qualifiedname>DFMCalcState::DFMCalcState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="10" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/dfmcalcstate.cpp" bodystart="6" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_f_m_calc_state_1a33b67bdc1c58cdccaac60e726e55ac2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DFMCalcState::DFMCalcState</definition>
+        <argsstring>(const DFMCalcState &amp;rhs)</argsstring>
+        <name>DFMCalcState</name>
+        <qualifiedname>DFMCalcState::DFMCalcState</qualifiedname>
+        <param>
+          <type>const <ref refid="class_d_f_m_calc_state" kindref="compound">DFMCalcState</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="11" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/dfmcalcstate.cpp" bodystart="10" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_f_m_calc_state_1ae7297e0a0676a8a44b69fb0d249e3af6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DFMCalcState::~DFMCalcState</definition>
+        <argsstring>()</argsstring>
+        <name>~DFMCalcState</name>
+        <qualifiedname>DFMCalcState::~DFMCalcState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="12" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/dfmcalcstate.cpp" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_f_m_calc_state_1a8428176d4c965af8bf9130184725f6bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DFMCalcState::ReadState</definition>
+        <argsstring>(FILE *in)</argsstring>
+        <name>ReadState</name>
+        <qualifiedname>DFMCalcState::ReadState</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="14" column="7" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/dfmcalcstate.cpp" bodystart="45" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_f_m_calc_state_1a9eaa990574d596844cbac9960a35bf2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DFMCalcState::SaveState</definition>
+        <argsstring>(FILE *out)</argsstring>
+        <name>SaveState</name>
+        <qualifiedname>DFMCalcState::SaveState</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="15" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/dfmcalcstate.cpp" bodystart="139" bodyend="232"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" line="7" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h" bodystart="8" bodyend="55"/>
+    <listofallmembers>
+      <member refid="class_d_f_m_calc_state_1addb424183ac814f994b26167cd7c7c24" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>DFMCalcState</name></member>
+      <member refid="class_d_f_m_calc_state_1a33b67bdc1c58cdccaac60e726e55ac2b" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>DFMCalcState</name></member>
+      <member refid="class_d_f_m_calc_state_1ab749bb10d34b0de93f07e45d144dfbc0" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_bp1</name></member>
+      <member refid="class_d_f_m_calc_state_1a204ba3a883754b36b18098d10bad1ea5" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_d</name></member>
+      <member refid="class_d_f_m_calc_state_1adf39c82f57923bb40d5be48c7a320170" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_Day</name></member>
+      <member refid="class_d_f_m_calc_state_1ac300bcde0ee96e5f53801824b7d997a5" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_et</name></member>
+      <member refid="class_d_f_m_calc_state_1abf9bdccda20042f194834dea2dafa599" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_ha1</name></member>
+      <member refid="class_d_f_m_calc_state_1a68c0bbfe3af11d1a4e24888a8360d520" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_hf</name></member>
+      <member refid="class_d_f_m_calc_state_1aabc737ce4d839eec086f218ea9915f44" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_Hour</name></member>
+      <member refid="class_d_f_m_calc_state_1a2ac92b666e8f2540d3dd04148b10f547" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_JDay</name></member>
+      <member refid="class_d_f_m_calc_state_1a826c3c327438f813d3607ed8f32b31e3" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_Min</name></member>
+      <member refid="class_d_f_m_calc_state_1a3532941bc8af74cd0ebe4db1f3651569" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_Month</name></member>
+      <member refid="class_d_f_m_calc_state_1a11d16caab2a11ae7a4d3c7bbcc73d6b1" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_nodes</name></member>
+      <member refid="class_d_f_m_calc_state_1a4e53d94baa2e8714879ba177d4e0762f" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_obstime</name></member>
+      <member refid="class_d_f_m_calc_state_1a735314aef1b54921f13ad032cd98305d" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_ra1</name></member>
+      <member refid="class_d_f_m_calc_state_1afc5bedeb2a9fd2224fdf3d3eb7b59706" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_rc1</name></member>
+      <member refid="class_d_f_m_calc_state_1a731763ce17721d81ad99400b260f70f6" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_rdur</name></member>
+      <member refid="class_d_f_m_calc_state_1a0d560c0f15aa3de34d1c15f72b4f7b31" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_s</name></member>
+      <member refid="class_d_f_m_calc_state_1a5ffd3b60338c4fc813baedb88655bd49" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_Sec</name></member>
+      <member refid="class_d_f_m_calc_state_1aa34100f082bf3dc4f190d2ba4862eb50" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_sv1</name></member>
+      <member refid="class_d_f_m_calc_state_1ac80529d708119261eeaebffc4c4a32d9" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_t</name></member>
+      <member refid="class_d_f_m_calc_state_1a5e667bf33005516f653c1cff73fba209" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_ta1</name></member>
+      <member refid="class_d_f_m_calc_state_1ab6a43b6e435dff4d58b60ce9a3aeb762" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_w</name></member>
+      <member refid="class_d_f_m_calc_state_1a0637ead41eeb1ef22a5150d156d9d116" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_wsa</name></member>
+      <member refid="class_d_f_m_calc_state_1a83974a6c6d469f76d40565a40725c8e9" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>m_Year</name></member>
+      <member refid="class_d_f_m_calc_state_1a8428176d4c965af8bf9130184725f6bb" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>ReadState</name></member>
+      <member refid="class_d_f_m_calc_state_1a9eaa990574d596844cbac9960a35bf2c" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>SaveState</name></member>
+      <member refid="class_d_f_m_calc_state_1ae7297e0a0676a8a44b69fb0d249e3af6" prot="public" virt="non-virtual"><scope>DFMCalcState</scope><name>~DFMCalcState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

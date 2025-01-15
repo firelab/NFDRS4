@@ -1,0 +1,44 @@
+\chapter{Dead Fuel Moisture}
+\hypertarget{_dead_fuel_moisture}{}\label{_dead_fuel_moisture}\index{Dead Fuel Moisture@{Dead Fuel Moisture}}
+\doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} is an implementation of Nelson\textquotesingle{}s dead fuel moisture model \doxysectlink{citations_nelson2000}{Nelson, Ralph M. Jr. 2000.}{1} as modified by \doxysectlink{citations_bevins2005}{Bevins, Collin D. 2005.}{1}.\hypertarget{_dead_fuel_moisture_dfmmods}{}\doxysection{\texorpdfstring{Dead Fuel Moisture Model Modifications}{Dead Fuel Moisture Model Modifications}}\label{_dead_fuel_moisture_dfmmods}
+The \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class has been modified from Nelson \doxysectlink{citations_nelson2000}{Nelson, Ralph M. Jr. 2000.}{1} description as follows\+:
+
+-- Moisture content and diffusivity computation time steps are independent of elapsed time since the previous update(), as recommended by Carlson 2003 \doxysectlink{citations_carlson2003}{Carlson, J. D. 2003.}{1}. -- Planar heat transfer rate, adsorption rate, rainfall runoff rate, and the number of moisture content and diffusivity computation steps are automatically derived from the stick radius using equations developed by Bevins \doxysectlink{citations_bevins2005}{Bevins, Collin D. 2005.}{1}. -- Precipitation is no longer divided into rainfall and rainstorm categories, making Nelson\textquotesingle{}s storm transition value (stv) unnecessary. -- Rainfall events are no longer divided into first hour and subsequent hour categories, making Nelson\textquotesingle{}s subsequent runoff factor (rai1) unnecessary. -- The following parameters are now assigned values independent of stick radius\+: -- maximum local moisture content is 0.\+60 g/g, -- desorption rate is 0.\+06 (cm3/cm2)/h. -- water film contribution is zero g/g.
+
+The above changes produce better stability and more accurate predictions for the available test data sets.\hypertarget{_dead_fuel_moisture_dfmuse}{}\doxysection{\texorpdfstring{Using Dead\+Fuel\+Moisture}{Using Dead\+Fuel\+Moisture}}\label{_dead_fuel_moisture_dfmuse}
+This is a quick tutorial on using the \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class.\hypertarget{_dead_fuel_moisture_dfmuse1}{}\doxysubsection{\texorpdfstring{Step 1\+: Create A Dead Fuel Moisture Stick}{Step 1\+: Create A Dead Fuel Moisture Stick}}\label{_dead_fuel_moisture_dfmuse1}
+To create a standard 1-\/h, 10-\/h, 100-\/h, or 1000-\/h time lag fuel moisture stick, call one of\+:
+
+-- Dead\+Fuel\+Moisture\texorpdfstring{$\ast$}{*} dfm1h = create\+Dead\+Fuel\+Moisture1( "{}1-\/h stick name"{} ); -- Dead\+Fuel\+Moisture\texorpdfstring{$\ast$}{*} dfm10h = create\+Dead\+Fuel\+Moisture10( "{}10-\/h stick name"{} ); -- Dead\+Fuel\+Moisture\texorpdfstring{$\ast$}{*} dfm100h = create\+Dead\+Fuel\+Moisture100( "{}100-\/h stick name"{} ); -- Dead\+Fuel\+Moisture\texorpdfstring{$\ast$}{*} dfm1000h = create\+Dead\+Fuel\+Moisture1000( "{}1000-\/h stick name"{} );
+
+To create a stick with a specific radius\+:
+
+-- \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} \texorpdfstring{$\ast$}{*}dfm = new \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture}( radius, "{}stick name"{} );\hypertarget{_dead_fuel_moisture_dfmuse2}{}\doxysubsection{\texorpdfstring{Step 2\+: Customize the Dead Fuel Moisture Stick (Optional)}{Step 2\+: Customize the Dead Fuel Moisture Stick (Optional)}}\label{_dead_fuel_moisture_dfmuse2}
+This step is only necessary if you are experimenting with the internals of the \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} class. If not, go on to Step 3.
+
+Call any of the following to set internal stick parameters\+:
+
+-- void set\+Adsorption\+Rate( double adsorption\+Rate ) ; -- void set\+Desorption\+Rate( double desorption\+Rate=0.\+06 ) ; -- void set\+Diffusivity\+Steps( int diffusivity\+Steps ); -- void set\+Planar\+Heat\+Transfer\+Rate( double planar\+Heat\+Transfer\+Rate ) ; -- void set\+Maximum\+Local\+Moisture( double local\+Max\+Mc=0.\+6 ) ; -- void set\+Moisture\+Steps( int moisture\+Steps ); -- void set\+Rainfall\+Runoff\+Factor( double rainfall\+Runoff\+Factor ); -- void set\+Random\+Seed( int randseed=0 ) ; -- void set\+Stick\+Density( double stick\+Density=0.\+4 ); -- void set\+Stick\+Length( double stick\+Length=41.\+0 ); -- void set\+Stick\+Nodes( int stick\+Nodes=11 ) ; -- void set\+Water\+Film\+Contribution( double water\+Film=0.\+0 ) ;
+
+Finally, you {\itshape must} call\+:
+
+-- void initialize\+Stick( void ) ;\hypertarget{_dead_fuel_moisture_dfmuse3}{}\doxysubsection{\texorpdfstring{Step 3\+: Initialize the Stick and Its Environment (Optional)}{Step 3\+: Initialize the Stick and Its Environment (Optional)}}\label{_dead_fuel_moisture_dfmuse3}
+If you wish to initialize the stick\textquotesingle{}s internal temperature and moisture profile, call one of\+:
+
+-- void initialize\+Environment( int year, int month, int day, int hour,     int minute, int second, double at, double rh, double sr, double rcum,     double ti, double hi, double wi, double bp ); -- void initialize\+Environment( double at, double rh, double sr, double rcum,     double ti, double hi, double wi, double bp );
+
+The first method initializes the stick date and time, and should be used if you are using the version of update() that takes the date and time as arguments.
+
+The second method should be called if you are using the version of update() that takes the elapsed time as an argument.
+
+If neither of these methods are invoked, the stick internal and external environments are initialized by the first update() invocation.\hypertarget{_dead_fuel_moisture_dfmuse4}{}\doxysubsection{\texorpdfstring{Step 4\+: Update the Stick Environment}{Step 4\+: Update the Stick Environment}}\label{_dead_fuel_moisture_dfmuse4}
+Call the update() method to update the stick\textquotesingle{}s clock and external environment, and recalculate the stick\textquotesingle{}s internal temperature and moisture profile. There are two overloaded versions of update()\+:
+
+-- bool update( int year, int month, int day, int hour, int minute,     int second, double at, double rh, double s\+W, double rcum ); -- bool update( double et, double at, double rh, double s\+W, double rcum );
+
+The first version determines elapsed time from the date and time arguments. Do not mix calls to the two versions for the same \doxylink{class_dead_fuel_moisture}{Dead\+Fuel\+Moisture} instance.\hypertarget{_dead_fuel_moisture_dfmuse5}{}\doxysubsection{\texorpdfstring{Step 5\+: Get Stick Temperature and Moisture Content}{Step 5\+: Get Stick Temperature and Moisture Content}}\label{_dead_fuel_moisture_dfmuse5}
+To determine the current stick temperature and moisture content, call\+:
+
+-- double mean\+Moisture(); -- double mean\+Wtd\+Moisture(); -- double mean\+Wtd\+Temperature(); -- double surface\+Moisture(); -- double surface\+Temperature();
+
+Temperatures are oC and moisture contents are g/g. 

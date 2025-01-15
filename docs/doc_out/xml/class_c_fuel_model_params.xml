@@ -1,0 +1,1046 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="class_c_fuel_model_params" kind="class" language="C++" prot="public">
+    <compoundname>CFuelModelParams</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_c_fuel_model_params_1ac9cd021a2d5e558c9203b8dedd06f106" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char CFuelModelParams::m_fuelModel</definition>
+        <argsstring></argsstring>
+        <name>m_fuelModel</name>
+        <qualifiedname>CFuelModelParams::m_fuelModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="72" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1ab7799aa5e575c9359339904225e40db9" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string CFuelModelParams::m_description</definition>
+        <argsstring></argsstring>
+        <name>m_description</name>
+        <qualifiedname>CFuelModelParams::m_description</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="73" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1abf7116632a09ee9790622b807423f83c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CFuelModelParams::m_SG1</definition>
+        <argsstring></argsstring>
+        <name>m_SG1</name>
+        <qualifiedname>CFuelModelParams::m_SG1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="74" column="5" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1afcf8c077fe5b3fd285fa5772b44b11af" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CFuelModelParams::m_SG10</definition>
+        <argsstring></argsstring>
+        <name>m_SG10</name>
+        <qualifiedname>CFuelModelParams::m_SG10</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="75" column="5" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a9472d1a2a8256328a9bda641f8edad77" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CFuelModelParams::m_SG100</definition>
+        <argsstring></argsstring>
+        <name>m_SG100</name>
+        <qualifiedname>CFuelModelParams::m_SG100</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="76" column="5" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1ad682c827f722ab8efeb0ec3e914d4500" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CFuelModelParams::m_SG1000</definition>
+        <argsstring></argsstring>
+        <name>m_SG1000</name>
+        <qualifiedname>CFuelModelParams::m_SG1000</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="77" column="5" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a321832caaf17356ed794b9a36635b9de" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CFuelModelParams::m_SGHERB</definition>
+        <argsstring></argsstring>
+        <name>m_SGHERB</name>
+        <qualifiedname>CFuelModelParams::m_SGHERB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="78" column="5" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1ad7a9b9097f82fcf1283429ad33517f08" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CFuelModelParams::m_SGWOOD</definition>
+        <argsstring></argsstring>
+        <name>m_SGWOOD</name>
+        <qualifiedname>CFuelModelParams::m_SGWOOD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="79" column="5" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1aae4d278033c6490f4c5d4e120e263afc" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CFuelModelParams::m_L1</definition>
+        <argsstring></argsstring>
+        <name>m_L1</name>
+        <qualifiedname>CFuelModelParams::m_L1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="80" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1acdd4d9d9feeb740d7d71cabae2231c9c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CFuelModelParams::m_L10</definition>
+        <argsstring></argsstring>
+        <name>m_L10</name>
+        <qualifiedname>CFuelModelParams::m_L10</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="81" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a25e335dae2f492497f72159961b2dc2c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CFuelModelParams::m_L100</definition>
+        <argsstring></argsstring>
+        <name>m_L100</name>
+        <qualifiedname>CFuelModelParams::m_L100</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="82" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a5795affd0e26b4852225d0a337844a14" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CFuelModelParams::m_L1000</definition>
+        <argsstring></argsstring>
+        <name>m_L1000</name>
+        <qualifiedname>CFuelModelParams::m_L1000</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="83" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a453cebb171806c3ac82f474854fd062c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CFuelModelParams::m_LHERB</definition>
+        <argsstring></argsstring>
+        <name>m_LHERB</name>
+        <qualifiedname>CFuelModelParams::m_LHERB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="84" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a48794c9a48fedac3eeb728ce6ca476ef" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CFuelModelParams::m_LWOOD</definition>
+        <argsstring></argsstring>
+        <name>m_LWOOD</name>
+        <qualifiedname>CFuelModelParams::m_LWOOD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="85" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a5efb055506c7f4239eaa96bfcefae19f" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CFuelModelParams::m_DEPTH</definition>
+        <argsstring></argsstring>
+        <name>m_DEPTH</name>
+        <qualifiedname>CFuelModelParams::m_DEPTH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="86" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a05bc3f473a60c10864bf571cdfd80419" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CFuelModelParams::m_MXD</definition>
+        <argsstring></argsstring>
+        <name>m_MXD</name>
+        <qualifiedname>CFuelModelParams::m_MXD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="87" column="5" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a14afe738fe8949d9d51251262361d1ff" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CFuelModelParams::m_HD</definition>
+        <argsstring></argsstring>
+        <name>m_HD</name>
+        <qualifiedname>CFuelModelParams::m_HD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="88" column="5" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a80662f2554c534c497417a0fa84bef02" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CFuelModelParams::m_SCM</definition>
+        <argsstring></argsstring>
+        <name>m_SCM</name>
+        <qualifiedname>CFuelModelParams::m_SCM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="89" column="5" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a2c1e1b49ab8505abb389102c668efd0f" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CFuelModelParams::m_LDROUGHT</definition>
+        <argsstring></argsstring>
+        <name>m_LDROUGHT</name>
+        <qualifiedname>CFuelModelParams::m_LDROUGHT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="90" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_fuel_model_params_1a8cdd4060eb4be79404634c0aa9ed4043" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CFuelModelParams::m_WNDFC</definition>
+        <argsstring></argsstring>
+        <name>m_WNDFC</name>
+        <qualifiedname>CFuelModelParams::m_WNDFC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="91" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_c_fuel_model_params_1a519ab687e897141d8bf144b5d4f2a5e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CFuelModelParams::CFuelModelParams</definition>
+        <argsstring>()</argsstring>
+        <name>CFuelModelParams</name>
+        <qualifiedname>CFuelModelParams::CFuelModelParams</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="28" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a5b9e5bb62c4d27b478587f4ebf9a7618" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CFuelModelParams::CFuelModelParams</definition>
+        <argsstring>(const CFuelModelParams &amp;rhs)</argsstring>
+        <name>CFuelModelParams</name>
+        <qualifiedname>CFuelModelParams::CFuelModelParams</qualifiedname>
+        <param>
+          <type>const <ref refid="class_c_fuel_model_params" kindref="compound">CFuelModelParams</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="29" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1aeb6d1bf447a3a118aba6f20bfb65438c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CFuelModelParams::~CFuelModelParams</definition>
+        <argsstring>()</argsstring>
+        <name>~CFuelModelParams</name>
+        <qualifiedname>CFuelModelParams::~CFuelModelParams</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a95b9a5dacad3f78737820ee723f67222" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char CFuelModelParams::getFuelModel</definition>
+        <argsstring>()</argsstring>
+        <name>getFuelModel</name>
+        <qualifiedname>CFuelModelParams::getFuelModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="31" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1ad2e1a5d0b6aa431f720cd8de0a4e84ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * CFuelModelParams::getDescription</definition>
+        <argsstring>()</argsstring>
+        <name>getDescription</name>
+        <qualifiedname>CFuelModelParams::getDescription</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="32" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a945643093d21fe9e8d93a6225dd6ee44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CFuelModelParams::getSG1</definition>
+        <argsstring>()</argsstring>
+        <name>getSG1</name>
+        <qualifiedname>CFuelModelParams::getSG1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="33" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a848f82456586f798c6451779116e805e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CFuelModelParams::getSG10</definition>
+        <argsstring>()</argsstring>
+        <name>getSG10</name>
+        <qualifiedname>CFuelModelParams::getSG10</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="34" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1ac0f322741dd1727b42f9ab44f2bebe03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CFuelModelParams::getSG100</definition>
+        <argsstring>()</argsstring>
+        <name>getSG100</name>
+        <qualifiedname>CFuelModelParams::getSG100</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="35" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1aabca0376a7bf73915578e8bbb1370f4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CFuelModelParams::getSG1000</definition>
+        <argsstring>()</argsstring>
+        <name>getSG1000</name>
+        <qualifiedname>CFuelModelParams::getSG1000</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="36" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a240c034868251647d4e967e9eac0d08d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CFuelModelParams::getSGHerb</definition>
+        <argsstring>()</argsstring>
+        <name>getSGHerb</name>
+        <qualifiedname>CFuelModelParams::getSGHerb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="37" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a006b663ea8b8583f1751b167dcf58c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CFuelModelParams::getSGWood</definition>
+        <argsstring>()</argsstring>
+        <name>getSGWood</name>
+        <qualifiedname>CFuelModelParams::getSGWood</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="38" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a0e8ac3b11e107c8993993ab0b28e6052" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CFuelModelParams::getL1</definition>
+        <argsstring>()</argsstring>
+        <name>getL1</name>
+        <qualifiedname>CFuelModelParams::getL1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="39" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a1876a768b1803484b7a4c7695a13469c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CFuelModelParams::getL10</definition>
+        <argsstring>()</argsstring>
+        <name>getL10</name>
+        <qualifiedname>CFuelModelParams::getL10</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="40" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1af332247c642a8019a470316fe5297079" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CFuelModelParams::getL100</definition>
+        <argsstring>()</argsstring>
+        <name>getL100</name>
+        <qualifiedname>CFuelModelParams::getL100</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="41" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a5463f5f201047576e9b88792cbb2c5de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CFuelModelParams::getL1000</definition>
+        <argsstring>()</argsstring>
+        <name>getL1000</name>
+        <qualifiedname>CFuelModelParams::getL1000</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="42" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a22143f7c388a50461e0f914f72dc2068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CFuelModelParams::getLHerb</definition>
+        <argsstring>()</argsstring>
+        <name>getLHerb</name>
+        <qualifiedname>CFuelModelParams::getLHerb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="43" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a1520056dca69d66a4542a26b2aed910f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CFuelModelParams::getLWood</definition>
+        <argsstring>()</argsstring>
+        <name>getLWood</name>
+        <qualifiedname>CFuelModelParams::getLWood</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="44" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1ac348ea8936baf5a73c1437b4e3d6e1d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CFuelModelParams::getDepth</definition>
+        <argsstring>()</argsstring>
+        <name>getDepth</name>
+        <qualifiedname>CFuelModelParams::getDepth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="45" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a76677945853ffc0e30a4901dbd8ef74a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CFuelModelParams::getMXD</definition>
+        <argsstring>()</argsstring>
+        <name>getMXD</name>
+        <qualifiedname>CFuelModelParams::getMXD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="46" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a7fb67e623e204bfe5ff807ce9f91ebb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CFuelModelParams::getHD</definition>
+        <argsstring>()</argsstring>
+        <name>getHD</name>
+        <qualifiedname>CFuelModelParams::getHD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="47" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a411bb5acf36a9541ebea88fef88a0077" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CFuelModelParams::getSCM</definition>
+        <argsstring>()</argsstring>
+        <name>getSCM</name>
+        <qualifiedname>CFuelModelParams::getSCM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="48" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a8577071f7b8e436dc7b354c52d393460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CFuelModelParams::getLDrought</definition>
+        <argsstring>()</argsstring>
+        <name>getLDrought</name>
+        <qualifiedname>CFuelModelParams::getLDrought</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="49" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a7392be6e2690b187ca6ddd22179aebb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CFuelModelParams::getWNDFC</definition>
+        <argsstring>()</argsstring>
+        <name>getWNDFC</name>
+        <qualifiedname>CFuelModelParams::getWNDFC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="50" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1aaa403793989b25221229ab2af082c152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setFuelModel</definition>
+        <argsstring>(char fm)</argsstring>
+        <name>setFuelModel</name>
+        <qualifiedname>CFuelModelParams::setFuelModel</qualifiedname>
+        <param>
+          <type>char</type>
+          <declname>fm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="51" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a3cb48e494ed7de2da9f77f404313ba45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setDescription</definition>
+        <argsstring>(const char *description)</argsstring>
+        <name>setDescription</name>
+        <qualifiedname>CFuelModelParams::setDescription</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="52" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1ad2287dfca5804a8ed9b95d9062db4000" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setSG1</definition>
+        <argsstring>(int sg1)</argsstring>
+        <name>setSG1</name>
+        <qualifiedname>CFuelModelParams::setSG1</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>sg1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="53" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a3cdc9f948d33504a372a3e981d6117c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setSG10</definition>
+        <argsstring>(int sg10)</argsstring>
+        <name>setSG10</name>
+        <qualifiedname>CFuelModelParams::setSG10</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>sg10</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="54" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1aed580e2bddf57b077689c0710221cbb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setSG100</definition>
+        <argsstring>(int sg100)</argsstring>
+        <name>setSG100</name>
+        <qualifiedname>CFuelModelParams::setSG100</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>sg100</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="55" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a583897e281f237e642b6434a9ed85d82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setSG1000</definition>
+        <argsstring>(int sg1000)</argsstring>
+        <name>setSG1000</name>
+        <qualifiedname>CFuelModelParams::setSG1000</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>sg1000</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="56" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a39955262a6db9056a2e22457c45f9e09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setSGHerb</definition>
+        <argsstring>(int sgHerb)</argsstring>
+        <name>setSGHerb</name>
+        <qualifiedname>CFuelModelParams::setSGHerb</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>sgHerb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="57" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a177ca8cac8d3ffb8b9a02d092c3e28fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setSGWood</definition>
+        <argsstring>(int sgWood)</argsstring>
+        <name>setSGWood</name>
+        <qualifiedname>CFuelModelParams::setSGWood</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>sgWood</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="58" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a684e7b64d6e5044f3a07ff88d9fd6d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setL1</definition>
+        <argsstring>(double l1)</argsstring>
+        <name>setL1</name>
+        <qualifiedname>CFuelModelParams::setL1</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>l1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="59" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1ae4cf6bdbc3ccb698deec83b23d6695d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setL10</definition>
+        <argsstring>(double l10)</argsstring>
+        <name>setL10</name>
+        <qualifiedname>CFuelModelParams::setL10</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>l10</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="60" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a140ab2972286a76f7db58d9b2dbf17aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setL100</definition>
+        <argsstring>(double l100)</argsstring>
+        <name>setL100</name>
+        <qualifiedname>CFuelModelParams::setL100</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>l100</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="61" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a536ab66206d35b989aff1150856cbe4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setL1000</definition>
+        <argsstring>(double l1000)</argsstring>
+        <name>setL1000</name>
+        <qualifiedname>CFuelModelParams::setL1000</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>l1000</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="62" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1ab7ca85824852a9e646973afb633526aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setLHerb</definition>
+        <argsstring>(double lHerb)</argsstring>
+        <name>setLHerb</name>
+        <qualifiedname>CFuelModelParams::setLHerb</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>lHerb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="63" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a7d06556c57f754f59e95879b69f56183" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setLWood</definition>
+        <argsstring>(double lWood)</argsstring>
+        <name>setLWood</name>
+        <qualifiedname>CFuelModelParams::setLWood</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>lWood</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="64" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1ac8f9f2654c91d3aa49a25a57f23f724a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setDepth</definition>
+        <argsstring>(double depth)</argsstring>
+        <name>setDepth</name>
+        <qualifiedname>CFuelModelParams::setDepth</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="65" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1ac81d510cdbf3a76ca4370a3346eaea79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setMXD</definition>
+        <argsstring>(int mxd)</argsstring>
+        <name>setMXD</name>
+        <qualifiedname>CFuelModelParams::setMXD</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>mxd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="66" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a4d109505b0d72aef68fb818a34b26211" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setHD</definition>
+        <argsstring>(int hd)</argsstring>
+        <name>setHD</name>
+        <qualifiedname>CFuelModelParams::setHD</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>hd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="67" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1ab1a59d8ffd5a9549f3506950c17e2098" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setSCM</definition>
+        <argsstring>(int scm)</argsstring>
+        <name>setSCM</name>
+        <qualifiedname>CFuelModelParams::setSCM</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="68" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a1bd1ed44944c0cebea7cb6fce0108b25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setLDrought</definition>
+        <argsstring>(double ldrought)</argsstring>
+        <name>setLDrought</name>
+        <qualifiedname>CFuelModelParams::setLDrought</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>ldrought</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="69" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_fuel_model_params_1a488f5dfaa352274c35580443c59c2f8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CFuelModelParams::setWNDFC</definition>
+        <argsstring>(double wndfc)</argsstring>
+        <name>setWNDFC</name>
+        <qualifiedname>CFuelModelParams::setWNDFC</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>wndfc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="70" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" line="25" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h" bodystart="26" bodyend="92"/>
+    <listofallmembers>
+      <member refid="class_c_fuel_model_params_1a519ab687e897141d8bf144b5d4f2a5e8" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>CFuelModelParams</name></member>
+      <member refid="class_c_fuel_model_params_1a5b9e5bb62c4d27b478587f4ebf9a7618" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>CFuelModelParams</name></member>
+      <member refid="class_c_fuel_model_params_1ac348ea8936baf5a73c1437b4e3d6e1d9" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getDepth</name></member>
+      <member refid="class_c_fuel_model_params_1ad2e1a5d0b6aa431f720cd8de0a4e84ee" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getDescription</name></member>
+      <member refid="class_c_fuel_model_params_1a95b9a5dacad3f78737820ee723f67222" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getFuelModel</name></member>
+      <member refid="class_c_fuel_model_params_1a7fb67e623e204bfe5ff807ce9f91ebb9" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getHD</name></member>
+      <member refid="class_c_fuel_model_params_1a0e8ac3b11e107c8993993ab0b28e6052" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getL1</name></member>
+      <member refid="class_c_fuel_model_params_1a1876a768b1803484b7a4c7695a13469c" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getL10</name></member>
+      <member refid="class_c_fuel_model_params_1af332247c642a8019a470316fe5297079" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getL100</name></member>
+      <member refid="class_c_fuel_model_params_1a5463f5f201047576e9b88792cbb2c5de" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getL1000</name></member>
+      <member refid="class_c_fuel_model_params_1a8577071f7b8e436dc7b354c52d393460" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getLDrought</name></member>
+      <member refid="class_c_fuel_model_params_1a22143f7c388a50461e0f914f72dc2068" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getLHerb</name></member>
+      <member refid="class_c_fuel_model_params_1a1520056dca69d66a4542a26b2aed910f" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getLWood</name></member>
+      <member refid="class_c_fuel_model_params_1a76677945853ffc0e30a4901dbd8ef74a" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getMXD</name></member>
+      <member refid="class_c_fuel_model_params_1a411bb5acf36a9541ebea88fef88a0077" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getSCM</name></member>
+      <member refid="class_c_fuel_model_params_1a945643093d21fe9e8d93a6225dd6ee44" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getSG1</name></member>
+      <member refid="class_c_fuel_model_params_1a848f82456586f798c6451779116e805e" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getSG10</name></member>
+      <member refid="class_c_fuel_model_params_1ac0f322741dd1727b42f9ab44f2bebe03" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getSG100</name></member>
+      <member refid="class_c_fuel_model_params_1aabca0376a7bf73915578e8bbb1370f4f" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getSG1000</name></member>
+      <member refid="class_c_fuel_model_params_1a240c034868251647d4e967e9eac0d08d" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getSGHerb</name></member>
+      <member refid="class_c_fuel_model_params_1a006b663ea8b8583f1751b167dcf58c29" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getSGWood</name></member>
+      <member refid="class_c_fuel_model_params_1a7392be6e2690b187ca6ddd22179aebb6" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>getWNDFC</name></member>
+      <member refid="class_c_fuel_model_params_1a5efb055506c7f4239eaa96bfcefae19f" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_DEPTH</name></member>
+      <member refid="class_c_fuel_model_params_1ab7799aa5e575c9359339904225e40db9" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_description</name></member>
+      <member refid="class_c_fuel_model_params_1ac9cd021a2d5e558c9203b8dedd06f106" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_fuelModel</name></member>
+      <member refid="class_c_fuel_model_params_1a14afe738fe8949d9d51251262361d1ff" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_HD</name></member>
+      <member refid="class_c_fuel_model_params_1aae4d278033c6490f4c5d4e120e263afc" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_L1</name></member>
+      <member refid="class_c_fuel_model_params_1acdd4d9d9feeb740d7d71cabae2231c9c" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_L10</name></member>
+      <member refid="class_c_fuel_model_params_1a25e335dae2f492497f72159961b2dc2c" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_L100</name></member>
+      <member refid="class_c_fuel_model_params_1a5795affd0e26b4852225d0a337844a14" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_L1000</name></member>
+      <member refid="class_c_fuel_model_params_1a2c1e1b49ab8505abb389102c668efd0f" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_LDROUGHT</name></member>
+      <member refid="class_c_fuel_model_params_1a453cebb171806c3ac82f474854fd062c" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_LHERB</name></member>
+      <member refid="class_c_fuel_model_params_1a48794c9a48fedac3eeb728ce6ca476ef" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_LWOOD</name></member>
+      <member refid="class_c_fuel_model_params_1a05bc3f473a60c10864bf571cdfd80419" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_MXD</name></member>
+      <member refid="class_c_fuel_model_params_1a80662f2554c534c497417a0fa84bef02" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_SCM</name></member>
+      <member refid="class_c_fuel_model_params_1abf7116632a09ee9790622b807423f83c" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_SG1</name></member>
+      <member refid="class_c_fuel_model_params_1afcf8c077fe5b3fd285fa5772b44b11af" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_SG10</name></member>
+      <member refid="class_c_fuel_model_params_1a9472d1a2a8256328a9bda641f8edad77" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_SG100</name></member>
+      <member refid="class_c_fuel_model_params_1ad682c827f722ab8efeb0ec3e914d4500" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_SG1000</name></member>
+      <member refid="class_c_fuel_model_params_1a321832caaf17356ed794b9a36635b9de" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_SGHERB</name></member>
+      <member refid="class_c_fuel_model_params_1ad7a9b9097f82fcf1283429ad33517f08" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_SGWOOD</name></member>
+      <member refid="class_c_fuel_model_params_1a8cdd4060eb4be79404634c0aa9ed4043" prot="private" virt="non-virtual"><scope>CFuelModelParams</scope><name>m_WNDFC</name></member>
+      <member refid="class_c_fuel_model_params_1ac8f9f2654c91d3aa49a25a57f23f724a" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setDepth</name></member>
+      <member refid="class_c_fuel_model_params_1a3cb48e494ed7de2da9f77f404313ba45" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setDescription</name></member>
+      <member refid="class_c_fuel_model_params_1aaa403793989b25221229ab2af082c152" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setFuelModel</name></member>
+      <member refid="class_c_fuel_model_params_1a4d109505b0d72aef68fb818a34b26211" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setHD</name></member>
+      <member refid="class_c_fuel_model_params_1a684e7b64d6e5044f3a07ff88d9fd6d5c" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setL1</name></member>
+      <member refid="class_c_fuel_model_params_1ae4cf6bdbc3ccb698deec83b23d6695d2" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setL10</name></member>
+      <member refid="class_c_fuel_model_params_1a140ab2972286a76f7db58d9b2dbf17aa" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setL100</name></member>
+      <member refid="class_c_fuel_model_params_1a536ab66206d35b989aff1150856cbe4d" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setL1000</name></member>
+      <member refid="class_c_fuel_model_params_1a1bd1ed44944c0cebea7cb6fce0108b25" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setLDrought</name></member>
+      <member refid="class_c_fuel_model_params_1ab7ca85824852a9e646973afb633526aa" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setLHerb</name></member>
+      <member refid="class_c_fuel_model_params_1a7d06556c57f754f59e95879b69f56183" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setLWood</name></member>
+      <member refid="class_c_fuel_model_params_1ac81d510cdbf3a76ca4370a3346eaea79" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setMXD</name></member>
+      <member refid="class_c_fuel_model_params_1ab1a59d8ffd5a9549f3506950c17e2098" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setSCM</name></member>
+      <member refid="class_c_fuel_model_params_1ad2287dfca5804a8ed9b95d9062db4000" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setSG1</name></member>
+      <member refid="class_c_fuel_model_params_1a3cdc9f948d33504a372a3e981d6117c7" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setSG10</name></member>
+      <member refid="class_c_fuel_model_params_1aed580e2bddf57b077689c0710221cbb0" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setSG100</name></member>
+      <member refid="class_c_fuel_model_params_1a583897e281f237e642b6434a9ed85d82" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setSG1000</name></member>
+      <member refid="class_c_fuel_model_params_1a39955262a6db9056a2e22457c45f9e09" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setSGHerb</name></member>
+      <member refid="class_c_fuel_model_params_1a177ca8cac8d3ffb8b9a02d092c3e28fe" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setSGWood</name></member>
+      <member refid="class_c_fuel_model_params_1a488f5dfaa352274c35580443c59c2f8d" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>setWNDFC</name></member>
+      <member refid="class_c_fuel_model_params_1aeb6d1bf447a3a118aba6f20bfb65438c" prot="public" virt="non-virtual"><scope>CFuelModelParams</scope><name>~CFuelModelParams</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

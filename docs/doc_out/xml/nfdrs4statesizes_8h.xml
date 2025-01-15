@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="nfdrs4statesizes_8h" kind="file" language="C++">
+    <compoundname>nfdrs4statesizes.h</compoundname>
+    <includedby refid="dfmcalcstate_8h" local="yes">D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h</includedby>
+    <includedby refid="lfmcalcstate_8h" local="yes">D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h</includedby>
+    <includedby refid="nfdrs4calcstate_8h" local="yes">D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/deadfuelmoisture.h</label>
+        <link refid="deadfuelmoisture_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/dfmcalcstate.h</label>
+        <link refid="dfmcalcstate_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h</label>
+        <link refid="lfmcalcstate_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/livefuelmoisture.h</label>
+        <link refid="livefuelmoisture_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4.h</label>
+        <link refid="nfdrs4_8h_source"/>
+      </node>
+      <node id="6">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4calcstate.h</label>
+        <link refid="nfdrs4calcstate_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4statesizes.h</label>
+        <link refid="nfdrs4statesizes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/deadfuelmoisture.cpp</label>
+        <link refid="deadfuelmoisture_8cpp"/>
+      </node>
+      <node id="9">
+        <label>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/livefuelmoisture.cpp</label>
+        <link refid="livefuelmoisture_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="nfdrs4statesizes_8h_1a3e4380d25b9c09f72511e4868539ee15" prot="public" static="no">
+        <name>FP_STORAGE_TYPE</name>
+        <initializer>float</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4statesizes.h" line="2" column="10" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4statesizes.h" bodystart="2" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FP_STORAGE_TYPE<sp/>float</highlight></codeline>
+    </programlisting>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/nfdrs4statesizes.h"/>
+  </compounddef>
+</doxygen>

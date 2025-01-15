@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="_dead_fuel_moisture" kind="page">
+    <compoundname>DeadFuelMoisture</compoundname>
+    <title>Dead Fuel Moisture</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_dead_fuel_moisture" kindref="compound">DeadFuelMoisture</ref> is an implementation of Nelson&apos;s dead fuel moisture model <ref refid="citations_1nelson2000" kindref="member">Nelson, Ralph M. Jr. 2000.</ref> as modified by <ref refid="citations_1bevins2005" kindref="member">Bevins, Collin D. 2005.</ref>.</para>
+<sect1 id="_dead_fuel_moisture_1dfmmods">
+<title>Dead Fuel Moisture Model Modifications</title><para>The <ref refid="class_dead_fuel_moisture" kindref="compound">DeadFuelMoisture</ref> class has been modified from Nelson <ref refid="citations_1nelson2000" kindref="member">Nelson, Ralph M. Jr. 2000.</ref> description as follows:</para>
+<para><ndash/> Moisture content and diffusivity computation time steps are independent of elapsed time since the previous update(), as recommended by Carlson 2003 <ref refid="citations_1carlson2003" kindref="member">Carlson, J. D. 2003.</ref>. <ndash/> Planar heat transfer rate, adsorption rate, rainfall runoff rate, and the number of moisture content and diffusivity computation steps are automatically derived from the stick radius using equations developed by Bevins <ref refid="citations_1bevins2005" kindref="member">Bevins, Collin D. 2005.</ref>. <ndash/> Precipitation is no longer divided into rainfall and rainstorm categories, making Nelson&apos;s storm transition value (stv) unnecessary. <ndash/> Rainfall events are no longer divided into first hour and subsequent hour categories, making Nelson&apos;s subsequent runoff factor (rai1) unnecessary. <ndash/> The following parameters are now assigned values independent of stick radius: <ndash/> maximum local moisture content is 0.60 g/g, <ndash/> desorption rate is 0.06 (cm3/cm2)/h. <ndash/> water film contribution is zero g/g.</para>
+<para>The above changes produce better stability and more accurate predictions for the available test data sets.</para>
+</sect1>
+<sect1 id="_dead_fuel_moisture_1dfmuse">
+<title>Using DeadFuelMoisture</title><para>This is a quick tutorial on using the <ref refid="class_dead_fuel_moisture" kindref="compound">DeadFuelMoisture</ref> class.</para>
+<sect2 id="_dead_fuel_moisture_1dfmuse1">
+<title>Step 1: Create A Dead Fuel Moisture Stick</title><para>To create a standard 1-h, 10-h, 100-h, or 1000-h time lag fuel moisture stick, call one of:</para>
+<para><ndash/> DeadFuelMoisture* dfm1h = createDeadFuelMoisture1( &quot;1-h stick name&quot; ); <ndash/> DeadFuelMoisture* dfm10h = createDeadFuelMoisture10( &quot;10-h stick name&quot; ); <ndash/> DeadFuelMoisture* dfm100h = createDeadFuelMoisture100( &quot;100-h stick name&quot; ); <ndash/> DeadFuelMoisture* dfm1000h = createDeadFuelMoisture1000( &quot;1000-h stick name&quot; );</para>
+<para>To create a stick with a specific radius:</para>
+<para><ndash/> <ref refid="class_dead_fuel_moisture" kindref="compound">DeadFuelMoisture</ref> *dfm = new <ref refid="class_dead_fuel_moisture" kindref="compound">DeadFuelMoisture</ref>( radius, &quot;stick name&quot; );</para>
+</sect2>
+<sect2 id="_dead_fuel_moisture_1dfmuse2">
+<title>Step 2: Customize the Dead Fuel Moisture Stick (Optional)</title><para>This step is only necessary if you are experimenting with the internals of the <ref refid="class_dead_fuel_moisture" kindref="compound">DeadFuelMoisture</ref> class. If not, go on to Step 3.</para>
+<para>Call any of the following to set internal stick parameters:</para>
+<para><ndash/> void setAdsorptionRate( double adsorptionRate ) ; <ndash/> void setDesorptionRate( double desorptionRate=0.06 ) ; <ndash/> void setDiffusivitySteps( int diffusivitySteps ); <ndash/> void setPlanarHeatTransferRate( double planarHeatTransferRate ) ; <ndash/> void setMaximumLocalMoisture( double localMaxMc=0.6 ) ; <ndash/> void setMoistureSteps( int moistureSteps ); <ndash/> void setRainfallRunoffFactor( double rainfallRunoffFactor ); <ndash/> void setRandomSeed( int randseed=0 ) ; <ndash/> void setStickDensity( double stickDensity=0.4 ); <ndash/> void setStickLength( double stickLength=41.0 ); <ndash/> void setStickNodes( int stickNodes=11 ) ; <ndash/> void setWaterFilmContribution( double waterFilm=0.0 ) ;</para>
+<para>Finally, you <emphasis>must</emphasis> call:</para>
+<para><ndash/> void initializeStick( void ) ;</para>
+</sect2>
+<sect2 id="_dead_fuel_moisture_1dfmuse3">
+<title>Step 3: Initialize the Stick and Its Environment (Optional)</title><para>If you wish to initialize the stick&apos;s internal temperature and moisture profile, call one of:</para>
+<para><ndash/> void initializeEnvironment( int year, int month, int day, int hour,
+    int minute, int second, double at, double rh, double sr, double rcum,
+    double ti, double hi, double wi, double bp ); <ndash/> void initializeEnvironment( double at, double rh, double sr, double rcum,
+    double ti, double hi, double wi, double bp );</para>
+<para>The first method initializes the stick date and time, and should be used if you are using the version of update() that takes the date and time as arguments.</para>
+<para>The second method should be called if you are using the version of update() that takes the elapsed time as an argument.</para>
+<para>If neither of these methods are invoked, the stick internal and external environments are initialized by the first update() invocation.</para>
+</sect2>
+<sect2 id="_dead_fuel_moisture_1dfmuse4">
+<title>Step 4: Update the Stick Environment</title><para>Call the update() method to update the stick&apos;s clock and external environment, and recalculate the stick&apos;s internal temperature and moisture profile. There are two overloaded versions of update():</para>
+<para><ndash/> bool update( int year, int month, int day, int hour, int minute,
+    int second, double at, double rh, double sW, double rcum ); <ndash/> bool update( double et, double at, double rh, double sW, double rcum );</para>
+<para>The first version determines elapsed time from the date and time arguments. Do not mix calls to the two versions for the same <ref refid="class_dead_fuel_moisture" kindref="compound">DeadFuelMoisture</ref> instance.</para>
+</sect2>
+<sect2 id="_dead_fuel_moisture_1dfmuse5">
+<title>Step 5: Get Stick Temperature and Moisture Content</title><para>To determine the current stick temperature and moisture content, call:</para>
+<para><ndash/> double meanMoisture(); <ndash/> double meanWtdMoisture(); <ndash/> double meanWtdTemperature(); <ndash/> double surfaceMoisture(); <ndash/> double surfaceTemperature();</para>
+<para>Temperatures are oC and moisture contents are g/g. </para>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/deadfuelmoisture.h"/>
+  </compounddef>
+</doxygen>

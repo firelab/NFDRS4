@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dir_6e89bf1d9f2ec201c9c602639fb32b4d" kind="dir">
+    <compoundname>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src</compoundname>
+    <innerfile refid="deadfuelmoisture_8cpp">deadfuelmoisture.cpp</innerfile>
+    <innerfile refid="dfmcalcstate_8cpp">dfmcalcstate.cpp</innerfile>
+    <innerfile refid="lfmcalcstate_8cpp">lfmcalcstate.cpp</innerfile>
+    <innerfile refid="livefuelmoisture_8cpp">livefuelmoisture.cpp</innerfile>
+    <innerfile refid="nfdrs4_8cpp">nfdrs4.cpp</innerfile>
+    <innerfile refid="nfdrs4calcstate_8cpp">nfdrs4calcstate.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/"/>
+  </compounddef>
+</doxygen>

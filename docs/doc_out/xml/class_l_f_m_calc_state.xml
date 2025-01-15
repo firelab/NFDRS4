@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="class_l_f_m_calc_state" kind="class" language="C++" prot="public">
+    <compoundname>LFMCalcState</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1abe3f6196e00f7d7f83b5e0bde3533676" prot="public" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t LFMCalcState::m_lastUpdateTime</definition>
+        <argsstring></argsstring>
+        <name>m_lastUpdateTime</name>
+        <qualifiedname>LFMCalcState::m_lastUpdateTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="17" column="8" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1ad717211e97c735be35549e8fdccddd35" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char LFMCalcState::m_UseVPDAvg</definition>
+        <argsstring></argsstring>
+        <name>m_UseVPDAvg</name>
+        <qualifiedname>LFMCalcState::m_UseVPDAvg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="18" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1ae1175ec58b5d2106870b401b2874b450" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char LFMCalcState::m_IsHerb</definition>
+        <argsstring></argsstring>
+        <name>m_IsHerb</name>
+        <qualifiedname>LFMCalcState::m_IsHerb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="19" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1ae3d574091822bb09ad50dc7bda718238" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char LFMCalcState::m_IsAnnual</definition>
+        <argsstring></argsstring>
+        <name>m_IsAnnual</name>
+        <qualifiedname>LFMCalcState::m_IsAnnual</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="20" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a1f2cea645d638d023bdf8ce67cbdcabf" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char LFMCalcState::m_LFIdaysAvg</definition>
+        <argsstring></argsstring>
+        <name>m_LFIdaysAvg</name>
+        <qualifiedname>LFMCalcState::m_LFIdaysAvg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="21" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a92f641ad5873b46d0bcfe0b47bbeb834" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char LFMCalcState::m_nDaysPrecip</definition>
+        <argsstring></argsstring>
+        <name>m_nDaysPrecip</name>
+        <qualifiedname>LFMCalcState::m_nDaysPrecip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="22" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a9fcc0f028ceb29a638f93c84884c99a0" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_Lat</definition>
+        <argsstring></argsstring>
+        <name>m_Lat</name>
+        <qualifiedname>LFMCalcState::m_Lat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="23" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a5702a8f9193b60f9e10ac364cec67c67" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_TminMin</definition>
+        <argsstring></argsstring>
+        <name>m_TminMin</name>
+        <qualifiedname>LFMCalcState::m_TminMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="24" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a088a9e80795da9316c1d3cb7d2478e4e" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_TminMax</definition>
+        <argsstring></argsstring>
+        <name>m_TminMax</name>
+        <qualifiedname>LFMCalcState::m_TminMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="25" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1aadf2537f689015777a5314eebdb56ab1" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_VPDMin</definition>
+        <argsstring></argsstring>
+        <name>m_VPDMin</name>
+        <qualifiedname>LFMCalcState::m_VPDMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="26" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a5fcde3c05f2b6e956bfa970c3494a7f0" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_VPDMax</definition>
+        <argsstring></argsstring>
+        <name>m_VPDMax</name>
+        <qualifiedname>LFMCalcState::m_VPDMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="27" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a346fe81ef14a159d5a207f9a2defb57d" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_DaylenMin</definition>
+        <argsstring></argsstring>
+        <name>m_DaylenMin</name>
+        <qualifiedname>LFMCalcState::m_DaylenMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="28" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a900b44cb3bde75c2acd64b14395c0560" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_DaylenMax</definition>
+        <argsstring></argsstring>
+        <name>m_DaylenMax</name>
+        <qualifiedname>LFMCalcState::m_DaylenMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="29" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a54d1bacb8937c025e06ac138dd3363e7" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_MaxGSI</definition>
+        <argsstring></argsstring>
+        <name>m_MaxGSI</name>
+        <qualifiedname>LFMCalcState::m_MaxGSI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="30" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1ae55b6f574e975b12f28f276ffa3d8781" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_GreenupThreshold</definition>
+        <argsstring></argsstring>
+        <name>m_GreenupThreshold</name>
+        <qualifiedname>LFMCalcState::m_GreenupThreshold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="31" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a51820068c0cd2d47fe4ba821d4146ada" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_MaxLFMVal</definition>
+        <argsstring></argsstring>
+        <name>m_MaxLFMVal</name>
+        <qualifiedname>LFMCalcState::m_MaxLFMVal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="32" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a2dcef08491d0c018a20bd46d1b645608" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_MinLFMVal</definition>
+        <argsstring></argsstring>
+        <name>m_MinLFMVal</name>
+        <qualifiedname>LFMCalcState::m_MinLFMVal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="33" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a977add9023b889bd296d579464200a9b" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_Slope</definition>
+        <argsstring></argsstring>
+        <name>m_Slope</name>
+        <qualifiedname>LFMCalcState::m_Slope</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="34" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a7703884247c3a346f9876b276bbbdbe7" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_Intercept</definition>
+        <argsstring></argsstring>
+        <name>m_Intercept</name>
+        <qualifiedname>LFMCalcState::m_Intercept</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="35" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1ac4bffd0048b7904487f80adfbfca366d" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char LFMCalcState::m_hasGreenedUpThisYear</definition>
+        <argsstring></argsstring>
+        <name>m_hasGreenedUpThisYear</name>
+        <qualifiedname>LFMCalcState::m_hasGreenedUpThisYear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="36" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1aeba9a3a45e02f8058d55e7c2ec484205" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char LFMCalcState::m_hasExceeded120ThisYear</definition>
+        <argsstring></argsstring>
+        <name>m_hasExceeded120ThisYear</name>
+        <qualifiedname>LFMCalcState::m_hasExceeded120ThisYear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="37" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1ae7a92f908d51fb85de5743ab3f05bc21" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char LFMCalcState::m_canIncreaseHerb</definition>
+        <argsstring></argsstring>
+        <name>m_canIncreaseHerb</name>
+        <qualifiedname>LFMCalcState::m_canIncreaseHerb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="38" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1affd9fd9e0812c2c1fe37fd691f326f8a" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::lastHerbFM</definition>
+        <argsstring></argsstring>
+        <name>lastHerbFM</name>
+        <qualifiedname>LFMCalcState::lastHerbFM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="39" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a11ed77d8e4a1dd2f774a28491e9a223b" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char LFMCalcState::m_useRTPrecip</definition>
+        <argsstring></argsstring>
+        <name>m_useRTPrecip</name>
+        <qualifiedname>LFMCalcState::m_useRTPrecip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="40" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1adf3d7de2262ee1b16aac00fdbe3b3c39" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_pcpMin</definition>
+        <argsstring></argsstring>
+        <name>m_pcpMin</name>
+        <qualifiedname>LFMCalcState::m_pcpMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="41" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1a860bd4b69fbedfc46d69c8491e32d923" prot="public" static="no" mutable="no">
+        <type>FP_STORAGE_TYPE</type>
+        <definition>FP_STORAGE_TYPE LFMCalcState::m_pcpMax</definition>
+        <argsstring></argsstring>
+        <name>m_pcpMax</name>
+        <qualifiedname>LFMCalcState::m_pcpMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="42" column="17" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_l_f_m_calc_state_1afbb67fd3c0573fd99169ff191467aaf6" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; FP_STORAGE_TYPE &gt;</type>
+        <definition>std::vector&lt;FP_STORAGE_TYPE&gt; LFMCalcState::m_qGSI</definition>
+        <argsstring></argsstring>
+        <name>m_qGSI</name>
+        <qualifiedname>LFMCalcState::m_qGSI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="44" column="13" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_l_f_m_calc_state_1abd3b81a0731ff763393d6af8a5383ffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LFMCalcState::LFMCalcState</definition>
+        <argsstring>()</argsstring>
+        <name>LFMCalcState</name>
+        <qualifiedname>LFMCalcState::LFMCalcState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="10" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/lfmcalcstate.cpp" bodystart="5" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_f_m_calc_state_1a2e0303972d691ca2b7e0314d293d11f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LFMCalcState::LFMCalcState</definition>
+        <argsstring>(const LFMCalcState &amp;rhs)</argsstring>
+        <name>LFMCalcState</name>
+        <qualifiedname>LFMCalcState::LFMCalcState</qualifiedname>
+        <param>
+          <type>const <ref refid="class_l_f_m_calc_state" kindref="compound">LFMCalcState</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="11" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/lfmcalcstate.cpp" bodystart="39" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_f_m_calc_state_1adf47cd99a24ef8d535c779639c3a554e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LFMCalcState::~LFMCalcState</definition>
+        <argsstring>()</argsstring>
+        <name>~LFMCalcState</name>
+        <qualifiedname>LFMCalcState::~LFMCalcState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="12" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/lfmcalcstate.cpp" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_f_m_calc_state_1a0a9a373a8c5613dac71343925a2e728d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool LFMCalcState::ReadState</definition>
+        <argsstring>(FILE *in)</argsstring>
+        <name>ReadState</name>
+        <qualifiedname>LFMCalcState::ReadState</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="14" column="7" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/lfmcalcstate.cpp" bodystart="78" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_l_f_m_calc_state_1a76d13f294cd2e75826899d931a0a66c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool LFMCalcState::SaveState</definition>
+        <argsstring>(FILE *out)</argsstring>
+        <name>SaveState</name>
+        <qualifiedname>LFMCalcState::SaveState</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="15" column="6" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/src/lfmcalcstate.cpp" bodystart="174" bodyend="268"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" line="7" column="1" bodyfile="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/lfmcalcstate.h" bodystart="8" bodyend="45"/>
+    <listofallmembers>
+      <member refid="class_l_f_m_calc_state_1affd9fd9e0812c2c1fe37fd691f326f8a" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>lastHerbFM</name></member>
+      <member refid="class_l_f_m_calc_state_1abd3b81a0731ff763393d6af8a5383ffa" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>LFMCalcState</name></member>
+      <member refid="class_l_f_m_calc_state_1a2e0303972d691ca2b7e0314d293d11f9" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>LFMCalcState</name></member>
+      <member refid="class_l_f_m_calc_state_1ae7a92f908d51fb85de5743ab3f05bc21" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_canIncreaseHerb</name></member>
+      <member refid="class_l_f_m_calc_state_1a900b44cb3bde75c2acd64b14395c0560" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_DaylenMax</name></member>
+      <member refid="class_l_f_m_calc_state_1a346fe81ef14a159d5a207f9a2defb57d" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_DaylenMin</name></member>
+      <member refid="class_l_f_m_calc_state_1ae55b6f574e975b12f28f276ffa3d8781" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_GreenupThreshold</name></member>
+      <member refid="class_l_f_m_calc_state_1aeba9a3a45e02f8058d55e7c2ec484205" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_hasExceeded120ThisYear</name></member>
+      <member refid="class_l_f_m_calc_state_1ac4bffd0048b7904487f80adfbfca366d" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_hasGreenedUpThisYear</name></member>
+      <member refid="class_l_f_m_calc_state_1a7703884247c3a346f9876b276bbbdbe7" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_Intercept</name></member>
+      <member refid="class_l_f_m_calc_state_1ae3d574091822bb09ad50dc7bda718238" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_IsAnnual</name></member>
+      <member refid="class_l_f_m_calc_state_1ae1175ec58b5d2106870b401b2874b450" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_IsHerb</name></member>
+      <member refid="class_l_f_m_calc_state_1abe3f6196e00f7d7f83b5e0bde3533676" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_lastUpdateTime</name></member>
+      <member refid="class_l_f_m_calc_state_1a9fcc0f028ceb29a638f93c84884c99a0" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_Lat</name></member>
+      <member refid="class_l_f_m_calc_state_1a1f2cea645d638d023bdf8ce67cbdcabf" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_LFIdaysAvg</name></member>
+      <member refid="class_l_f_m_calc_state_1a54d1bacb8937c025e06ac138dd3363e7" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_MaxGSI</name></member>
+      <member refid="class_l_f_m_calc_state_1a51820068c0cd2d47fe4ba821d4146ada" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_MaxLFMVal</name></member>
+      <member refid="class_l_f_m_calc_state_1a2dcef08491d0c018a20bd46d1b645608" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_MinLFMVal</name></member>
+      <member refid="class_l_f_m_calc_state_1a92f641ad5873b46d0bcfe0b47bbeb834" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_nDaysPrecip</name></member>
+      <member refid="class_l_f_m_calc_state_1a860bd4b69fbedfc46d69c8491e32d923" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_pcpMax</name></member>
+      <member refid="class_l_f_m_calc_state_1adf3d7de2262ee1b16aac00fdbe3b3c39" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_pcpMin</name></member>
+      <member refid="class_l_f_m_calc_state_1afbb67fd3c0573fd99169ff191467aaf6" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_qGSI</name></member>
+      <member refid="class_l_f_m_calc_state_1a977add9023b889bd296d579464200a9b" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_Slope</name></member>
+      <member refid="class_l_f_m_calc_state_1a088a9e80795da9316c1d3cb7d2478e4e" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_TminMax</name></member>
+      <member refid="class_l_f_m_calc_state_1a5702a8f9193b60f9e10ac364cec67c67" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_TminMin</name></member>
+      <member refid="class_l_f_m_calc_state_1a11ed77d8e4a1dd2f774a28491e9a223b" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_useRTPrecip</name></member>
+      <member refid="class_l_f_m_calc_state_1ad717211e97c735be35549e8fdccddd35" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_UseVPDAvg</name></member>
+      <member refid="class_l_f_m_calc_state_1a5fcde3c05f2b6e956bfa970c3494a7f0" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_VPDMax</name></member>
+      <member refid="class_l_f_m_calc_state_1aadf2537f689015777a5314eebdb56ab1" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>m_VPDMin</name></member>
+      <member refid="class_l_f_m_calc_state_1a0a9a373a8c5613dac71343925a2e728d" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>ReadState</name></member>
+      <member refid="class_l_f_m_calc_state_1a76d13f294cd2e75826899d931a0a66c1" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>SaveState</name></member>
+      <member refid="class_l_f_m_calc_state_1adf47cd99a24ef8d535c779639c3a554e" prot="public" virt="non-virtual"><scope>LFMCalcState</scope><name>~LFMCalcState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

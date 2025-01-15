@@ -161,12 +161,37 @@ class NFDRS4
 {
     public:
 		NFDRS4();
+		/// @brief NFDRS4 class constructor.
+		///
+		/// @param Lat The latitude of the simulation point (decimal degrees eg. 46.125)
+		/// @param FuelModel Fuel Model (Fuel model character code eg. "Y", "X", etc....
+		/// @param SlopeClass (1-5)		
+		/// @param AvgAnnPrecip  (Mean annual total precip (inches))
+		/// @param LT (Use Drought Fuel Load Transfer (boolean)
+		/// @param Cure (Use herbaceous curing (boolean))
+		/// @param IsAnnual (Treat herbs as annuals, only allow one greenup per year)
+		/// /// @return None
+		/// 
         NFDRS4(double Lat,char FuelModel,int SlopeClass, double AvgAnnPrecip,bool LT,bool Cure, bool IsAnnual);
         ~NFDRS4();
         // Member functions
 		//CreateFuelModels called in constructors
 		void CreateFuelModels();
 
+		/// @brief NFDRS4 class initialization function.
+		///
+		/// @param Lat  The latitude of the simulation point (decimal degrees eg. 46.125)
+		/// @param FuelModel Fuel Model (Fuel model character code eg. "Y", "X", etc....
+		/// @param SlopeClass (1-5)		
+		/// @param AvgAnnPrecip  (Mean annual total precip (inches))
+		/// @param LT (Use Drought Fuel Load Transfer (boolean)
+		/// @param Cure (Use herbaceous curing (boolean))
+		/// @param isAnnual (Treat herbs as annuals, only allow one greenup per year)
+		/// @param kbdiThreshold Starting KBDI value to beging drought fuel load additions (default is 100)
+		/// @param RegObsHour = 13 Regular observation hour (this is used to prompt the GSI-LFMC calculations to run once a day at this hour)
+		/// @param isReinit = false (Reinitialize flag (boolean): Set to true if Init is being called mid-calculation (Not normally used)
+		/// /// @return None
+		/// 
 		void Init(double Lat, char FuelModel, int SlopeClass, double AvgAnnPrecip, bool LT, bool Cure, bool isAnnual, int kbdiThreshold, int RegObsHour = 13, bool isReinit = false);
  	   void Update(int Year, int Month, int Day, int Hour, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double PPTAmt, double pcp24, double SolarRad, double WS, bool SnowDay, int RegObsHr);
        void Update(int Year, int Month, int Day, int Hour, double Temp, double RH, double PPTAmt, double SolarRad, double WS, bool SnowDay);

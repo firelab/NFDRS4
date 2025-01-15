@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dir_86d896f802cda5991ebae8024109ee05" kind="dir">
+    <compoundname>D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/CMakeFiles/NFDRS4.dir/src</compoundname>
+    <innerfile refid="deadfuelmoisture_8cpp_8obj_8d">deadfuelmoisture.cpp.obj.d</innerfile>
+    <innerfile refid="dfmcalcstate_8cpp_8obj_8d">dfmcalcstate.cpp.obj.d</innerfile>
+    <innerfile refid="lfmcalcstate_8cpp_8obj_8d">lfmcalcstate.cpp.obj.d</innerfile>
+    <innerfile refid="livefuelmoisture_8cpp_8obj_8d">livefuelmoisture.cpp.obj.d</innerfile>
+    <innerfile refid="nfdrs4_8cpp_8obj_8d">nfdrs4.cpp.obj.d</innerfile>
+    <innerfile refid="nfdrs4calcstate_8cpp_8obj_8d">nfdrs4calcstate.cpp.obj.d</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/CMakeFiles/NFDRS4.dir/src/"/>
+  </compounddef>
+</doxygen>

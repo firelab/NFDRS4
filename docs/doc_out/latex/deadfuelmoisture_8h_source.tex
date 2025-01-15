@@ -1,0 +1,371 @@
+\doxysection{deadfuelmoisture.\+h}
+\hypertarget{deadfuelmoisture_8h_source}{}\label{deadfuelmoisture_8h_source}\index{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/deadfuelmoisture.h@{D:/Source/PublicGithub/NFDRS4/lib/NFDRS4/include/deadfuelmoisture.h}}
+\mbox{\hyperlink{deadfuelmoisture_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifndef\ \_DEADFUELMOISTURE\_H\_INCLUDED\_}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ \_DEADFUELMOISTURE\_H\_INCLUDED\_}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}dfmcalcstate.h"{}}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ Standard\ include\ files}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ Custom\ include\ files}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifdef\ HAVE\_CONFIG\_H}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <config.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ Custom\ include\ files}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00180\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ }
+\DoxyCodeLine{00181\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ DFM\_State\_None\ =\ 0,}
+\DoxyCodeLine{00183\ \ \ \ \ DFM\_State\_Adsorption\ =\ 1,}
+\DoxyCodeLine{00184\ \ \ \ \ DFM\_State\_Desorption\ =\ 2,}
+\DoxyCodeLine{00185\ \ \ \ \ DFM\_State\_Condensation1\ =\ 3,}
+\DoxyCodeLine{00186\ \ \ \ \ DFM\_State\_Condensation2\ =\ 4,}
+\DoxyCodeLine{00187\ \ \ \ \ DFM\_State\_Evaporation\ =\ 5,}
+\DoxyCodeLine{00188\ \ \ \ \ DFM\_State\_Rainfall1\ =\ 6,}
+\DoxyCodeLine{00189\ \ \ \ \ DFM\_State\_Rainfall2\ =\ 7,}
+\DoxyCodeLine{00190\ \ \ \ \ DFM\_State\_Rainstorm\ =\ 8,}
+\DoxyCodeLine{00191\ \ \ \ \ DFM\_State\_Stagnation\ =\ 9,}
+\DoxyCodeLine{00192\ \ \ \ \ DFM\_State\_Error\ =\ 10}
+\DoxyCodeLine{00193\ \}\ DFM\_State;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}}
+\DoxyCodeLine{00197\ \{}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Aks;\ \ \ \ \textcolor{comment}{//\ =\ 2.0e-\/13;}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00207\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Alb;\ \ \ \ \textcolor{comment}{//\ =\ 0.6;}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00212\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Alpha;\ \ \textcolor{comment}{//\ =\ 0.25;}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00217\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Ap;\ \ \ \ \ \textcolor{comment}{//\ =\ 0.000772;}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00222\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Aw;\ \ \ \ \ \textcolor{comment}{//\ =\ 0.8;}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00227\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Eps;\ \ \ \ \textcolor{comment}{//\ =\ 0.85;}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Hfs;\ \ \ \ \textcolor{comment}{//\ =\ 0.99;}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00237\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Kelvin;\ \textcolor{comment}{//\ =\ 273.2;}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Pi;\ \ \ \ \ \textcolor{comment}{//\ =\ 3.141592654;}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00247\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Pr;\ \ \ \ \ \textcolor{comment}{//\ =\ 0.7;}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00252\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Sbc;\ \ \ \ \textcolor{comment}{//\ =\ 1.37e-\/12;}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Sc;\ \ \ \ \ \textcolor{comment}{//\ =\ 0.58;}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00263\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Smv;\ \ \ \ \textcolor{comment}{//\ =\ 94.743;}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00268\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ St;\ \ \ \ \ \textcolor{comment}{//\ =\ 72.8;}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00273\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Tcd;\ \ \ \ \textcolor{comment}{//\ =\ 6.;}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00278\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Tcn;\ \ \ \ \textcolor{comment}{//\ =\ 3.;}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00283\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Thdiff;\ \textcolor{comment}{//\ =\ 8.0;}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00288\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Wl;\ \ \ \ \ \textcolor{comment}{//\ =\ 0.0023;}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00291\ \textcolor{comment}{//\ Stick-\/independent\ intermediates\ derived\ in\ Fms\_CreateConstant().}}
+\DoxyCodeLine{00292\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00297\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Srf;\ \ \ \ \textcolor{comment}{//\ =\ 14.82052;}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00302\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Wsf;\ \ \ \ \textcolor{comment}{//\ =\ 4.60517;}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00311\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Hrd;\ \ \ \ \textcolor{comment}{//\ =\ 0.116171;}}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00320\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Hrn;\ \ \ \ \textcolor{comment}{//\ =\ 0.112467;}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00326\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Sir;\ \ \ \ \textcolor{comment}{//\ =\ 0.0714285;}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00333\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Scr;\ \ \ \ \textcolor{comment}{//\ =\ 0.285714;}}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00340\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00344\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ DFM\_States\ =\ 11;}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \textcolor{comment}{//\ Friends}}
+\DoxyCodeLine{00347\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&operator<<(std::ostream\&\ output,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}\&\ r\ );}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\ \&operator>>(std::istream\&\ input,\ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}\&\ r\ );}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \textcolor{comment}{//\ Public\ methods}}
+\DoxyCodeLine{00352\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{comment}{//\ Constructors}}
+\DoxyCodeLine{00354\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}(\ \textcolor{keywordtype}{double}\ radius=0.64,\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}=\textcolor{stringliteral}{"{}"{}}\ )\ ;}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{comment}{//\ Virtual\ destructor\ permits\ subclassing}}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dead_fuel_moisture_a75d2dbe6a187396527c3aa14c8669374}{\string~DeadFuelMoisture}}(\ \textcolor{keywordtype}{void}\ )\ ;}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{comment}{//\ Copy\ constructor}}
+\DoxyCodeLine{00358\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}\&\ rhs\ )\ ;}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{comment}{//\ Assignment\ operator}}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}\&\ \mbox{\hyperlink{class_dead_fuel_moisture_a8317a670602ff7a8a907fc4c466e6870}{operator=}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}\&\ rhs\ )\ ;}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_dead_fuel_moisture_adc75c2d8be220236beefd8129806effd}{className}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{comment}{//\ Static\ convenience\ functions}}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}*\ createDeadFuelMoisture1(\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}=\textcolor{stringliteral}{"{}"{}}\ )\ ;}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}*\ createDeadFuelMoisture10(\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}=\textcolor{stringliteral}{"{}"{}}\ )\ ;}
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}*\ createDeadFuelMoisture100(\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}=\textcolor{stringliteral}{"{}"{}}\ )\ ;}
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_dead_fuel_moisture}{DeadFuelMoisture}}*\ createDeadFuelMoisture1000(\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}=\textcolor{stringliteral}{"{}"{}}\ )\ ;}
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_aa2b6dcba8e0e0464dc2c9042aab926bd}{deriveAdsorptionRate}}(\ \textcolor{keywordtype}{double}\ radius\ )\ ;}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_aa9b2da5e0370bb062946a612d9c76417}{deriveDiffusivitySteps}}(\ \textcolor{keywordtype}{double}\ radius\ )\ ;}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_afa052d97c6e89f6e975ec40456f27d35}{deriveMoistureSteps}}(\ \textcolor{keywordtype}{double}\ radius\ )\ ;}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a2b0237de11984743cf046cd3b9a45653}{derivePlanarHeatTransferRate}}(\ \textcolor{keywordtype}{double}\ radius\ )\ ;}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_af960d6d577dd9aae28268556b2e1656b}{deriveRainfallRunoffFactor}}(\ \textcolor{keywordtype}{double}\ radius\ )\ ;}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_ae1835a05a1e2165ae11d7b78cbcd27ae}{deriveStickNodes}}(\ \textcolor{keywordtype}{double}\ radius\ )\ ;}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a3b8498c6f9dd1209a71b31a668b720af}{uniformRandom}}(\ \textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ max\ )\ ;}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{comment}{//\ Methods\ for\ initializing\ the\ dead\ fuel\ stick\ and\ its\ environment}}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33}{initializeEnvironment}}(}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ year,}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ month,}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ day,}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ hour,}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ minute,}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ second,}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ at,}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ rh,}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ sr,}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ rcum,}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ ti,}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ hi,}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ wi,}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ bp=0.0218}
+\DoxyCodeLine{00391\ \ \ \ \ );}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a5d7e5ca19093677c3ea7c9d3893a1f33}{initializeEnvironment}}(}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ at,}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ rh,}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ sr,}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ rcum,}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ ti,}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ hi,}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ wi,}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ bp=0.0218}
+\DoxyCodeLine{00401\ \ \ \ \ );}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{comment}{//\ Methods\ for\ updating\ the\ fuel\ moisture\ condition}}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update}}(}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ year,}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ month,}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ day,}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ hour,}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ minute,}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ second,}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ at,}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ rh,}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ sW,}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ rcum,}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ bpr=0.0218,}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ prcpAsAmnt\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{00417\ \ \ \ \ )\ ;}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dead_fuel_moisture_a4746107fb764a152c86a2d65530bc4e6}{update}}(}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ et,}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ at,}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ rh,}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ sW,}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ rcum,}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ bpr=0.0218,}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ prcpAsAmnt\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{00426\ \ \ \ \ )\ ;}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_ae9f35a88ff35ce2a2e826a228bcc6740}{zero}}(\ \textcolor{keywordtype}{void}\ )\ ;}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{comment}{//\ Methods\ to\ access\ update()\ results}}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a8c01ee5143395c34027cf372cda580f2}{elapsedTime}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_afedbf690e873ed73adc1350820386650}{initialized}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00432\ \ \ \ \ std::string\ \mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a1eca4a133de0836b7f49809acfeb411f}{meanMoisture}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a41288d4072c396d959b9f212ea5c868e}{meanWtdMoisture}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_af1062728fc8b6df70ca4660f72783998}{medianRadialMoisture}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a453ce81d6d0ba9d4ce73129c59f73452}{meanWtdTemperature}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a5faa6c8cfc5b43c315f1ff8f93c7ff3a}{pptRate}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dead_fuel_moisture_ae4d7efab6198134758706a2ef4e45ca7}{state}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_dead_fuel_moisture_a9aa34f74d33b473633c0e640e9cefe2f}{stateName}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a45db9c0fe5035e815d94abd53a3a0641}{surfaceMoisture}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_aab5c9670cabbc2cda4ea2a30b4466f80}{surfaceTemperature}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keywordtype}{long}\ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_a98eb38730baffb5f2535c2ba8d59cefe}{updates}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \ \ \ \ \textcolor{comment}{//\ Methods\ to\ access\ model\ parameters}}
+\DoxyCodeLine{00446\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_ae9d3802f75938aa853b9f9dfc3a1ced7}{adsorptionRate}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00447\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_ac2421beaae88b27b370fab42c5230192}{desorptionRate}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_af325e2676e70e9ce355a2d73dc5cbfa5}{diffusivitySteps}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_ac2db8237057baa92d96e9fbb9311bb1d}{maximumLocalMoisture}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_a3765d6f27160fc2f9dbd5d75b6ad8bde}{moistureSteps}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a5d91e3db37f99d784a5f86f3ffb29559}{planarHeatTransferRate}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a53fc3e78cd9f69f84730c4643e88251a}{rainfallRunoffFactor}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a310579f10acabb20414599b0751a29d7}{stickDensity}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a3b9e1595ddb846bd0056077988f349c8}{stickLength}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_a86296efb7e6f27334df9b3f5d5b4ae51}{stickNodes}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a0dbf829327feb16730696f29cba3cb09}{waterFilmContribution}}(\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{comment}{//\ For\ those\ who\ want\ to\ experiment\ with\ the\ model\ parameters...}}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_af1aea194ca002e88620657680b1cc668}{initializeStick}}(\ \textcolor{keywordtype}{void}\ )\ ;}
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a41ecec10c0309a304b365bac0dd0c6b2}{setAdsorptionRate}}(\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_ae9d3802f75938aa853b9f9dfc3a1ced7}{adsorptionRate}}\ )\ ;}
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_ab03c63a5da350d85aa7a87e01a7a8151}{setAllowRainstorm}}(\ \textcolor{keywordtype}{bool}\ allow=\textcolor{keyword}{true}\ )\ ;}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a43b7a07f731f76c2ce20d6d01f5263e2}{setAllowRainfall2}}(\ \textcolor{keywordtype}{bool}\ allow=\textcolor{keyword}{true}\ )\ ;}
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a2344d3de8d8687e1b6d57e0cd47cfabe}{setDesorptionRate}}(\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_ac2421beaae88b27b370fab42c5230192}{desorptionRate}}=0.06\ )\ ;}
+\DoxyCodeLine{00464\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a245657398705b47bd1839817359dfc40}{setDiffusivitySteps}}(\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dead_fuel_moisture_af325e2676e70e9ce355a2d73dc5cbfa5}{diffusivitySteps}}\ );}
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a8a7ab69e0c6e7cf1b8fec86e2aea8c2f}{setMaximumLocalMoisture}}(\ \textcolor{keywordtype}{double}\ localMaxMc=0.6\ )\ ;}
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a705bdb0f79b5585b7d4d1ac051a8fb3f}{setMoistureSteps}}(\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dead_fuel_moisture_a3765d6f27160fc2f9dbd5d75b6ad8bde}{moistureSteps}}\ );}
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a07c7ae6bbceefbedbcc722d703e54a7d}{setPertubateColumn}}(\ \textcolor{keywordtype}{bool}\ pertubate=\textcolor{keyword}{true}\ )\ ;}
+\DoxyCodeLine{00468\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_af6d83322cc111426a01983717af08077}{setPlanarHeatTransferRate}}(\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a5d91e3db37f99d784a5f86f3ffb29559}{planarHeatTransferRate}}\ )\ ;}
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a1439d17c94259f61c7929bd908905ac6}{setRainfallRunoffFactor}}(\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a53fc3e78cd9f69f84730c4643e88251a}{rainfallRunoffFactor}}\ );}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a3a1326dacf769eb705e3aedc94ba21d9}{setRandomSeed}}(\ \textcolor{keywordtype}{int}\ randseed=0\ )\ ;}
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_ae7edacca19522e18a9123491331e0755}{setRampRai0}}(\ \textcolor{keywordtype}{bool}\ ramp=\textcolor{keyword}{true}\ )\ ;}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a50eaae9356d01e8e423693425fa7a17e}{setStickDensity}}(\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a310579f10acabb20414599b0751a29d7}{stickDensity}}=0.4\ );}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a59011a0bec6368a3db4fbcec6bbe757b}{setStickLength}}(\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_a3b9e1595ddb846bd0056077988f349c8}{stickLength}}=41.0\ );}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a8704fd1a9cc73fba78b13ac32d353853}{setStickNodes}}(\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dead_fuel_moisture_a86296efb7e6f27334df9b3f5d5b4ae51}{stickNodes}}=11\ )\ ;}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_ad9566d785add658a7e901a97534db484}{setWaterFilmContribution}}(\ \textcolor{keywordtype}{double}\ waterFilm=0.0\ )\ ;}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_a41f960cc972d0f5be384492289fd9546}{setMoisture}}(\textcolor{keywordtype}{float}\ initFM);}
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dead_fuel_moisture_ad031ca0debab1ef9561d230be866879f}{eqmc}}(\textcolor{keywordtype}{double}\ fTemp,\ \textcolor{keywordtype}{double}\ fRH);}
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeParameters(\ \textcolor{keywordtype}{double}\ radius,\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}}\ )\ ;}
+\DoxyCodeLine{00479\ \ \ \ \ \mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}\ GetState();}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordtype}{bool}\ SetState(\mbox{\hyperlink{class_d_f_m_calc_state}{DFMCalcState}}\ \mbox{\hyperlink{class_dead_fuel_moisture_ae4d7efab6198134758706a2ef4e45ca7}{state}});}
+\DoxyCodeLine{00481\ \textcolor{comment}{//\ Protected\ methods}}
+\DoxyCodeLine{00482\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dead_fuel_moisture_acddefa26df19357465f5a2fc18d5a599}{diffusivity}}(\ \textcolor{keywordtype}{double}\ bp\ )\ ;}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeParameters(}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_dead_fuel_moisture_a0c060161940dd4e81a12bc8bda374d08}{name}},}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ radius,}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_a86296efb7e6f27334df9b3f5d5b4ae51}{stickNodes}},}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_a3765d6f27160fc2f9dbd5d75b6ad8bde}{moistureSteps}},}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_af325e2676e70e9ce355a2d73dc5cbfa5}{diffusivitySteps}},}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a5d91e3db37f99d784a5f86f3ffb29559}{planarHeatTransferRate}},}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ae9d3802f75938aa853b9f9dfc3a1ced7}{adsorptionRate}},}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a53fc3e78cd9f69f84730c4643e88251a}{rainfallRunoffFactor}},}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a3b9e1595ddb846bd0056077988f349c8}{stickLength}}=41.,}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a310579f10acabb20414599b0751a29d7}{stickDensity}}=0.4,}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a0dbf829327feb16730696f29cba3cb09}{waterFilmContribution}}=0.,}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ localMaxMc=0.6,}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ac2421beaae88b27b370fab42c5230192}{desorptionRate}}=0.06,}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ rainfallAdjustmentFactor=0.5,}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \ stormTransitionValue=99999.,}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ randseed=0,}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ allowRainfall2=\textcolor{keyword}{false},}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ allowRainstorm=\textcolor{keyword}{false},}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ pertubateColumn=\textcolor{keyword}{false},}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ rampRai0=\textcolor{keyword}{false}}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ )\ ;}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \textcolor{comment}{//\ Protected\ data\ members}}
+\DoxyCodeLine{00509\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{comment}{//SemTime\ m\_semTime;\ \ //!<\ Current\ observation's\ date\ and\ time.}}
+\DoxyCodeLine{00511\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Jday;}
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Year;}
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Month;}
+\DoxyCodeLine{00514\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Day;}
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Hour;}
+\DoxyCodeLine{00516\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Min;}
+\DoxyCodeLine{00517\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Sec;}
+\DoxyCodeLine{00518\ \ \ \ \ time\_t\ obstime;}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \ \ \ \ \textcolor{comment}{//\ Stick\ and\ model\ parameters\ defined\ or\ inferred\ during\ construction:}}
+\DoxyCodeLine{00521\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a73a248b5ff434e6b599e4d56135a077d}{m\_density}};\ \ }
+\DoxyCodeLine{00522\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_ae7095f74ef42967ab6d12ec39c386e4d}{m\_dSteps}};\ \ \ }
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a221c72ae93c1142ab064eaa501f9a789}{m\_hc}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00524\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_aa226a2ac01b271740d62db99838b86fe}{m\_length}};\ \ \ }
+\DoxyCodeLine{00525\ \ \ \ \ std::string\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ac27468a7000225676a26530a5ab58876}{m\_name}};\ \ \ \ \ }
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_aa95bed309db6f0e811d83bd8346d7997}{m\_nodes}};\ \ \ \ }
+\DoxyCodeLine{00527\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a1b825ee89f9b496abc4b7905be3a5f51}{m\_radius}};\ \ \ }
+\DoxyCodeLine{00528\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a216b9916bcfb1c476c242168db1a7e30}{m\_rai0}};\ \ \ \ \ }
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ae9ed8d702e8e9d81d71b49a308e4429d}{m\_rai1}};\ \ \ \ \ }
+\DoxyCodeLine{00530\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a5f01be8a94cd9db773e926a70582bb54}{m\_stca}};\ \ \ \ \ }
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_aefe3d6907f83cd65218d4e8b2ec4bdcf}{m\_stcd}};\ \ \ \ \ }
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_ac30b8d7aa15f000fbb1b6cdd0dbd7d2c}{m\_mSteps}};\ \ \ }
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a129cf5c29da4bc3ceefd523abc666642}{m\_stv}};\ \ \ \ \ \ }
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a6395d043e3d5dcb533b8f9d21230a691}{m\_wfilmk}};\ \ \ }
+\DoxyCodeLine{00535\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ac9075ffa494f19ee3e7e5b7c107fc81e}{m\_wmx}};\ \ \ \ \ \ }
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \ \ \ \ \textcolor{comment}{//\ Configuration\ parameters}}
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ m\_allowRainfall2;\ \ \ \textcolor{comment}{//\ If\ TRUE,\ applies\ Nelson's\ logic\ for\ rainfall\ runoff\ after\ the\ first\ hour}}
+\DoxyCodeLine{00539\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ m\_allowRainstorm;\ \ \ \textcolor{comment}{//\ If\ TRUE,\ applies\ Nelson's\ logic\ for\ rainstorm\ transition\ and\ state}}
+\DoxyCodeLine{00540\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ m\_pertubateColumn;\ \ \textcolor{comment}{//\ If\ TRUE,\ the\ continuous\ liquid\ column\ condition\ get\ pertubated}}
+\DoxyCodeLine{00541\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ m\_rampRai0;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ TRUE,\ used\ Bevins'\ ramping\ of\ rainfall\ runoff\ factor\ rather\ than\ Nelsons\ rai0\ *=\ 0.15}}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00543\ \ \ \ \ \textcolor{comment}{//\ Intermediate\ stick\ variables\ derived\ in\ initializeStick()}}
+\DoxyCodeLine{00544\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_abecf5bddd562ffcc8af26e94ad9bea99}{m\_dx}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00545\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a77dd9eea161bcf7118095f11d0f98be6}{m\_wmax}};\ \ \ \ \ }
+\DoxyCodeLine{00546\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_afddf141aaa71ff135686fbc1625fcbdf}{m\_x}};\ }
+\DoxyCodeLine{00547\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_ad38d47ec2be741ee337a7f3cea68813e}{m\_v}};\ }
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \ \ \ \ \textcolor{comment}{//\ Optimization\ factors\ derived\ in\ initializeStick()}}
+\DoxyCodeLine{00550\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a8df0ebfaa6821266d2fb49ef24374516}{m\_amlf}};\ \ \ \ \ }
+\DoxyCodeLine{00551\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a1abc2c5a56eb30b8b1a4c9fa3a2ca6de}{m\_capf}};\ \ \ \ \ }
+\DoxyCodeLine{00552\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ac2571ce997589a18469ebbf84cef2d9d}{m\_hwf}};\ \ \ \ \ \ }
+\DoxyCodeLine{00553\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_aaa3f46c3b5d90b89752835beaa68b44f}{m\_dx\_2}};\ \ \ \ \ }
+\DoxyCodeLine{00554\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a433fd304ed8f97c1aaf9675921787115}{m\_vf}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \ \ \textcolor{comment}{//\ Environmental\ variables\ provided\ to\ initializeEnvironment():}}
+\DoxyCodeLine{00557\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a7f38b29f788aa0e8e3eb0ab65a04b7d9}{m\_bp0}};\ \ \ \ \ \ }
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a272c85c15c79c4d9f5f20935a961ca28}{m\_ha0}};\ \ \ \ \ \ }
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_aa92ff65aed8ac5d445489d61f0904330}{m\_rc0}};\ \ \ \ \ \ }
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ad6b1b046b6051067301a110f99f9ef84}{m\_sv0}};\ \ \ \ \ \ }
+\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a1a1c36cb455535b0fb026f1ac67710f0}{m\_ta0}};\ \ \ \ \ \ }
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_a65aa84ff477d84bbec782c5f05e0e785}{m\_init}};\ \ \ \ \ }
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \ \ \ \ \textcolor{comment}{//\ Environmental\ variables\ provided\ to\ update():}}
+\DoxyCodeLine{00565\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a1203a439428bc4b6148f16705233cff6}{m\_bp1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a41aa3bdd0c365b36b41390140d2c3a45}{m\_et}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ac25528f285398e59300ac7d1791e1d45}{m\_ha1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00568\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a9d23a92bbec63478a3c5155325e080e8}{m\_rc1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00569\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_aaac33602b16e0bfbb0b3bc44f7e3cbf1}{m\_sv1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a6b2eddcbd49409aee495966f86dc3235}{m\_ta1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00572\ \ \ \ \ \textcolor{comment}{//\ Intermediate\ environmental\ variables\ derived\ by\ update():}}
+\DoxyCodeLine{00573\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_afbeecfa8977fb81e1fb042458c46d0ca}{m\_ddt}};\ \ \ \ \ \ }
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_abe1f5e25750ecb5f771d215c23129ebe}{m\_mdt}};\ \ \ \ \ \ }
+\DoxyCodeLine{00575\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ae41498df4d126abb1519c75ff0b5d500}{m\_mdt\_2}};\ \ \ \ }
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a419ac52d334b5ce52618542de4660a85}{m\_pptrate}};\ \ }
+\DoxyCodeLine{00577\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_abffa3c90d94e61dacf6914bdfd8e1fa3}{m\_ra0}};\ \ \ \ \ \ }
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ac70c8137d59e9511c871980a15276477}{m\_ra1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00579\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_aca0c8cf1873fc90965fc260d3e0b8df0}{m\_rdur}};\ \ \ \ \ }
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a99e5fe4b1437ef83cccf48f8d2fd849a}{m\_sf}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00582\ \ \ \ \ \textcolor{comment}{//\ Stick\ moisture\ condition\ variables\ derived\ in\ update():}}
+\DoxyCodeLine{00583\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a2b9f253da74614c8e5636eb37f04caad}{m\_hf}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00584\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a7317ac4a21ed69cbb264c33c303a1160}{m\_wsa}};\ \ \ \ \ \ }
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_ae9ed5b2f6606e9a56a2593237761f9dd}{m\_sem}};\ \ \ \ \ \ }
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a47f1c59e6dcc4a352169e3fc2bc90c83}{m\_wfilm}};\ \ \ \ }
+\DoxyCodeLine{00587\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_dead_fuel_moisture_a36e0ce672c819114097bae568fcb4fe9}{m\_elapsed}};\ \ }
+\DoxyCodeLine{00588\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_a1ccea8741286d352af8fb0d21e7a5c59}{m\_t}};\ }
+\DoxyCodeLine{00589\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_a1e81a9af0b50ed12cde1eae217bd38df}{m\_s}};\ }
+\DoxyCodeLine{00590\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_a7c7cc53692281e448fb9f5029f9aef40}{m\_d}};\ }
+\DoxyCodeLine{00591\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_abbd29164ac91fbe564e92077c40a6948}{m\_w}};\ }
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keywordtype}{long}\ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_a9ec41879bc9a47362c6cf8f95a93fdbc}{m\_updates}};\ \ }
+\DoxyCodeLine{00593\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dead_fuel_moisture_a784e800d40445780d3b6793386ee82e2}{m\_state}};\ \ }
+\DoxyCodeLine{00594\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_dead_fuel_moisture_a488b2dc5d16d77543e0d91d83ca220ee}{m\_randseed}};\ }
+\DoxyCodeLine{00595\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_ac31e90481310538ac838ea228943fdc7}{m\_Ttold}};\ }
+\DoxyCodeLine{00596\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_aff2ad22f4f18d67134b29d7292982037}{m\_Tsold}};\ }
+\DoxyCodeLine{00597\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_ac14bc458bee6f8fc1671c70f53e34fbd}{m\_Twold}};\ }
+\DoxyCodeLine{00598\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_a645700c1d4eedd07389b84d8c7d61fb4}{m\_Tv}};\ \ \ \ }
+\DoxyCodeLine{00599\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_a7a0fc8e022bc8e50bd4ad1ddd2657e36}{m\_To}};\ \ \ \ }
+\DoxyCodeLine{00600\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_dead_fuel_moisture_a07156ce652c23c19e2fe869e75c72c3e}{m\_Tg}};\ \ \ \ }
+\DoxyCodeLine{00601\ \};}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00642\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00643\ }
+\DoxyCodeLine{00644\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00645\ \textcolor{comment}{//\ \ End\ of\ DeadFuelMoisture.h}}
+\DoxyCodeLine{00646\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00647\ }
+
+\end{DoxyCode}
