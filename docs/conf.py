@@ -28,9 +28,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
-breathe_projects = {
-"nfdrs": "./_build/xml/",
-}
+breathe_projects = {"nfdrs4": "_build/xml/"}
 
 # Breathe configuration
 breathe_default_project = "nfdrs4"
