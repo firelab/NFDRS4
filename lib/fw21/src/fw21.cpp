@@ -120,7 +120,7 @@ string CFW21Data::DateToOriginal(TM inTm, int tzOffset)
 		tm lTime = inTm;
 		//tm_increment_hour(&lTime, m_timeZoneOffset);
 		tm_decrement_hour(&lTime, tzOffset);
-		sprintf(buf, "%04d%02d%02dT%02d%02d%02dZ", lTime.tm_year, lTime.tm_mon + 1, lTime.tm_mday, lTime.tm_hour,
+		sprintf(buf, "%04d%02d%02dT%02d%02d%02dZ", lTime.tm_year + 1900, lTime.tm_mon + 1, lTime.tm_mday, lTime.tm_hour,
 			lTime.tm_min, lTime.tm_sec);
 		string ret = buf;
 		return ret;
