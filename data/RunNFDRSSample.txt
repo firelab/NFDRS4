@@ -8,8 +8,12 @@ initFile = "/NFDRSInitSample.txt";
 wxFile = "/someWx.fw21";
 #NFDRSState saving and loading capabilities (optional)
 #loadFromState will load the state file and begin any calculations from the saved state
+#if no loadFromState is desired, use "";
+#e.g. loadFromState = "";
 loadFromStateFile = "/someSavedState.nfdrs";
 #saveToStateFile will save the state when calculation is complete to the indicated file
+#if no saveToStateFile is desired, use "";
+#e.g. saveToStateFile = "";
 saveToStateFile = "/newSavedState.nfdrs";
 # output files (csv) can be designated, otherwise nothing is output 
 # if they exist, they are appended to by the program
