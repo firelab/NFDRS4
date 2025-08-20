@@ -332,7 +332,7 @@ void CNFDRSParams::InitNFDRS(NFDRS4* pNFDRS)
 		fm = m_fuelParams.getFuelModel();
 	}
 	pNFDRS->Init(getLatitude(), fm, getSlopeClass(), getAvgAnnualPrecip(), getUseLoadTransfer(), getUseCure(),
-		getIsAnnual(), getKbdiThreshold());
+		getIsAnnual(), getKbdiThreshold(), getObsHour());
 	pNFDRS->iSetFuelModel(fm);
 	pNFDRS->SetOneHourParams(m_1HourParams.getRadius(), m_1HourParams.getAdsorptionRate(), m_1HourParams.getMaxLocalMoisture(), m_1HourParams.getStickDensity(), m_1HourParams.getDesorptionRate());
 	pNFDRS->SetTenHourParams(m_10HourParams.getRadius(), m_10HourParams.getAdsorptionRate(), m_10HourParams.getMaxLocalMoisture(), m_10HourParams.getStickDensity(), m_10HourParams.getDesorptionRate());
