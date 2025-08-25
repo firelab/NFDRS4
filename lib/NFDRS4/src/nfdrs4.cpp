@@ -1434,7 +1434,7 @@ bool NFDRS4::LoadState(NFDRS4State state)
 	UseCuring = state.m_UseCuring;
 	UseLoadTransfer = state.m_UseLoadTransfer;
 	KBDIThreshold = state.m_KBDIThreshold;
-	Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, state.herbState.m_IsAnnual, KBDIThreshold);
+	Init(Lat, FuelModel, SlopeClass, AvgPrecip, UseLoadTransfer, UseCuring, state.herbState.m_IsAnnual, KBDIThreshold, m_regObsHour);
 
 
 	BI = state.m_BI;
@@ -1446,6 +1446,9 @@ bool NFDRS4::LoadState(NFDRS4State state)
     KBDIThreshold = state.m_KBDIThreshold;
 	lastUtcUpdateTime = state.m_lastUtcUpdateTime;
     lastDailyUpdateTime = state.m_lastDailyUpdateTime;
+    tm lastTM = lastDailyUpdateTime.get_tm();
+    if (lastTM.tm_hour != m_regObsHour)
+        m_regObsHour = lastTM.tm_hour;
 	MC1 = state.m_MC1;
 	MC10 = state.m_MC10;
 	MC100 = state.m_MC100;
