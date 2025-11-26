@@ -349,8 +349,7 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, int Julian, double T
 	iSetFuelMoistures(MC1, MC10, MC100, MC1000, MCWOOD, MCHERB, FuelTemperature);
 	// Calculate the indices
 
-	double fSC, fERC, fBI, fIC;
-	iCalcIndexes((int)WS, SlopeClass, &fSC, &fERC, &fBI, &fIC);
+	iCalcIndexes((int)WS, SlopeClass);
     YesterdayJDay = Julian;
     lastUtcUpdateTime = thisUtcTime;
 }
@@ -528,8 +527,8 @@ void NFDRS4::Update(int Year, int Month, int Day, int Hour, double Temp, double 
     iSetFuelMoistures(MC1, MC10, MC100, MC1000, MCWOOD, MCHERB, FuelTemperature);
     // Calculate the indices
 
-    double fSC, fERC, fBI, fIC;
-    iCalcIndexes((int)WS, SlopeClass, &fSC, &fERC, &fBI, &fIC);
+    //double fSC, fERC, fBI, fIC;
+    iCalcIndexes((int)WS, SlopeClass);
     YesterdayJDay = Julian;
     lastUtcUpdateTime = thisUtcTime;
 }
@@ -589,9 +588,9 @@ void NFDRS4::UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, 
 		iSetFuelMoistures(fMC1, fMC10, fMC100, fMC1000, MCWOOD, MCHERB, fuelTemp);
 		// Calculate the indices
 
-		double fSC, fERC, fBI, fIC;
+		//double fSC, fERC, fBI, fIC;
 		//FuelTemperature = fuelTemp;
-		iCalcIndexes((int)WS, SlopeClass, &fSC, &fERC, &fBI, &fIC);
+		iCalcIndexes((int)WS, SlopeClass);
 
 
 	YesterdayJDay = Julian;
@@ -751,6 +750,15 @@ bool NFDRS4::iSetFuelModel(char cFM)
     return false;
 }
 
+// Calculates all Components and Indices for NFDRS4
+// iWS: Windspeed (mph)
+// iSlopeCls: Slope Class (1-5 or actual in degrees)
+int NFDRS4::iCalcIndexes(int iWS, int iSlopeCls, double fGSI /*) = -999 */ , double fKBDI /*= -999*/)
+{
+    double dummySC, dummyERC, dummyBI, dummyIC;
+    int ret = iCalcIndexes(iWS, iSlopeCls, &dummySC, &dummyERC, &dummyBI, &dummyIC, fGSI, fKBDI);
+    return ret;
+}
 
 // Calculates all Components and Indices for NFDRS4
 // iWS: Windspeed (mph)

@@ -198,8 +198,9 @@ class NFDRS4
        void UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double pcp24, double WS, double fMC1, double fMC10, double fMC100, double fMC1000, double fuelTemp, bool SnowDay/* = false*/);
  		bool iSetFuelModel(char cFM);
         int iSetFuelMoistures (double fMC1, double fMC10,double fMC100, double fMC1000, double fMCWood, double fMCHerb, double fuelTempC);
-        int iCalcIndexes (int iWS, int iSlopeCls,double* fSC,double* fERC, double* fBI, double* fIC,double fGSI = -999,double fKBDI = -999);
-        int iCalcKBDI (double fPrecipAmt, int iMaxTemp,double fCummPrecip, int iYKBDI, double fAvgPrecip);
+		int iCalcIndexes(int iWS, int iSlopeCls, double* fSC, double* fERC, double* fBI, double* fIC, double fGSI = -999, double fKBDI = -999);
+		int iCalcIndexes(int iWS, int iSlopeCls, double fGSI = -999, double fKBDI = -999);
+		int iCalcKBDI (double fPrecipAmt, int iMaxTemp,double fCummPrecip, int iYKBDI, double fAvgPrecip);
 		double Cure(double fGSI = -999, double fGreenupThreshold = 0.5, double fGSIMax = 1.0);
 
 		void SetGSIParams(double MaxGSI, double GreenupThreshold, double TminMin = -2.0, double TminMax = 5.0, double VPDMin = 900, 
