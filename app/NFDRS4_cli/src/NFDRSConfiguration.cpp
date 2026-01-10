@@ -146,6 +146,8 @@ void NFDRSConfiguration::parse(
 		oneHourParams.setStickDensity(cfg->lookupFloat(cfgScope, "1hr_opts.stickDensity"));
 		oneHourParams.setMaxLocalMoisture(cfg->lookupFloat(cfgScope, "1hr_opts.maxLocalMoisture"));
 		oneHourParams.setDesortionRate(cfg->lookupFloat(cfgScope, "1hr_opts.desorptionRate"));
+		oneHourParams.setMoistureSteps(cfg->lookupInt(cfgScope, "1hr_opts.moistureSteps"));
+		oneHourParams.setStickNodes(cfg->lookupInt(cfgScope, "1hr_opts.stickNodes"));
 		m_nfdrsParams.set1HourParams(oneHourParams);
 		CDeadFuelMoistureParams tenHourParams;
 		tenHourParams.setRadius(cfg->lookupFloat(cfgScope, "10hr_opts.radius"));
@@ -153,6 +155,8 @@ void NFDRSConfiguration::parse(
 		tenHourParams.setStickDensity(cfg->lookupFloat(cfgScope, "10hr_opts.stickDensity"));
 		tenHourParams.setMaxLocalMoisture(cfg->lookupFloat(cfgScope, "10hr_opts.maxLocalMoisture"));
 		tenHourParams.setDesortionRate(cfg->lookupFloat(cfgScope, "10hr_opts.desorptionRate"));
+		tenHourParams.setMoistureSteps(cfg->lookupInt(cfgScope, "10hr_opts.moistureSteps"));
+		tenHourParams.setStickNodes(cfg->lookupInt(cfgScope, "10hr_opts.stickNodes"));
 		m_nfdrsParams.set10HourParams(tenHourParams);
 		CDeadFuelMoistureParams hundredHourParams;
 		hundredHourParams.setRadius(cfg->lookupFloat(cfgScope, "100hr_opts.radius"));
@@ -160,6 +164,8 @@ void NFDRSConfiguration::parse(
 		hundredHourParams.setStickDensity(cfg->lookupFloat(cfgScope, "100hr_opts.stickDensity"));
 		hundredHourParams.setMaxLocalMoisture(cfg->lookupFloat(cfgScope, "100hr_opts.maxLocalMoisture"));
 		hundredHourParams.setDesortionRate(cfg->lookupFloat(cfgScope, "100hr_opts.desorptionRate"));
+		hundredHourParams.setMoistureSteps(cfg->lookupInt(cfgScope, "100hr_opts.moistureSteps"));
+		hundredHourParams.setStickNodes(cfg->lookupInt(cfgScope, "100hr_opts.stickNodes"));
 		m_nfdrsParams.set100HourParams(hundredHourParams);
 		CDeadFuelMoistureParams thousandHourParams;
 		thousandHourParams.setRadius(cfg->lookupFloat(cfgScope, "1000hr_opts.radius"));
@@ -167,6 +173,8 @@ void NFDRSConfiguration::parse(
 		thousandHourParams.setStickDensity(cfg->lookupFloat(cfgScope, "1000hr_opts.stickDensity"));
 		thousandHourParams.setMaxLocalMoisture(cfg->lookupFloat(cfgScope, "1000hr_opts.maxLocalMoisture"));
 		thousandHourParams.setDesortionRate(cfg->lookupFloat(cfgScope, "1000hr_opts.desorptionRate"));
+		thousandHourParams.setMoistureSteps(cfg->lookupInt(cfgScope, "1000hr_opts.moistureSteps"));
+		thousandHourParams.setStickNodes(cfg->lookupInt(cfgScope, "1000hr_opts.stickNodes"));
 		m_nfdrsParams.set1000HourParams(thousandHourParams);
 		if (m_nfdrsParams.getFuelModel() == 'C' || m_nfdrsParams.getFuelModel() == 'c')//custom fuel model expected
 		{

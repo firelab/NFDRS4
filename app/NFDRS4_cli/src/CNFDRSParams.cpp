@@ -250,6 +250,8 @@ CDeadFuelMoistureParams::CDeadFuelMoistureParams()
 	m_stickDensity = 0.4;
 	m_maxLocalMoisture = 0.35;
 	m_desorptionRate = 0.06;
+	m_moistureSteps = 15;
+	m_stickNodes = 11;
 }
 
 CDeadFuelMoistureParams::CDeadFuelMoistureParams(const CDeadFuelMoistureParams& rhs)
@@ -259,6 +261,8 @@ CDeadFuelMoistureParams::CDeadFuelMoistureParams(const CDeadFuelMoistureParams& 
 	m_stickDensity = rhs.m_stickDensity;
 	m_maxLocalMoisture = rhs.m_maxLocalMoisture;
 	m_desorptionRate = rhs.m_desorptionRate;
+	m_moistureSteps = rhs.m_moistureSteps;
+	m_stickNodes = rhs.m_stickNodes;
 }
 
 CDeadFuelMoistureParams::~CDeadFuelMoistureParams()

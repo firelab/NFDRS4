@@ -86,6 +86,9 @@ deadFuelMoisture.defaults {
 	stickDensity = "0.400";
 	maxLocalMoisture = "0.35";
 	desorptionRate = "0.06";
+#added 1/9/2026 for performance optimization
+	moistureSteps = "-999";
+	stickNodes = "-999";
 }
 # 1hr options
 1hr_opts {

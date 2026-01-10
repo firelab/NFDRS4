@@ -71,17 +71,23 @@ public:
 	double getStickDensity() { return m_stickDensity; }
 	double getMaxLocalMoisture() { return m_maxLocalMoisture; }
 	double getDesorptionRate() { return m_desorptionRate; }
+	int getMoistureSteps() { return m_moistureSteps; }
+	int getStickNodes() { return m_stickNodes; }
 	void setRadius(double radius) { m_radius = radius; }
 	void setAdsorptionRate(double adsortionRate) { m_adsorptionRate = adsortionRate; }
 	void setStickDensity(double stickDensity) { m_stickDensity = stickDensity; }
 	void setMaxLocalMoisture(double maxLocalMoisture) { m_maxLocalMoisture = maxLocalMoisture; }
 	void setDesortionRate(double desorptionRate) { m_desorptionRate = desorptionRate; }
+	void setMoistureSteps(int moistureSteps) { m_moistureSteps = moistureSteps; }
+	void setStickNodes(int stickNodes) { m_stickNodes = stickNodes; }
 private:
 	double m_radius;
 	double m_adsorptionRate;
 	double m_stickDensity;
 	double m_maxLocalMoisture;
 	double m_desorptionRate;
+	int m_moistureSteps;
+	int m_stickNodes;
 };
 
 class NFDRS4;
