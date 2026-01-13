@@ -171,6 +171,15 @@ class NFDRS4
 		/// @param Cure (Use herbaceous curing (boolean))
 		/// @param IsAnnual (Treat herbs as annuals, only allow one greenup per year)
 		/// /// @return None
+		/// @example 
+		/// double latitude = 45.0;
+		/// char FM = 'Y';
+		/// int SlpCls = 1;
+		/// double MeanAnnPrcp = 15.0;
+		/// bool LT = 1;
+		/// bool Cure = 1;
+		/// bool IsAnnual = 0;
+		/// nfdrs4 = NFDRS4(latitude, FM, SlpCls, MeanAnnPrcp, LT, Cure,IsAnnual);
 		/// 
         NFDRS4(double Lat,char FuelModel,int SlopeClass, double AvgAnnPrecip,bool LT,bool Cure, bool IsAnnual);
         ~NFDRS4();
@@ -194,6 +203,23 @@ class NFDRS4
 		/// 
 		void Init(double Lat, char FuelModel, int SlopeClass, double AvgAnnPrecip, bool LT, bool Cure, bool isAnnual, int kbdiThreshold, int RegObsHour = 13, bool isReinit = false);
  	   void Update(int Year, int Month, int Day, int Hour, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double PPTAmt, double pcp24, double SolarRad, double WS, bool SnowDay, int RegObsHr);
+
+	   /// @brief NFDRS4 class hourly update function
+		/// This function is used to update the NFDRS class each hour. It receives date/time components and weather variables and it updates all dead and live fuel moisture values and calculates fire danger indices.
+		/// 
+		/// 
+		/// @param Year Integer obs year
+		/// @param Month Integer obs month
+		/// @param Day Integer obs day
+		/// @param Hour Integer obs hour
+		/// @param Temp Hourly temperature (deg F)
+		/// @param RH  Hourly relative Humidity (%)
+		/// @param PPTAmt Hourly precipitation amount (inches)
+		/// @param SolarRad Hourly solar radiation (W/m2)
+		/// @param WS Hourly windspeed (mph)
+		/// @param SnowDay Snow Flag (0 for no snow, 1 for snow)
+		/// /// @return None
+		/// 
        void Update(int Year, int Month, int Day, int Hour, double Temp, double RH, double PPTAmt, double SolarRad, double WS, bool SnowDay);
        void UpdateDaily(int Year, int Month, int Day, int Julian, double Temp, double MinTemp, double MaxTemp, double RH, double MinRH, double pcp24, double WS, double fMC1, double fMC10, double fMC100, double fMC1000, double fuelTemp, bool SnowDay/* = false*/);
  		bool iSetFuelModel(char cFM);

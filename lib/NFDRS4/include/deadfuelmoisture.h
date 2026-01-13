@@ -359,8 +359,15 @@ public:
     // Assignment operator
     const DeadFuelMoisture& operator=( const DeadFuelMoisture& rhs ) ;
     const char* className( void ) const ;
+
+    // Convenience functions to setup 1,10, 100 and 1000 hour fuel moisture sticks with appropriate defaults
+    void initDeadFuelMoisture1();
+    void initDeadFuelMoisture10();
+    void initDeadFuelMoisture100();
+    void initDeadFuelMoisture1000();
+
     // Static convenience functions
-    static DeadFuelMoisture* createDeadFuelMoisture1( const std::string& name="" ) ;
+    static DeadFuelMoisture* createDeadFuelMoisture1(const std::string& name = "");
     static DeadFuelMoisture* createDeadFuelMoisture10( const std::string& name="" ) ;
     static DeadFuelMoisture* createDeadFuelMoisture100( const std::string& name="" ) ;
     static DeadFuelMoisture* createDeadFuelMoisture1000( const std::string& name="" ) ;
@@ -448,6 +455,7 @@ public:
     int    diffusivitySteps( void ) const ;
     double maximumLocalMoisture( void ) const ;
     int    moistureSteps( void ) const ;
+
     double planarHeatTransferRate( void ) const ;
     double rainfallRunoffFactor( void ) const ;
     double stickDensity( void ) const ;
@@ -638,6 +646,7 @@ protected:
     Prediction of diurnal change in 1-h fuel stick moisture content.
     <i>Can. J. For. Res.</i> <b>30</b>: 1071-1087. (2000).
  */
+
 
 #endif
 

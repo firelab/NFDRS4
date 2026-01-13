@@ -93,28 +93,10 @@ void NFDRS4::Init(double inLat, char iFuelModel, int inSlopeClass, double inAvgA
         WoodyFM.SetLFMParameters(WoodyFM.GetMaxGSI(), WoodyFM.GetGreenupThreshold(), WoodyFM.GetMinLFMVal(), WoodyFM.GetMaxLFMVal());
     }
 	// Initialize the dead fuel moisture models
-	OneHourFM.initializeParameters(0.2, "One Hour");             // 1hr Dead FM model init
-	TenHourFM.initializeParameters(0.64, "Ten Hour");            // 10hr Dead FM model init
-	HundredHourFM.initializeParameters(2.0, "Hundred Hour");     // 100hr Dead FM model init
-	ThousandHourFM.initializeParameters(3.81, "Thousand Hour"); 
-	
-	
-	OneHourFM.setAdsorptionRate(0.462252733);
-	TenHourFM.setAdsorptionRate(0.079548303);
-	HundredHourFM.setAdsorptionRate(0.06);
-	ThousandHourFM.setAdsorptionRate(0.06);
-		
-	//these two lines were not done in the original constructor. 
-	//sets maximum stick moisture limit. Not really relevant for 100 and 1000 hour moistures.
-	OneHourFM.setMaximumLocalMoisture(0.35);
-	TenHourFM.setMaximumLocalMoisture(0.35);
-	HundredHourFM.setMaximumLocalMoisture(0.35);
-	ThousandHourFM.setMaximumLocalMoisture(0.35);
-
-    OneHourFM.setMoisture(0.2f);
-    TenHourFM.setMoisture(0.2f);
-    HundredHourFM.setMoisture(0.2f);
-    ThousandHourFM.setMoisture(0.2f);
+    OneHourFM.initDeadFuelMoisture1();
+    TenHourFM.initDeadFuelMoisture10();
+    HundredHourFM.initDeadFuelMoisture100();
+    ThousandHourFM.initDeadFuelMoisture1000();
     
     //iSetFuelModel(FuelModel);                                   // Set the Fuel model
 	UseLoadTransfer = LT;                                       // Use Load Transfer? (bool)

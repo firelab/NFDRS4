@@ -273,6 +273,75 @@ const char* DeadFuelMoisture::className( void ) const
     return( "DeadFuelMoisture" );
 }
 
+
+
+ //------------------------------------------------------------------------------
+ /*! \brief Convenience method to create a 1-h time lag
+     DeadFuelMoisture instance and set all all parameters
+     \param[in] NONE
+     \relates DeadFuelMoisture
+     \return Void.
+  */
+void DeadFuelMoisture::initDeadFuelMoisture1()
+{
+    initializeParameters(0.2, "One Hour");
+    setAdsorptionRate(0.462252733);
+    setMaximumLocalMoisture(0.35);
+    setMoisture(0.2f);
+    initializeStick();
+}
+
+
+//------------------------------------------------------------------------------
+/*! \brief Convenience method to create a 10-h time lag
+    DeadFuelMoisture instance and set all all parameters
+    \param[in] NONE
+    \relates DeadFuelMoisture
+    \return Void.
+ */
+void DeadFuelMoisture::initDeadFuelMoisture10()
+{
+    initializeParameters(0.64, "Ten Hour");
+    setAdsorptionRate(0.079548303);
+    setMaximumLocalMoisture(0.35);
+    setMoisture(0.2f);
+    initializeStick();
+}
+
+
+//------------------------------------------------------------------------------
+/*! \brief Convenience method to create a 100-h time lag
+    DeadFuelMoisture instance and set all all parameters
+    \param[in] NONE
+    \relates DeadFuelMoisture
+    \return Void.
+ */
+void DeadFuelMoisture::initDeadFuelMoisture100()
+{
+    initializeParameters(2.0, "Hundred Hour");
+    setAdsorptionRate(0.06);
+    setMaximumLocalMoisture(0.35);
+    setMoisture(0.2f);
+    initializeStick();
+}
+
+
+//------------------------------------------------------------------------------
+/*! \brief Convenience method to create a 1000-h time lag
+    DeadFuelMoisture instance and set all all parameters
+    \param[in] NONE
+    \relates DeadFuelMoisture
+    \return Void.
+ */
+void DeadFuelMoisture::initDeadFuelMoisture1000()
+{
+    initializeParameters(3.81, "Thousand Hour");
+    setAdsorptionRate(0.06);
+    setMaximumLocalMoisture(0.35);
+    setMoisture(0.2f);
+    initializeStick();
+}
+
 //------------------------------------------------------------------------------
 /*! \brief Static convenience method to create a 1-h time lag
     DeadFuelMoisture instance with a 0.20-cm radius (0.16-in diameter).
@@ -283,10 +352,9 @@ const char* DeadFuelMoisture::className( void ) const
 
     \return Pointer to the dynamically-allocated DeadFuelMoisture instance.
  */
-
-DeadFuelMoisture* DeadFuelMoisture::createDeadFuelMoisture1( const string& name )
+DeadFuelMoisture* DeadFuelMoisture::createDeadFuelMoisture1(const string& name)
 {
-    return( new DeadFuelMoisture( 0.20, name ) );
+    return(new DeadFuelMoisture(0.2, name));
 }
 
 //------------------------------------------------------------------------------

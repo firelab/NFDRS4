@@ -119,7 +119,10 @@ NFDRS4State::NFDRS4State(NFDRS4 *pNFDRS)
 
 bool NFDRS4State::LoadState(std::string fileName)
 {
-	FILE *in = fopen(fileName.c_str(), "rb");
+	FILE* in;
+	errno_t err;
+
+	err = fopen_s(&in,fileName.c_str(), "rb");
 	if (!in)
 		return false;
 
@@ -441,7 +444,10 @@ bool NFDRS4State::LoadState(std::string fileName)
 
 bool NFDRS4State::SaveState(std::string fileName)
 {
-	FILE *out = fopen(fileName.c_str(), "wb");
+	FILE* out;
+	errno_t err;
+
+	err = fopen_s(&out, fileName.c_str(), "rb");
 	if (!out)
 		return false;
 

@@ -466,6 +466,7 @@
     <member refid="class_n_f_d_r_s4_1a08f7f5f2db70c3db80afe64f3e027015" kind="function"><name>iSetFuelModel</name></member>
     <member refid="class_n_f_d_r_s4_1ace213fdf16ac6dfc3f7f4b205ef87468" kind="function"><name>iSetFuelMoistures</name></member>
     <member refid="class_n_f_d_r_s4_1a3ac12870ecc6e1c1b1dd068b860da162" kind="function"><name>iCalcIndexes</name></member>
+    <member refid="class_n_f_d_r_s4_1a1bb7975793eb5db9c491fd1b474a23a7" kind="function"><name>iCalcIndexes</name></member>
     <member refid="class_n_f_d_r_s4_1a09f17517e03ecfc92bc02dfc6b27ef38" kind="function"><name>iCalcKBDI</name></member>
     <member refid="class_n_f_d_r_s4_1a3187691e47e88b06bfc5c363898c42b3" kind="function"><name>Cure</name></member>
     <member refid="class_n_f_d_r_s4_1af449e83d0eb7622b841b8f039e2bf575" kind="function"><name>SetGSIParams</name></member>
