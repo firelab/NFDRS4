@@ -1,4 +1,3 @@
-#define __STDC_WANT_LIB_EXT1__ 1
 #include "nfdrs4.h"
 #include "nfdrs4calcstate.h"
 
@@ -121,9 +120,8 @@ NFDRS4State::NFDRS4State(NFDRS4 *pNFDRS)
 bool NFDRS4State::LoadState(std::string fileName)
 {
 	FILE* in;
-	errno_t err;
 
-	err = fopen_s(&in,fileName.c_str(), "rb");
+	in = fopen(fileName.c_str(), "rb");
 	if (!in)
 		return false;
 
@@ -446,9 +444,8 @@ bool NFDRS4State::LoadState(std::string fileName)
 bool NFDRS4State::SaveState(std::string fileName)
 {
 	FILE* out;
-	errno_t err;
 
-	err = fopen_s(&out, fileName.c_str(), "rb");
+	out = fopen(fileName.c_str(), "wb");
 	if (!out)
 		return false;
 
