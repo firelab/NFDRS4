@@ -404,4 +404,5 @@ CMakeSettings.json
 /CMakeFiles/CMakeConfigureLog.yaml
 /CMakeFiles/3.29.5-msvc4/CompilerIdC/CMakeCCompilerId.c
 /CMakeFiles/3.29.5-msvc4/CompilerIdCXX/CMakeCXXCompilerId.cpp
-/CMakeFiles
+/CMakeFiles/*
+/CMakeFiles/3.29.5-msvc4/CMakeDetermineCompilerABI_C.bin
