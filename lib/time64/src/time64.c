@@ -857,7 +857,7 @@ struct TM *localtime64(const Time64_T *time) {
 #ifdef WIN32
     _tzset();
 #else
-    _tzset();
+    tzset();
 #endif
     return localtime64_r(time, &Static_Return_Date);
 }
@@ -874,7 +874,7 @@ char *ctime64( const Time64_T* time ) {
 #ifdef WIN32
     _tzset();
 #else
-    _tzset();
+    tzset();
 #endif
     return asctime64(localtime64(time));
 }
