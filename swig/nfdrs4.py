@@ -143,6 +143,18 @@ class DeadFuelMoisture(object):
     def className(self):
         return _nfdrs4.DeadFuelMoisture_className(self)
 
+    def initDeadFuelMoisture1(self):
+        return _nfdrs4.DeadFuelMoisture_initDeadFuelMoisture1(self)
+
+    def initDeadFuelMoisture10(self):
+        return _nfdrs4.DeadFuelMoisture_initDeadFuelMoisture10(self)
+
+    def initDeadFuelMoisture100(self):
+        return _nfdrs4.DeadFuelMoisture_initDeadFuelMoisture100(self)
+
+    def initDeadFuelMoisture1000(self):
+        return _nfdrs4.DeadFuelMoisture_initDeadFuelMoisture1000(self)
+
     @staticmethod
     def createDeadFuelMoisture1(*args):
         return _nfdrs4.DeadFuelMoisture_createDeadFuelMoisture1(*args)

@@ -5327,6 +5327,98 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_DeadFuelMoisture_initDeadFuelMoisture1(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  DeadFuelMoisture *arg1 = (DeadFuelMoisture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_DeadFuelMoisture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DeadFuelMoisture_initDeadFuelMoisture1" "', argument " "1"" of type '" "DeadFuelMoisture *""'"); 
+  }
+  arg1 = reinterpret_cast< DeadFuelMoisture * >(argp1);
+  (arg1)->initDeadFuelMoisture1();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_DeadFuelMoisture_initDeadFuelMoisture10(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  DeadFuelMoisture *arg1 = (DeadFuelMoisture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_DeadFuelMoisture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DeadFuelMoisture_initDeadFuelMoisture10" "', argument " "1"" of type '" "DeadFuelMoisture *""'"); 
+  }
+  arg1 = reinterpret_cast< DeadFuelMoisture * >(argp1);
+  (arg1)->initDeadFuelMoisture10();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_DeadFuelMoisture_initDeadFuelMoisture100(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  DeadFuelMoisture *arg1 = (DeadFuelMoisture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_DeadFuelMoisture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DeadFuelMoisture_initDeadFuelMoisture100" "', argument " "1"" of type '" "DeadFuelMoisture *""'"); 
+  }
+  arg1 = reinterpret_cast< DeadFuelMoisture * >(argp1);
+  (arg1)->initDeadFuelMoisture100();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_DeadFuelMoisture_initDeadFuelMoisture1000(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  DeadFuelMoisture *arg1 = (DeadFuelMoisture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_DeadFuelMoisture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DeadFuelMoisture_initDeadFuelMoisture1000" "', argument " "1"" of type '" "DeadFuelMoisture *""'"); 
+  }
+  arg1 = reinterpret_cast< DeadFuelMoisture * >(argp1);
+  (arg1)->initDeadFuelMoisture1000();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_DeadFuelMoisture_createDeadFuelMoisture1__SWIG_0(PyObject *self, Py_ssize_t nobjs, PyObject **swig_obj) {
   PyObject *resultobj = 0;
   std::string *arg1 = 0 ;
@@ -34207,6 +34299,10 @@ static PyMethodDef SwigMethods[] = {
 	 { "new_DeadFuelMoisture", _wrap_new_DeadFuelMoisture, METH_VARARGS, NULL},
 	 { "DeadFuelMoisture_Const_assign_DeadFuelMoisture", _wrap_DeadFuelMoisture_Const_assign_DeadFuelMoisture, METH_VARARGS, NULL},
 	 { "DeadFuelMoisture_className", _wrap_DeadFuelMoisture_className, METH_O, NULL},
+	 { "DeadFuelMoisture_initDeadFuelMoisture1", _wrap_DeadFuelMoisture_initDeadFuelMoisture1, METH_O, NULL},
+	 { "DeadFuelMoisture_initDeadFuelMoisture10", _wrap_DeadFuelMoisture_initDeadFuelMoisture10, METH_O, NULL},
+	 { "DeadFuelMoisture_initDeadFuelMoisture100", _wrap_DeadFuelMoisture_initDeadFuelMoisture100, METH_O, NULL},
+	 { "DeadFuelMoisture_initDeadFuelMoisture1000", _wrap_DeadFuelMoisture_initDeadFuelMoisture1000, METH_O, NULL},
 	 { "DeadFuelMoisture_createDeadFuelMoisture1", _wrap_DeadFuelMoisture_createDeadFuelMoisture1, METH_VARARGS, NULL},
 	 { "DeadFuelMoisture_createDeadFuelMoisture10", _wrap_DeadFuelMoisture_createDeadFuelMoisture10, METH_VARARGS, NULL},
 	 { "DeadFuelMoisture_createDeadFuelMoisture100", _wrap_DeadFuelMoisture_createDeadFuelMoisture100, METH_VARARGS, NULL},
