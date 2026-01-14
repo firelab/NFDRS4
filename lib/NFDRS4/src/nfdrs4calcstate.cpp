@@ -1,3 +1,4 @@
+#define __STDC_WANT_LIB_EXT1__ 1
 #include "nfdrs4.h"
 #include "nfdrs4calcstate.h"
 
