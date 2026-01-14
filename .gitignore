@@ -373,6 +373,7 @@ CMakeSettings.json
 *.make
 *.d
 *.ts
+*compiler_depend.internal
 /lib/csv_readrow/CMakeFiles/csv_readrow.dir
 /lib/fw21/CMakeFiles/fw21.dir/objects1
 /lib/fw21/Makefile
