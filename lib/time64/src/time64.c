@@ -833,7 +833,7 @@ char *asctime64_r( const struct TM* date, char *result ) {
     if( !valid_tm_wday(date) || !valid_tm_mon(date) )
         return NULL;
 
-    sprintf_s(result, TM64_ASCTIME_FORMAT,
+    sprintf(result, TM64_ASCTIME_FORMAT,
         wday_name[date->tm_wday],
         mon_name[date->tm_mon],
         date->tm_mday, date->tm_hour,
