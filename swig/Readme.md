@@ -18,6 +18,8 @@ Notes: The include path to Python.h might need to be changed. Other than that, a
 
 **How to compile and build SWIG module for Python using Anaconda:**
 ***This example is for Python 3.13 but can be adapted to any Python version***
+Create a new conda environment that includes gxx and swig for Python 3.13
+```conda create --name nfdrs4 swig gxx m2-base python=3.13```
 ****$ENVDIR points to the local directory where your Anaconda environment is installed. You can find this by typing "conda env list" at an Anaconda Powershell prompt****
 
 ```conda create --name nfdrs4 swig gxx m2-base python=3.13
