@@ -18,27 +18,22 @@ Notes: The include path to Python.h might need to be changed. Other than that, a
 
 **How to compile and build SWIG module for Python using Anaconda:**
 ***This example is for Python 3.13 but can be adapted to any Python version***
-Create a new conda environment that includes gxx and swig for Python 3.13
-```conda create --name nfdrs4 swig gxx m2-base python=3.13```
 ***$ENVDIR points to the local directory where your Anaconda environment is installed. You can find this by typing:***
 ```conda env list``` 
 And noting the install directory for the environments
 
 
-```conda create --name nfdrs4 swig gxx m2-base python=3.13
+```
+conda create --name nfdrs4 swig gxx m2-base python=3.13
+
 cd swig
+
 swig -python -c++ nfdrs4.i  
+
 g++ -I $ENVDIR\include -I ../lib/NFDRS4/include/ -I ../lib/time64/include/ -I ../lib/utctime/include/ -c ../lib/NFDRS4/src/deadfuelmoisture.cpp  ../lib/NFDRS4/src/livefuelmoisture.cpp ../lib/NFDRS4/src/dfmcalcstate.cpp ../lib/NFDRS4/src/lfmcalcstate.cpp ../lib/NFDRS4/src/nfdrs4calcstate.cpp ../lib/NFDRS4/src/nfdrs4.cpp ../lib/utctime/src/utctime.cpp ../app/NFDRS4_cli/src/CNFDRSParams.cpp ../lib/time64/src/time64.c nfdrs4_wrap.cxx
 
 g++ -shared *.o -o _nfdrs4.pyd -lgomp -L $ENVDIR\libs -l python313
-
 ```
-
-
-
-
-List item
-
 
 **Example usage to test functions:**
 
