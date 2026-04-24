@@ -27,9 +27,10 @@ And noting the install directory for the environments
 conda create --name nfdrs4 swig gxx m2-base python=3.13
 cd swig
 swig -python -c++ nfdrs4.i  
-g++ -I $ENVDIR\include -I ../lib/NFDRS4/include/ -I ../lib/time64/include/ -I ../lib/utctime/include/ -c ../lib/NFDRS4/src/deadfuelmoisture.cpp  ../lib/NFDRS4/src/livefuelmoisture.cpp ../lib/NFDRS4/src/dfmcalcstate.cpp ../lib/NFDRS4/src/lfmcalcstate.cpp ../lib/NFDRS4/src/nfdrs4calcstate.cpp ../lib/NFDRS4/src/nfdrs4.cpp ../lib/utctime/src/utctime.cpp ../app/NFDRS4_cli/src/CNFDRSParams.cpp ../lib/time64/src/time64.c nfdrs4_wrap.cxx
-g++ -shared *.o -o _nfdrs4.pyd -lgomp -L $ENVDIR\libs -l python313
+g++ -I %CONDA_PREFIX%\include -I ../lib/NFDRS4/include/ -I ../lib/time64/include/ -I ../lib/utctime/include/ -c ../lib/NFDRS4/src/deadfuelmoisture.cpp  ../lib/NFDRS4/src/livefuelmoisture.cpp ../lib/NFDRS4/src/dfmcalcstate.cpp ../lib/NFDRS4/src/lfmcalcstate.cpp ../lib/NFDRS4/src/nfdrs4calcstate.cpp ../lib/NFDRS4/src/nfdrs4.cpp ../lib/utctime/src/utctime.cpp ../app/NFDRS4_cli/src/CNFDRSParams.cpp ../lib/time64/src/time64.c nfdrs4_wrap.cxx
+g++ -shared *.o -o _nfdrs4.pyd -lgomp -L %CONDA_PREFIX%\libs -l python313
 ```
+Note: %CONDA_PREFIX% may be different if using a Powershell prompt...
 
 **Example usage to test functions:**
 
