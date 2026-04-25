@@ -40,3 +40,6 @@ set_target_properties( fw21
 #install
 install(TARGETS NFDRS4 DESTINATION "${lib_dest}")
 install(TARGETS fw21 DESTINATION "${lib_dest}")
+install(TARGETS csv_readrow DESTINATION "${lib_dest}")
+install(TARGETS time64 DESTINATION "${lib_dest}")
+install(TARGETS utctime DESTINATION "${lib_dest}")
