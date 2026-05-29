@@ -74,7 +74,7 @@ Select Build - Install NFDRS4
 
 From the repo root:
 
-```cd extern/config4cpp/
+```cd extern/config4cpp/```
 
 After extracting the repository, navigate to the NFDRS4/external/config4cpp directory in a Terminal window, and run ```make```<br>
 This will create config4cpp.a in NFDRS/external/lib
