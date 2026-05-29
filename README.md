@@ -77,7 +77,7 @@ From the repo root:
 ```cd extern/config4cpp/```
 
 After extracting the repository, navigate to the NFDRS4/external/config4cpp directory in a Terminal window, and run ```make```<br>
-This will create config4cpp.a in NFDRS/external/lib
+This will create config4cpp.a in NFDRS4/extern/config4cpp/lib
 
 Navigate back to the NFDRS4 directory. run: ```cmake .```<br>
 Fill in or add entries for CONFIG4CPP_DIR and CONFIG4CPP_LIB
