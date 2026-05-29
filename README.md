@@ -83,8 +83,9 @@ Navigate back to the NFDRS4 directory. run: ```cmake .```<br>
 The first time you run cmake, it will fail because it doesn't know where to find CONFIG4CPP. Just edit two entries in the CMakeCache.txt as follows.
 Fill in CONFIG4CPP_DIR and CONFIG4CPP_LIB
 e.g.<br>
-```CONFIG4CPP_DIR:PATH=$SRCROOT/NFDRS4/extern/config4cpp/include```` <br>
+```CONFIG4CPP_DIR:PATH=$SRCROOT/NFDRS4/extern/config4cpp/include``` <br>
 ```CONFIG4CPP_LIB:FILEPATH=$SRCROOT/NFDRS4/extern/config4cpp/lib/libconfig4cpp.a``` <br>
+Where $SRCROOT is the location of the repo on the local machine.
 
 Build the repository:
 run ```make```
