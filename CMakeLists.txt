@@ -7,6 +7,10 @@ project (
 	DESCRIPTION "National Fire Danger Rating System 4"
 	LANGUAGES CXX)
 
+if (NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE "Release")
+endif()
+
 # Only do these if this is the main project, and not if it is included through add_subdirectory
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
 
