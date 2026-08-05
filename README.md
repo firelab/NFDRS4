@@ -71,17 +71,28 @@ Select Build - Install NFDRS4
 	NFDRS4_cli.exe and FireWxConverter.exe
 
 ## Building NFDRS4 for Linux
-After extracting the repository, navigate to the NFDRS4/external/config4cpp directory in a Terminal window, and run ```make```<br>
-This will create config4cpp.a in NFDRS/external/lib
+
+From the repo root:
+
+```cd extern/config4cpp/```<br>
+Now run ```make```<br>
+
+This will create config4cpp.a in NFDRS4/extern/config4cpp/lib
 
 Navigate back to the NFDRS4 directory. run: ```cmake .```<br>
-Fill in or add entries for CONFIG4CPP_DIR and CONFIG4CPP_LIB
-e.g.
-CONFIG4CPP_DIR:PATH=/home/<user>/src/NFDRS4/extern/config4cpp/include
-CONFIG4CPP_LIB:FILEPATH=/home/<user>/src/NFDRS4/extern/config4cpp/lib/libconfig4cpp.a
+The first time you run cmake, it will fail because it doesn't know where to find CONFIG4CPP. Just edit two entries in the CMakeCache.txt as follows.
+Fill in CONFIG4CPP_DIR and CONFIG4CPP_LIB
+e.g.<br>
+```CONFIG4CPP_DIR:PATH=$SRCROOT/NFDRS4/extern/config4cpp/include``` <br>
+```CONFIG4CPP_LIB:FILEPATH=$SRCROOT/NFDRS4/extern/config4cpp/lib/libconfig4cpp.a``` <br>
+Where $SRCROOT is the location of the repo on the local machine.
 
 Build the repository:
 run ```make```
 
 Install the repository:
 run ```sudo make install```
+
+## Testing the NFDRS4 Command Line Interface
+The above steps will create bin/NFDSR4_cli. This is the executable for NFDSR4. It requires three inputs: a config file, an init file and a weather file. There are examples for these files in the ```data``` folder. 
+

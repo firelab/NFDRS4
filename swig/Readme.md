@@ -34,7 +34,7 @@ Note: %CONDA_PREFIX% may be different if using a Powershell prompt. If you are h
 
 ```python
 python
->>> import nfdrs4
+>>> import nfdrs4 as nfdrs4
 >>> nf= nfdrs4.DeadFuelMoisture.createDeadFuelMoisture1()
 >>> nf.update(1,1,1,1,1)
 True
