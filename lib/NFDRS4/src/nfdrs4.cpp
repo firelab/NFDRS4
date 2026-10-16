@@ -1438,42 +1438,42 @@ void NFDRS4::SetWoodyGSIparams(double MaxGSI, double GreenupThreshold, double Tm
         MCWOOD = woodyMax;
 }
 
-void NFDRS4::SetOneHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate)
+void NFDRS4::SetOneHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate, int numNodes)
 {
-    Set1HourRadius(radius);
+    Set1HourRadius(radius, numNodes);
     Set1HourAdsorptionRate(adsorptionRate);
     Set1HourStickDensity(stickDensity);
     Set1HourMaxLocalMoisture(maxLocalMoisture);
     Set1HourDesorptionRate(desorptionRate);
 }
-void NFDRS4::SetTenHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate)
+void NFDRS4::SetTenHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate, int numNodes)
 {
-    Set10HourRadius(radius);
+    Set10HourRadius(radius, numNodes);
     Set10HourAdsorptionRate(adsorptionRate);
     Set10HourStickDensity(stickDensity);
     Set10HourMaxLocalMoisture(maxLocalMoisture);
     Set10HourDesorptionRate(desorptionRate);
 }
-void NFDRS4::SetHundredHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate)
+void NFDRS4::SetHundredHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate, int numNodes)
 {
-    Set100HourRadius(radius);
+    Set100HourRadius(radius, numNodes);
     Set100HourAdsorptionRate(adsorptionRate);
     Set100HourStickDensity(stickDensity);
     Set100HourMaxLocalMoisture(maxLocalMoisture);
     Set100HourDesorptionRate(desorptionRate);
 }
-void NFDRS4::SetThousandHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate)
+void NFDRS4::SetThousandHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate, int numNodes)
 {
-    Set1000HourRadius(radius);
+    Set1000HourRadius(radius, numNodes);
     Set1000HourAdsorptionRate(adsorptionRate);
     Set1000HourStickDensity(stickDensity);
     Set1000HourMaxLocalMoisture(maxLocalMoisture);
     Set1000HourDesorptionRate(desorptionRate);
 }
 
-void NFDRS4::Set1HourRadius(double radius)
+void NFDRS4::Set1HourRadius(double radius, int numNodes/* = -1*/)
 {
-    OneHourFM.initializeParameters(radius, "One Hour");
+    OneHourFM.initializeParameters(radius, "One Hour", numNodes);
 }
 
 void NFDRS4::Set1HourAdsorptionRate(double adsorptionRate)
@@ -1496,9 +1496,9 @@ void NFDRS4::Set1HourDesorptionRate(double desorptionRate)
     OneHourFM.setDesorptionRate(desorptionRate);
 }
 
-void NFDRS4::Set10HourRadius(double radius)
+void NFDRS4::Set10HourRadius(double radius, int numNodes/* = -1*/)
 {
-    TenHourFM.initializeParameters(radius, "Ten Hour");
+    TenHourFM.initializeParameters(radius, "Ten Hour", numNodes);
 }
 
 void NFDRS4::Set10HourAdsorptionRate(double adsorptionRate)
@@ -1521,9 +1521,9 @@ void NFDRS4::Set10HourDesorptionRate(double desorptionRate)
     TenHourFM.setDesorptionRate(desorptionRate);
 }
 
-void NFDRS4::Set100HourRadius(double radius)
+void NFDRS4::Set100HourRadius(double radius, int numNodes/* = -1*/)
 {
-    HundredHourFM.initializeParameters(radius, "Hundred Hour");
+    HundredHourFM.initializeParameters(radius, "Hundred Hour", numNodes);
 }
 
 void NFDRS4::Set100HourAdsorptionRate(double adsorptionRate)
@@ -1546,9 +1546,9 @@ void NFDRS4::Set100HourDesorptionRate(double desorptionRate)
     HundredHourFM.setDesorptionRate(desorptionRate);
 }
 
-void NFDRS4::Set1000HourRadius(double radius)
+void NFDRS4::Set1000HourRadius(double radius, int numNodes/* = -1*/)
 {
-    ThousandHourFM.initializeParameters(radius, "Thousand Hour");
+    ThousandHourFM.initializeParameters(radius, "Thousand Hour", numNodes);
 }
 
 void NFDRS4::Set1000HourAdsorptionRate(double adsorptionRate)

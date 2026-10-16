@@ -52,5 +52,8 @@ public:
 	std::vector<FP_STORAGE_TYPE> m_d; //!< Array of nodal bound water diffusivities (cm2/h).
 	std::vector<FP_STORAGE_TYPE> m_w; //!< Array of nodal moisture contents (g water/g dry fuel).
 
+	//radius added 10/16/2026
+	FP_STORAGE_TYPE  m_radius;   //!< Stick radius (cm).
+
 };
 

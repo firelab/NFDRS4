@@ -35,6 +35,8 @@ DFMCalcState::DFMCalcState(const DFMCalcState &rhs)
 	m_s = rhs.m_s;
 	m_d = rhs.m_d;
 	m_w = rhs.m_w;
+
+	m_radius = rhs.m_radius;
 }
 
 
@@ -133,6 +135,10 @@ bool DFMCalcState::ReadState(FILE *in)
 			m_w.push_back(tVal);
 		}
 	}
+	nRead = fread(&m_radius, sizeof(m_radius), 1, in);
+	if (nRead != 1)
+		return false;
+
 	return true;
 }
 
@@ -227,6 +233,9 @@ bool DFMCalcState::SaveState(FILE *out)
 				return false;
 		}
 	}
+	nWrite = fwrite(&m_radius, sizeof(m_radius), 1, out);
+	if (nWrite != 1)
+		return false;
 
 	return true;
 }

@@ -140,10 +140,11 @@ void CNFDRSParams::InitNFDRS(NFDRS4* pNFDRS)
 	pNFDRS->Init(getLatitude(), fm, getSlopeClass(), getAvgAnnualPrecip(), getUseLoadTransfer(), getUseCure(),
 		getIsAnnual(), getKbdiThreshold(), getObsHour());
 	pNFDRS->iSetFuelModel(fm);
-	pNFDRS->SetOneHourParams(m_1HourParams.getRadius(), m_1HourParams.getAdsorptionRate(), m_1HourParams.getMaxLocalMoisture(), m_1HourParams.getStickDensity(), m_1HourParams.getDesorptionRate());
-	pNFDRS->SetTenHourParams(m_10HourParams.getRadius(), m_10HourParams.getAdsorptionRate(), m_10HourParams.getMaxLocalMoisture(), m_10HourParams.getStickDensity(), m_10HourParams.getDesorptionRate());
-	pNFDRS->SetHundredHourParams(m_100HourParams.getRadius(), m_100HourParams.getAdsorptionRate(), m_100HourParams.getMaxLocalMoisture(), m_100HourParams.getStickDensity(), m_100HourParams.getDesorptionRate());
-	pNFDRS->SetThousandHourParams(m_1000HourParams.getRadius(), m_1000HourParams.getAdsorptionRate(), m_1000HourParams.getMaxLocalMoisture(), m_1000HourParams.getStickDensity(), m_1000HourParams.getDesorptionRate());
+	pNFDRS->SetOneHourParams(m_1HourParams.getRadius(), m_1HourParams.getAdsorptionRate(), m_1HourParams.getMaxLocalMoisture(), m_1HourParams.getStickDensity(), m_1HourParams.getDesorptionRate(), m_1HourParams.getStickNodes());
+	//pNFDRS->SetOneH
+	pNFDRS->SetTenHourParams(m_10HourParams.getRadius(), m_10HourParams.getAdsorptionRate(), m_10HourParams.getMaxLocalMoisture(), m_10HourParams.getStickDensity(), m_10HourParams.getDesorptionRate(), m_10HourParams.getStickNodes());
+	pNFDRS->SetHundredHourParams(m_100HourParams.getRadius(), m_100HourParams.getAdsorptionRate(), m_100HourParams.getMaxLocalMoisture(), m_100HourParams.getStickDensity(), m_100HourParams.getDesorptionRate(), m_100HourParams.getStickNodes());
+	pNFDRS->SetThousandHourParams(m_1000HourParams.getRadius(), m_1000HourParams.getAdsorptionRate(), m_1000HourParams.getMaxLocalMoisture(), m_1000HourParams.getStickDensity(), m_1000HourParams.getDesorptionRate(), m_1000HourParams.getStickNodes());
 	CGSIParams gsi = getGsiParams();
 	pNFDRS->SetGSIParams(gsi.getGsiMax(), gsi.getGsiHerbGreenup(), gsi.getGsiTminMin(), gsi.getGsiTminMax(), gsi.getGsiVpdMin(),
 		gsi.getGsiVpdMax(), gsi.getGsiDaylenMin(), gsi.getGsiDaylenMax(), gsi.getGsiAveragingPeriod(),

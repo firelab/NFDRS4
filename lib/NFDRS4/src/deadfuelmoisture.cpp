@@ -284,9 +284,9 @@ const char* DeadFuelMoisture::className( void ) const
   */
 void DeadFuelMoisture::initDeadFuelMoisture1()
 {
-    initializeParameters(0.2, "One Hour");
-    setAdsorptionRate(0.462252733);
-    setMaximumLocalMoisture(0.35);
+    initializeParameters(m_radius, "One Hour", m_nodes);
+    setAdsorptionRate(m_stca);// 0.462252733);
+    setMaximumLocalMoisture(m_wmx);// 0.35);
     setMoisture(0.2f);
     initializeStick();
 }
@@ -301,9 +301,9 @@ void DeadFuelMoisture::initDeadFuelMoisture1()
  */
 void DeadFuelMoisture::initDeadFuelMoisture10()
 {
-    initializeParameters(0.64, "Ten Hour");
-    setAdsorptionRate(0.079548303);
-    setMaximumLocalMoisture(0.35);
+    initializeParameters(m_radius, "Ten Hour", m_nodes);
+    setAdsorptionRate(m_stca);//0.079548303);
+    setMaximumLocalMoisture(m_wmx);//0.35);
     setMoisture(0.2f);
     initializeStick();
 }
@@ -318,9 +318,9 @@ void DeadFuelMoisture::initDeadFuelMoisture10()
  */
 void DeadFuelMoisture::initDeadFuelMoisture100()
 {
-    initializeParameters(2.0, "Hundred Hour");
-    setAdsorptionRate(0.06);
-    setMaximumLocalMoisture(0.35);
+    initializeParameters(m_radius, "Hundred Hour", m_nodes);
+    setAdsorptionRate(m_stca);//0.06);
+    setMaximumLocalMoisture(m_wmx);//0.35);
     setMoisture(0.2f);
     initializeStick();
 }
@@ -335,8 +335,8 @@ void DeadFuelMoisture::initDeadFuelMoisture100()
  */
 void DeadFuelMoisture::initDeadFuelMoisture1000()
 {
-    initializeParameters(3.81, "Thousand Hour");
-    setAdsorptionRate(0.06);
+    initializeParameters(m_radius, "Thousand Hour", m_nodes);
+    setAdsorptionRate(m_stca);//0.06);
     setMaximumLocalMoisture(0.35);
     setMoisture(0.2f);
     initializeStick();
@@ -818,12 +818,12 @@ void DeadFuelMoisture::initializeEnvironment (
     \param[in] name Name or description of the dead fuel stick.
  */
 
-void DeadFuelMoisture::initializeParameters( double radius, const string& name )
+void DeadFuelMoisture::initializeParameters( double radius, const string& name, const int numNodes /*= -1*/)
 {
     initializeParameters(
         name,
         radius,
-        deriveStickNodes( radius ),
+        numNodes > 0 ? numNodes : deriveStickNodes( radius ),
         deriveMoistureSteps( radius ),
         deriveDiffusivitySteps( radius ),
         derivePlanarHeatTransferRate( radius ),
@@ -2578,6 +2578,7 @@ DFMCalcState DeadFuelMoisture::GetState()
 		//tVal = m_w[i];
 		ret.m_w.push_back((float)m_w[i]);
 	}
+    ret.m_radius = m_radius;
 	return ret;
 }
 
@@ -2591,6 +2592,7 @@ bool DeadFuelMoisture::SetState(DFMCalcState state)
 	m_Hour = state.m_Hour;
 	m_Min = state.m_Min;
 	m_Sec = state.m_Sec;
+    m_radius = state.m_radius;
 	m_bp1 = state.m_bp1;
 	m_et = state.m_et;
 	m_ha1 = state.m_ha1;
@@ -2619,7 +2621,62 @@ bool DeadFuelMoisture::SetState(DFMCalcState state)
 		m_w.push_back(state.m_w[i]);
 	}
 	diffusivity(m_bp1);
-	return true;
+    //add in changes to account for m_nodes changes from defaults
+    m_dx = m_radius / (double)(m_nodes - 1);
+    m_dx_2 = m_dx * 2.;
+    // Maximum possible stick moisture content (g/g)
+    m_wmax = (1. / m_density) - (1. / 1.53);
+    // Derive nodal radial distances
+    m_x.resize(0);
+    for (int i = 0; i < m_nodes - 1; i++)
+    {
+        // Initialize radial distance from center of stick (cm)
+        m_x.push_back(m_radius - (m_dx * i));
+    }
+    m_x.push_back(0.0); 
+    
+    // Derive nodal volume fractions
+    m_v.resize(0);
+    double ro = m_radius;
+    double ri = ro - 0.5 * m_dx;
+    double a2 = m_radius * m_radius;
+    m_v.push_back((ro * ro - ri * ri) / a2);
+    double vwt = m_v[0];
+    for (int i = 1; i < m_nodes - 1; i++)
+    {
+        ro = ri;
+        ri = ro - m_dx;
+        m_v.push_back((ro * ro - ri * ri) / a2);
+        vwt += m_v[i];
+    }
+    m_v.push_back(ri * ri / a2);
+
+    vwt += m_v[m_nodes - 1];
+    m_Twold.clear();
+    m_Ttold.clear();
+    m_Tsold.clear();
+    m_Tv.clear();
+    m_To.clear();
+    m_Tg.clear();
+    m_Twold.insert(m_Twold.begin(), m_nodes, 0.0);
+    m_Ttold.insert(m_Ttold.begin(), m_nodes, 0.0);
+    m_Tsold.insert(m_Tsold.begin(), m_nodes, 0.0);
+    m_Tv.insert(m_Tv.begin(), m_nodes, 0.0);
+    m_To.insert(m_To.begin(), m_nodes, 0.0);
+    m_Tg.insert(m_Tg.begin(), m_nodes, 0.0);
+    //-------------------------------------------------------------------------
+    // Computation optimization parameters
+    //-------------------------------------------------------------------------
+    m_hwf = 0.622 * m_hc * pow((Pr / Sc), 0.667);
+    m_amlf = m_hwf / (0.24 * m_density * m_radius);
+    double rcav = 0.5 * Aw * Wl;
+    m_capf = 3600. * Pi * St * rcav * rcav
+        / (16. * m_radius * m_radius * m_length * m_density);
+    // m_vf == optimization factor used in update()
+    // WAS: m_vf = St / (Aw * Wl * Scr);
+    // WAS: m_vf = St / (Wl * Scr);
+    m_vf = St / (m_density * Wl * Scr);
+    return true;
 }
 
 

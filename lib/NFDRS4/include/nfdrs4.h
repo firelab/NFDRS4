@@ -241,26 +241,26 @@ class NFDRS4
 			unsigned int nPrecipDays = 30, double rtPrecipMin = 0.5, double rtPrecipMax = 1.5, bool UseRTPrecip = false,
             double woodyMin = 60.0, double woodyMax = 200.0);
 
-        void SetOneHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate);
-        void SetTenHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate);
-        void SetHundredHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate);
-        void SetThousandHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate);
-        void Set1HourRadius(double radius);
+        void SetOneHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate, int numNodes);
+        void SetTenHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate, int numNodes);
+        void SetHundredHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate, int numNodes);
+        void SetThousandHourParams(double radius, double adsorptionRate, double maxLocalMoisture, double stickDensity, double desorptionRate, int numNodes);
+        void Set1HourRadius(double radius, int numNodes = -1);
         void Set1HourAdsorptionRate(double adsorptionRate);
         void Set1HourStickDensity(double stickDensity);
         void Set1HourMaxLocalMoisture(double maxLocalMoisture);
         void Set1HourDesorptionRate(double desorptionRate);
-        void Set10HourRadius(double radius);
+        void Set10HourRadius(double radius, int numNodes = -1);
         void Set10HourAdsorptionRate(double adsorptionRate);
         void Set10HourStickDensity(double stickDensity);
         void Set10HourMaxLocalMoisture(double maxLocalMoisture);
         void Set10HourDesorptionRate(double desorptionRate);
-        void Set100HourRadius(double radius);
+        void Set100HourRadius(double radius, int numNodes = -1);
         void Set100HourAdsorptionRate(double adsorptionRate);
         void Set100HourStickDensity(double stickDensity);
         void Set100HourMaxLocalMoisture(double maxLocalMoisture);
         void Set100HourDesorptionRate(double desorptionRate);
-        void Set1000HourRadius(double radius);
+        void Set1000HourRadius(double radius, int numNodes = -1);
         void Set1000HourAdsorptionRate(double adsorptionRate);
         void Set1000HourStickDensity(double stickDensity);
         void Set1000HourMaxLocalMoisture(double maxLocalMoisture);

@@ -483,7 +483,7 @@ public:
     void setWaterFilmContribution( double waterFilm=0.0 ) ;
 	void setMoisture(float initFM);
 	double eqmc(double fTemp, double fRH);
-	void initializeParameters( double radius, const std::string& name ) ;
+	void initializeParameters( double radius, const std::string& name, const int numNodes = -1 ) ;
 	DFMCalcState GetState();
 	bool SetState(DFMCalcState state);
 // Protected methods
