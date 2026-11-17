@@ -28,6 +28,10 @@
 #%include "std_iostream.i"
 %include "windows.i"
 
+%include "typemaps.i"
+%apply long long *OUTPUT { Time64_T * };
+%apply long long { Time64_T };
+
 //ignore for now:
 %ignore operator <<;
 %ignore operator >>;
